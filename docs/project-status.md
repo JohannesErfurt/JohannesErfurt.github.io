@@ -5,8 +5,8 @@ Updated: 2026-07-21
 ## Current state
 
 - Phase: foundation
-- Last completed agent task: A-001 — Scaffold Astro and the repository structure
-- Next ready agent task: A-002 — Add Tailwind and global style foundations
+- Last completed agent task: A-002 — Add Tailwind and global style foundations
+- Next ready agent task: A-003 — Configure root-domain static output
 - Release state: not ready
 - Source plan: `portfolio_project_plan.md` (contains pre-existing user changes)
 
@@ -41,6 +41,16 @@ Blockers: H-NNN or none
 Next: A-NNN
 ```
 
+2026-07-21 — A-002 — complete
+Result: Added Tailwind CSS 4 through the preferred official Vite plugin, loaded
+a single global stylesheet, and replaced the unstyled placeholder with a small
+utility-class smoke test.
+Evidence: `npm run check` -> 0 diagnostics; `npm run build` -> passed;
+generated CSS contains `.text-3xl` and is linked from `dist/index.html`.
+Commit: `chore: configure Tailwind CSS` (this iteration)
+Blockers: none
+Next: A-003
+
 2026-07-21 — A-001 — complete
 Result: Initialized a minimal Astro 7 project with strict TypeScript, standard
 scripts, a static placeholder page, a lockfile, and the required tracked folder
@@ -55,5 +65,6 @@ Next: A-002
 
 - 2026-07-21: Use separate agent and human backlogs so an autonomous loop cannot
   silently invent personal content or perform account-level release actions.
-- 2026-07-21: Execute one agent task per loop iteration and require verification
-  evidence before checking it off.
+- 2026-07-21: A loop invocation continues through all ready agent tasks without
+  waiting for another prompt. Each task still requires its own verification
+  evidence and scoped local commit before the loop advances.

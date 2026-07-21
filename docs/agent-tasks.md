@@ -19,7 +19,7 @@ intended to produce one focused commit.
     - `npm run check` and `npm run build` exit with code 0.
   - Commit: `chore: initialize Astro portfolio`
 
-- [ ] **A-002 — Add Tailwind and global style foundations**
+- [x] **A-002 — Add Tailwind and global style foundations**
   - Depends on: A-001
   - Implements: plan 1.2
   - Work: install the Astro-supported Tailwind integration; load one global
