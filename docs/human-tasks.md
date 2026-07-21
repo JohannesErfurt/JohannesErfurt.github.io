@@ -86,11 +86,11 @@ to the coding agent; do not store private source documents in the repository.
 
 ## Optional human enhancements
 
-- [ ] **H-009 — Supply approved visual assets**
+- [x] **H-009 — Supply approved visual assets**
   - Provide an optional portrait, project screenshots, and architecture diagrams
     with attribution/license notes and desired alt-text context.
   - Success criteria:
-    - Original files are high enough resolution for their intended display size.
-    - Public-use permission and attribution requirements are documented.
-    - No screenshot contains secrets, personal data, private customer data, or private URLs.
+    - [x] Original files are high enough resolution for their intended display size.
+    - [x] Public-use permission and attribution requirements are documented.
+    - [x] No screenshot contains secrets, personal data, private customer data, or private URLs.
   - Unlocks: optional visual polish; does not block the initial release

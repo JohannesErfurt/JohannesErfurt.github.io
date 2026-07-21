@@ -213,3 +213,16 @@ Approval states: `pending`, `approved`, or `omit`.
   2026-07-21, including the at-own-risk Impressum omission, limited privacy notice,
   social title and description, and social-image omission.
 - Approved by/date: `Johannes Erfurt, 2026-07-21`
+
+## H-009 — Profile photo
+
+- Status: approved for public website use
+- Source supplied by Johannes: `Bewerbungsfoto_crop.tif`
+- Public derivative: `public/assets/johannes-erfurt-profile.webp`
+- Processing: centered square crop, 800x800 pixels, WebP encoding, and source
+  metadata removed; the original TIF is not published.
+- Alt text: `Portrait of Dr.-Ing. Johannes Erfurt`
+- Permission/attribution: Johannes explicitly instructed publication as his
+  profile picture in the Codex task on 2026-07-21; no third-party attribution
+  is requested.
+- Approved by/date: `Johannes Erfurt, 2026-07-21`

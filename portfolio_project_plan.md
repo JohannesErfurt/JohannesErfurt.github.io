@@ -247,8 +247,8 @@ export interface PublicationEntry {
 
 - [x] **Task 4.3: Static Generation & Performance Optimization**
   - [x] Confirm all portfolio routes are statically generated.
-  - [x] Optimize images as WebP or AVIF where appropriate; no raster content images are currently included.
-  - [x] Set explicit image width and height to prevent layout shift; no content images are currently included.
+  - [x] Optimize the supplied profile image as a metadata-stripped WebP.
+  - [x] Set explicit image width and height on the profile image to prevent layout shift.
   - [x] Load the small local SVG favicon efficiently.
   - [x] Minimize client-side JavaScript and hydrate only interactive components.
   - [x] Configure sensible font loading and fallbacks.

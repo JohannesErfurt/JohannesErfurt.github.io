@@ -24,6 +24,9 @@ Updated: 2026-07-21
 - H-006 is complete. Johannes explicitly chose to omit an Impressum at his own
   risk, approved the limited factual privacy notice without private contact
   details, approved the social title/description, and omitted the social image.
+- H-009 is complete. Johannes supplied and explicitly approved a cropped profile
+  photo for public website use; only a metadata-stripped 800x800 WebP derivative
+  is published.
 - Live release acceptance requires H-007 and H-008.
 
 ## Verification baseline
@@ -63,6 +66,18 @@ languages, sabbatical wording and dates present; two-page PNG render -> no clipp
 overlap, broken glyphs, or unreadable text; PDF SHA-256 ->
 `0834F1E7337EF065270D47F4B6F223AA8A187DB02CFCDE2F7C45937F3EA3BA38`.
 Commit: `chore: audit portfolio release candidate` (this iteration)
+Blockers: H-007 and H-008
+Next: H-007 — enable and validate GitHub Pages deployment
+
+2026-07-21 — H-009 — complete
+Result: Added Johannes' explicitly approved profile photo to the hero section.
+The source TIF remains private; the site publishes only a centered, metadata-
+stripped 800x800 WebP derivative with explicit dimensions and descriptive alt text.
+Evidence: browser render at 1280x720 -> image loaded at 800x800 with no horizontal
+overflow; `npm run check` -> 0 diagnostics; `npm test` -> 7 passed; `npm run build`
+and HTML/internal-link validation -> passed; Lighthouse -> home 99/100/100/100 and
+privacy 100/100/100/100 for Performance/Accessibility/Best Practices/SEO.
+Commit: `feat: add approved profile photo` (this iteration)
 Blockers: H-007 and H-008
 Next: H-007 — enable and validate GitHub Pages deployment
 
