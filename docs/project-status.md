@@ -5,8 +5,8 @@ Updated: 2026-07-21
 ## Current state
 
 - Phase: foundation
-- Last completed agent task: A-002 — Add Tailwind and global style foundations
-- Next ready agent task: A-003 — Configure root-domain static output
+- Last completed agent task: A-003 — Configure root-domain static output
+- Next ready agent task: A-004 — Define and validate portfolio data schemas
 - Release state: not ready
 - Source plan: `portfolio_project_plan.md` (contains pre-existing user changes)
 
@@ -40,6 +40,15 @@ Commit: hash or not created
 Blockers: H-NNN or none
 Next: A-NNN
 ```
+
+2026-07-21 — A-003 — complete
+Result: Configured explicit static output and the canonical personal GitHub
+Pages root domain without a repository base path.
+Evidence: `npm run check` -> 0 diagnostics; `npm run build` -> generated
+`dist/index.html`; generated-output scan -> no `/JohannesErfurt.github.io/` subpath.
+Commit: `chore: configure GitHub Pages URL` (this iteration)
+Blockers: none
+Next: A-004
 
 2026-07-21 — A-002 — complete
 Result: Added Tailwind CSS 4 through the preferred official Vite plugin, loaded

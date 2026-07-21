@@ -31,7 +31,7 @@ intended to produce one focused commit.
     - `npm run check` and `npm run build` exit with code 0.
   - Commit: `chore: configure Tailwind CSS`
 
-- [ ] **A-003 — Configure root-domain static output**
+- [x] **A-003 — Configure root-domain static output**
   - Depends on: A-001
   - Implements: plan 1.3
   - Work: configure Astro for static generation at the personal Pages root.
