@@ -1,4 +1,5 @@
 ---
+import ExperienceTimeline from '../components/ExperienceTimeline.astro';
 import HeroSummary from '../components/HeroSummary.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -9,6 +10,8 @@ const description = 'Portfolio of AI systems engineer and computer vision expert
 
 <BaseLayout title={pageTitle} description={description}>
   <HeroSummary />
+
+  <ExperienceTimeline />
 
   <section class="mx-auto max-w-5xl px-6 pb-16 sm:pb-24" id="projects" aria-labelledby="projects-title">
     <h2 class="sr-only" id="projects-title">Projects</h2>

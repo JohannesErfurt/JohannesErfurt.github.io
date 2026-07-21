@@ -100,7 +100,7 @@ intended to produce one focused commit.
     - Automated checks and production build pass.
   - Commit: `feat: add recruiter summary hero`
 
-- [ ] **A-008 — Implement the experience timeline**
+- [x] **A-008 — Implement the experience timeline**
   - Depends on: A-005, A-006
   - Implements: plan 3.2
   - Work: render typed experience data with distinct entry types and accessible

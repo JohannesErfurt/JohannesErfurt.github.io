@@ -5,8 +5,8 @@ Updated: 2026-07-21
 ## Current state
 
 - Phase: content and vertical slice
-- Last completed agent task: A-007 — Implement the recruiter hero
-- Next ready agent task: A-008 — Implement the experience timeline
+- Last completed agent task: A-008 — Implement the experience timeline
+- Next ready agent task: A-009 — Implement the project showcase
 - Release state: not ready
 - Source plan: `portfolio_project_plan.md` (contains pre-existing user changes)
 
@@ -46,6 +46,18 @@ Commit: hash or not created
 Blockers: H-NNN or none
 Next: A-NNN
 ```
+
+2026-07-21 — A-008 — complete
+Result: Rendered all 11 approved timeline records in descending chronological
+order with explicit Industry, Research, Teaching, Education, Professional
+development, and Sabbatical labels plus native expandable technical details.
+Evidence: browser audit -> 11 unique records, all essential dates/roles/summaries
+visible when collapsed, no horizontal overflow, native summaries focusable with
+open state exposed; `npm run check` -> 0 diagnostics; `npm run build` -> passed;
+`npm test` -> 7 passed.
+Commit: `feat: add accessible experience timeline` (this iteration)
+Blockers: none
+Next: A-009
 
 2026-07-21 — A-007 — complete
 Result: Added an above-the-fold recruiter summary with the approved identity,

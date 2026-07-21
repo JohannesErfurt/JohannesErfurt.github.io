@@ -197,10 +197,10 @@ export interface PublicationEntry {
   - [x] Add direct CTA button: "Download ATS CV (PDF)" linking to sanitized PDF asset.
   - [x] Add secondary CTA: "Explore Projects & Code".
 
-- [ ] **Task 3.2: Experience Timeline Component (`InteractiveTimeline.tsx`)**
-  - [ ] Render chronological list/tree with clear visual distinct badges for each entry type (Industry, Research, Education, Sabbatical).
-  - [ ] Ensure 11/2022 – 10/2023 Sabbatical node renders cleanly with a dedicated icon (e.g., Globe / Family) and positive concise description ("World Travel & Parental Leave - Intercultural perspective & family focus").
-  - [ ] Expandable details for technical stack (e.g., Python, PyTorch, C++, LangChain, LangGraph, H.266/VVC).
+- [x] **Task 3.2: Experience Timeline Component (`InteractiveTimeline.tsx`)**
+  - [x] Render chronological list/tree with clear visual distinct badges for each entry type (Industry, Research, Education, Sabbatical).
+  - [x] Ensure 11/2022 – 10/2023 Sabbatical node renders cleanly with a dedicated icon (e.g., Globe / Family) and positive concise description ("World Travel & Parental Leave - Intercultural perspective & family focus").
+  - [x] Expandable details for technical stack (e.g., Python, PyTorch, C++, LangChain, LangGraph, H.266/VVC).
 
 - [ ] **Task 3.3: Multi-Agent & AI Engineering Showcase (`ProjectGrid.tsx`)**
   - [ ] Display interactive cards for MindGrow Stories and Wizarding Story Engine.
