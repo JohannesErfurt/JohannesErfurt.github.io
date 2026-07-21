@@ -44,7 +44,7 @@ intended to produce one focused commit.
 
 ## Content model
 
-- [ ] **A-004 — Define and validate portfolio data schemas**
+- [x] **A-004 — Define and validate portfolio data schemas**
   - Depends on: A-001
   - Implements: plan 2.1
   - Work: define strict types for languages, timeline entries, projects, and

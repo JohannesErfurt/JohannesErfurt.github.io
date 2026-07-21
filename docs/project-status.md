@@ -4,16 +4,18 @@ Updated: 2026-07-21
 
 ## Current state
 
-- Phase: foundation
-- Last completed agent task: A-003 — Configure root-domain static output
-- Next ready agent task: A-004 — Define and validate portfolio data schemas
+- Phase: content model and vertical slice
+- Last completed agent task: A-004 — Define and validate portfolio data schemas
+- Next ready agent task: A-006 — Build the semantic page shell
 - Release state: not ready
 - Source plan: `portfolio_project_plan.md` (contains pre-existing user changes)
 
 ## Human blockers
 
 - H-001, H-002, H-003, and H-004 are marked approved in
-  `docs/content-approvals.md`; their dependent engineering work is unblocked.
+  `docs/content-approvals.md`, but A-005 remains blocked by unresolved approved
+  content: missing master's dates (H-002), project impact/third-project decisions
+  (H-003), and unchecked publication metadata (H-004).
 - A-007/A-016 require H-005, which remains pending because the supplied CV is
   not sanitized or single-column.
 - H-006 is labelled approved but still contains unresolved legal/privacy and
@@ -40,6 +42,15 @@ Commit: hash or not created
 Blockers: H-NNN or none
 Next: A-NNN
 ```
+
+2026-07-21 — A-004 — complete
+Result: Added strict domain interfaces and native runtime validators for all
+four portfolio collections, plus a deterministic schema test suite.
+Evidence: `npm test` -> 4 passed; `npm run check` -> 0 diagnostics;
+`npm run build` -> passed.
+Commit: `feat: add typed portfolio data schemas` (this iteration)
+Blockers: none for A-004; A-005 is blocked by H-002/H-003/H-004 placeholders
+Next: A-006 (independent of A-005)
 
 2026-07-21 — A-003 — complete
 Result: Configured explicit static output and the canonical personal GitHub
