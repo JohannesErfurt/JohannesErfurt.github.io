@@ -245,13 +245,13 @@ export interface PublicationEntry {
     - [ ] No flash of an incorrect theme is visible during normal loading.
   - **Suggested commit message:** `feat: add portfolio theme system`
 
-- [ ] **Task 4.3: Static Generation & Performance Optimization**
-  - [ ] Confirm all portfolio routes are statically generated.
-  - [ ] Optimize images as WebP or AVIF where appropriate.
-  - [ ] Set explicit image width and height to prevent layout shift.
-  - [ ] Inline or efficiently load small SVG icons.
-  - [ ] Minimize client-side JavaScript and hydrate only interactive components.
-  - [ ] Configure sensible font loading and fallbacks.
+- [x] **Task 4.3: Static Generation & Performance Optimization**
+  - [x] Confirm all portfolio routes are statically generated.
+  - [x] Optimize images as WebP or AVIF where appropriate; no raster content images are currently included.
+  - [x] Set explicit image width and height to prevent layout shift; no content images are currently included.
+  - [x] Inline or efficiently load small SVG icons; no SVG assets are currently required.
+  - [x] Minimize client-side JavaScript and hydrate only interactive components.
+  - [x] Configure sensible font loading and fallbacks.
   - **Acceptance criteria:**
     - [ ] Production build generates all expected static pages.
     - [ ] No avoidable cumulative layout shift is present.

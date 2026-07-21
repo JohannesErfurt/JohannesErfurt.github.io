@@ -5,8 +5,8 @@ Updated: 2026-07-21
 ## Current state
 
 - Phase: content and vertical slice
-- Last completed agent task: A-012 — Add metadata, privacy pages, and 404 handling
-- Next ready agent task: A-013 — Optimize static output and assets
+- Last completed agent task: A-013 — Optimize static output and assets
+- Next ready agent task: A-015 — Add automated quality gates
 - Release state: not ready
 - Source plan: `portfolio_project_plan.md` (contains pre-existing user changes)
 
@@ -45,6 +45,18 @@ Commit: hash or not created
 Blockers: H-NNN or none
 Next: A-NNN
 ```
+
+2026-07-21 — A-013 — complete
+Result: Audited the production output and confirmed that the current no-image,
+system-font implementation already meets the asset and hydration constraints;
+no speculative media or dependencies were added.
+Evidence: production browser audit -> CLS 0, no content images, no external fonts,
+0 module scripts, 2 necessary inline theme scripts, 1 local stylesheet, no
+horizontal overflow; static build -> index, privacy, and 404 generated;
+`npm run check` -> 0 diagnostics; `npm run build` -> passed; `npm test` -> 7 passed.
+Commit: `perf: optimize portfolio assets and output` (this iteration)
+Blockers: none
+Next: A-015
 
 2026-07-21 — A-012 — complete
 Result: Added the approved canonical/social metadata without an image, a limited

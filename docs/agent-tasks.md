@@ -170,7 +170,7 @@ intended to produce one focused commit.
     - Automated checks and production build pass.
   - Commit: `feat: add metadata and public policy pages`
 
-- [ ] **A-013 — Optimize static output and assets**
+- [x] **A-013 — Optimize static output and assets**
   - Depends on: A-007 through A-012
   - Implements: plan 4.3
   - Work: optimize images, dimensions, fonts, CSS, and hydration while respecting
