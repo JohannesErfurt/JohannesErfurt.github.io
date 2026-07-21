@@ -194,7 +194,7 @@ export interface PublicationEntry {
 - [x] **Task 3.1: 30-Second Recruiter Summary Card (`HeroSummary.tsx` / `.astro`)**
   - [x] Position above the fold on homepage.
   - [x] Display quick-scan badge stats: **PhD in Video Coding**, **AI & Image Processing Specialist**, **LangGraph / Multi-Agent Architect**.
-  - [x] Add direct CTA button: "Download ATS CV (PDF)" linking to sanitized PDF asset.
+  - [x] Add direct CTA button: "Download CV (PDF)" linking to the approved public PDF asset.
   - [x] Add secondary CTA: "Explore Projects & Code".
 
 - [x] **Task 3.2: Experience Timeline Component (`InteractiveTimeline.tsx`)**
@@ -292,7 +292,7 @@ export interface PublicationEntry {
 ## 🎯 Definition of Done (Verification Checklist)
 
 - [ ] **30-Second Scan Test Passed:** A visitor can identify Dr. Johannes Erfurt's core identity (PhD in Video Coding + AI/Multi-Agent Specialist) within 30 seconds.
-- [x] **ATS CV Download Functional:** Clicking "Download ATS CV" downloads `Dr_Johannes_Erfurt_CV.pdf` containing publications, languages, and zero exposed PII.
+- [x] **Public CV Download Functional:** Clicking "Download CV" downloads the approved `Dr_Johannes_Erfurt_CV.pdf` containing publications, supplied language levels, and zero exposed PII.
 - [x] **Timeline Gap Explicit:** Sabbatical (11/2022 – 10/2023) is visually clear and positively framed.
 - [x] **Languages Displayed:** German, English, and Russian proficiencies are prominently listed.
 - [ ] **Mobile & Desktop Responsive:** Perfectly readable across viewport widths 320px to 3840px.

@@ -18,9 +18,10 @@ Updated: 2026-07-21
 - A-006 is complete. Browser verification at 320px and 1440px found no horizontal
   overflow or overlap; all seven links are focusable in logical DOM order and
   expose a visible focus outline.
-- H-005 is complete. Johannes approved the sanitized two-page, single-column CV
-  candidate for public release on 2026-07-21; materially changed versions require
-  renewed approval.
+- H-005 is complete. Johannes approved a replacement four-page, visually designed
+  CV for public release on 2026-07-21. It is not claimed to be ATS-optimized;
+  its extracted language section contains English and Russian, while German
+  remains represented on the website.
 - H-006 is complete. Johannes explicitly chose to omit an Impressum at his own
   risk, approved the limited factual privacy notice without private contact
   details, approved the social title/description, and omitted the social image.
@@ -37,8 +38,8 @@ Updated: 2026-07-21
 - `npm run build` — passed on 2026-07-21 (3 static pages).
 - `npm test` — passed on 2026-07-21 (7 tests).
 - `npm run validate` — passed on 2026-07-21 (HTML and internal links valid).
-- `npm run lighthouse` — passed on 2026-07-21 (home and privacy each scored
-  100/100/100/100 for Performance/Accessibility/Best Practices/SEO).
+- `npm run lighthouse` — passed on 2026-07-21 (home scored 99/100/100/100 and
+  privacy scored 100/100/100/100 for Performance/Accessibility/Best Practices/SEO).
 
 ## Iteration log
 
@@ -52,6 +53,22 @@ Commit: hash or not created
 Blockers: H-NNN or none
 Next: A-NNN
 ```
+
+2026-07-21 — H-005 replacement — complete
+Result: Replaced the public CV with Johannes' explicitly supplied four-page
+visually designed `cv_github.pdf`, retaining the stable download filename.
+The website CTA now says “Download CV (PDF)” because ATS optimization is not
+claimed for this design.
+Evidence: PDF extraction -> 4 pages, selectable text, 5 approved publications,
+English and Russian language levels, approved sabbatical wording, no email/phone/
+address/private contact details; metadata scrub -> only intentional title,
+author, and subject retained; rendered public copy -> no clipping or overlap;
+`npm run check` -> 0 diagnostics; `npm test` -> 7 passed; `npm run build` and
+HTML/internal-link validation -> passed; Lighthouse -> home 99/100/100/100 and
+privacy 100/100/100/100.
+Commit: `feat: replace public CV with approved design` (this iteration)
+Blockers: H-007 and H-008
+Next: H-007 — enable and validate GitHub Pages deployment
 
 2026-07-21 — A-016 — complete
 Result: Audited release candidate `7f11c3ad915f604f69d97782544ed3520bccd5da`.

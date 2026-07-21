@@ -164,26 +164,28 @@ Approval states: `pending`, `approved`, or `omit`.
   redistribution license was confirmed for the other four records.
 - Approved by/date: `Johannes Erfurt, 2026-07-21`
 
-## H-005 — ATS CV
+## H-005 — Public CV
 
-- Status: approved
+- Status: replacement approved; visual design prioritized over ATS optimization
 - Expected path: `public/assets/Dr_Johannes_Erfurt_CV.pdf`
-- Private source CV reviewed: yes, 2026-07-21
-- Candidate generated: yes, 2026-07-21, at the expected path.
-- Candidate format: two-page, single-column, text-based PDF generated from the
-  approved structured portfolio data.
-- Text extraction and reading order reviewed: passed.
-- PII review: passed; the candidate contains no birth date, residential address,
-  private phone number, or private email address.
-- Document metadata review: passed; author/title/creator metadata is intentional
-  and contains no private contact details.
-- Content coverage: passed; the approved publications, all three approved language
-  levels, and the approved sabbatical wording are included.
-- Render review: passed automated and agent visual review at full-page scale;
-  no clipping, overlap, or unintended blank page was found.
-- Public-release approval: Johannes explicitly approved this generated candidate
-  in the Codex task on 2026-07-21. Materially changed CV versions require renewed
-  approval before publication.
+- Source supplied: `cv_github.pdf`, 2026-07-21
+- Candidate format: four-page, visually designed PDF with selectable text,
+  hyperlinks, publications, project details, experience, education, and a
+  separate signature page.
+- Text extraction and reading order reviewed: passed; the language section
+  contains English and Russian. German is not present in the replacement's
+  machine-extracted language section and remains represented on the website.
+- PII review: passed; no email, phone label, residential address, or private
+  contact details detected. The visible date is the document signing date.
+- Document metadata review: passed after removing source metadata; only title,
+  author, and subject metadata are retained.
+- Content coverage: passed for the supplied replacement; all five approved
+  publications and the approved sabbatical wording are included.
+- Render review: passed four-page visual review; no clipping, overlap, or broken
+  glyphs was found. Page four is intentionally a largely blank signature page.
+- Public-release approval: Johannes explicitly approved replacing the prior CV
+  with this supplied file in the Codex task on 2026-07-21. ATS optimization is
+  intentionally not claimed for this replacement.
 - Approved by/date: `Johannes Erfurt, 2026-07-21`
 
 ## H-006 — Legal, privacy, and metadata

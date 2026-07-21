@@ -42,12 +42,13 @@ to the coding agent; do not store private source documents in the repository.
     - Every supplied PDF is legally redistributable; otherwise link to its landing page.
   - Unlocks: A-005
 
-- [x] **H-005 — Supply and approve the public ATS CV**
+- [x] **H-005 — Supply and approve the public CV**
   - Place the final file at `public/assets/Dr_Johannes_Erfurt_CV.pdf` after a privacy review.
   - Success criteria:
     - The PDF contains selectable/extractable text in a logical single-column order.
-    - It includes selected publications; German, English, and Russian levels; and
-      the approved 11/2022–10/2023 sabbatical wording.
+    - It includes selected publications, the supplied language levels, and the
+      approved 11/2022–10/2023 sabbatical wording. The replacement is visually
+      designed and is not claimed to be ATS-optimized.
     - Manual review confirms no street address, exact birth date, private phone,
       hidden comments/metadata, or other unintended personal information.
     - The filename is exact and the document opens in two independent PDF viewers.
