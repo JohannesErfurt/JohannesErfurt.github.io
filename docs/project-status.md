@@ -6,7 +6,7 @@ Updated: 2026-07-21
 
 - Phase: content and vertical slice
 - Last completed agent task: A-011 — Complete navigation and the theme system
-- Next ready agent task: none; A-012 is blocked by H-006
+- Next ready agent task: A-012 — Add metadata, privacy pages, and 404 handling
 - Release state: not ready
 - Source plan: `portfolio_project_plan.md` (contains pre-existing user changes)
 
@@ -21,10 +21,9 @@ Updated: 2026-07-21
 - H-005 is complete. Johannes approved the sanitized two-page, single-column CV
   candidate for public release on 2026-07-21; materially changed versions require
   renewed approval.
-- H-006 remains pending. The social image is resolved as `omit`, and a privacy
-  basis is documented, but a legally reviewed Impressum/privacy decision and
-  explicitly approved public contact details are still required. Treat
-  A-012/A-016 as blocked until those choices are resolved.
+- H-006 is complete. Johannes explicitly chose to omit an Impressum at his own
+  risk, approved the limited factual privacy notice without private contact
+  details, approved the social title/description, and omitted the social image.
 - Live release acceptance requires H-007 and H-008.
 
 ## Verification baseline

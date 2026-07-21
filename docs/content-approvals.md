@@ -188,27 +188,28 @@ Approval states: `pending`, `approved`, or `omit`.
 
 ## H-006 — Legal, privacy, and metadata
 
-- Status: pending
+- Status: approved
 - Legal review finding, 2026-07-21: Section 5 DDG requires name, serviceable
   postal address, and a means of rapid electronic contact when the portfolio is
   a business-like digital service normally offered for remuneration. Section 18
   MStV adds a named responsible person and address for qualifying
   journalistically edited offerings. Applicability must be confirmed for the
   intended use of this portfolio; this repository does not make that legal choice.
-- Impressum decision/content: `[critical: provide legally reviewed text and explicitly
-  approve every postal/contact detail for public release; never reuse the CV address
-  automatically]`
-- Privacy draft basis: static GitHub Pages site; no first-party analytics, cookies,
-  contact form, embedded media, or externally hosted fonts are currently planned.
-  GitHub may nevertheless process service-usage data such as IP address, device
-  information, request timestamps, referrers, viewed pages, and clicked links.
-  Final controller/contact details and legally reviewed wording remain pending.
-- Draft social title: `Dr.-Ing. Johannes Erfurt | AI Systems and Computer Vision`
-- Draft social description: `AI systems engineer specializing in computer vision,
+- Impressum decision/content: `omit`; Johannes explicitly chose to publish without
+  an Impressum at his own risk. Do not publish a postal address or private contact
+  detail from the source CV.
+- Approved privacy notice: `This static portfolio does not use first-party
+  analytics, cookies, contact forms, embedded media, or externally hosted fonts.
+  The site is hosted using GitHub Pages. GitHub may process technical service-usage
+  data such as IP address, device information, request timestamps, referrers,
+  viewed pages, and clicked links. Further information is available in the GitHub
+  General Privacy Statement.`
+- Approved privacy-policy link: `https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement`
+- Approved social title: `Dr.-Ing. Johannes Erfurt | AI Systems and Computer Vision`
+- Approved social description: `AI systems engineer specializing in computer vision,
   multi-agent applications, MLOps, and image/video coding.`
 - Social image path/license: `omit`; the CV portrait is not approved for reuse.
-- Approval requested:
-  - Approve or revise the title and description.
-  - Provide legally reviewed public disclosure/privacy content and explicitly
-    approve any postal address or electronic contact that will be published.
-- Approved by/date: `[pending legal/content approval]`
+- Approval record: Johannes explicitly approved H-006 in the Codex task on
+  2026-07-21, including the at-own-risk Impressum omission, limited privacy notice,
+  social title and description, and social-image omission.
+- Approved by/date: `Johannes Erfurt, 2026-07-21`

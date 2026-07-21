@@ -53,7 +53,7 @@ to the coding agent; do not store private source documents in the repository.
     - The filename is exact and the document opens in two independent PDF viewers.
   - Unlocks: A-007, A-016
 
-- [ ] **H-006 — Approve public legal, privacy, and metadata content**
+- [x] **H-006 — Approve public legal, privacy, and metadata content**
   - Decide whether German law requires an Impressum for this site and provide
     reviewed public wording/contact details; approve privacy wording and social-preview text/image.
   - Success criteria:
