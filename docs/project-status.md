@@ -5,8 +5,8 @@ Updated: 2026-07-21
 ## Current state
 
 - Phase: content and vertical slice
-- Last completed agent task: A-009 — Implement the project showcase
-- Next ready agent task: A-010 — Implement skills, languages, and publications
+- Last completed agent task: A-010 — Implement skills, languages, and publications
+- Next ready agent task: A-011 — Complete navigation and the theme system
 - Release state: not ready
 - Source plan: `portfolio_project_plan.md` (contains pre-existing user changes)
 
@@ -46,6 +46,18 @@ Commit: hash or not created
 Blockers: H-NNN or none
 Next: A-NNN
 ```
+
+2026-07-21 — A-010 — complete
+Result: Added a competency matrix, the three approved language proficiencies,
+and five publications grouped programmatically as thesis, journal, and conference
+work with accessible DOI and official-record links.
+Evidence: browser audit -> exact language labels/levels, 9 competencies, publication
+groups 1/2/2 with 5 unique records and 10 labelled HTTPS links, no flag-only
+communication, no mobile overflow; `npm run check` -> 0 diagnostics;
+`npm run build` -> passed; `npm test` -> 7 passed.
+Commit: `feat: add skills and publications sections` (this iteration)
+Blockers: none
+Next: A-011
 
 2026-07-21 — A-009 — complete
 Result: Replaced the project placeholder with two typed, responsive project

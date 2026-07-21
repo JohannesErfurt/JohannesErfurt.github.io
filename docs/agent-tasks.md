@@ -128,7 +128,7 @@ intended to produce one focused commit.
     - Automated checks and production build pass.
   - Commit: `feat: add project showcase`
 
-- [ ] **A-010 — Implement skills, languages, and publications**
+- [x] **A-010 — Implement skills, languages, and publications**
   - Depends on: A-005, A-006
   - Implements: plan 3.4 and 3.5
   - Work: render approved language levels, core competencies, and categorized

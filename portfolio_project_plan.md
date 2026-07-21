@@ -207,16 +207,16 @@ export interface PublicationEntry {
   - [x] Show architecture diagrams / workflow badges (LangGraph, FastAPI, Vector DB, Cloud Native).
   - [x] Highlight quantifiable impact / technical achievements.
 
-- [ ] **Task 3.4: Languages & Core Competencies Matrix (`SkillsMatrix.tsx`)**
-  - [ ] Explicitly render Language Proficiencies block:
+- [x] **Task 3.4: Languages & Core Competencies Matrix (`SkillsMatrix.tsx`)**
+  - [x] Explicitly render Language Proficiencies block:
     * 🇩🇪 German: Native Speaker
     * 🇬🇧 English: Business Fluent
     * 🇷🇺 Russian: Very Good
-  - [ ] Render Core Technical Competencies: Multi-Agent Orchestration, MLOps, Video Compression (HEVC/VVC), Deep Learning, C++/Python.
+  - [x] Render Core Technical Competencies: Multi-Agent Orchestration, MLOps, Video Compression (HEVC/VVC), Deep Learning, C++/Python.
 
-- [ ] **Task 3.5: Research & Publications Section (`PublicationsList.tsx`)**
-  - [ ] Categorized view of PhD thesis and peer-reviewed papers.
-  - [ ] Direct links to DOIs / PDFs / IEEE Xplore where available.
+- [x] **Task 3.5: Research & Publications Section (`PublicationsList.tsx`)**
+  - [x] Categorized view of PhD thesis and peer-reviewed papers.
+  - [x] Direct links to DOIs / PDFs / IEEE Xplore where available.
 
 ---
 
