@@ -222,9 +222,9 @@ export interface PublicationEntry {
 
 ### Phase 4: Core Layout, Styling & Performance Implementation
 
-- [ ] **Task 4.1: Layout & Global Navigation**
+- [x] **Task 4.1: Layout & Global Navigation**
   - [x] Create `Header.astro` or `Header.tsx` with smooth-scroll navigation links: `#about`, `#experience`, `#projects`, `#publications`, and `#languages`.
-  - [ ] Create `Footer.astro` or `Footer.tsx` with copyright, GitHub, LinkedIn, and Impressum / privacy links.
+  - [x] Create `Footer.astro` or `Footer.tsx` with copyright, GitHub, LinkedIn, and the approved privacy link; Impressum is omitted per H-006.
   - [x] Implement responsive mobile navigation.
   - [x] Add visible keyboard-focus states.
   - [x] Add a skip-to-content link.

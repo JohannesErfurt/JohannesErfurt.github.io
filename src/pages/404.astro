@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Page not found | Dr.-Ing. Johannes Erfurt';
+const description = 'The requested portfolio page could not be found.';
+---
+
+<BaseLayout title={title} description={description} noindex>
+  <section class="mx-auto flex max-w-3xl flex-col items-start px-6 py-24 sm:py-32" aria-labelledby="not-found-title">
+    <p class="text-sm font-bold uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">404</p>
+    <h1 class="mt-3 text-4xl font-bold tracking-tight text-slate-950 dark:text-white" id="not-found-title">
+      Page not found
+    </h1>
+    <p class="mt-5 text-lg leading-8 text-slate-700 dark:text-slate-300">
+      The requested page does not exist or may have moved.
+    </p>
+    <a
+      class="mt-8 rounded-lg bg-indigo-700 px-5 py-3 font-semibold text-white outline-offset-4 hover:bg-indigo-800 focus-visible:outline-2 focus-visible:outline-indigo-700 dark:bg-indigo-600 dark:hover:bg-indigo-500 dark:focus-visible:outline-indigo-300"
+      href="/"
+    >Return to the portfolio</a>
+  </section>
+</BaseLayout>

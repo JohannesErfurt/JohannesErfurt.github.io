@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Privacy | Dr.-Ing. Johannes Erfurt';
+const description = 'Privacy information for the portfolio of Dr.-Ing. Johannes Erfurt.';
+const githubPrivacyUrl = 'https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement';
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="mx-auto max-w-3xl px-6 py-16 sm:py-24" aria-labelledby="privacy-title">
+    <p class="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">
+      Site information
+    </p>
+    <h1 class="mt-3 text-4xl font-bold tracking-tight text-slate-950 dark:text-white" id="privacy-title">
+      Privacy
+    </h1>
+
+    <div class="mt-8 space-y-6 text-lg leading-8 text-slate-700 dark:text-slate-300">
+      <p>
+        This static portfolio does not use first-party analytics, cookies, contact forms,
+        embedded media, or externally hosted fonts.
+      </p>
+      <p>
+        The site is hosted using GitHub Pages. GitHub may process technical service-usage
+        data such as IP address, device information, request timestamps, referrers,
+        viewed pages, and clicked links.
+      </p>
+      <p>
+        Further information is available in the
+        <a
+          class="font-semibold text-indigo-700 underline decoration-indigo-300 underline-offset-4 outline-offset-4 hover:text-indigo-900 focus-visible:outline-2 focus-visible:outline-indigo-700 dark:text-indigo-300 dark:hover:text-indigo-200 dark:focus-visible:outline-indigo-300"
+          href={githubPrivacyUrl}
+        >GitHub General Privacy Statement</a>.
+      </p>
+    </div>
+
+    <a
+      class="mt-10 inline-block font-semibold text-indigo-700 underline decoration-indigo-300 underline-offset-4 outline-offset-4 hover:text-indigo-900 focus-visible:outline-2 focus-visible:outline-indigo-700 dark:text-indigo-300 dark:hover:text-indigo-200 dark:focus-visible:outline-indigo-300"
+      href="/"
+    >Return to the portfolio</a>
+  </article>
+</BaseLayout>

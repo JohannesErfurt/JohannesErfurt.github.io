@@ -5,8 +5,8 @@ Updated: 2026-07-21
 ## Current state
 
 - Phase: content and vertical slice
-- Last completed agent task: A-011 — Complete navigation and the theme system
-- Next ready agent task: A-012 — Add metadata, privacy pages, and 404 handling
+- Last completed agent task: A-012 — Add metadata, privacy pages, and 404 handling
+- Next ready agent task: A-013 — Optimize static output and assets
 - Release state: not ready
 - Source plan: `portfolio_project_plan.md` (contains pre-existing user changes)
 
@@ -45,6 +45,19 @@ Commit: hash or not created
 Blockers: H-NNN or none
 Next: A-NNN
 ```
+
+2026-07-21 — A-012 — complete
+Result: Added the approved canonical/social metadata without an image, a limited
+privacy page without private contact details, robots and sitemap files, footer
+privacy navigation, and a noindex static 404 page with a root-home link.
+Evidence: browser audit -> approved title/description, one canonical URL, complete
+OG/Twitter text metadata, no social image, privacy route and 404 route resolve;
+output assertions -> index/privacy/404/robots/sitemap passed;
+`npm run check` -> 0 diagnostics; `npm run build` -> 3 pages built;
+`npm test` -> 7 passed.
+Commit: `feat: add metadata and public policy pages` (this iteration)
+Blockers: none
+Next: A-013
 
 2026-07-21 — A-011 — complete
 Result: Completed desktop and native mobile navigation, added a skip link,

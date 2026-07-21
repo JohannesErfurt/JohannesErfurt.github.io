@@ -157,7 +157,7 @@ intended to produce one focused commit.
     - Automated checks and production build pass.
   - Commit: `feat: complete navigation and theme system`
 
-- [ ] **A-012 — Add metadata, privacy pages, and 404 handling**
+- [x] **A-012 — Add metadata, privacy pages, and 404 handling**
   - Depends on: A-006, H-006
   - Implements: footer disclosure and part of plan 5.2
   - Work: add approved metadata, canonical URL, social preview metadata, legal/privacy
