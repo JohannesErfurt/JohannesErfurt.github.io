@@ -197,7 +197,7 @@ intended to produce one focused commit.
     - Local production build passes.
   - Commit: `ci: configure GitHub Pages deployment`
 
-- [ ] **A-015 — Add automated quality gates**
+- [x] **A-015 — Add automated quality gates**
   - Depends on: A-013
   - Implements: plan 5.1
   - Work: add CI/local checks for types, build, valid HTML, internal links,

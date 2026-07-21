@@ -253,9 +253,9 @@ export interface PublicationEntry {
   - [x] Minimize client-side JavaScript and hydrate only interactive components.
   - [x] Configure sensible font loading and fallbacks.
   - **Acceptance criteria:**
-    - [ ] Production build generates all expected static pages.
-    - [ ] No avoidable cumulative layout shift is present.
-    - [ ] Non-interactive sections ship without unnecessary client-side JavaScript.
+    - [x] Production build generates all expected static pages.
+    - [x] No avoidable cumulative layout shift is present.
+    - [x] Non-interactive sections ship without unnecessary client-side JavaScript.
   - **Suggested commit message:** `perf: optimize static portfolio output`
 
 ---
@@ -263,15 +263,15 @@ export interface PublicationEntry {
 ### Phase 5: Automated QA & Release Validation
 
 - [ ] **Task 5.1: Configure Automated Quality Checks**
-  - [ ] Add Lighthouse CI or an equivalent automated performance audit.
-  - [ ] Add HTML validation with `html-validate` or an equivalent tool.
+  - [x] Add Lighthouse CI or an equivalent automated performance audit.
+  - [x] Add HTML validation with `html-validate` or an equivalent tool.
   - [ ] Add automated broken-link checking for internal and external links.
-  - [ ] Add TypeScript and build checks to CI.
-  - [ ] Configure the CI workflow to fail on critical validation errors.
+  - [x] Add TypeScript and build checks to CI.
+  - [x] Configure the CI workflow to fail on critical validation errors.
   - **Acceptance criteria:**
-    - [ ] Type checking and production build run automatically.
-    - [ ] Invalid HTML and broken internal links fail CI.
-    - [ ] Lighthouse reports are generated for the deployed or preview build.
+    - [x] Type checking and production build run automatically.
+    - [x] Invalid HTML and broken internal links fail CI.
+    - [x] Lighthouse reports are generated for the deployed or preview build.
   - **Suggested commit message:** `ci: add automated portfolio quality checks`
 
 - [ ] **Task 5.2: Validate GitHub Pages Release**

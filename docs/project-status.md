@@ -4,9 +4,9 @@ Updated: 2026-07-21
 
 ## Current state
 
-- Phase: content and vertical slice
-- Last completed agent task: A-013 — Optimize static output and assets
-- Next ready agent task: A-015 — Add automated quality gates
+- Phase: release-candidate validation
+- Last completed agent task: A-015 — Add automated quality gates
+- Next ready agent task: A-016 — Perform the release-candidate repository audit
 - Release state: not ready
 - Source plan: `portfolio_project_plan.md` (contains pre-existing user changes)
 
@@ -45,6 +45,16 @@ Commit: hash or not created
 Blockers: H-NNN or none
 Next: A-NNN
 ```
+
+2026-07-21 — A-015 — complete
+Result: Added deterministic content tests, generated-HTML and internal-link
+validation, Lighthouse CI thresholds, and a CI quality job that gates deployment.
+Evidence: `npm run quality` -> type check passed, 7 tests passed, 3 pages built,
+3 HTML files and their internal links validated; Lighthouse -> home 100/100/100/100
+and privacy 100/100/100/100 for Performance/Accessibility/Best Practices/SEO.
+Commit: `ci: add portfolio quality gates` (this iteration)
+Blockers: none
+Next: A-016
 
 2026-07-21 — A-013 — complete
 Result: Audited the production output and confirmed that the current no-image,
