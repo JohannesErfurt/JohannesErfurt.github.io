@@ -5,8 +5,8 @@ Updated: 2026-07-21
 ## Current state
 
 - Phase: content and vertical slice
-- Last completed agent task: A-005 — Populate approved structured content
-- Next ready agent task: A-006 — Build the semantic page shell
+- Last completed agent task: A-006 — Build the semantic page shell
+- Next ready agent task: A-007 — Implement the recruiter hero
 - Release state: not ready
 - Source plan: `portfolio_project_plan.md` (contains pre-existing user changes)
 
@@ -15,9 +15,9 @@ Updated: 2026-07-21
 - H-001 through H-004 are approved. H-002 dates and claims are complete, H-003
   uses approved qualitative impacts and omits the unsupported third project,
   and H-004 metadata was verified against official records. A-005 is unblocked.
-- A-006 implementation is present as uncommitted work, but its required 320px and
-  1440px browser verification is blocked because the in-app browser runtime fails
-  before initialization (`failed to write kernel assets`, OS error 3).
+- A-006 is complete. Browser verification at 320px and 1440px found no horizontal
+  overflow or overlap; all seven links are focusable in logical DOM order and
+  expose a visible focus outline.
 - H-005 is complete. Johannes approved the sanitized two-page, single-column CV
   candidate for public release on 2026-07-21; materially changed versions require
   renewed approval.
@@ -46,6 +46,17 @@ Commit: hash or not created
 Blockers: H-NNN or none
 Next: A-NNN
 ```
+
+2026-07-21 — A-006 — complete
+Result: Verified and completed the semantic page shell with one header, main,
+and footer; approved profile links; responsive rendering; and keyboard-visible
+focus for every interactive element.
+Evidence: browser render at 320x800 and 1440x900 -> no overflow/overlap;
+focus audit -> 7 enabled links in logical order with a 2px visible outline;
+`npm run check` -> 0 diagnostics; `npm run build` -> passed; `npm test` -> 7 passed.
+Commit: `feat: add portfolio vertical slice` (this iteration)
+Blockers: none
+Next: A-007
 
 2026-07-21 — A-005 — complete
 Result: Added validated JSON collections for 3 languages, 11 timeline entries,

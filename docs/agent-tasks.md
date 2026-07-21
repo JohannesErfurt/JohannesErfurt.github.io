@@ -72,7 +72,7 @@ intended to produce one focused commit.
 
 ## Visible vertical slice and components
 
-- [ ] **A-006 — Build the semantic page shell**
+- [x] **A-006 — Build the semantic page shell**
   - Depends on: A-002, A-003, H-001
   - Implements: plan 1.6 and part of 4.1
   - Work: add the base layout, header, main landmark, initial hero, one project

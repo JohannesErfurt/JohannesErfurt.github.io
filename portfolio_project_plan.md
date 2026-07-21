@@ -107,10 +107,10 @@
   - [x] Create a simple hero section with the final professional title.
   - [x] Add one placeholder or real featured-project card.
   - [x] Create a minimal footer with GitHub and LinkedIn links.
-  - [ ] Verify the page locally.
+  - [x] Verify the page locally.
   - [ ] Deploy the minimal page through GitHub Actions.
   - **Acceptance criteria:**
-    - [ ] Header, hero, one project card, and footer render on desktop and mobile.
+    - [x] Header, hero, one project card, and footer render on desktop and mobile.
     - [x] The local build succeeds.
     - [ ] The deployed GitHub Pages site displays the same content.
   - **Suggested commit message:** `feat: add initial deployed portfolio shell`
