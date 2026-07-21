@@ -191,11 +191,11 @@ export interface PublicationEntry {
 
 ### Phase 3: UI/UX Component Specifications
 
-- [ ] **Task 3.1: 30-Second Recruiter Summary Card (`HeroSummary.tsx` / `.astro`)**
-  - [ ] Position above the fold on homepage.
-  - [ ] Display quick-scan badge stats: **PhD in Video Coding**, **AI & Image Processing Specialist**, **LangGraph / Multi-Agent Architect**.
-  - [ ] Add direct CTA button: "Download ATS CV (PDF)" linking to sanitized PDF asset.
-  - [ ] Add secondary CTA: "Explore Projects & Code".
+- [x] **Task 3.1: 30-Second Recruiter Summary Card (`HeroSummary.tsx` / `.astro`)**
+  - [x] Position above the fold on homepage.
+  - [x] Display quick-scan badge stats: **PhD in Video Coding**, **AI & Image Processing Specialist**, **LangGraph / Multi-Agent Architect**.
+  - [x] Add direct CTA button: "Download ATS CV (PDF)" linking to sanitized PDF asset.
+  - [x] Add secondary CTA: "Explore Projects & Code".
 
 - [ ] **Task 3.2: Experience Timeline Component (`InteractiveTimeline.tsx`)**
   - [ ] Render chronological list/tree with clear visual distinct badges for each entry type (Industry, Research, Education, Sabbatical).

@@ -5,8 +5,8 @@ Updated: 2026-07-21
 ## Current state
 
 - Phase: content and vertical slice
-- Last completed agent task: A-006 — Build the semantic page shell
-- Next ready agent task: A-007 — Implement the recruiter hero
+- Last completed agent task: A-007 — Implement the recruiter hero
+- Next ready agent task: A-008 — Implement the experience timeline
 - Release state: not ready
 - Source plan: `portfolio_project_plan.md` (contains pre-existing user changes)
 
@@ -46,6 +46,18 @@ Commit: hash or not created
 Blockers: H-NNN or none
 Next: A-NNN
 ```
+
+2026-07-21 — A-007 — complete
+Result: Added an above-the-fold recruiter summary with the approved identity,
+three evidence-backed expertise signals, an approved ATS CV download, and a
+projects CTA.
+Evidence: browser render at 1366x768 -> all required hero content and both CTAs
+visible above the fold; CTA focus audit -> visible 2px outlines; project target
+and CV output asset -> present; `npm run check` -> 0 diagnostics;
+`npm run build` -> passed; `npm test` -> 7 passed.
+Commit: `feat: add recruiter summary hero` (this iteration)
+Blockers: none
+Next: A-008
 
 2026-07-21 — A-006 — complete
 Result: Verified and completed the semantic page shell with one header, main,

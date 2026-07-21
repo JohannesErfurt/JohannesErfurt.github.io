@@ -86,7 +86,7 @@ intended to produce one focused commit.
     - `npm run check` and `npm run build` exit with code 0.
   - Commit: `feat: add portfolio vertical slice`
 
-- [ ] **A-007 — Implement the recruiter hero**
+- [x] **A-007 — Implement the recruiter hero**
   - Depends on: A-005, A-006, H-005
   - Implements: plan 3.1
   - Work: create the above-the-fold identity summary, proof badges, CV CTA, and
