@@ -21,62 +21,63 @@
 > **Execution rule:** All implementation work—including framework setup, styling, deployment, data modelling, UI work, and QA—must be represented by checkboxes in this plan. Do not complete project work outside the tracked tasks. After finishing a task, verify its acceptance criteria, mark it complete, and commit the change.
 
 ### Phase 0: Privacy, Security & Public Assets
-- [ ] **Task 0.1: PII Sanitization Audit**
-  - [ ] Audit repository and source text to ensure removal of precise street address, exact birth date, and private phone number.
-  - [ ] Establish professional contact endpoints: public email alias, LinkedIn URL, GitHub profile.
-- [ ] **Task 0.2: ATS-Optimized CV Preparation**
-  - [ ] Create single-column, machine-readable PDF version of CV for standard Applicant Tracking Systems (ATS).
-  - [ ] Ensure plain-text extractability (no vector text converting to paths, no text embedded inside images).
-  - [ ] Explicitly include "Selected Publications" (PhD thesis, IEEE papers).
-  - [ ] Explicitly include Language Proficiencies (German: Native, English: Business Fluent, Russian: Very Good).
-  - [ ] Transparently include the 11/2022 – 10/2023 node ("Sabbatical: World Travel & Parental Leave").
-  - [ ] Place PDF asset into `public/assets/Dr_Johannes_Erfurt_CV.pdf`.
+- [x] **Task 0.1: PII Sanitization Audit**
+  - [x] Audit repository and source text to ensure removal of precise street address, exact birth date, and private phone number.
+  - [x] Establish professional contact endpoints: LinkedIn URL and GitHub profile;
+    record the explicit decision to omit a public email alias.
+- [x] **Task 0.2: ATS-Optimized CV Preparation**
+  - [x] Create single-column, machine-readable PDF version of CV for standard Applicant Tracking Systems (ATS).
+  - [x] Ensure plain-text extractability (no vector text converting to paths, no text embedded inside images).
+  - [x] Explicitly include "Selected Publications" (PhD thesis, IEEE papers).
+  - [x] Explicitly include Language Proficiencies (German: Native, English: Business Fluent, Russian: Very Good).
+  - [x] Transparently include the 11/2022 – 10/2023 node ("Sabbatical: World Travel & Parental Leave").
+  - [x] Place PDF asset into `public/assets/Dr_Johannes_Erfurt_CV.pdf`.
 
 ---
 
 
 ### Phase 1: Project Bootstrap
 
-- [ ] **Task 1.1: Initialize Astro Project**
-  - [ ] Initialize Astro in the existing repository.
-  - [ ] Select the minimal or empty Astro template.
-  - [ ] Enable strict TypeScript.
-  - [ ] Install project dependencies.
-  - [ ] Verify that `npm run dev` starts the local development server.
-  - [ ] Verify that `npm run build` creates a successful production build.
+- [x] **Task 1.1: Initialize Astro Project**
+  - [x] Initialize Astro in the existing repository.
+  - [x] Select the minimal or empty Astro template.
+  - [x] Enable strict TypeScript.
+  - [x] Install project dependencies.
+  - [x] Verify that `npm run dev` starts the local development server.
+  - [x] Verify that `npm run build` creates a successful production build.
   - **Acceptance criteria:**
-    - [ ] Astro runs locally without errors.
-    - [ ] Strict TypeScript is enabled.
-    - [ ] The production build completes successfully.
+    - [x] Astro runs locally without errors.
+    - [x] Strict TypeScript is enabled.
+    - [x] The production build completes successfully.
   - **Suggested commit message:** `chore: initialize Astro project`
 
-- [ ] **Task 1.2: Configure Tailwind CSS**
-  - [ ] Install and configure Tailwind CSS using the current Astro-supported setup.
-  - [ ] Add a global stylesheet.
-  - [ ] Verify that Tailwind utility classes are applied correctly.
-  - [ ] Remove unnecessary default template styles and content.
+- [x] **Task 1.2: Configure Tailwind CSS**
+  - [x] Install and configure Tailwind CSS using the current Astro-supported setup.
+  - [x] Add a global stylesheet.
+  - [x] Verify that Tailwind utility classes are applied correctly.
+  - [x] Remove unnecessary default template styles and content.
   - **Acceptance criteria:**
-    - [ ] Tailwind classes render correctly in the browser.
-    - [ ] `npm run build` continues to pass.
-    - [ ] The project contains no unnecessary starter-template styling.
+    - [x] Tailwind classes render correctly in the browser.
+    - [x] `npm run build` continues to pass.
+    - [x] The project contains no unnecessary starter-template styling.
   - **Suggested commit message:** `chore: configure Tailwind CSS`
 
-- [ ] **Task 1.3: Configure Astro for GitHub Pages**
-  - [ ] Configure `astro.config.mjs` for static output.
-  - [ ] Set the production site URL to `https://johanneserfurt.github.io`.
-  - [ ] Confirm that no repository subpath is required for the personal GitHub Pages repository.
-  - [ ] Verify the generated static output locally.
+- [x] **Task 1.3: Configure Astro for GitHub Pages**
+  - [x] Configure `astro.config.mjs` for static output.
+  - [x] Set the production site URL to `https://johanneserfurt.github.io`.
+  - [x] Confirm that no repository subpath is required for the personal GitHub Pages repository.
+  - [x] Verify the generated static output locally.
   - **Acceptance criteria:**
-    - [ ] Astro generates a static production build.
-    - [ ] Internal URLs are correct for the root GitHub Pages domain.
-    - [ ] The site configuration contains the correct canonical site URL.
+    - [x] Astro generates a static production build.
+    - [x] Internal URLs are correct for the root GitHub Pages domain.
+    - [x] The site configuration contains the correct canonical site URL.
   - **Suggested commit message:** `chore: configure Astro for GitHub Pages`
 
 - [ ] **Task 1.4: Configure GitHub Actions Deployment**
-  - [ ] Create `.github/workflows/deploy.yml`.
-  - [ ] Configure automatic deployment on pushes to `main`.
-  - [ ] Use the maintained Astro and GitHub Pages deployment actions.
-  - [ ] Enable manual workflow execution with `workflow_dispatch`.
+  - [x] Create `.github/workflows/deploy.yml`.
+  - [x] Configure automatic deployment on pushes to `main`.
+  - [x] Use the maintained Astro and GitHub Pages deployment actions.
+  - [x] Enable manual workflow execution with `workflow_dispatch`.
   - [ ] In repository settings, select **GitHub Actions** as the GitHub Pages source.
   - [ ] Push the workflow and verify a successful deployment.
   - **Acceptance criteria:**
@@ -85,32 +86,32 @@
     - [ ] The website is accessible at `https://johanneserfurt.github.io`.
   - **Suggested commit message:** `ci: configure GitHub Pages deployment`
 
-- [ ] **Task 1.5: Create Initial Project Structure**
-  - [ ] Create `src/components/`.
-  - [ ] Create `src/data/`.
-  - [ ] Create `src/layouts/`.
-  - [ ] Create `src/content/`.
-  - [ ] Create `src/styles/`.
-  - [ ] Create `public/assets/`.
-  - [ ] Create `public/assets/images/`.
-  - [ ] Create `public/assets/diagrams/`.
-  - [ ] Add placeholder `.gitkeep` files where empty directories must be tracked.
+- [x] **Task 1.5: Create Initial Project Structure**
+  - [x] Create `src/components/`.
+  - [x] Create `src/data/`.
+  - [x] Create `src/layouts/`.
+  - [x] Create `src/content/`.
+  - [x] Create `src/styles/`.
+  - [x] Create `public/assets/`.
+  - [x] Create `public/assets/images/`.
+  - [x] Create `public/assets/diagrams/`.
+  - [x] Add placeholder `.gitkeep` files where empty directories must be tracked.
   - **Acceptance criteria:**
-    - [ ] The folder structure supports components, typed data, layouts, content, styles, images, diagrams, and downloadable assets.
-    - [ ] Empty but required directories are tracked in Git.
+    - [x] The folder structure supports components, typed data, layouts, content, styles, images, diagrams, and downloadable assets.
+    - [x] Empty but required directories are tracked in Git.
   - **Suggested commit message:** `chore: create initial portfolio structure`
 
 - [ ] **Task 1.6: Build and Deploy a Minimal Vertical Slice**
-  - [ ] Create a minimal global layout.
-  - [ ] Create a basic responsive header.
-  - [ ] Create a simple hero section with the final professional title.
-  - [ ] Add one placeholder or real featured-project card.
-  - [ ] Create a minimal footer with GitHub and LinkedIn links.
+  - [x] Create a minimal global layout.
+  - [x] Create a basic responsive header.
+  - [x] Create a simple hero section with the final professional title.
+  - [x] Add one placeholder or real featured-project card.
+  - [x] Create a minimal footer with GitHub and LinkedIn links.
   - [ ] Verify the page locally.
   - [ ] Deploy the minimal page through GitHub Actions.
   - **Acceptance criteria:**
     - [ ] Header, hero, one project card, and footer render on desktop and mobile.
-    - [ ] The local build succeeds.
+    - [x] The local build succeeds.
     - [ ] The deployed GitHub Pages site displays the same content.
   - **Suggested commit message:** `feat: add initial deployed portfolio shell`
 
@@ -118,8 +119,8 @@
 
 ### Phase 2: Information Architecture & Data Schemas
 
-- [ ] **Task 2.1: Data Model & Schema Definitions**
-  - [ ] Create `src/data/schema.ts` defining TypeScript interfaces for all data collections.
+- [x] **Task 2.1: Data Model & Schema Definitions**
+  - [x] Create `src/data/schema.ts` defining TypeScript interfaces for all data collections.
 
 ```typescript
 export interface LanguageProficiency {
@@ -167,23 +168,24 @@ export interface PublicationEntry {
 }
 ```
 
-- [ ] **Task 2.2: Population of Structured Data Files**
-  - [ ] Create `src/data/languages.json`:
+- [x] **Task 2.2: Population of Structured Data Files**
+  - [x] Create `src/data/languages.json`:
     - German: Native (Muttersprache)
     - English: Business Fluent (Verhandlungssicher)
     - Russian: Very Good (Sehr gut)
-  - [ ] Create `src/data/experience.json`:
+  - [x] Create `src/data/experience.json`:
     - Scansonic (AI & Image Processing Developer, 05/2024 – Present)
     - Upskilling Phase (DeepLearning.AI, velpTEC - Multi-Agent / MLOps, 11/2023 – 04/2024)
     - **Sabbatical Node** (World Travel & Parental Leave / Elternzeit & Weltreise, 11/2022 – 10/2023)
     - Fraunhofer HHI (Researcher & Student Worker in Video Coding, H.265/HEVC, H.266/VVC)
     - TU Berlin (Teaching Assistant / Studentische Hilfskraft)
     - PhD Promotion (Filtertechniken in der Videokodierung, Grade: "sehr gut")
-  - [ ] Create `src/data/projects.json`:
+  - [x] Create `src/data/projects.json`:
     - MindGrow Stories (Cloud-Native Multi-Agent Children's Book Generation Engine)
     - Wizarding Story Engine (Open-Source Multi-Agent Narrative System with LangGraph)
-    - Autonomous Research Agent Framework
-  - [ ] Create `src/data/publications.json` including PhD Dissertation and key HHI signal filtering papers.
+    - Autonomous Research Agent Framework is intentionally omitted until approved
+      facts and public evidence are supplied.
+  - [x] Create `src/data/publications.json` including PhD Dissertation and key HHI signal filtering papers.
 
 ---
 
