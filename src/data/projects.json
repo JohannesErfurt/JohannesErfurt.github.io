@@ -1,0 +1,23 @@
+[
+  {
+    "id": "mindgrow-stories",
+    "title": "MindGrow Stories",
+    "subtitle": "Full-Stack AI Application",
+    "category": "AI / Multi-Agent",
+    "description": "A cloud-native multi-agent platform for the automated creation of personalized children's books, with modular LLM, image-generation, and VLM workflows.",
+    "impact": "Demonstrates end-to-end delivery of a cloud-native generative-AI product, combining multi-agent orchestration, multimodal generation, automated quality assessment, character-consistency controls, and CI/CD-based deployment.",
+    "techStack": ["Next.js", "FastAPI", "LLMs", "VLMs", "Image Generation", "CI/CD", "Render"],
+    "featured": true
+  },
+  {
+    "id": "wizarding-story-engine",
+    "title": "Wizarding Story Engine",
+    "subtitle": "Open-Source Multi-Agent Writing System",
+    "category": "AI / Multi-Agent",
+    "description": "A state-based LangGraph pipeline for planning, generating, evaluating, and iteratively revising long-form narrative text.",
+    "impact": "Provides an open-source reference architecture for controllable long-form generation, with specialized critic agents, iterative revision, resumable execution, human approval gates, and explicit token and cost monitoring.",
+    "techStack": ["Python", "LangGraph", "LangChain", "Pydantic", "Human-in-the-Loop"],
+    "githubUrl": "https://github.com/JohannesErfurt/wizarding-story-engine",
+    "featured": true
+  }
+]

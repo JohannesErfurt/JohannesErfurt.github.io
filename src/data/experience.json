@@ -1,0 +1,153 @@
+[
+  {
+    "id": "scansonic-ai-developer",
+    "period": "05/2024-Present",
+    "startDate": "2024-05",
+    "endDate": "present",
+    "role": "Software Developer for AI and Image Processing",
+    "organization": "Scansonic MI GmbH",
+    "type": "employment",
+    "summary": "Develops industrial AI and computer-vision systems for automated quality monitoring of laser brazing and welding processes.",
+    "keyHighlights": [
+      "Trains and validates defect-detection and localization models, including CNNs, ViTs, image classification, and semantic segmentation.",
+      "Builds ML pipelines, hyperparameter-tuning workflows, data augmentation, pre-labeling infrastructure, and edge-deployment tooling.",
+      "Reduced manual annotation effort by approximately 50% through pre-labeling infrastructure.",
+      "Coordinates AI software releases and mentors colleagues and students."
+    ],
+    "techStack": ["Python", "PyTorch", "Computer Vision", "CNNs", "Vision Transformers", "MLOps"]
+  },
+  {
+    "id": "ai-upskilling",
+    "period": "11/2023-04/2024",
+    "startDate": "2023-11",
+    "endDate": "2024-04",
+    "role": "Further Education and Project Phase",
+    "organization": "DeepLearning.AI and velpTEC",
+    "type": "upskilling",
+    "summary": "Intensive preparation for the transition to industrial AI development.",
+    "keyHighlights": [
+      "Studied transformers, attention, LLMs, CNNs, RNNs, LSTMs, transfer learning, and data augmentation."
+    ],
+    "techStack": ["PyTorch", "TensorFlow", "scikit-learn", "Transformers", "LLMs"]
+  },
+  {
+    "id": "sabbatical-world-travel-parental-leave",
+    "period": "11/2022-10/2023",
+    "startDate": "2022-11",
+    "endDate": "2023-10",
+    "role": "World Travel and Parental Leave",
+    "organization": "Sabbatical",
+    "type": "sabbatical",
+    "summary": "World travel and parental leave - intercultural perspective and family focus.",
+    "keyHighlights": [],
+    "isGap": true
+  },
+  {
+    "id": "fraunhofer-research-associate",
+    "period": "09/2015-10/2022",
+    "startDate": "2015-09",
+    "endDate": "2022-10",
+    "role": "Research Associate",
+    "organization": "Fraunhofer Heinrich Hertz Institute",
+    "type": "employment",
+    "summary": "Researched image/video coding, signal filtering, learned filters, and perceptual quality assessment for HEVC and VVC.",
+    "keyHighlights": [
+      "Developed wavelet, shearlet, Wiener-filter, classification, and artifact-reduction methods.",
+      "Achieved more than 4% coding-efficiency improvement over VVC with a combined learned and Wiener-filter approach.",
+      "Built reproducible C++ and Python simulation software and participated in JVET standardization.",
+      "Contributed to WPSNR quality assessment and co-invented patent applications."
+    ],
+    "techStack": ["C++", "Python", "MATLAB", "CMake", "HEVC", "VVC", "CNNs", "CI/CD"]
+  },
+  {
+    "id": "fraunhofer-student-research-assistant",
+    "period": "08/2014-08/2015",
+    "startDate": "2014-08",
+    "endDate": "2015-08",
+    "role": "Student Research Assistant",
+    "organization": "Fraunhofer Heinrich Hertz Institute",
+    "type": "employment",
+    "summary": "Conducted video-compression research focused on arithmetic coding algorithms.",
+    "keyHighlights": [],
+    "techStack": ["Video Coding", "Arithmetic Coding"]
+  },
+  {
+    "id": "tu-berlin-student-teaching-assistant",
+    "period": "10/2011-09/2014",
+    "startDate": "2011-10",
+    "endDate": "2014-09",
+    "role": "Student Teaching Assistant",
+    "organization": "Technical University of Berlin",
+    "type": "employment",
+    "summary": "Conducted mathematics and engineering tutorials and explained complex concepts to students.",
+    "keyHighlights": []
+  },
+  {
+    "id": "tu-berlin-phd",
+    "period": "09/2019-09/2022",
+    "startDate": "2019-09",
+    "endDate": "2022-09",
+    "role": "PhD",
+    "organization": "Technical University of Berlin",
+    "type": "education",
+    "summary": "Doctoral research on filter techniques in video coding, combining analytical signal processing and machine learning.",
+    "keyHighlights": [
+      "Dissertation: Filter techniques in video coding.",
+      "Final grade: Very good.",
+      "Published and presented research and supervised student work."
+    ],
+    "techStack": ["Signal Processing", "Video Coding", "Machine Learning"]
+  },
+  {
+    "id": "tu-berlin-msc-mathematics",
+    "period": "10/2012-03/2015",
+    "startDate": "2012-10",
+    "endDate": "2015-03",
+    "role": "Master of Science in Mathematics",
+    "organization": "Technische Universität Berlin",
+    "type": "education",
+    "summary": "Mathematics degree specializing in signal processing.",
+    "keyHighlights": [
+      "Final grade: 1.2.",
+      "Master's thesis: Multidimensional Inpainting, grade 1.0."
+    ],
+    "techStack": ["Mathematics", "Signal Processing"]
+  },
+  {
+    "id": "tomsk-study-abroad",
+    "period": "09/2012-01/2013",
+    "startDate": "2012-09",
+    "endDate": "2013-01",
+    "role": "Study Abroad",
+    "organization": "Tomsk Polytechnic University, Russia",
+    "type": "education",
+    "summary": "International study period in Russia.",
+    "keyHighlights": []
+  },
+  {
+    "id": "tu-berlin-bsc-mathematics",
+    "period": "10/2008-09/2012",
+    "startDate": "2008-10",
+    "endDate": "2012-09",
+    "role": "Bachelor of Science in Mathematics",
+    "organization": "Technische Universität Berlin",
+    "type": "education",
+    "summary": "Mathematics degree with a minor in physics.",
+    "keyHighlights": [
+      "Final grade: 1.4.",
+      "Bachelor's thesis: Partial Differential Equations."
+    ],
+    "techStack": ["Mathematics", "Physics"]
+  },
+  {
+    "id": "durham-study-abroad",
+    "period": "09/2010-06/2011",
+    "startDate": "2010-09",
+    "endDate": "2011-06",
+    "role": "Study Abroad",
+    "organization": "Durham University, England",
+    "type": "education",
+    "summary": "International study period in England.",
+    "keyHighlights": []
+  }
+]

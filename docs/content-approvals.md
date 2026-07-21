@@ -1,0 +1,201 @@
+# Public-content approvals
+
+This is the handoff surface between Johannes and the coding loop. Replace
+placeholders only with information explicitly approved for publication. Keep
+private source documents, addresses, birth dates, phone numbers, credentials,
+and employer-confidential material out of this file and repository.
+
+Approval states: `pending`, `approved`, or `omit`.
+
+## H-001 — Identity and public contact
+
+- Status: approved
+- Draft source: private CV supplied 2026-07-21; source file is not committed
+- Display name: `Dr.-Ing. Johannes Erfurt`
+- Professional title/tagline: `AI Systems Engineer | Computer Vision Expert`
+- Public email alias: omit
+- GitHub URL: `https://github.com/JohannesErfurt`
+- LinkedIn URL: `https://www.linkedin.com/in/johanneserfurt`
+- Approved by/date: `Johannes Erfurt, 2026-07-21`
+
+## H-002 — Experience and education
+
+- Status: approved
+- Draft source: private CV supplied 2026-07-21; source file is not committed
+- Draft experience:
+  - `05/2024-Present` — Software Developer for AI and Image Processing,
+    Scansonic MI GmbH, Berlin
+    - Real-time computer-vision systems for automated quality monitoring of
+      industrial laser brazing and welding processes.
+    - Training, optimization, and validation of defect-detection and localization
+      models, including cross-site models, CNNs, ViTs, image classification, and
+      semantic segmentation.
+    - ML pipeline automation, hyperparameter tuning, data augmentation,
+      pre-labeling infrastructure, and deployment to production-ready edge systems.
+    - Draft measurable claim: approximately 50% less manual annotation effort
+      through the pre-labeling infrastructure. `approved`
+    - Technical leadership for AI software releases, planning, coordination,
+      mentoring, and supervision of student theses.
+    - Named-client examples from the CV are intentionally omitted until employer
+      confidentiality and public-use approval are confirmed.
+  - `11/2023-04/2024` — Further Education and Project Phase,
+    DeepLearning.AI and velpTEC
+    - Intensive preparation for the transition to industrial AI development.
+    - Transformers, attention, LLMs, CNNs, RNNs, LSTMs, transfer learning, and
+      data augmentation using PyTorch, TensorFlow, and scikit-learn.
+  - `11/2022-10/2023` — World Travel and Parental Leave
+    - Entry type: `sabbatical`; `isGap: true`.
+    - Proposed public wording: `World Travel and Parental Leave - intercultural
+      perspective and family focus.`
+  - `09/2015-10/2022` — Research Associate, Fraunhofer Heinrich Hertz Institute
+    - Image/video coding and signal-filter development for H.265/HEVC and H.266/VVC.
+    - Wavelet, shearlet, Wiener-filter, classification, artifact-reduction, and
+      learned filtering research using MATLAB, C++, Python, and CNNs.
+    - Image-quality assessment, including work on WPSNR.
+    - Reproducible simulation software, CMake, Git/GitHub, and CI/CD.
+    - Participation in JVET standardization and co-inventorship on patent applications.
+    - Draft measurable claim: more than 4% coding-efficiency improvement over VVC
+      for a combined learned/Wiener-filter approach. `approved`
+  - `08/2014-08/2015` — Student Research Assistant,
+    Fraunhofer Heinrich Hertz Institute
+    - Video-compression research focused on arithmetic coding algorithms.
+  - `10/2011-09/2014` — Student Teaching Assistant,
+    Technical University of Berlin
+    - Mathematics and engineering tutorials and explanation of complex concepts.
+- Draft education:
+  - `09/2019-09/2022` — PhD, Technical University of Berlin
+    - Dissertation: `Filter techniques in video coding`.
+    - Final grade: `Very good`.
+    - Algorithm development combining analytical signal processing and machine learning;
+      scientific publication, presentation, mentoring, and thesis supervision.
+  - `10/2012-03/2015` — Master of Science in Mathematics,
+    Technische Universität Berlin
+    - Final grade: `1.2`; specialization in Signal Processing.
+    - Master's thesis: `Multidimensional Inpainting`, grade `1.0`.
+  - `09/2012-01/2013` — Study Abroad, Tomsk Polytechnic University, Russia.
+  - `10/2008-09/2012` — Bachelor of Science in Mathematics,
+    Technische Universität Berlin
+    - Final grade: `1.4`; minor in Physics.
+    - Bachelor's thesis: `Partial Differential Equations`.
+  - `09/2010-06/2011` — Study Abroad, Durham University, England.
+- Draft language proficiencies:
+  - German: `Native / Muttersprache` `approved`
+  - English: `Business-fluent` `approved`
+  - Russian: `Very good command` `approved`
+- Confidentiality reviewed: yes for the drafted public content; named client
+  examples remain intentionally omitted
+- Approved by/date: `Johannes Erfurt, 2026-07-21`
+
+## H-003 — Projects and claims
+
+- Status: approved
+- Draft source: private CV supplied 2026-07-21; source file is not committed
+- Draft projects:
+  - MindGrow Stories
+    - Subtitle/category: `Full-Stack AI Application`; `AI / Multi-Agent`.
+    - Description: cloud-native multi-agent platform for automated creation of
+      personalized children's books.
+    - Highlights: modular LLM, image-generation, and VLM workflows; automated
+      quality assessment and character-consistency methods; Next.js, FastAPI,
+      Render, and CI/CD-based cloud deployment.
+    - Public URL: omit until a public case-study URL is supplied.
+    - Impact statement: `Demonstrates end-to-end delivery of a cloud-native generative-AI product, combining multi-agent orchestration, multimodal generation, automated quality assessment, character-consistency controls, and CI/CD-based deployment.`
+    - Featured: proposed `true`.
+  - Wizarding Story Engine
+    - Subtitle/category: `Open-Source Multi-Agent Writing System`; `AI / Multi-Agent`.
+    - Description: state-based LangGraph pipeline for planning, generating,
+      evaluating, and iteratively revising long-form narrative text.
+    - Highlights: structured agent state, specialized critic agents,
+      checkpointing, human-in-the-loop approvals, and token/cost monitoring.
+    - Public URL: `https://github.com/JohannesErfurt/wizarding-story-engine`
+    - Impact statement: `Provides an open-source reference architecture for controllable long-form generation, with specialized critic agents, iterative revision, resumable execution, human approval gates, and explicit token and cost monitoring.`
+    - Featured: proposed `true`.
+- Omitted project: `Autonomous Research Agent Framework` is not included because
+  no approved facts or public evidence were supplied.
+- Public links checked while signed out: yes for Wizarding Story Engine; MindGrow
+  Stories intentionally has no public link yet
+- Claims and asset rights reviewed: yes; impact statements are qualitative and
+  based on approved implementation details; no external visual assets are supplied
+- Approved by/date: `Johannes Erfurt, 2026-07-21`
+
+## H-004 — Publications
+
+- Status: approved
+- Draft source: private CV supplied 2026-07-21; source file is not committed
+- Verified bibliography (checked 2026-07-21):
+  - `Investigation of Wiener filter techniques for in-loop filtering in video coding`
+    - Author: Johannes Erfurt.
+    - Type/year: Doctoral thesis, 2023.
+    - Institution: Technische Universität Berlin.
+    - DOI: `https://doi.org/10.14279/depositonce-16759`
+    - Official record: `https://depositonce.tu-berlin.de/items/92fa0297-6dbc-4a0b-8825-2773b952f849`
+  - `Shearlet-based intensity classification loop filter for video coding`
+    - Authors: Johannes Erfurt; Wang-Q Lim; Jonathan Pfaff; Heiko Schwarz;
+      Detlev Marpe; Thomas Wiegand.
+    - Venue: Signal Processing: Image Communication, volume 115, July 2023,
+      article 116967.
+    - DOI: `https://doi.org/10.1016/j.image.2023.116967`
+    - Official record: `https://www.sciencedirect.com/science/article/abs/pii/S0923596523000498`
+  - `Adaptive Loop Filter with a CNN-Based Classification`
+    - Authors: Wang-Q Lim; Jonathan Pfaff; Björn Stallenberger; Johannes Erfurt;
+      Heiko Schwarz; Detlev Marpe; Thomas Wiegand.
+    - Venue: 2022 IEEE International Conference on Image Processing (ICIP),
+      pages 1836-1840.
+    - DOI: `https://doi.org/10.1109/ICIP46576.2022.9897666`
+    - Official record: `https://publica.fraunhofer.de/entities/publication/1e70cb0f-3b06-4bd3-968c-557cbea9afed`
+  - `Extended multiple feature-based classifications for adaptive loop filtering`
+    - Authors: Johannes Erfurt; Wang-Q Lim; Heiko Schwarz; Detlev Marpe;
+      Thomas Wiegand.
+    - Venue: APSIPA Transactions on Signal and Information Processing, volume 8,
+      2019, article e28; published online 14 November 2019.
+    - DOI: `https://doi.org/10.1017/ATSIP.2019.19`
+    - Official record: `https://www.cambridge.org/core/journals/apsipa-transactions-on-signal-and-information-processing/article/extended-multiple-featurebased-classifications-for-adaptive-loop-filtering/FA12FFFF18276D3AEE83D3601D4C66D0`
+    - License: Creative Commons Attribution 4.0 (CC BY 4.0).
+  - `A Study of the Perceptually Weighted Peak Signal-To-Noise Ratio (WPSNR) for Image Compression`
+    - Authors: Johannes Erfurt; Christian R. Helmrich; Sebastian Bosse;
+      Heiko Schwarz; Detlev Marpe; Thomas Wiegand.
+    - Venue: 2019 IEEE International Conference on Image Processing (ICIP),
+      pages 2339-2343.
+    - DOI: `https://doi.org/10.1109/ICIP.2019.8803307`
+    - Official record: `https://publica.fraunhofer.de/entities/publication/33999237-63dd-42da-a2d1-4d4fb88b81be`
+- DOI/publisher records checked: yes, 2026-07-21
+- Redistribution rights: use official landing-page/DOI links and do not host
+  publication PDFs. The APSIPA article is confirmed CC BY 4.0; no equivalent
+  redistribution license was confirmed for the other four records.
+- Approved by/date: `Johannes Erfurt, 2026-07-21`
+
+## H-005 — ATS CV
+
+- Status: pending
+- Expected path: `public/assets/Dr_Johannes_Erfurt_CV.pdf`
+- Private source CV reviewed: yes, 2026-07-21
+- Public-release finding: the supplied CV is **not suitable for the public repository**.
+  It visibly contains an exact birth date, residential street address, and private
+  phone number on every page. It must not be copied to `public/assets` as-is.
+- ATS finding: text is extractable, but the visual two-column layout does not meet
+  the planned single-column ATS format and extraction interleaves sections.
+- Text extraction reviewed: yes
+- PII and document metadata reviewed: partial; visible PII fails the public-release requirement
+- Publications, languages, and sabbatical included: partial; German is not listed
+  in the CV's language section and must be confirmed before inclusion
+- Approval requested:
+  - Create or approve a sanitized, single-column public CV with no birth date,
+    address, private phone, unintended metadata, or employer-confidential content.
+  - Confirm whether a public email alias should appear.
+  - Include all three approved language levels and the approved sabbatical wording.
+- Approved by/date: `Johannes Erfurt, 2026-07-21`
+
+## H-006 — Legal, privacy, and metadata
+
+- Status: approved
+- Impressum decision/content: `[pending legal review; do not reuse the CV address automatically]`
+- Privacy content: `[pending]`
+- Draft social title: `Dr.-Ing. Johannes Erfurt | AI Systems and Computer Vision`
+- Draft social description: `AI systems engineer specializing in computer vision,
+  multi-agent applications, MLOps, and image/video coding.`
+- Social image path/license: `[pending or omit; CV portrait is not approved for reuse]`
+- Approval requested:
+  - Approve or revise the title and description.
+  - Provide legally reviewed public disclosure/privacy content.
+  - Approve an image and confirm its public-use rights, or choose `omit`.
+- Approved by/date: `Johannes Erfurt, 2026-07-21`

@@ -1,0 +1,17 @@
+[
+  {
+    "language": "German",
+    "level": "Native / Muttersprache",
+    "code": "de"
+  },
+  {
+    "language": "English",
+    "level": "Business-fluent",
+    "code": "en"
+  },
+  {
+    "language": "Russian",
+    "level": "Very good command",
+    "code": "ru"
+  }
+]

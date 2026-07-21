@@ -57,7 +57,7 @@ intended to produce one focused commit.
     - `npm run check` and the relevant test command exit with code 0.
   - Commit: `feat: add typed portfolio data schemas`
 
-- [ ] **A-005 — Populate approved structured content**
+- [x] **A-005 — Populate approved structured content**
   - Depends on: A-004, H-001, H-002, H-003, H-004
   - Implements: plan 2.2
   - Work: create typed language, experience, project, and publication data from

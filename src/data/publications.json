@@ -1,0 +1,52 @@
+[
+  {
+    "id": "doctoral-thesis-wiener-filter-techniques",
+    "year": 2023,
+    "title": "Investigation of Wiener filter techniques for in-loop filtering in video coding",
+    "venue": "Technische Universität Berlin",
+    "authors": "Johannes Erfurt",
+    "doi": "https://doi.org/10.14279/depositonce-16759",
+    "paperUrl": "https://depositonce.tu-berlin.de/items/92fa0297-6dbc-4a0b-8825-2773b952f849",
+    "type": "PhD Thesis"
+  },
+  {
+    "id": "shearlet-intensity-classification-loop-filter",
+    "year": 2023,
+    "title": "Shearlet-based intensity classification loop filter for video coding",
+    "venue": "Signal Processing: Image Communication, volume 115, article 116967",
+    "authors": "Johannes Erfurt; Wang-Q Lim; Jonathan Pfaff; Heiko Schwarz; Detlev Marpe; Thomas Wiegand",
+    "doi": "https://doi.org/10.1016/j.image.2023.116967",
+    "paperUrl": "https://www.sciencedirect.com/science/article/abs/pii/S0923596523000498",
+    "type": "Journal"
+  },
+  {
+    "id": "adaptive-loop-filter-cnn-classification",
+    "year": 2022,
+    "title": "Adaptive Loop Filter with a CNN-Based Classification",
+    "venue": "2022 IEEE International Conference on Image Processing (ICIP), pages 1836-1840",
+    "authors": "Wang-Q Lim; Jonathan Pfaff; Björn Stallenberger; Johannes Erfurt; Heiko Schwarz; Detlev Marpe; Thomas Wiegand",
+    "doi": "https://doi.org/10.1109/ICIP46576.2022.9897666",
+    "paperUrl": "https://publica.fraunhofer.de/entities/publication/1e70cb0f-3b06-4bd3-968c-557cbea9afed",
+    "type": "Conference"
+  },
+  {
+    "id": "extended-feature-classifications-alf",
+    "year": 2019,
+    "title": "Extended multiple feature-based classifications for adaptive loop filtering",
+    "venue": "APSIPA Transactions on Signal and Information Processing, volume 8, article e28",
+    "authors": "Johannes Erfurt; Wang-Q Lim; Heiko Schwarz; Detlev Marpe; Thomas Wiegand",
+    "doi": "https://doi.org/10.1017/ATSIP.2019.19",
+    "paperUrl": "https://www.cambridge.org/core/journals/apsipa-transactions-on-signal-and-information-processing/article/extended-multiple-featurebased-classifications-for-adaptive-loop-filtering/FA12FFFF18276D3AEE83D3601D4C66D0",
+    "type": "Journal"
+  },
+  {
+    "id": "wpsnr-image-compression",
+    "year": 2019,
+    "title": "A Study of the Perceptually Weighted Peak Signal-To-Noise Ratio (WPSNR) for Image Compression",
+    "venue": "2019 IEEE International Conference on Image Processing (ICIP), pages 2339-2343",
+    "authors": "Johannes Erfurt; Christian R. Helmrich; Sebastian Bosse; Heiko Schwarz; Detlev Marpe; Thomas Wiegand",
+    "doi": "https://doi.org/10.1109/ICIP.2019.8803307",
+    "paperUrl": "https://publica.fraunhofer.de/entities/publication/33999237-63dd-42da-a2d1-4d4fb88b81be",
+    "type": "Conference"
+  }
+]

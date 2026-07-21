@@ -4,18 +4,17 @@ Updated: 2026-07-21
 
 ## Current state
 
-- Phase: blocked after foundation/deployment setup
-- Last completed agent task: A-014 — Add GitHub Pages deployment workflow
-- Next ready agent task: none; all remaining tasks have unresolved dependencies
+- Phase: content and vertical slice
+- Last completed agent task: A-005 — Populate approved structured content
+- Next ready agent task: A-006 — Build the semantic page shell
 - Release state: not ready
 - Source plan: `portfolio_project_plan.md` (contains pre-existing user changes)
 
 ## Human blockers
 
-- H-001, H-002, H-003, and H-004 are marked approved in
-  `docs/content-approvals.md`, but A-005 remains blocked by unresolved approved
-  content: missing master's dates (H-002), project impact/third-project decisions
-  (H-003), and unchecked publication metadata (H-004).
+- H-001 through H-004 are approved. H-002 dates and claims are complete, H-003
+  uses approved qualitative impacts and omits the unsupported third project,
+  and H-004 metadata was verified against official records. A-005 is unblocked.
 - A-006 implementation is present as uncommitted work, but its required 320px and
   1440px browser verification is blocked because the in-app browser runtime fails
   before initialization (`failed to write kernel assets`, OS error 3).
@@ -45,6 +44,16 @@ Commit: hash or not created
 Blockers: H-NNN or none
 Next: A-NNN
 ```
+
+2026-07-21 — A-005 — complete
+Result: Added validated JSON collections for 3 languages, 11 timeline entries,
+2 approved projects, and 5 verified publications. Unsupported project content
+and an unavailable MindGrow URL are omitted rather than fabricated.
+Evidence: `npm test` -> 7 passed; `npm run check` -> 0 diagnostics;
+`npm run build` -> passed; HTTPS and sabbatical invariants -> passed.
+Commit: `content: add verified portfolio data` (this iteration)
+Blockers: none
+Next: A-006
 
 2026-07-21 — A-014 — complete
 Result: Added the maintained official Astro/GitHub Pages build and deployment
