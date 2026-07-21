@@ -1,19 +1,24 @@
 ---
-import '../styles/global.css';
+import ProjectCard from '../components/ProjectCard.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-const pageTitle = 'Johannes Erfurt — Portfolio';
+const pageTitle = 'Dr.-Ing. Johannes Erfurt — Portfolio';
+const description = 'Portfolio of AI systems engineer and computer vision expert Johannes Erfurt.';
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
-  </head>
-  <body class="min-h-screen bg-slate-50 text-slate-950">
-    <main class="mx-auto max-w-5xl px-6 py-16">
-      <h1 class="text-3xl font-bold tracking-tight text-indigo-700">{pageTitle}</h1>
-    </main>
-  </body>
-</html>
+<BaseLayout title={pageTitle} description={description}>
+  <section class="mx-auto max-w-5xl px-6 py-16 sm:py-24" id="about">
+    <p class="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700">Portfolio</p>
+    <h1 class="mt-4 max-w-3xl text-4xl font-bold tracking-tight text-slate-950 sm:text-6xl">
+      Dr.-Ing. Johannes Erfurt
+    </h1>
+    <p class="mt-5 max-w-2xl text-xl leading-8 text-slate-700">
+      AI Systems Engineer <span aria-hidden="true">|</span> Computer Vision Expert
+    </p>
+  </section>
+
+  <section class="mx-auto max-w-5xl px-6 pb-16 sm:pb-24" id="projects" aria-labelledby="projects-title">
+    <h2 class="sr-only" id="projects-title">Projects</h2>
+    <ProjectCard />
+  </section>
+</BaseLayout>

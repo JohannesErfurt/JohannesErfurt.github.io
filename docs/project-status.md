@@ -19,10 +19,13 @@ Updated: 2026-07-21
   1440px browser verification is blocked because the in-app browser runtime fails
   before initialization (`failed to write kernel assets`, OS error 3).
 - A-007/A-016 require H-005, which remains pending because the supplied CV is
-  not sanitized or single-column.
-- H-006 is labelled approved but still contains unresolved legal/privacy and
-  social-image placeholders. Treat A-012/A-016 as blocked until those choices
-  are resolved.
+  not suitable for publication. A sanitized two-page, single-column candidate
+  now exists and has passed automated and agent review; Johannes's final
+  public-release approval is still required.
+- H-006 remains pending. The social image is resolved as `omit`, and a privacy
+  basis is documented, but a legally reviewed Impressum/privacy decision and
+  explicitly approved public contact details are still required. Treat
+  A-012/A-016 as blocked until those choices are resolved.
 - Live release acceptance requires H-007 and H-008.
 
 ## Verification baseline
@@ -30,7 +33,7 @@ Updated: 2026-07-21
 - `npm ci` — passed on 2026-07-21 (279 packages, 0 vulnerabilities reported).
 - `npm run check` — passed on 2026-07-21 (4 files, 0 errors/warnings/hints).
 - `npm run build` — passed on 2026-07-21 (static `dist/index.html`, 1 page).
-- `npm test` — not available yet; A-004/A-015 introduce relevant test coverage.
+- `npm test` — passed on 2026-07-21 (7 tests).
 
 ## Iteration log
 

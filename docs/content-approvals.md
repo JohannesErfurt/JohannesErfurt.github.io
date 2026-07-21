@@ -169,33 +169,46 @@ Approval states: `pending`, `approved`, or `omit`.
 - Status: pending
 - Expected path: `public/assets/Dr_Johannes_Erfurt_CV.pdf`
 - Private source CV reviewed: yes, 2026-07-21
-- Public-release finding: the supplied CV is **not suitable for the public repository**.
-  It visibly contains an exact birth date, residential street address, and private
-  phone number on every page. It must not be copied to `public/assets` as-is.
-- ATS finding: text is extractable, but the visual two-column layout does not meet
-  the planned single-column ATS format and extraction interleaves sections.
-- Text extraction reviewed: yes
-- PII and document metadata reviewed: partial; visible PII fails the public-release requirement
-- Publications, languages, and sabbatical included: partial; German is not listed
-  in the CV's language section and must be confirmed before inclusion
+- Candidate generated: yes, 2026-07-21, at the expected path.
+- Candidate format: two-page, single-column, text-based PDF generated from the
+  approved structured portfolio data.
+- Text extraction and reading order reviewed: passed.
+- PII review: passed; the candidate contains no birth date, residential address,
+  private phone number, or private email address.
+- Document metadata review: passed; author/title/creator metadata is intentional
+  and contains no private contact details.
+- Content coverage: passed; the approved publications, all three approved language
+  levels, and the approved sabbatical wording are included.
+- Render review: passed automated and agent visual review at full-page scale;
+  no clipping, overlap, or unintended blank page was found.
 - Approval requested:
-  - Create or approve a sanitized, single-column public CV with no birth date,
-    address, private phone, unintended metadata, or employer-confidential content.
-  - Confirm whether a public email alias should appear.
-  - Include all three approved language levels and the approved sabbatical wording.
-- Approved by/date: `Johannes Erfurt, 2026-07-21`
+  - Johannes must review the generated candidate and explicitly approve it for
+    publication, or list requested corrections.
+- Approved by/date: `[pending final public-release approval]`
 
 ## H-006 — Legal, privacy, and metadata
 
-- Status: approved
-- Impressum decision/content: `[pending legal review; do not reuse the CV address automatically]`
-- Privacy content: `[pending]`
+- Status: pending
+- Legal review finding, 2026-07-21: Section 5 DDG requires name, serviceable
+  postal address, and a means of rapid electronic contact when the portfolio is
+  a business-like digital service normally offered for remuneration. Section 18
+  MStV adds a named responsible person and address for qualifying
+  journalistically edited offerings. Applicability must be confirmed for the
+  intended use of this portfolio; this repository does not make that legal choice.
+- Impressum decision/content: `[critical: provide legally reviewed text and explicitly
+  approve every postal/contact detail for public release; never reuse the CV address
+  automatically]`
+- Privacy draft basis: static GitHub Pages site; no first-party analytics, cookies,
+  contact form, embedded media, or externally hosted fonts are currently planned.
+  GitHub may nevertheless process service-usage data such as IP address, device
+  information, request timestamps, referrers, viewed pages, and clicked links.
+  Final controller/contact details and legally reviewed wording remain pending.
 - Draft social title: `Dr.-Ing. Johannes Erfurt | AI Systems and Computer Vision`
 - Draft social description: `AI systems engineer specializing in computer vision,
   multi-agent applications, MLOps, and image/video coding.`
-- Social image path/license: `[pending or omit; CV portrait is not approved for reuse]`
+- Social image path/license: `omit`; the CV portrait is not approved for reuse.
 - Approval requested:
   - Approve or revise the title and description.
-  - Provide legally reviewed public disclosure/privacy content.
-  - Approve an image and confirm its public-use rights, or choose `omit`.
-- Approved by/date: `Johannes Erfurt, 2026-07-21`
+  - Provide legally reviewed public disclosure/privacy content and explicitly
+    approve any postal address or electronic contact that will be published.
+- Approved by/date: `[pending legal/content approval]`
