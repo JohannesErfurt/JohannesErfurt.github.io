@@ -228,3 +228,12 @@ Approval states: `pending`, `approved`, or `omit`.
   profile picture in the Codex task on 2026-07-21; no third-party attribution
   is requested.
 - Approved by/date: `Johannes Erfurt, 2026-07-21`
+
+## Additional public content approval — hobbies
+
+- Approved hobbies for the homepage About section: tinkering with custom AI
+  agents; electronic music and dancing; cultural exchange and traveling; table
+  tennis.
+- Public-use approval: Johannes explicitly approved all four hobbies in the Codex
+  task on 2026-07-21.
+- Approved by/date: `Johannes Erfurt, 2026-07-21`

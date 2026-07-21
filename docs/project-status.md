@@ -28,6 +28,9 @@ Updated: 2026-07-21
 - H-009 is complete. Johannes supplied and explicitly approved a cropped profile
   photo for public website use; only a metadata-stripped 800x800 WebP derivative
   is published.
+- The four hobbies in the expanded About section are approved for public use:
+  custom AI-agent tinkering, electronic music and dancing, cultural exchange and
+  traveling, and table tennis.
 - Live release acceptance requires H-007 and H-008.
 
 ## Verification baseline
@@ -53,6 +56,19 @@ Commit: hash or not created
 Blockers: H-NNN or none
 Next: A-NNN
 ```
+
+2026-07-21 — About section expansion — complete
+Result: Expanded the homepage About section with a warmer personal narrative,
+four icon-led facts cards, and four approved hobby cards. Content is stored in a
+typed data module and uses native inline SVG symbols with visible labels.
+Evidence: browser render -> About heading, 4 highlights, 4 hobbies, 8 icons,
+and no horizontal overflow; `npm run check` -> 0 diagnostics; `npm test` -> 7
+passed; `npm run build` -> 3 pages; HTML/internal-link validation -> passed;
+Lighthouse -> home and privacy 100/100/100/100 for Performance/Accessibility/
+Best Practices/SEO.
+Commit: `feat: expand homepage about section` (this iteration)
+Blockers: H-007 and H-008
+Next: H-007 — enable and validate GitHub Pages deployment
 
 2026-07-21 — H-005 replacement — complete
 Result: Replaced the public CV with Johannes' explicitly supplied four-page

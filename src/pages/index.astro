@@ -1,6 +1,7 @@
 ---
 import ExperienceTimeline from '../components/ExperienceTimeline.astro';
 import ExpertiseAndPublications from '../components/ExpertiseAndPublications.astro';
+import AboutProfile from '../components/AboutProfile.astro';
 import HeroSummary from '../components/HeroSummary.astro';
 import ProjectShowcase from '../components/ProjectShowcase.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -11,6 +12,8 @@ const description = 'AI systems engineer specializing in computer vision, multi-
 
 <BaseLayout title={pageTitle} description={description}>
   <HeroSummary />
+
+  <AboutProfile />
 
   <ExperienceTimeline />
 
