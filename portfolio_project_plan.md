@@ -223,22 +223,22 @@ export interface PublicationEntry {
 ### Phase 4: Core Layout, Styling & Performance Implementation
 
 - [ ] **Task 4.1: Layout & Global Navigation**
-  - [ ] Create `Header.astro` or `Header.tsx` with smooth-scroll navigation links: `#about`, `#experience`, `#projects`, `#publications`, and `#languages`.
+  - [x] Create `Header.astro` or `Header.tsx` with smooth-scroll navigation links: `#about`, `#experience`, `#projects`, `#publications`, and `#languages`.
   - [ ] Create `Footer.astro` or `Footer.tsx` with copyright, GitHub, LinkedIn, and Impressum / privacy links.
-  - [ ] Implement responsive mobile navigation.
-  - [ ] Add visible keyboard-focus states.
-  - [ ] Add a skip-to-content link.
+  - [x] Implement responsive mobile navigation.
+  - [x] Add visible keyboard-focus states.
+  - [x] Add a skip-to-content link.
   - **Acceptance criteria:**
     - [ ] Navigation works with mouse, touch, and keyboard.
     - [ ] Header and footer are responsive.
     - [ ] All internal navigation links point to valid section IDs.
   - **Suggested commit message:** `feat: implement global navigation and footer`
 
-- [ ] **Task 4.2: Theme and Global Design Tokens**
-  - [ ] Configure the agreed light and dark color palettes.
-  - [ ] Define global typography, spacing, border radius, and shadow tokens.
-  - [ ] Add a light/dark theme switcher with persisted user preference.
-  - [ ] Respect the operating system's preferred color scheme on first visit.
+- [x] **Task 4.2: Theme and Global Design Tokens**
+  - [x] Configure the agreed light and dark color palettes.
+  - [x] Define global typography, spacing, border radius, and shadow tokens.
+  - [x] Add a light/dark theme switcher with persisted user preference.
+  - [x] Respect the operating system's preferred color scheme on first visit.
   - **Acceptance criteria:**
     - [ ] Light and dark themes meet WCAG 2.1 AA contrast requirements.
     - [ ] Theme selection persists across reloads.

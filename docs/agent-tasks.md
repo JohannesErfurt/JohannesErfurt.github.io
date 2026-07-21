@@ -143,7 +143,7 @@ intended to produce one focused commit.
 
 ## Interaction, polish, and delivery
 
-- [ ] **A-011 — Complete navigation and the theme system**
+- [x] **A-011 — Complete navigation and the theme system**
   - Depends on: A-006, A-008, A-009, A-010
   - Implements: plan 4.1 and 4.2
   - Work: finish responsive section navigation, skip link, design tokens, and a

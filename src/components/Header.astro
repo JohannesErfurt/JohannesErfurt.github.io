@@ -1,31 +1,85 @@
 ---
 const githubUrl = 'https://github.com/JohannesErfurt';
 const linkedInUrl = 'https://www.linkedin.com/in/johanneserfurt';
+const sectionLinks = [
+  { href: '#about', label: 'About' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#publications', label: 'Publications' },
+  { href: '#languages', label: 'Languages' },
+];
 ---
 
-<header class="border-b border-slate-200 bg-white">
-  <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-6 py-5">
+<header class="border-b border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
+  <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-6 py-4">
     <a
-      class="font-semibold tracking-tight text-slate-950 outline-offset-4 hover:text-indigo-700 focus-visible:outline-2 focus-visible:outline-indigo-700"
+      class="font-semibold tracking-tight text-slate-950 outline-offset-4 hover:text-indigo-700 focus-visible:outline-2 focus-visible:outline-indigo-700 dark:text-white dark:hover:text-indigo-300 dark:focus-visible:outline-indigo-300"
       href="/"
     >
       Johannes Erfurt
     </a>
-    <nav aria-label="Primary navigation">
-      <ul class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-medium">
-        <li>
-          <a class="outline-offset-4 hover:text-indigo-700 focus-visible:outline-2 focus-visible:outline-indigo-700" href="#about">About</a>
-        </li>
-        <li>
-          <a class="outline-offset-4 hover:text-indigo-700 focus-visible:outline-2 focus-visible:outline-indigo-700" href="#projects">Projects</a>
-        </li>
-        <li>
-          <a class="outline-offset-4 hover:text-indigo-700 focus-visible:outline-2 focus-visible:outline-indigo-700" href={githubUrl}>GitHub</a>
-        </li>
-        <li>
-          <a class="outline-offset-4 hover:text-indigo-700 focus-visible:outline-2 focus-visible:outline-indigo-700" href={linkedInUrl}>LinkedIn</a>
-        </li>
-      </ul>
-    </nav>
+
+    <div class="flex items-center gap-4">
+      <nav class="hidden lg:block" aria-label="Primary navigation">
+        <ul class="flex items-center gap-5 text-sm font-medium">
+          {sectionLinks.map((link) => (
+            <li>
+              <a class="outline-offset-4 hover:text-indigo-700 focus-visible:outline-2 focus-visible:outline-indigo-700 dark:text-slate-200 dark:hover:text-indigo-300 dark:focus-visible:outline-indigo-300" href={link.href}>{link.label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <button
+        class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-800 outline-offset-4 hover:border-indigo-700 hover:text-indigo-700 focus-visible:outline-2 focus-visible:outline-indigo-700 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-indigo-300 dark:hover:text-indigo-300 dark:focus-visible:outline-indigo-300"
+        type="button"
+        data-theme-toggle
+        aria-pressed="false"
+        aria-label="Use dark theme"
+      >
+        <span data-theme-label>Dark mode</span>
+      </button>
+    </div>
+
+    <details class="w-full lg:hidden">
+      <summary class="w-fit cursor-pointer rounded-lg font-semibold text-slate-800 outline-offset-4 focus-visible:outline-2 focus-visible:outline-indigo-700 dark:text-slate-100 dark:focus-visible:outline-indigo-300">
+        Menu
+      </summary>
+      <nav class="mt-4 border-t border-slate-200 pt-4 dark:border-slate-800" aria-label="Mobile navigation">
+        <ul class="grid gap-3 text-sm font-medium sm:grid-cols-2">
+          {sectionLinks.map((link) => (
+            <li>
+              <a class="block rounded-md py-1 outline-offset-4 hover:text-indigo-700 focus-visible:outline-2 focus-visible:outline-indigo-700 dark:text-slate-200 dark:hover:text-indigo-300 dark:focus-visible:outline-indigo-300" href={link.href}>{link.label}</a>
+            </li>
+          ))}
+          <li><a class="block rounded-md py-1 outline-offset-4 hover:text-indigo-700 focus-visible:outline-2 focus-visible:outline-indigo-700 dark:text-slate-200 dark:hover:text-indigo-300 dark:focus-visible:outline-indigo-300" href={githubUrl}>GitHub</a></li>
+          <li><a class="block rounded-md py-1 outline-offset-4 hover:text-indigo-700 focus-visible:outline-2 focus-visible:outline-indigo-700 dark:text-slate-200 dark:hover:text-indigo-300 dark:focus-visible:outline-indigo-300" href={linkedInUrl}>LinkedIn</a></li>
+        </ul>
+      </nav>
+    </details>
   </div>
 </header>
+
+<script is:inline>
+  (() => {
+    const toggle = document.querySelector('[data-theme-toggle]');
+    const label = toggle?.querySelector('[data-theme-label]');
+    if (!(toggle instanceof HTMLButtonElement) || !(label instanceof HTMLElement)) return;
+
+    const updateControl = () => {
+      const dark = document.documentElement.classList.contains('dark');
+      toggle.setAttribute('aria-pressed', String(dark));
+      toggle.setAttribute('aria-label', dark ? 'Use light theme' : 'Use dark theme');
+      label.textContent = dark ? 'Light mode' : 'Dark mode';
+    };
+
+    updateControl();
+    toggle.addEventListener('click', () => {
+      const dark = !document.documentElement.classList.contains('dark');
+      document.documentElement.classList.toggle('dark', dark);
+      document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
+      localStorage.setItem('portfolio-theme', dark ? 'dark' : 'light');
+      updateControl();
+    });
+  })();
+</script>

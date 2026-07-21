@@ -5,8 +5,8 @@ Updated: 2026-07-21
 ## Current state
 
 - Phase: content and vertical slice
-- Last completed agent task: A-010 — Implement skills, languages, and publications
-- Next ready agent task: A-011 — Complete navigation and the theme system
+- Last completed agent task: A-011 — Complete navigation and the theme system
+- Next ready agent task: none; A-012 is blocked by H-006
 - Release state: not ready
 - Source plan: `portfolio_project_plan.md` (contains pre-existing user changes)
 
@@ -46,6 +46,19 @@ Commit: hash or not created
 Blockers: H-NNN or none
 Next: A-NNN
 ```
+
+2026-07-21 — A-011 — complete
+Result: Completed desktop and native mobile navigation, added a skip link,
+introduced reduced-motion-aware global tokens, and implemented an accessible
+light/dark theme that honors first-visit system preference and persists choices.
+Evidence: browser audit -> all five section targets exist; mobile menu exposes
+seven visible links and a focusable native summary; theme state toggles and
+persists after reload; early head script present; contrast audit -> 0 failures
+across 218 visible text candidates in light and dark themes;
+`npm run check` -> 0 diagnostics; `npm run build` -> passed; `npm test` -> 7 passed.
+Commit: `feat: complete navigation and theme system` (this iteration)
+Blockers: none for A-011
+Next: none; A-012 blocked by H-006
 
 2026-07-21 — A-010 — complete
 Result: Added a competency matrix, the three approved language proficiencies,

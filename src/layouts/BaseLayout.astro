@@ -16,10 +16,25 @@ const { title, description } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <script is:inline>
+      (() => {
+        const savedTheme = localStorage.getItem('portfolio-theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const useDark = savedTheme ? savedTheme === 'dark' : prefersDark;
+        document.documentElement.classList.toggle('dark', useDark);
+        document.documentElement.style.colorScheme = useDark ? 'dark' : 'light';
+      })();
+    </script>
     <meta name="description" content={description} />
     <title>{title}</title>
   </head>
-  <body class="min-h-screen bg-slate-50 text-slate-950 antialiased">
+  <body class="min-h-screen bg-slate-50 text-slate-950 antialiased dark:bg-slate-950 dark:text-slate-50">
+    <a
+      class="fixed left-4 top-4 z-50 -translate-y-24 rounded-lg bg-indigo-700 px-4 py-3 font-semibold text-white outline-offset-4 transition-transform focus:translate-y-0 focus-visible:outline-2 focus-visible:outline-indigo-300"
+      href="#main-content"
+    >
+      Skip to main content
+    </a>
     <div class="flex min-h-screen flex-col">
       <Header />
       <main class="flex-1" id="main-content">
