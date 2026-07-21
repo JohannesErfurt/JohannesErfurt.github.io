@@ -249,7 +249,7 @@ export interface PublicationEntry {
   - [x] Confirm all portfolio routes are statically generated.
   - [x] Optimize images as WebP or AVIF where appropriate; no raster content images are currently included.
   - [x] Set explicit image width and height to prevent layout shift; no content images are currently included.
-  - [x] Inline or efficiently load small SVG icons; no SVG assets are currently required.
+  - [x] Load the small local SVG favicon efficiently.
   - [x] Minimize client-side JavaScript and hydrate only interactive components.
   - [x] Configure sensible font loading and fallbacks.
   - **Acceptance criteria:**
@@ -292,8 +292,8 @@ export interface PublicationEntry {
 ## 🎯 Definition of Done (Verification Checklist)
 
 - [ ] **30-Second Scan Test Passed:** A visitor can identify Dr. Johannes Erfurt's core identity (PhD in Video Coding + AI/Multi-Agent Specialist) within 30 seconds.
-- [ ] **ATS CV Download Functional:** Clicking "Download ATS CV" downloads `Dr_Johannes_Erfurt_CV.pdf` containing publications, languages, and zero exposed PII.
-- [ ] **Timeline Gap Explicit:** Sabbatical (11/2022 – 10/2023) is visually clear and positively framed.
-- [ ] **Languages Displayed:** German, English, and Russian proficiencies are prominently listed.
+- [x] **ATS CV Download Functional:** Clicking "Download ATS CV" downloads `Dr_Johannes_Erfurt_CV.pdf` containing publications, languages, and zero exposed PII.
+- [x] **Timeline Gap Explicit:** Sabbatical (11/2022 – 10/2023) is visually clear and positively framed.
+- [x] **Languages Displayed:** German, English, and Russian proficiencies are prominently listed.
 - [ ] **Mobile & Desktop Responsive:** Perfectly readable across viewport widths 320px to 3840px.
 - [ ] **Deployed on GitHub Pages:** Accessible live at `https://johanneserfurt.github.io`.

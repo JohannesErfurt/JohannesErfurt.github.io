@@ -211,7 +211,7 @@ intended to produce one focused commit.
     - All quality commands pass on the current production build.
   - Commit: `ci: add portfolio quality gates`
 
-- [ ] **A-016 — Perform the release-candidate repository audit**
+- [x] **A-016 — Perform the release-candidate repository audit**
   - Depends on: A-014, A-015, H-005, H-006
   - Implements: local portion of plan 5.2 and Definition of Done
   - Work: run all checks, audit public files for sensitive data, verify the CV and

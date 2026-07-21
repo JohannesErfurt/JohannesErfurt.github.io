@@ -5,9 +5,9 @@ Updated: 2026-07-21
 ## Current state
 
 - Phase: release-candidate validation
-- Last completed agent task: A-015 — Add automated quality gates
-- Next ready agent task: A-016 — Perform the release-candidate repository audit
-- Release state: not ready
+- Last completed agent task: A-016 — Perform the release-candidate repository audit
+- Next ready agent task: none
+- Release state: local release candidate ready; awaiting H-007 and H-008
 - Source plan: `portfolio_project_plan.md` (contains pre-existing user changes)
 
 ## Human blockers
@@ -28,10 +28,14 @@ Updated: 2026-07-21
 
 ## Verification baseline
 
-- `npm ci` — passed on 2026-07-21 (279 packages, 0 vulnerabilities reported).
-- `npm run check` — passed on 2026-07-21 (4 files, 0 errors/warnings/hints).
-- `npm run build` — passed on 2026-07-21 (static `dist/index.html`, 1 page).
+- `npm ci` — passed on 2026-07-21 (584 packages installed; npm reported 5
+  development-toolchain vulnerabilities: 2 low, 2 moderate, 1 high).
+- `npm run check` — passed on 2026-07-21 (21 files, 0 errors/warnings/hints).
+- `npm run build` — passed on 2026-07-21 (3 static pages).
 - `npm test` — passed on 2026-07-21 (7 tests).
+- `npm run validate` — passed on 2026-07-21 (HTML and internal links valid).
+- `npm run lighthouse` — passed on 2026-07-21 (home and privacy each scored
+  100/100/100/100 for Performance/Accessibility/Best Practices/SEO).
 
 ## Iteration log
 
@@ -46,13 +50,29 @@ Blockers: H-NNN or none
 Next: A-NNN
 ```
 
+2026-07-21 — A-016 — complete
+Result: Audited release candidate `7f11c3ad915f604f69d97782544ed3520bccd5da`.
+The clean build and all gates pass; tracked/public files contain no detected
+private contact data, exact birth date, address, secret, or credential; the
+approved two-page CV renders cleanly and its text contains all five approved
+publications, all three languages, and the approved sabbatical wording.
+Evidence: `npm ci` -> passed; `npm run quality` -> passed; sensitive-data pattern
+scan -> 0 email/exact-date/postal-address/credential/private-key matches (generic
+policy wording reviewed separately); PDF extraction -> 5/5 publications, 3/3
+languages, sabbatical wording and dates present; two-page PNG render -> no clipping,
+overlap, broken glyphs, or unreadable text; PDF SHA-256 ->
+`0834F1E7337EF065270D47F4B6F223AA8A187DB02CFCDE2F7C45937F3EA3BA38`.
+Commit: `chore: audit portfolio release candidate` (this iteration)
+Blockers: H-007 and H-008
+Next: H-007 — enable and validate GitHub Pages deployment
+
 2026-07-21 — A-015 — complete
 Result: Added deterministic content tests, generated-HTML and internal-link
 validation, Lighthouse CI thresholds, and a CI quality job that gates deployment.
 Evidence: `npm run quality` -> type check passed, 7 tests passed, 3 pages built,
 3 HTML files and their internal links validated; Lighthouse -> home 100/100/100/100
 and privacy 100/100/100/100 for Performance/Accessibility/Best Practices/SEO.
-Commit: `ci: add portfolio quality gates` (this iteration)
+Commit: `7f11c3a` (`ci: add portfolio quality gates`)
 Blockers: none
 Next: A-016
 
