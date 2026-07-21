@@ -18,10 +18,9 @@ Updated: 2026-07-21
 - A-006 implementation is present as uncommitted work, but its required 320px and
   1440px browser verification is blocked because the in-app browser runtime fails
   before initialization (`failed to write kernel assets`, OS error 3).
-- A-007/A-016 require H-005, which remains pending because the supplied CV is
-  not suitable for publication. A sanitized two-page, single-column candidate
-  now exists and has passed automated and agent review; Johannes's final
-  public-release approval is still required.
+- H-005 is complete. Johannes approved the sanitized two-page, single-column CV
+  candidate for public release on 2026-07-21; materially changed versions require
+  renewed approval.
 - H-006 remains pending. The social image is resolved as `omit`, and a privacy
   basis is documented, but a legally reviewed Impressum/privacy decision and
   explicitly approved public contact details are still required. Treat

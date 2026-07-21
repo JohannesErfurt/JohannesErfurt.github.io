@@ -166,7 +166,7 @@ Approval states: `pending`, `approved`, or `omit`.
 
 ## H-005 — ATS CV
 
-- Status: pending
+- Status: approved
 - Expected path: `public/assets/Dr_Johannes_Erfurt_CV.pdf`
 - Private source CV reviewed: yes, 2026-07-21
 - Candidate generated: yes, 2026-07-21, at the expected path.
@@ -181,10 +181,10 @@ Approval states: `pending`, `approved`, or `omit`.
   levels, and the approved sabbatical wording are included.
 - Render review: passed automated and agent visual review at full-page scale;
   no clipping, overlap, or unintended blank page was found.
-- Approval requested:
-  - Johannes must review the generated candidate and explicitly approve it for
-    publication, or list requested corrections.
-- Approved by/date: `[pending final public-release approval]`
+- Public-release approval: Johannes explicitly approved this generated candidate
+  in the Codex task on 2026-07-21. Materially changed CV versions require renewed
+  approval before publication.
+- Approved by/date: `Johannes Erfurt, 2026-07-21`
 
 ## H-006 — Legal, privacy, and metadata
 

@@ -42,7 +42,7 @@ to the coding agent; do not store private source documents in the repository.
     - Every supplied PDF is legally redistributable; otherwise link to its landing page.
   - Unlocks: A-005
 
-- [ ] **H-005 — Supply and approve the public ATS CV**
+- [x] **H-005 — Supply and approve the public ATS CV**
   - Place the final file at `public/assets/Dr_Johannes_Erfurt_CV.pdf` after a privacy review.
   - Success criteria:
     - The PDF contains selectable/extractable text in a logical single-column order.
