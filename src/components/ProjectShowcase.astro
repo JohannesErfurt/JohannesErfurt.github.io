@@ -1,0 +1,28 @@
+---
+import { projects } from '../data';
+import type { ProjectEntry } from '../data/schema';
+import ProjectCard from './ProjectCard.astro';
+
+const orderedProjects = [...projects]
+  .sort((left, right) => Number(right.featured) - Number(left.featured)) as ProjectEntry[];
+---
+
+<section
+  class="mx-auto max-w-5xl px-6 py-16 sm:py-24"
+  id="projects"
+  aria-labelledby="projects-title"
+>
+  <div class="max-w-3xl">
+    <p class="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700">Selected projects</p>
+    <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl" id="projects-title">
+      Multi-agent systems in practice
+    </h2>
+    <p class="mt-4 text-lg leading-8 text-slate-700">
+      Approved examples of controllable AI workflows, multimodal generation, and production delivery.
+    </p>
+  </div>
+
+  <div class="mt-10 grid gap-6 md:grid-cols-2">
+    {orderedProjects.map((project) => <ProjectCard project={project} />)}
+  </div>
+</section>

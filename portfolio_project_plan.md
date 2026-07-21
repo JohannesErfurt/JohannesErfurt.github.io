@@ -202,10 +202,10 @@ export interface PublicationEntry {
   - [x] Ensure 11/2022 – 10/2023 Sabbatical node renders cleanly with a dedicated icon (e.g., Globe / Family) and positive concise description ("World Travel & Parental Leave - Intercultural perspective & family focus").
   - [x] Expandable details for technical stack (e.g., Python, PyTorch, C++, LangChain, LangGraph, H.266/VVC).
 
-- [ ] **Task 3.3: Multi-Agent & AI Engineering Showcase (`ProjectGrid.tsx`)**
-  - [ ] Display interactive cards for MindGrow Stories and Wizarding Story Engine.
-  - [ ] Show architecture diagrams / workflow badges (LangGraph, FastAPI, Vector DB, Cloud Native).
-  - [ ] Highlight quantifiable impact / technical achievements.
+- [x] **Task 3.3: Multi-Agent & AI Engineering Showcase (`ProjectGrid.tsx`)**
+  - [x] Display interactive cards for MindGrow Stories and Wizarding Story Engine.
+  - [x] Show architecture diagrams / workflow badges (LangGraph, FastAPI, Vector DB, Cloud Native).
+  - [x] Highlight quantifiable impact / technical achievements.
 
 - [ ] **Task 3.4: Languages & Core Competencies Matrix (`SkillsMatrix.tsx`)**
   - [ ] Explicitly render Language Proficiencies block:

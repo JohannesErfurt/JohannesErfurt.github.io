@@ -115,7 +115,7 @@ intended to produce one focused commit.
     - Automated checks and production build pass.
   - Commit: `feat: add accessible experience timeline`
 
-- [ ] **A-009 — Implement the project showcase**
+- [x] **A-009 — Implement the project showcase**
   - Depends on: A-005, A-006
   - Implements: plan 3.3
   - Work: render featured and other projects from data with architecture/technology

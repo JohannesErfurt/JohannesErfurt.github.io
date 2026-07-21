@@ -5,8 +5,8 @@ Updated: 2026-07-21
 ## Current state
 
 - Phase: content and vertical slice
-- Last completed agent task: A-008 — Implement the experience timeline
-- Next ready agent task: A-009 — Implement the project showcase
+- Last completed agent task: A-009 — Implement the project showcase
+- Next ready agent task: A-010 — Implement skills, languages, and publications
 - Release state: not ready
 - Source plan: `portfolio_project_plan.md` (contains pre-existing user changes)
 
@@ -46,6 +46,18 @@ Commit: hash or not created
 Blockers: H-NNN or none
 Next: A-NNN
 ```
+
+2026-07-21 — A-009 — complete
+Result: Replaced the project placeholder with two typed, responsive project
+cards containing approved descriptions, exact impact statements, workflow
+technology badges, and only the public links that actually exist.
+Evidence: browser audit at 320px and 1440px -> 2 unique project cards, no
+horizontal overflow or clipping; MindGrow -> 0 links; Wizarding Story Engine ->
+1 accessible source link; displayed impact text matches approved JSON exactly;
+`npm run check` -> 0 diagnostics; `npm run build` -> passed; `npm test` -> 7 passed.
+Commit: `feat: add project showcase` (this iteration)
+Blockers: none
+Next: A-010
 
 2026-07-21 — A-008 — complete
 Result: Rendered all 11 approved timeline records in descending chronological
