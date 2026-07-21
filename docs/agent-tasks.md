@@ -184,7 +184,7 @@ intended to produce one focused commit.
     - Automated checks and production build pass.
   - Commit: `perf: optimize portfolio assets and output`
 
-- [ ] **A-014 — Add GitHub Pages deployment workflow**
+- [x] **A-014 — Add GitHub Pages deployment workflow**
   - Depends on: A-003
   - Implements: repository-owned part of plan 1.4
   - Work: add a least-privilege Pages workflow for `main` and manual dispatch,

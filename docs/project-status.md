@@ -4,9 +4,9 @@ Updated: 2026-07-21
 
 ## Current state
 
-- Phase: content model and vertical slice
-- Last completed agent task: A-004 — Define and validate portfolio data schemas
-- Next ready agent task: A-006 — Build the semantic page shell
+- Phase: blocked after foundation/deployment setup
+- Last completed agent task: A-014 — Add GitHub Pages deployment workflow
+- Next ready agent task: none; all remaining tasks have unresolved dependencies
 - Release state: not ready
 - Source plan: `portfolio_project_plan.md` (contains pre-existing user changes)
 
@@ -16,6 +16,9 @@ Updated: 2026-07-21
   `docs/content-approvals.md`, but A-005 remains blocked by unresolved approved
   content: missing master's dates (H-002), project impact/third-project decisions
   (H-003), and unchecked publication metadata (H-004).
+- A-006 implementation is present as uncommitted work, but its required 320px and
+  1440px browser verification is blocked because the in-app browser runtime fails
+  before initialization (`failed to write kernel assets`, OS error 3).
 - A-007/A-016 require H-005, which remains pending because the supplied CV is
   not sanitized or single-column.
 - H-006 is labelled approved but still contains unresolved legal/privacy and
@@ -42,6 +45,24 @@ Commit: hash or not created
 Blockers: H-NNN or none
 Next: A-NNN
 ```
+
+2026-07-21 — A-014 — complete
+Result: Added the maintained official Astro/GitHub Pages build and deployment
+workflow for pushes to `main` and manual dispatch, with least-privilege permissions.
+Evidence: YAML parser -> passed; workflow semantic assertions -> passed;
+`npm run build` -> passed; actions use explicit major versions.
+Commit: `ci: configure GitHub Pages deployment` (this iteration)
+Blockers: none for A-014; live activation remains human-owned H-007
+Next: none; all remaining tasks are blocked
+
+2026-07-21 — A-006 — blocked
+Result: Implemented the semantic responsive shell locally, but did not mark it
+complete or commit it because required visual viewport verification could not run.
+Evidence: `npm run check` -> 0 diagnostics; `npm test` -> 4 passed;
+`npm run build` -> passed; in-app browser initialization -> OS error 3.
+Commit: not created
+Blockers: browser runtime unavailable
+Next: A-014 (independent; completed afterward)
 
 2026-07-21 — A-004 — complete
 Result: Added strict domain interfaces and native runtime validators for all
