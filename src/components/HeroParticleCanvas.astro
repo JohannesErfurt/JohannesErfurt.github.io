@@ -15,9 +15,7 @@
     phase: number;
   };
 
-  type Target =
-    | { kind: 'text'; value: string }
-    | { kind: 'shape'; value: 'network' | 'vision' | 'pipeline' | 'agents' | 'video' };
+  type Target = { value: 'network' | 'vision' | 'music' | 'pipeline' | 'agents' };
 
   const canvas = document.querySelector<HTMLCanvasElement>('[data-hero-particles]');
   const hero = canvas?.closest<HTMLElement>('#hero');
@@ -29,17 +27,14 @@
 
     if (context && maskContext) {
       const targets: Target[] = [
-        { kind: 'text', value: 'AI\nSYSTEMS' },
-        { kind: 'shape', value: 'network' },
-        { kind: 'text', value: 'COMPUTER\nVISION' },
-        { kind: 'shape', value: 'vision' },
-        { kind: 'text', value: 'MLOPS' },
-        { kind: 'shape', value: 'pipeline' },
-        { kind: 'text', value: 'AGENT\nWORKFLOWS' },
-        { kind: 'shape', value: 'agents' },
-        { kind: 'text', value: 'VIDEO\nCODING' },
-        { kind: 'shape', value: 'video' },
+        { value: 'network' },
+        { value: 'vision' },
+        { value: 'music' },
+        { value: 'pipeline' },
+        { value: 'agents' },
       ];
+      // A long phase leaves a deliberate pause once the particles have settled.
+      const phaseDuration = 12000;
 
       const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
       const desktopLayout = window.matchMedia('(min-width: 768px)');
@@ -65,14 +60,14 @@
         maskContext.stroke();
       };
 
-      const drawShape = (shape: Extract<Target, { kind: 'shape' }>['value']) => {
-        const centerX = width * 0.77;
+      const drawShape = (shape: Target['value']) => {
+        const centerX = width * 0.85;
         const centerY = height * 0.5;
-        const scale = Math.min(width * 0.18, height * 0.28);
+        const scale = Math.min(width * 0.15, height * 0.32);
 
         maskContext.fillStyle = '#fff';
         maskContext.strokeStyle = '#fff';
-        maskContext.lineWidth = Math.max(3, scale * 0.025);
+        maskContext.lineWidth = Math.max(5, scale * 0.045);
         maskContext.lineCap = 'round';
         maskContext.lineJoin = 'round';
 
@@ -93,17 +88,36 @@
 
         if (shape === 'vision') {
           maskContext.beginPath();
-          maskContext.ellipse(centerX, centerY, scale * 1.15, scale * 0.65, 0, 0, Math.PI * 2);
+          maskContext.ellipse(centerX, centerY, scale * 1.1, scale * 0.62, 0, 0, Math.PI * 2);
           maskContext.stroke();
-          drawCircle(centerX, centerY, scale * 0.28);
+          maskContext.beginPath();
+          maskContext.arc(centerX, centerY, scale * 0.32, 0, Math.PI * 2);
+          maskContext.stroke();
+          drawCircle(centerX, centerY, scale * 0.14);
           maskContext.globalCompositeOperation = 'destination-out';
-          drawCircle(centerX + scale * 0.08, centerY - scale * 0.08, scale * 0.08);
+          drawCircle(centerX + scale * 0.05, centerY - scale * 0.08, scale * 0.05);
           maskContext.globalCompositeOperation = 'source-over';
         }
 
+        if (shape === 'music') {
+          const leftNote = { x: centerX - scale * 0.48, y: centerY + scale * 0.48 };
+          const rightNote = { x: centerX + scale * 0.42, y: centerY + scale * 0.28 };
+          drawCircle(leftNote.x, leftNote.y, scale * 0.19);
+          drawCircle(rightNote.x, rightNote.y, scale * 0.19);
+          drawLine({ x: leftNote.x + scale * 0.13, y: leftNote.y }, { x: leftNote.x + scale * 0.13, y: centerY - scale * 0.68 });
+          drawLine({ x: rightNote.x + scale * 0.13, y: rightNote.y }, { x: rightNote.x + scale * 0.13, y: centerY - scale * 0.82 });
+          drawLine({ x: leftNote.x + scale * 0.13, y: centerY - scale * 0.68 }, { x: rightNote.x + scale * 0.13, y: centerY - scale * 0.82 });
+          maskContext.beginPath();
+          maskContext.arc(centerX - scale * 0.88, centerY, scale * 0.23, -Math.PI / 2, Math.PI / 2);
+          maskContext.stroke();
+          maskContext.beginPath();
+          maskContext.arc(centerX + scale * 0.95, centerY, scale * 0.23, Math.PI / 2, Math.PI * 1.5);
+          maskContext.stroke();
+        }
+
         if (shape === 'pipeline') {
-          const boxWidth = scale * 0.56;
-          const boxHeight = scale * 0.5;
+          const boxWidth = scale * 0.6;
+          const boxHeight = scale * 0.55;
           const boxes = [-0.92, 0, 0.92].map((offset) => ({
             x: centerX + offset * scale - boxWidth / 2,
             y: centerY - boxHeight / 2,
@@ -137,52 +151,17 @@
           drawCircle(centerX, centerY, scale * 0.2);
         }
 
-        if (shape === 'video') {
-          const frameWidth = scale * 2.1;
-          const frameHeight = scale * 1.25;
-          const left = centerX - frameWidth / 2;
-          const top = centerY - frameHeight / 2;
-          maskContext.strokeRect(left, top, frameWidth, frameHeight);
-          const perforationCount = 6;
-          for (let index = 0; index < perforationCount; index += 1) {
-            const x = left + scale * 0.18 + index * ((frameWidth - scale * 0.36) / (perforationCount - 1));
-            maskContext.fillRect(x - scale * 0.05, top + scale * 0.08, scale * 0.1, scale * 0.1);
-            maskContext.fillRect(x - scale * 0.05, top + frameHeight - scale * 0.18, scale * 0.1, scale * 0.1);
-          }
-          maskContext.beginPath();
-          maskContext.moveTo(centerX - scale * 0.2, centerY - scale * 0.3);
-          maskContext.lineTo(centerX + scale * 0.42, centerY);
-          maskContext.lineTo(centerX - scale * 0.2, centerY + scale * 0.3);
-          maskContext.closePath();
-          maskContext.fill();
-        }
-      };
-
-      const drawText = (value: string) => {
-        const centerX = width * 0.77;
-        const centerY = height * 0.5;
-        const lines = value.split('\n');
-        const fontSize = Math.min(62, Math.max(34, width * 0.048));
-        const lineHeight = fontSize * 1.08;
-        maskContext.fillStyle = '#fff';
-        maskContext.font = `800 ${fontSize}px system-ui, sans-serif`;
-        maskContext.textAlign = 'center';
-        maskContext.textBaseline = 'middle';
-        lines.forEach((line, index) => {
-          const y = centerY + (index - (lines.length - 1) / 2) * lineHeight;
-          maskContext.fillText(line, centerX, y, width * 0.42);
-        });
       };
 
       const targetPoints = (target: Target): Point[] => {
         maskContext.clearRect(0, 0, width, height);
-        target.kind === 'text' ? drawText(target.value) : drawShape(target.value);
+        drawShape(target.value);
 
         const imageData = maskContext.getImageData(0, 0, width, height).data;
         const points: Point[] = [];
         const sampleStep = Math.max(4, Math.round(width / 260));
         for (let y = 0; y < height; y += sampleStep) {
-          for (let x = Math.floor(width * 0.53); x < width * 0.98; x += sampleStep) {
+          for (let x = Math.floor(width * 0.64); x < width * 0.995; x += sampleStep) {
             if ((imageData[(y * width + x) * 4 + 3] ?? 0) > 120) points.push({ x, y });
           }
         }
@@ -192,17 +171,17 @@
       const assignTarget = (target: Target, reset = false) => {
         const points = targetPoints(target);
         if (points.length === 0) return;
-        const particleCount = Math.min(260, Math.max(150, Math.floor((width * height) / 4200)));
+        const particleCount = Math.min(440, Math.max(300, Math.floor((width * height) / 1800)));
 
         while (particles.length < particleCount) {
           particles.push({
-            x: width * (0.58 + Math.random() * 0.38),
+            x: width * (0.68 + Math.random() * 0.28),
             y: height * (0.2 + Math.random() * 0.6),
-            targetX: width * 0.77,
+            targetX: width * 0.85,
             targetY: height * 0.5,
             velocityX: 0,
             velocityY: 0,
-            radius: 1.1 + Math.random() * 1.9,
+            radius: 1.7 + Math.random() * 1.55,
             phase: Math.random() * Math.PI * 2,
           });
         }
@@ -244,7 +223,7 @@
         }
         lastFrameAt = time;
 
-        if (time - targetChangedAt > 2800) {
+        if (time - targetChangedAt > phaseDuration) {
           targetIndex = (targetIndex + 1) % targets.length;
           assignTarget(targets[targetIndex] ?? targets[0]!);
           targetChangedAt = time;
@@ -252,11 +231,11 @@
 
         context.clearRect(0, 0, width, height);
         particles.forEach((particle) => {
-          particle.velocityX = particle.velocityX * 0.84 + (particle.targetX - particle.x) * 0.025;
-          particle.velocityY = particle.velocityY * 0.84 + (particle.targetY - particle.y) * 0.025;
+          particle.velocityX = particle.velocityX * 0.86 + (particle.targetX - particle.x) * 0.014;
+          particle.velocityY = particle.velocityY * 0.86 + (particle.targetY - particle.y) * 0.014;
           particle.x += particle.velocityX;
           particle.y += particle.velocityY;
-          const shimmer = 0.64 + Math.sin(time * 0.002 + particle.phase) * 0.2;
+          const shimmer = 0.78 + Math.sin(time * 0.002 + particle.phase) * 0.16;
           context.beginPath();
           context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
           context.fillStyle = `rgba(224, 242, 254, ${shimmer})`;
@@ -286,7 +265,7 @@
         context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
         maskCanvas.width = width;
         maskCanvas.height = height;
-        assignTarget(targets[targetIndex] ?? targets[0]!, true);
+        assignTarget(targets[targetIndex] ?? targets[0]!, reducedMotion.matches || particles.length > 0);
         reducedMotion.matches ? renderStatic() : start();
       };
 

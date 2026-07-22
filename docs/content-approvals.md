@@ -84,17 +84,19 @@ Approval states: `pending`, `approved`, or `omit`.
 ## Additional public content approval — hero particle animation
 
 - Status: approved for public website use
-- Approved phrases: `AI SYSTEMS`, `COMPUTER VISION`, `MLOPS`, `AGENT WORKFLOWS`,
-  and `VIDEO CODING`.
-- Approved presentation: white and cyan particles morph between the approved
-  phrases and original symbolic forms for a neural network, vision, an MLOps
-  pipeline, connected agents, and a video frame.
+- Approved symbols: an original neural-network graph with neurons; a clear eye
+  for computer vision; connected musical notes with sound waves for electronic
+  music; a three-stage MLOps pipeline; and a connected-agent network.
+- Approved presentation: white and cyan particles slowly form one large symbol
+  at a time in the right side of the hero. Each twelve-second phase gives the
+  symbol time to settle and remain recognisable before the next transition. No
+  words are shown in the animation.
 - Accessibility behavior: the canvas is decorative and hidden from assistive
   technology; animation is disabled on small screens, becomes static when the
   user requests reduced motion, and pauses outside the viewport or in an inactive
   tab.
-- Public-use approval: Johannes explicitly requested a CV-specific adaptation of
-  the particle-morphing concept in the Codex task on 2026-07-22.
+- Public-use approval: Johannes explicitly requested this CV-specific,
+  symbol-only refinement in the Codex task on 2026-07-22.
 - Approved by/date: `Johannes Erfurt, 2026-07-22`
 
 ## Additional public content approval — Experience infographic

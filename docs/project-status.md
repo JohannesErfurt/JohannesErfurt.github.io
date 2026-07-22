@@ -60,6 +60,23 @@ Blockers: H-NNN or none
 Next: A-NNN
 ```
 
+2026-07-22 — Hero particle symbol refinement — complete
+Result: Replaced the particle animation's text morphs with five larger,
+symbol-only forms: neural network, vision eye, electronic-music notes, MLOps
+pipeline, and connected agents. The particle field is positioned farther right;
+the slower twelve-second cycle allows each symbol to settle before transitioning.
+Evidence: desktop browser preview -> neural-network and electronic-music
+symbols render clearly in the right side of the hero without obscuring its
+content; 390px browser check -> canvas is hidden and no horizontal overflow;
+`npm run check` -> 24 files, 0 diagnostics;
+`npm test` -> 7 passed; `npm run build` -> 3 static pages built; `npm run
+lighthouse` -> homepage audit completed, but the suite could not finish because
+Windows denied cleanup of Lighthouse's temporary Chrome profile while testing
+the privacy page (EPERM; retried once).
+Commit: not created
+Blockers: H-007 and H-008
+Next: H-007 — validate the live GitHub Pages deployment
+
 2026-07-22 — Experience career infographic — complete
 Result: Added the user-supplied career-journey infographic below the Experience
 introduction and before the detailed timeline. The displayed image is constrained
