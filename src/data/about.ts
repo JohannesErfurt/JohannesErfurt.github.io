@@ -2,8 +2,9 @@ export type AboutIcon = 'education' | 'skills' | 'research' | 'languages';
 
 export interface AboutHighlight {
   title: string;
-  value: string;
-  description: string;
+  value?: string;
+  description?: string;
+  items?: string[];
   icon: AboutIcon;
 }
 
@@ -28,8 +29,12 @@ export const aboutHighlights: AboutHighlight[] = [
   },
   {
     title: 'Skills',
-    value: 'AI systems & vision',
-    description: 'Multi-agent workflows, MLOps, and image processing',
+    items: [
+      'Generative AI & Agent Systems (LangGraph, Prompt Engineering)',
+      'Computer Vision & Machine Learning (CNNs, ViTs, Fine-Tuning)',
+      'Software Development & MLOps (Python, C++, Docker, CI/CD)',
+      'Image/Video Processing & Algorithmics (Video Codecs, Deep Learning Filters)',
+    ],
     icon: 'skills',
   },
   {

@@ -52,8 +52,16 @@ const iconPaths = (icon: AboutIcon | Hobby['icon']) =>
           <path d={highlightIconPaths[highlight.icon]} />
         </svg>
         <p class="mt-4 text-xs font-bold uppercase tracking-[0.14em] text-slate-500 dark:text-slate-400">{highlight.title}</p>
-        <h3 class="mt-2 font-bold text-slate-950 dark:text-white">{highlight.value}</h3>
-        <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">{highlight.description}</p>
+        {highlight.items ? (
+          <ul class="mt-3 list-disc space-y-3 pl-5 text-sm leading-6 text-slate-700 marker:text-indigo-600 dark:text-slate-300 dark:marker:text-indigo-400">
+            {highlight.items.map((item) => <li>{item}</li>)}
+          </ul>
+        ) : (
+          <>
+            <h3 class="mt-2 font-bold text-slate-950 dark:text-white">{highlight.value}</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">{highlight.description}</p>
+          </>
+        )}
       </article>
     ))}
     </div>

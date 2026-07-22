@@ -60,6 +60,17 @@ Blockers: H-NNN or none
 Next: A-NNN
 ```
 
+2026-07-22 — About skills update — complete
+Result: Replaced the compact Skills summary in the homepage About section with
+four detailed capability groups covering generative AI and agents, computer
+vision and machine learning, software development and MLOps, and image/video
+processing and algorithmics. The entries render as a semantic bullet list.
+Evidence: `npm run check` -> 23 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run build` -> 3 static pages.
+Commit: `content: expand About skills` (this iteration)
+Blockers: H-007 and H-008
+Next: H-007 — validate the live GitHub Pages deployment
+
 2026-07-22 — About narrative update — complete
 Result: Replaced the existing About heading and two introductory paragraphs with
 a polished English adaptation of Johannes's German summary. The new copy presents

@@ -33,6 +33,17 @@ Approval states: `pending`, `approved`, or `omit`.
   2026-07-22.
 - Approved by/date: `Johannes Erfurt, 2026-07-22`
 
+## Additional public content approval — About skills
+
+- Approved capability groups: `Generative AI & Agent Systems (LangGraph, Prompt
+  Engineering)`; `Computer Vision & Machine Learning (CNNs, ViTs, Fine-Tuning)`;
+  `Software Development & MLOps (Python, C++, Docker, CI/CD)`; and `Image/Video
+  Processing & Algorithmics (Video Codecs, Deep Learning Filters)`.
+- Public-use approval: Johannes supplied these capability groups and explicitly
+  requested their publication in the homepage About section in the Codex task on
+  2026-07-22.
+- Approved by/date: `Johannes Erfurt, 2026-07-22`
+
 ## H-002 — Experience and education
 
 - Status: approved
