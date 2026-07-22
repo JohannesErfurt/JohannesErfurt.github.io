@@ -60,6 +60,17 @@ Blockers: H-NNN or none
 Next: A-NNN
 ```
 
+2026-07-22 — Hero computer-vision symbol refinement — complete
+Result: Replaced the basic eye with an original connected computer-vision eye:
+an almond-shaped outline, concentric iris rings, and eight linked outer nodes,
+following the supplied reference's composition.
+Evidence: desktop browser preview -> particle animation remains positioned in the
+right hero area without obscuring the content; `npm run check` -> 24 files, 0
+diagnostics; `npm test` -> 7 passed; `npm run build` -> 3 static pages built.
+Commit: not created
+Blockers: H-007 and H-008
+Next: H-007 — validate the live GitHub Pages deployment
+
 2026-07-22 — Hero electronic-music symbol refinement — complete
 Result: Replaced the music-note-and-waves phase with an original dotted DJ/mixer
 deck featuring a central turntable, note, knobs, and faders, following the

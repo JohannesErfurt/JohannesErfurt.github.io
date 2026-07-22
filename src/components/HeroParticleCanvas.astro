@@ -120,15 +120,35 @@
 
         if (shape === 'vision') {
           maskContext.beginPath();
-          maskContext.ellipse(centerX, centerY, scale * 1.1, scale * 0.62, 0, 0, Math.PI * 2);
+          maskContext.moveTo(centerX - scale * 1.12, centerY);
+          maskContext.quadraticCurveTo(centerX, centerY - scale * 0.92, centerX + scale * 1.12, centerY);
+          maskContext.quadraticCurveTo(centerX, centerY + scale * 0.92, centerX - scale * 1.12, centerY);
+          maskContext.closePath();
           maskContext.stroke();
           maskContext.beginPath();
-          maskContext.arc(centerX, centerY, scale * 0.32, 0, Math.PI * 2);
+          maskContext.arc(centerX, centerY, scale * 0.55, 0, Math.PI * 2);
           maskContext.stroke();
           drawCircle(centerX, centerY, scale * 0.14);
-          maskContext.globalCompositeOperation = 'destination-out';
-          drawCircle(centerX + scale * 0.05, centerY - scale * 0.08, scale * 0.05);
-          maskContext.globalCompositeOperation = 'source-over';
+          maskContext.beginPath();
+          maskContext.arc(centerX, centerY, scale * 0.3, 0, Math.PI * 2);
+          maskContext.stroke();
+
+          const nodes = [
+            { x: centerX, y: centerY - scale * 1.2, anchor: { x: centerX, y: centerY - scale * 0.66 } },
+            { x: centerX + scale * 0.86, y: centerY - scale * 0.9, anchor: { x: centerX + scale * 0.56, y: centerY - scale * 0.52 } },
+            { x: centerX + scale * 1.42, y: centerY, anchor: { x: centerX + scale * 1.12, y: centerY } },
+            { x: centerX + scale * 0.83, y: centerY + scale * 0.96, anchor: { x: centerX + scale * 0.54, y: centerY + scale * 0.55 } },
+            { x: centerX, y: centerY + scale * 1.28, anchor: { x: centerX, y: centerY + scale * 0.68 } },
+            { x: centerX - scale * 0.83, y: centerY + scale * 0.96, anchor: { x: centerX - scale * 0.54, y: centerY + scale * 0.55 } },
+            { x: centerX - scale * 1.42, y: centerY, anchor: { x: centerX - scale * 1.12, y: centerY } },
+            { x: centerX - scale * 0.86, y: centerY - scale * 0.9, anchor: { x: centerX - scale * 0.56, y: centerY - scale * 0.52 } },
+          ];
+          nodes.forEach((node) => {
+            drawLine({ x: node.x, y: node.y }, node.anchor);
+            maskContext.beginPath();
+            maskContext.arc(node.x, node.y, scale * 0.16, 0, Math.PI * 2);
+            maskContext.stroke();
+          });
         }
 
         if (shape === 'music') {
