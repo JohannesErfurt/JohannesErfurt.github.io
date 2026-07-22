@@ -60,6 +60,18 @@ Blockers: H-NNN or none
 Next: A-NNN
 ```
 
+2026-07-22 — Hero neural-network symbol refinement — complete
+Result: Replaced the simple neural graph with six large, particle-filled neuron
+circles and crossing connections, following the supplied reference's structure
+while retaining an original canvas-particle illustration.
+Evidence: desktop browser preview -> six dotted neuron clusters and their
+crossing links form clearly to the right of the hero content; `npm run check`
+-> 24 files, 0 diagnostics; `npm test` -> 7 passed; `npm run build` -> 3 static
+pages built.
+Commit: not created
+Blockers: H-007 and H-008
+Next: H-007 — validate the live GitHub Pages deployment
+
 2026-07-22 — Hero agent-symbol refinement — complete
 Result: Removed the MLOps particle phase. Replaced the simple agent network with
 an original chatbot-and-tool-ring illustration, inspired by the supplied visual
