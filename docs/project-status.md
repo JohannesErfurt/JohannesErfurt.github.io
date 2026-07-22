@@ -60,6 +60,18 @@ Blockers: H-NNN or none
 Next: A-NNN
 ```
 
+2026-07-22 — Hero agent-symbol refinement — complete
+Result: Removed the MLOps particle phase. Replaced the simple agent network with
+an original chatbot-and-tool-ring illustration, inspired by the supplied visual
+reference: a central assistant connects to speech, reasoning, document, globe,
+search, and calendar tools.
+Evidence: desktop browser preview -> the chatbot-and-tool-ring particle symbol
+forms clearly to the right of the hero content; `npm run check` -> 24 files, 0
+diagnostics; `npm test` -> 7 passed; `npm run build` -> 3 static pages built.
+Commit: not created
+Blockers: H-007 and H-008
+Next: H-007 — validate the live GitHub Pages deployment
+
 2026-07-22 — Hero particle symbol refinement — complete
 Result: Replaced the particle animation's text morphs with five larger,
 symbol-only forms: neural network, vision eye, electronic-music notes, MLOps

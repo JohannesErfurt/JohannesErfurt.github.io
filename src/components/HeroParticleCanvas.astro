@@ -15,7 +15,7 @@
     phase: number;
   };
 
-  type Target = { value: 'network' | 'vision' | 'music' | 'pipeline' | 'agents' };
+  type Target = { value: 'network' | 'vision' | 'music' | 'agents' };
 
   const canvas = document.querySelector<HTMLCanvasElement>('[data-hero-particles]');
   const hero = canvas?.closest<HTMLElement>('#hero');
@@ -30,7 +30,6 @@
         { value: 'network' },
         { value: 'vision' },
         { value: 'music' },
-        { value: 'pipeline' },
         { value: 'agents' },
       ];
       // A long phase leaves a deliberate pause once the particles have settled.
@@ -57,6 +56,22 @@
         maskContext.beginPath();
         maskContext.moveTo(from.x, from.y);
         maskContext.lineTo(to.x, to.y);
+        maskContext.stroke();
+      };
+
+      const drawRoundedRect = (x: number, y: number, rectWidth: number, rectHeight: number, radius: number) => {
+        const corner = Math.min(radius, rectWidth / 2, rectHeight / 2);
+        maskContext.beginPath();
+        maskContext.moveTo(x + corner, y);
+        maskContext.lineTo(x + rectWidth - corner, y);
+        maskContext.quadraticCurveTo(x + rectWidth, y, x + rectWidth, y + corner);
+        maskContext.lineTo(x + rectWidth, y + rectHeight - corner);
+        maskContext.quadraticCurveTo(x + rectWidth, y + rectHeight, x + rectWidth - corner, y + rectHeight);
+        maskContext.lineTo(x + corner, y + rectHeight);
+        maskContext.quadraticCurveTo(x, y + rectHeight, x, y + rectHeight - corner);
+        maskContext.lineTo(x, y + corner);
+        maskContext.quadraticCurveTo(x, y, x + corner, y);
+        maskContext.closePath();
         maskContext.stroke();
       };
 
@@ -115,40 +130,73 @@
           maskContext.stroke();
         }
 
-        if (shape === 'pipeline') {
-          const boxWidth = scale * 0.6;
-          const boxHeight = scale * 0.55;
-          const boxes = [-0.92, 0, 0.92].map((offset) => ({
-            x: centerX + offset * scale - boxWidth / 2,
-            y: centerY - boxHeight / 2,
-          }));
-          boxes.forEach((box) => maskContext.strokeRect(box.x, box.y, boxWidth, boxHeight));
-          for (let index = 0; index < boxes.length - 1; index += 1) {
-            const fromX = boxes[index]!.x + boxWidth;
-            const toX = boxes[index + 1]!.x;
-            drawLine({ x: fromX, y: centerY }, { x: toX, y: centerY });
-            drawLine({ x: toX - scale * 0.12, y: centerY - scale * 0.1 }, { x: toX, y: centerY });
-            drawLine({ x: toX - scale * 0.12, y: centerY + scale * 0.1 }, { x: toX, y: centerY });
-          }
-          drawCircle(centerX - scale * 0.92, centerY, scale * 0.1);
-          drawCircle(centerX, centerY, scale * 0.1);
-          drawCircle(centerX + scale * 0.92, centerY, scale * 0.1);
-        }
-
         if (shape === 'agents') {
-          const outerNodes = Array.from({ length: 6 }, (_, index) => {
-            const angle = (Math.PI * 2 * index) / 6 - Math.PI / 2;
-            return {
-              x: centerX + Math.cos(angle) * scale,
-              y: centerY + Math.sin(angle) * scale,
-            };
-          });
-          outerNodes.forEach((node, index) => {
-            drawLine({ x: centerX, y: centerY }, node);
-            drawLine(node, outerNodes[(index + 1) % outerNodes.length]!);
-            drawCircle(node.x, node.y, scale * 0.11);
-          });
-          drawCircle(centerX, centerY, scale * 0.2);
+          const orbit = scale * 1.05;
+          const toolPoints = [
+            { x: centerX, y: centerY - orbit },
+            { x: centerX + orbit * 0.92, y: centerY - orbit * 0.42 },
+            { x: centerX + orbit * 0.92, y: centerY + orbit * 0.45 },
+            { x: centerX, y: centerY + orbit },
+            { x: centerX - orbit * 0.92, y: centerY + orbit * 0.45 },
+            { x: centerX - orbit * 0.92, y: centerY - orbit * 0.42 },
+          ];
+
+          maskContext.setLineDash([scale * 0.07, scale * 0.075]);
+          maskContext.beginPath();
+          maskContext.ellipse(centerX, centerY, orbit * 1.08, orbit * 0.92, 0, 0, Math.PI * 2);
+          maskContext.stroke();
+          maskContext.setLineDash([]);
+          toolPoints.forEach((point) => drawLine({ x: centerX, y: centerY }, point));
+
+          const robotWidth = scale * 1.08;
+          const robotHeight = scale * 0.86;
+          const robotLeft = centerX - robotWidth / 2;
+          const robotTop = centerY - robotHeight / 2;
+          drawRoundedRect(robotLeft, robotTop, robotWidth, robotHeight, scale * 0.22);
+          drawRoundedRect(robotLeft + scale * 0.16, robotTop + scale * 0.17, robotWidth - scale * 0.32, robotHeight - scale * 0.34, scale * 0.16);
+          drawCircle(centerX - scale * 0.18, centerY, scale * 0.07);
+          drawCircle(centerX + scale * 0.18, centerY, scale * 0.07);
+          drawLine({ x: centerX, y: robotTop }, { x: centerX, y: robotTop - scale * 0.2 });
+          drawCircle(centerX, robotTop - scale * 0.25, scale * 0.07);
+          drawCircle(robotLeft - scale * 0.08, centerY, scale * 0.12);
+          drawCircle(robotLeft + robotWidth + scale * 0.08, centerY, scale * 0.12);
+
+          const speech = toolPoints[0]!;
+          drawRoundedRect(speech.x - scale * 0.38, speech.y - scale * 0.22, scale * 0.76, scale * 0.42, scale * 0.12);
+          drawLine({ x: speech.x - scale * 0.1, y: speech.y + scale * 0.2 }, { x: speech.x - scale * 0.18, y: speech.y + scale * 0.32 });
+          [-0.16, 0, 0.16].forEach((offset) => drawCircle(speech.x + scale * offset, speech.y, scale * 0.045));
+
+          const brain = toolPoints[1]!;
+          drawCircle(brain.x - scale * 0.15, brain.y, scale * 0.2);
+          drawCircle(brain.x + scale * 0.15, brain.y, scale * 0.2);
+          drawLine({ x: brain.x, y: brain.y - scale * 0.2 }, { x: brain.x, y: brain.y + scale * 0.2 });
+
+          const document = toolPoints[2]!;
+          drawRoundedRect(document.x - scale * 0.28, document.y - scale * 0.27, scale * 0.56, scale * 0.54, scale * 0.07);
+          [-0.11, 0.04, 0.18].forEach((offset) => drawLine(
+            { x: document.x - scale * 0.15, y: document.y + scale * offset },
+            { x: document.x + scale * 0.15, y: document.y + scale * offset },
+          ));
+
+          const globe = toolPoints[3]!;
+          maskContext.beginPath();
+          maskContext.arc(globe.x, globe.y, scale * 0.28, 0, Math.PI * 2);
+          maskContext.stroke();
+          maskContext.beginPath();
+          maskContext.ellipse(globe.x, globe.y, scale * 0.12, scale * 0.28, 0, 0, Math.PI * 2);
+          maskContext.stroke();
+          drawLine({ x: globe.x - scale * 0.28, y: globe.y }, { x: globe.x + scale * 0.28, y: globe.y });
+
+          const search = toolPoints[4]!;
+          maskContext.beginPath();
+          maskContext.arc(search.x - scale * 0.06, search.y - scale * 0.05, scale * 0.2, 0, Math.PI * 2);
+          maskContext.stroke();
+          drawLine({ x: search.x + scale * 0.08, y: search.y + scale * 0.1 }, { x: search.x + scale * 0.28, y: search.y + scale * 0.3 });
+
+          const calendar = toolPoints[5]!;
+          drawRoundedRect(calendar.x - scale * 0.3, calendar.y - scale * 0.25, scale * 0.6, scale * 0.5, scale * 0.07);
+          drawLine({ x: calendar.x - scale * 0.3, y: calendar.y - scale * 0.08 }, { x: calendar.x + scale * 0.3, y: calendar.y - scale * 0.08 });
+          [-0.13, 0.13].forEach((offset) => drawCircle(calendar.x + scale * offset, calendar.y - scale * 0.32, scale * 0.05));
         }
 
       };

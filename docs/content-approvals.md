@@ -86,7 +86,8 @@ Approval states: `pending`, `approved`, or `omit`.
 - Status: approved for public website use
 - Approved symbols: an original neural-network graph with neurons; a clear eye
   for computer vision; connected musical notes with sound waves for electronic
-  music; a three-stage MLOps pipeline; and a connected-agent network.
+  music; and an agentic-AI assistant: a central chatbot connected to a ring of
+  speech, reasoning, document, globe, search, and calendar tools.
 - Approved presentation: white and cyan particles slowly form one large symbol
   at a time in the right side of the hero. Each twelve-second phase gives the
   symbol time to settle and remain recognisable before the next transition. No
@@ -95,8 +96,10 @@ Approval states: `pending`, `approved`, or `omit`.
   technology; animation is disabled on small screens, becomes static when the
   user requests reduced motion, and pauses outside the viewport or in an inactive
   tab.
-- Public-use approval: Johannes explicitly requested this CV-specific,
-  symbol-only refinement in the Codex task on 2026-07-22.
+- Public-use approval: Johannes explicitly requested the four-symbol sequence
+  and supplied a visual reference for the agentic-AI assistant in the Codex task
+  on 2026-07-22. The reference image itself is not published; the animation uses
+  an original particle illustration.
 - Approved by/date: `Johannes Erfurt, 2026-07-22`
 
 ## Additional public content approval — Experience infographic
