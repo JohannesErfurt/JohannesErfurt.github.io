@@ -14,9 +14,7 @@ export interface AboutHighlight {
 }
 
 export const aboutIntro = [
-  'My technology stack spans the entire lifecycle of modern AI applications—from mathematical foundations, machine learning, and computer vision to software development, MLOps, and agentic AI systems.',
-  'My focus is not on mastering as many individual technologies as possible, but on combining them thoughtfully to build robust, scalable, and maintainable systems.',
-  'This breadth enables me to approach both scientific questions and industrial development projects holistically, while integrating new technologies quickly into existing solutions.',
+  'I enjoy building intelligent systems that bridge research and real-world applications. My interests span machine learning, computer vision, generative AI, MLOps, and autonomous agents, with a focus on scalable, maintainable software.',
 ];
 
 export const aboutHighlights: AboutHighlight[] = [

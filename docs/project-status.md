@@ -60,6 +60,16 @@ Blockers: H-NNN or none
 Next: A-NNN
 ```
 
+2026-07-22 — About narrative update — complete
+Result: Replaced the homepage About narrative with Johannes's supplied concise
+statement on research-to-application intelligent systems and scalable,
+maintainable software. The existing heading remains unchanged.
+Evidence: `npm run check` -> 24 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run build` -> 3 static pages built.
+Commit: not created
+Blockers: H-007 and H-008
+Next: H-007 — validate the live GitHub Pages deployment
+
 2026-07-22 — Hero agent and neural-symbol clarity refinement — complete
 Result: Increased particle density and particle size for stronger settled forms.
 Simplified the neural graph to larger neuron rings and fewer clear connections;
