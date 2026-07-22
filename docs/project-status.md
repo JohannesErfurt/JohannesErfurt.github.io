@@ -60,6 +60,22 @@ Blockers: H-NNN or none
 Next: A-NNN
 ```
 
+2026-07-22 — CV-specific hero particle animation — complete
+Result: Added an original, dependency-free canvas animation whose white/cyan
+particles morph between five approved CV phrases and five related symbols. The
+effect is confined to the right side of the desktop hero and remains behind the
+foreground content. Small screens omit it; reduced-motion mode renders a static
+state; inactive and off-screen animations pause.
+Evidence: desktop browser frames -> phrases and transitions render on the right
+without foreground overlap or horizontal overflow; 390px browser check -> canvas
+hidden and no horizontal overflow; `npm run quality` -> 24 files with 0
+diagnostics, 7 tests passed, 3 pages built, HTML/internal links valid; Lighthouse
+-> home 95/100/100/100 and privacy 100/100/100/100 for Performance/
+Accessibility/Best Practices/SEO.
+Commit: `feat: add CV particle hero animation` (this iteration)
+Blockers: H-007 and H-008
+Next: H-007 — validate the live GitHub Pages deployment
+
 2026-07-22 — Hero background image — complete
 Result: Added the user-supplied AI illustration as a full-width hero background,
 with a dark gradient overlay and the profile photo, name, badges, and actions

@@ -1,3 +1,7 @@
+---
+import HeroParticleCanvas from './HeroParticleCanvas.astro';
+---
+
 <section
   class="relative isolate overflow-hidden bg-slate-950"
   id="hero"
@@ -20,8 +24,9 @@
     class="absolute inset-0 -z-10 bg-gradient-to-r from-slate-950/95 via-slate-950/75 to-indigo-950/55"
     aria-hidden="true"
   ></div>
+  <HeroParticleCanvas />
 
-  <div class="mx-auto max-w-5xl px-6 py-12 sm:py-16">
+  <div class="relative z-10 mx-auto max-w-5xl px-6 py-12 sm:py-16">
   <div class="flex flex-col gap-8 sm:flex-row sm:items-center">
     <img
       src="/assets/johannes-erfurt-profile.webp"

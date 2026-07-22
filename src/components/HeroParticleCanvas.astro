@@ -1,0 +1,343 @@
+<canvas
+  class="pointer-events-none absolute inset-0 z-0 hidden h-full w-full md:block"
+  data-hero-particles
+  aria-hidden="true"
+></canvas>
+
+<script>
+  type Point = { x: number; y: number };
+  type Particle = Point & {
+    targetX: number;
+    targetY: number;
+    velocityX: number;
+    velocityY: number;
+    radius: number;
+    phase: number;
+  };
+
+  type Target =
+    | { kind: 'text'; value: string }
+    | { kind: 'shape'; value: 'network' | 'vision' | 'pipeline' | 'agents' | 'video' };
+
+  const canvas = document.querySelector<HTMLCanvasElement>('[data-hero-particles]');
+  const hero = canvas?.closest<HTMLElement>('#hero');
+
+  if (canvas && hero) {
+    const context = canvas.getContext('2d');
+    const maskCanvas = document.createElement('canvas');
+    const maskContext = maskCanvas.getContext('2d', { willReadFrequently: true });
+
+    if (context && maskContext) {
+      const targets: Target[] = [
+        { kind: 'text', value: 'AI\nSYSTEMS' },
+        { kind: 'shape', value: 'network' },
+        { kind: 'text', value: 'COMPUTER\nVISION' },
+        { kind: 'shape', value: 'vision' },
+        { kind: 'text', value: 'MLOPS' },
+        { kind: 'shape', value: 'pipeline' },
+        { kind: 'text', value: 'AGENT\nWORKFLOWS' },
+        { kind: 'shape', value: 'agents' },
+        { kind: 'text', value: 'VIDEO\nCODING' },
+        { kind: 'shape', value: 'video' },
+      ];
+
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const desktopLayout = window.matchMedia('(min-width: 768px)');
+      const particles: Particle[] = [];
+      let width = 0;
+      let height = 0;
+      let targetIndex = 0;
+      let targetChangedAt = 0;
+      let frameId = 0;
+      let isVisible = true;
+      let lastFrameAt = 0;
+
+      const drawCircle = (x: number, y: number, radius: number) => {
+        maskContext.beginPath();
+        maskContext.arc(x, y, radius, 0, Math.PI * 2);
+        maskContext.fill();
+      };
+
+      const drawLine = (from: Point, to: Point) => {
+        maskContext.beginPath();
+        maskContext.moveTo(from.x, from.y);
+        maskContext.lineTo(to.x, to.y);
+        maskContext.stroke();
+      };
+
+      const drawShape = (shape: Extract<Target, { kind: 'shape' }>['value']) => {
+        const centerX = width * 0.77;
+        const centerY = height * 0.5;
+        const scale = Math.min(width * 0.18, height * 0.28);
+
+        maskContext.fillStyle = '#fff';
+        maskContext.strokeStyle = '#fff';
+        maskContext.lineWidth = Math.max(3, scale * 0.025);
+        maskContext.lineCap = 'round';
+        maskContext.lineJoin = 'round';
+
+        if (shape === 'network') {
+          const nodes = [
+            { x: centerX - scale, y: centerY },
+            { x: centerX - scale * 0.5, y: centerY - scale * 0.75 },
+            { x: centerX - scale * 0.45, y: centerY + scale * 0.7 },
+            { x: centerX, y: centerY - scale * 0.2 },
+            { x: centerX + scale * 0.15, y: centerY + scale * 0.72 },
+            { x: centerX + scale * 0.65, y: centerY - scale * 0.65 },
+            { x: centerX + scale, y: centerY + scale * 0.15 },
+          ];
+          const links: Array<readonly [number, number]> = [[0, 1], [0, 2], [1, 3], [1, 5], [2, 3], [2, 4], [3, 4], [3, 5], [3, 6], [4, 6], [5, 6]];
+          links.forEach(([from, to]) => drawLine(nodes[from]!, nodes[to]!));
+          nodes.forEach((node, index) => drawCircle(node.x, node.y, scale * (index === 3 ? 0.13 : 0.09)));
+        }
+
+        if (shape === 'vision') {
+          maskContext.beginPath();
+          maskContext.ellipse(centerX, centerY, scale * 1.15, scale * 0.65, 0, 0, Math.PI * 2);
+          maskContext.stroke();
+          drawCircle(centerX, centerY, scale * 0.28);
+          maskContext.globalCompositeOperation = 'destination-out';
+          drawCircle(centerX + scale * 0.08, centerY - scale * 0.08, scale * 0.08);
+          maskContext.globalCompositeOperation = 'source-over';
+        }
+
+        if (shape === 'pipeline') {
+          const boxWidth = scale * 0.56;
+          const boxHeight = scale * 0.5;
+          const boxes = [-0.92, 0, 0.92].map((offset) => ({
+            x: centerX + offset * scale - boxWidth / 2,
+            y: centerY - boxHeight / 2,
+          }));
+          boxes.forEach((box) => maskContext.strokeRect(box.x, box.y, boxWidth, boxHeight));
+          for (let index = 0; index < boxes.length - 1; index += 1) {
+            const fromX = boxes[index]!.x + boxWidth;
+            const toX = boxes[index + 1]!.x;
+            drawLine({ x: fromX, y: centerY }, { x: toX, y: centerY });
+            drawLine({ x: toX - scale * 0.12, y: centerY - scale * 0.1 }, { x: toX, y: centerY });
+            drawLine({ x: toX - scale * 0.12, y: centerY + scale * 0.1 }, { x: toX, y: centerY });
+          }
+          drawCircle(centerX - scale * 0.92, centerY, scale * 0.1);
+          drawCircle(centerX, centerY, scale * 0.1);
+          drawCircle(centerX + scale * 0.92, centerY, scale * 0.1);
+        }
+
+        if (shape === 'agents') {
+          const outerNodes = Array.from({ length: 6 }, (_, index) => {
+            const angle = (Math.PI * 2 * index) / 6 - Math.PI / 2;
+            return {
+              x: centerX + Math.cos(angle) * scale,
+              y: centerY + Math.sin(angle) * scale,
+            };
+          });
+          outerNodes.forEach((node, index) => {
+            drawLine({ x: centerX, y: centerY }, node);
+            drawLine(node, outerNodes[(index + 1) % outerNodes.length]!);
+            drawCircle(node.x, node.y, scale * 0.11);
+          });
+          drawCircle(centerX, centerY, scale * 0.2);
+        }
+
+        if (shape === 'video') {
+          const frameWidth = scale * 2.1;
+          const frameHeight = scale * 1.25;
+          const left = centerX - frameWidth / 2;
+          const top = centerY - frameHeight / 2;
+          maskContext.strokeRect(left, top, frameWidth, frameHeight);
+          const perforationCount = 6;
+          for (let index = 0; index < perforationCount; index += 1) {
+            const x = left + scale * 0.18 + index * ((frameWidth - scale * 0.36) / (perforationCount - 1));
+            maskContext.fillRect(x - scale * 0.05, top + scale * 0.08, scale * 0.1, scale * 0.1);
+            maskContext.fillRect(x - scale * 0.05, top + frameHeight - scale * 0.18, scale * 0.1, scale * 0.1);
+          }
+          maskContext.beginPath();
+          maskContext.moveTo(centerX - scale * 0.2, centerY - scale * 0.3);
+          maskContext.lineTo(centerX + scale * 0.42, centerY);
+          maskContext.lineTo(centerX - scale * 0.2, centerY + scale * 0.3);
+          maskContext.closePath();
+          maskContext.fill();
+        }
+      };
+
+      const drawText = (value: string) => {
+        const centerX = width * 0.77;
+        const centerY = height * 0.5;
+        const lines = value.split('\n');
+        const fontSize = Math.min(62, Math.max(34, width * 0.048));
+        const lineHeight = fontSize * 1.08;
+        maskContext.fillStyle = '#fff';
+        maskContext.font = `800 ${fontSize}px system-ui, sans-serif`;
+        maskContext.textAlign = 'center';
+        maskContext.textBaseline = 'middle';
+        lines.forEach((line, index) => {
+          const y = centerY + (index - (lines.length - 1) / 2) * lineHeight;
+          maskContext.fillText(line, centerX, y, width * 0.42);
+        });
+      };
+
+      const targetPoints = (target: Target): Point[] => {
+        maskContext.clearRect(0, 0, width, height);
+        target.kind === 'text' ? drawText(target.value) : drawShape(target.value);
+
+        const imageData = maskContext.getImageData(0, 0, width, height).data;
+        const points: Point[] = [];
+        const sampleStep = Math.max(4, Math.round(width / 260));
+        for (let y = 0; y < height; y += sampleStep) {
+          for (let x = Math.floor(width * 0.53); x < width * 0.98; x += sampleStep) {
+            if ((imageData[(y * width + x) * 4 + 3] ?? 0) > 120) points.push({ x, y });
+          }
+        }
+        return points;
+      };
+
+      const assignTarget = (target: Target, reset = false) => {
+        const points = targetPoints(target);
+        if (points.length === 0) return;
+        const particleCount = Math.min(260, Math.max(150, Math.floor((width * height) / 4200)));
+
+        while (particles.length < particleCount) {
+          particles.push({
+            x: width * (0.58 + Math.random() * 0.38),
+            y: height * (0.2 + Math.random() * 0.6),
+            targetX: width * 0.77,
+            targetY: height * 0.5,
+            velocityX: 0,
+            velocityY: 0,
+            radius: 1.1 + Math.random() * 1.9,
+            phase: Math.random() * Math.PI * 2,
+          });
+        }
+        particles.length = particleCount;
+
+        particles.forEach((particle, index) => {
+          const point = points[Math.floor((index * points.length) / particleCount) % points.length] ?? points[0]!;
+          particle.targetX = point.x;
+          particle.targetY = point.y;
+          if (reset) {
+            particle.x = point.x;
+            particle.y = point.y;
+            particle.velocityX = 0;
+            particle.velocityY = 0;
+          }
+        });
+      };
+
+      const renderStatic = () => {
+        context.clearRect(0, 0, width, height);
+        assignTarget(targets[0]!, true);
+        particles.forEach((particle) => {
+          context.beginPath();
+          context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+          context.fillStyle = 'rgba(224, 242, 254, 0.82)';
+          context.fill();
+        });
+      };
+
+      const animate = (time: number) => {
+        if (!desktopLayout.matches || reducedMotion.matches || !isVisible || document.hidden) {
+          frameId = 0;
+          return;
+        }
+
+        if (time - lastFrameAt < 1000 / 45) {
+          frameId = window.requestAnimationFrame(animate);
+          return;
+        }
+        lastFrameAt = time;
+
+        if (time - targetChangedAt > 2800) {
+          targetIndex = (targetIndex + 1) % targets.length;
+          assignTarget(targets[targetIndex] ?? targets[0]!);
+          targetChangedAt = time;
+        }
+
+        context.clearRect(0, 0, width, height);
+        particles.forEach((particle) => {
+          particle.velocityX = particle.velocityX * 0.84 + (particle.targetX - particle.x) * 0.025;
+          particle.velocityY = particle.velocityY * 0.84 + (particle.targetY - particle.y) * 0.025;
+          particle.x += particle.velocityX;
+          particle.y += particle.velocityY;
+          const shimmer = 0.64 + Math.sin(time * 0.002 + particle.phase) * 0.2;
+          context.beginPath();
+          context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+          context.fillStyle = `rgba(224, 242, 254, ${shimmer})`;
+          context.fill();
+        });
+        frameId = window.requestAnimationFrame(animate);
+      };
+
+      const start = () => {
+        if (frameId || !desktopLayout.matches || reducedMotion.matches || !isVisible || document.hidden) return;
+        targetChangedAt = performance.now();
+        frameId = window.requestAnimationFrame(animate);
+      };
+
+      const resize = () => {
+        const bounds = hero.getBoundingClientRect();
+        const nextWidth = Math.max(1, Math.round(bounds.width));
+        const nextHeight = Math.max(1, Math.round(bounds.height));
+        if (nextWidth === width && nextHeight === height && particles.length > 0) return;
+        width = nextWidth;
+        height = nextHeight;
+        const pixelRatio = Math.min(window.devicePixelRatio || 1, 1.5);
+        canvas.width = Math.round(width * pixelRatio);
+        canvas.height = Math.round(height * pixelRatio);
+        canvas.style.width = `${width}px`;
+        canvas.style.height = `${height}px`;
+        context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+        maskCanvas.width = width;
+        maskCanvas.height = height;
+        assignTarget(targets[targetIndex] ?? targets[0]!, true);
+        reducedMotion.matches ? renderStatic() : start();
+      };
+
+      const stop = () => {
+        if (frameId) window.cancelAnimationFrame(frameId);
+        frameId = 0;
+      };
+
+      const visibilityObserver = new IntersectionObserver(([entry]) => {
+        if (!entry) return;
+        isVisible = entry.isIntersecting;
+        isVisible ? start() : stop();
+      }, { threshold: 0.05 });
+
+      const resizeObserver = new ResizeObserver(resize);
+      let isInitialized = false;
+
+      const handleMotionChange = () => {
+        if (!isInitialized) return;
+        stop();
+        reducedMotion.matches ? renderStatic() : start();
+      };
+
+      const handleDocumentVisibility = () => document.hidden ? stop() : start();
+
+      const enable = () => {
+        if (isInitialized || !desktopLayout.matches) return;
+        isInitialized = true;
+        resizeObserver.observe(hero);
+        visibilityObserver.observe(hero);
+        resize();
+      };
+
+      const disable = () => {
+        if (!isInitialized) return;
+        isInitialized = false;
+        stop();
+        resizeObserver.unobserve(hero);
+        visibilityObserver.unobserve(hero);
+        particles.length = 0;
+        context.clearRect(0, 0, width, height);
+        width = 0;
+        height = 0;
+      };
+
+      const handleLayoutChange = () => desktopLayout.matches ? enable() : disable();
+
+      reducedMotion.addEventListener('change', handleMotionChange);
+      desktopLayout.addEventListener('change', handleLayoutChange);
+      document.addEventListener('visibilitychange', handleDocumentVisibility);
+      enable();
+    }
+  }
+</script>
