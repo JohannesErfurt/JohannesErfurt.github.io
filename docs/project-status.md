@@ -60,6 +60,19 @@ Blockers: H-NNN or none
 Next: A-NNN
 ```
 
+2026-07-22 — About education and hobbies update — complete
+Result: Expanded the Education card with the approved Mathematics B.Sc. and
+M.Sc., replaced the Research card with a four-item Hobbies card, and added the
+four user-supplied hobby icons. Removed the separate hobby grid to avoid repeated
+content.
+Evidence: `npm run check` -> 23 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run build` -> 3 static pages; generated homepage check -> both mathematics
+degrees and four hobbies present, all four icon assets copied, old duplicate hobby
+section absent.
+Commit: `content: update About education and hobbies` (this iteration)
+Blockers: H-007 and H-008
+Next: H-007 — validate the live GitHub Pages deployment
+
 2026-07-22 — About skills update — complete
 Result: Replaced the compact Skills summary in the homepage About section with
 four detailed capability groups covering generative AI and agents, computer

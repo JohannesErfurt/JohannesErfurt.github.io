@@ -1,17 +1,16 @@
-export type AboutIcon = 'education' | 'skills' | 'research' | 'languages';
+export type AboutIcon = 'education' | 'skills' | 'hobbies' | 'languages';
+
+export interface AboutHighlightItem {
+  label: string;
+  image?: string;
+}
 
 export interface AboutHighlight {
   title: string;
   value?: string;
   description?: string;
-  items?: string[];
+  items?: AboutHighlightItem[];
   icon: AboutIcon;
-}
-
-export interface Hobby {
-  name: string;
-  description: string;
-  icon: 'agents' | 'music' | 'travel' | 'table-tennis';
 }
 
 export const aboutIntro = [
@@ -23,53 +22,37 @@ export const aboutIntro = [
 export const aboutHighlights: AboutHighlight[] = [
   {
     title: 'Education',
-    value: 'PhD in video coding',
-    description: 'Technical University of Berlin',
+    items: [
+      { label: 'PhD in Video Coding — Technische Universität Berlin' },
+      { label: 'M.Sc. in Mathematics — Technische Universität Berlin' },
+      { label: 'B.Sc. in Mathematics — Technische Universität Berlin' },
+    ],
     icon: 'education',
   },
   {
     title: 'Skills',
     items: [
-      'Generative AI & Agent Systems (LangGraph, Prompt Engineering)',
-      'Computer Vision & Machine Learning (CNNs, ViTs, Fine-Tuning)',
-      'Software Development & MLOps (Python, C++, Docker, CI/CD)',
-      'Image/Video Processing & Algorithmics (Video Codecs, Deep Learning Filters)',
+      { label: 'Generative AI & Agent Systems (LangGraph, Prompt Engineering)' },
+      { label: 'Computer Vision & Machine Learning (CNNs, ViTs, Fine-Tuning)' },
+      { label: 'Software Development & MLOps (Python, C++, Docker, CI/CD)' },
+      { label: 'Image/Video Processing & Algorithmics (Video Codecs, Deep Learning Filters)' },
     ],
     icon: 'skills',
   },
   {
-    title: 'Research',
-    value: 'Video coding',
-    description: 'Learned filters, signal processing, and quality assessment',
-    icon: 'research',
+    title: 'Hobbies',
+    items: [
+      { label: 'Tinkering with custom AI agents', image: '/assets/hobby-ai-agents.png' },
+      { label: 'Electronic music & dancing', image: '/assets/hobby-music-dancing.png' },
+      { label: 'Cultural exchange & traveling', image: '/assets/hobby-cultural-exchange-travel.png' },
+      { label: 'Table tennis', image: '/assets/hobby-table-tennis.png' },
+    ],
+    icon: 'hobbies',
   },
   {
     title: 'Languages',
     value: 'German, English, Russian',
     description: 'Native German; business-fluent English; very good Russian',
     icon: 'languages',
-  },
-];
-
-export const hobbies: Hobby[] = [
-  {
-    name: 'Custom AI agents',
-    description: 'Tinkering with new ways to make agents useful, controllable, and fun.',
-    icon: 'agents',
-  },
-  {
-    name: 'Electronic music & dancing',
-    description: 'A creative reset away from screens and technical diagrams.',
-    icon: 'music',
-  },
-  {
-    name: 'Cultural exchange & traveling',
-    description: 'Learning from places, people, and perspectives different from my own.',
-    icon: 'travel',
-  },
-  {
-    name: 'Table tennis',
-    description: 'Fast rallies, focus, and a little friendly competition.',
-    icon: 'table-tennis',
   },
 ];

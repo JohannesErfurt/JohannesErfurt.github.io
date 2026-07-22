@@ -259,6 +259,12 @@ Approval states: `pending`, `approved`, or `omit`.
 - Approved hobbies for the homepage About section: tinkering with custom AI
   agents; electronic music and dancing; cultural exchange and traveling; table
   tennis.
+- Approved presentation: display the four hobbies in the About summary cards
+  using the four PNG icons supplied by Johannes on 2026-07-22. The public assets
+  are `hobby-ai-agents.png`, `hobby-music-dancing.png`,
+  `hobby-cultural-exchange-travel.png`, and `hobby-table-tennis.png`.
+- Icon source/license/attribution: not supplied; Johannes explicitly instructed
+  their publication. No attribution statement is added to the site.
 - Public-use approval: Johannes explicitly approved all four hobbies in the Codex
-  task on 2026-07-21.
-- Approved by/date: `Johannes Erfurt, 2026-07-21`
+  task on 2026-07-21 and supplied the icons in the Codex task on 2026-07-22.
+- Approved by/date: `Johannes Erfurt, 2026-07-22`
