@@ -60,6 +60,16 @@ Blockers: H-NNN or none
 Next: A-NNN
 ```
 
+2026-07-22 — About north-star removal — complete
+Result: Removed the complete `My north star` panel and simplified the surrounding
+About layout so the approved narrative occupies the available content width.
+Evidence: `npm run check` -> 23 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run build` -> 3 static pages; generated homepage -> north-star label and
+supporting sentence absent.
+Commit: `content: remove About north-star panel` (this iteration)
+Blockers: H-007 and H-008
+Next: H-007 — validate the live GitHub Pages deployment
+
 2026-07-22 — Hero expertise badge update — complete
 Result: Replaced the `Multi-Agent Systems · LangGraph` hero badge with the
 approved `MLOps - Software Engineering` text.

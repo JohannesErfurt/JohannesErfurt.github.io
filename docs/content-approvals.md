@@ -31,6 +31,8 @@ Approval states: `pending`, `approved`, or `omit`.
 - Public-use approval: Johannes supplied this biography summary and explicitly
   requested its publication on the homepage About section in the Codex task on
   2026-07-22.
+- Omitted content: the separate `My north star` panel and its supporting sentence
+  were removed at Johannes's request on 2026-07-22.
 - Approved by/date: `Johannes Erfurt, 2026-07-22`
 
 ## Additional public content approval — About skills
