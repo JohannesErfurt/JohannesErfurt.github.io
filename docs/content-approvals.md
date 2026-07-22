@@ -35,6 +35,19 @@ Approval states: `pending`, `approved`, or `omit`.
   were removed at Johannes's request on 2026-07-22.
 - Approved by/date: `Johannes Erfurt, 2026-07-22`
 
+## Additional public content approval — About illustration
+
+- Status: approved for public website use
+- Source supplied by Johannes: `codex-clipboard-6ef6720b-a150-45bd-9a5a-628605abfec4.png`
+- Public derivative: `public/assets/about-ai-systems.jpg`
+- Processing: converted from a 2.36 MB PNG to a 302 KB JPEG at the original
+  1376x768 dimensions; the temporary source image is not published.
+- Alt text: `A biological neuron connecting to a glowing digital neural network
+  inside a human profile`
+- Source/license/attribution: not supplied; Johannes explicitly instructed its
+  publication. No attribution statement is added to the site.
+- Approved by/date: `Johannes Erfurt, 2026-07-22`
+
 ## Additional public content approval — About skills
 
 - Approved capability groups: `Generative AI & Agent Systems (LangGraph, Prompt

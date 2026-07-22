@@ -60,6 +60,18 @@ Blockers: H-NNN or none
 Next: A-NNN
 ```
 
+2026-07-22 — About illustration — complete
+Result: Added the user-supplied AI/neural-network illustration between the About
+narrative and summary cards. Published a visually equivalent JPEG derivative at
+the original dimensions, reducing transfer size from 2.36 MB to about 302 KB.
+Evidence: `npm run check` -> 23 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run validate` -> 3 pages built, HTML and internal links valid; generated
+homepage -> illustration and descriptive alt text present; production asset ->
+published JPEG present.
+Commit: `feat: add About illustration` (this iteration)
+Blockers: H-007 and H-008
+Next: H-007 — validate the live GitHub Pages deployment
+
 2026-07-22 — About north-star removal — complete
 Result: Removed the complete `My north star` panel and simplified the surrounding
 About layout so the approved narrative occupies the available content width.
