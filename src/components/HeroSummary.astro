@@ -1,59 +1,79 @@
 <section
-  class="mx-auto max-w-5xl px-6 py-12 sm:py-16"
+  class="relative isolate overflow-hidden bg-slate-950"
   id="hero"
   aria-labelledby="hero-title"
 >
+  <img
+    src="/assets/hero-ai-background-1536.webp"
+    srcset="/assets/hero-ai-background-768.webp 768w, /assets/hero-ai-background-1536.webp 1536w"
+    sizes="100vw"
+    alt=""
+    width="1536"
+    height="1024"
+    class="absolute inset-0 -z-20 h-full w-full object-cover object-center"
+    loading="eager"
+    fetchpriority="high"
+    decoding="async"
+    aria-hidden="true"
+  />
+  <div
+    class="absolute inset-0 -z-10 bg-gradient-to-r from-slate-950/95 via-slate-950/75 to-indigo-950/55"
+    aria-hidden="true"
+  ></div>
+
+  <div class="mx-auto max-w-5xl px-6 py-12 sm:py-16">
   <div class="flex flex-col gap-8 sm:flex-row sm:items-center">
     <img
       src="/assets/johannes-erfurt-profile.webp"
       width="320"
       height="320"
       alt="Portrait of Dr.-Ing. Johannes Erfurt"
-      class="h-40 w-40 shrink-0 rounded-2xl border border-slate-200 object-cover shadow-lg dark:border-slate-700 sm:h-48 sm:w-48"
+      class="h-40 w-40 shrink-0 rounded-2xl border-2 border-white/70 object-cover shadow-2xl sm:h-48 sm:w-48"
       loading="eager"
       decoding="async"
     />
     <div>
-      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-200">
         AI engineering portfolio
       </p>
       <h1
-        class="mt-4 max-w-4xl text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-6xl"
+        class="mt-4 max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-6xl"
         id="hero-title"
       >
         Dr.-Ing. Johannes Erfurt
       </h1>
-      <p class="mt-5 max-w-2xl text-xl leading-8 text-slate-700 dark:text-slate-300">
+      <p class="mt-5 max-w-2xl text-xl leading-8 text-slate-100">
         AI Systems Engineer <span aria-hidden="true">|</span> Computer Vision Expert
       </p>
     </div>
   </div>
 
   <ul class="mt-7 flex max-w-4xl flex-wrap gap-3" aria-label="Core expertise">
-    <li class="rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-800 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100">
+    <li class="rounded-full border border-white/30 bg-slate-950/70 px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm">
       PhD · Video Coding
     </li>
-    <li class="rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-800 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100">
+    <li class="rounded-full border border-white/30 bg-slate-950/70 px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm">
       Industrial AI · Computer Vision
     </li>
-    <li class="rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-800 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100">
+    <li class="rounded-full border border-white/30 bg-slate-950/70 px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm">
       MLOps - Software Engineering
     </li>
   </ul>
 
   <div class="mt-8 flex flex-wrap gap-4">
     <a
-      class="rounded-lg bg-indigo-700 px-5 py-3 text-sm font-semibold text-white outline-offset-4 transition-colors hover:bg-indigo-800 focus-visible:outline-2 focus-visible:outline-indigo-700 dark:bg-indigo-600 dark:hover:bg-indigo-500 dark:focus-visible:outline-indigo-300"
+      class="rounded-lg bg-indigo-500 px-5 py-3 text-sm font-semibold text-white outline-offset-4 transition-colors hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-white"
       href="/assets/Dr_Johannes_Erfurt_CV.pdf"
       download
     >
       Download CV (PDF)
     </a>
     <a
-      class="rounded-lg border border-slate-400 bg-white px-5 py-3 text-sm font-semibold text-slate-900 outline-offset-4 transition-colors hover:border-indigo-700 hover:text-indigo-700 focus-visible:outline-2 focus-visible:outline-indigo-700 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:hover:border-indigo-300 dark:hover:text-indigo-300 dark:focus-visible:outline-indigo-300"
+      class="rounded-lg border border-white/60 bg-slate-950/70 px-5 py-3 text-sm font-semibold text-white outline-offset-4 backdrop-blur-sm transition-colors hover:border-white hover:bg-white hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-white"
       href="#projects"
     >
       Explore Projects &amp; Code
     </a>
+  </div>
   </div>
 </section>

@@ -66,6 +66,21 @@ Approval states: `pending`, `approved`, or `omit`.
   Codex task on 2026-07-22.
 - Approved by/date: `Johannes Erfurt, 2026-07-22`
 
+## Additional public content approval — hero background
+
+- Status: approved for public website use
+- Source supplied by Johannes: `codex-clipboard-6e20f4e3-efba-465e-9921-8a474da81465.png`
+- Public derivatives: `public/assets/hero-ai-background-768.webp` and
+  `public/assets/hero-ai-background-1536.webp`
+- Processing: converted from a 2.18 MB PNG into responsive WebP assets: about
+  56 KB at 768x512 and 165 KB at the original 1536x1024 dimensions. The browser
+  selects the appropriate width; the temporary source image is not published.
+- Presentation: decorative full-width hero background with a dark contrast
+  overlay; the profile image and hero content appear above it.
+- Source/license/attribution: not supplied; Johannes explicitly instructed its
+  publication. No attribution statement is added to the site.
+- Approved by/date: `Johannes Erfurt, 2026-07-22`
+
 ## H-002 — Experience and education
 
 - Status: approved
