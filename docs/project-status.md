@@ -60,6 +60,17 @@ Blockers: H-NNN or none
 Next: A-NNN
 ```
 
+2026-07-22 — About illustration layout — complete
+Result: Moved the About illustration beside the introductory narrative in a
+responsive two-column layout. Smaller screens retain a readable stacked layout,
+with the summary cards remaining below both elements.
+Evidence: `npm run check` -> 23 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run validate` -> 3 pages built, HTML and internal links valid; generated
+homepage -> responsive two-column About wrapper present.
+Commit: `style: place About image beside narrative` (this iteration)
+Blockers: H-007 and H-008
+Next: H-007 — validate the live GitHub Pages deployment
+
 2026-07-22 — About illustration — complete
 Result: Added the user-supplied AI/neural-network illustration between the About
 narrative and summary cards. Published a visually equivalent JPEG derivative at
