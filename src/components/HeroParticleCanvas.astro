@@ -132,19 +132,43 @@
         }
 
         if (shape === 'music') {
-          const leftNote = { x: centerX - scale * 0.48, y: centerY + scale * 0.48 };
-          const rightNote = { x: centerX + scale * 0.42, y: centerY + scale * 0.28 };
-          drawCircle(leftNote.x, leftNote.y, scale * 0.19);
-          drawCircle(rightNote.x, rightNote.y, scale * 0.19);
-          drawLine({ x: leftNote.x + scale * 0.13, y: leftNote.y }, { x: leftNote.x + scale * 0.13, y: centerY - scale * 0.68 });
-          drawLine({ x: rightNote.x + scale * 0.13, y: rightNote.y }, { x: rightNote.x + scale * 0.13, y: centerY - scale * 0.82 });
-          drawLine({ x: leftNote.x + scale * 0.13, y: centerY - scale * 0.68 }, { x: rightNote.x + scale * 0.13, y: centerY - scale * 0.82 });
+          const deckSize = scale * 1.72;
+          const deckLeft = centerX - deckSize / 2;
+          const deckTop = centerY - deckSize / 2;
+          drawRoundedRect(deckLeft, deckTop, deckSize, deckSize, scale * 0.12);
+
           maskContext.beginPath();
-          maskContext.arc(centerX - scale * 0.88, centerY, scale * 0.23, -Math.PI / 2, Math.PI / 2);
+          maskContext.arc(centerX, centerY + scale * 0.02, scale * 0.58, 0, Math.PI * 2);
           maskContext.stroke();
-          maskContext.beginPath();
-          maskContext.arc(centerX + scale * 0.95, centerY, scale * 0.23, Math.PI / 2, Math.PI * 1.5);
-          maskContext.stroke();
+
+          const noteBase = { x: centerX - scale * 0.18, y: centerY + scale * 0.37 };
+          drawCircle(noteBase.x, noteBase.y, scale * 0.13);
+          drawCircle(centerX + scale * 0.28, centerY + scale * 0.18, scale * 0.13);
+          drawLine({ x: noteBase.x + scale * 0.1, y: noteBase.y }, { x: noteBase.x + scale * 0.1, y: centerY - scale * 0.36 });
+          drawLine({ x: centerX + scale * 0.38, y: centerY + scale * 0.18 }, { x: centerX + scale * 0.38, y: centerY - scale * 0.53 });
+          drawLine({ x: noteBase.x + scale * 0.1, y: centerY - scale * 0.36 }, { x: centerX + scale * 0.38, y: centerY - scale * 0.53 });
+          drawLine({ x: noteBase.x + scale * 0.1, y: centerY - scale * 0.15 }, { x: centerX + scale * 0.38, y: centerY - scale * 0.28 });
+
+          const knobs = [
+            { x: deckLeft + scale * 0.2, y: deckTop + scale * 0.38 },
+            { x: deckLeft + scale * 0.2, y: centerY - scale * 0.18 },
+            { x: deckLeft + scale * 0.2, y: centerY + scale * 0.45 },
+            { x: deckLeft + deckSize - scale * 0.2, y: deckTop + scale * 0.35 },
+            { x: deckLeft + deckSize - scale * 0.2, y: centerY + scale * 0.38 },
+          ];
+          knobs.forEach((knob) => {
+            maskContext.beginPath();
+            maskContext.arc(knob.x, knob.y, scale * 0.1, 0, Math.PI * 2);
+            maskContext.stroke();
+          });
+
+          const faders = [-0.38, 0, 0.38];
+          faders.forEach((offset, index) => {
+            const x = centerX + scale * offset;
+            const top = deckTop + deckSize - scale * 0.35;
+            drawLine({ x, y: top }, { x, y: deckTop + deckSize - scale * 0.08 });
+            drawCircle(x, top + scale * (0.08 + index * 0.08), scale * 0.07);
+          });
         }
 
         if (shape === 'agents') {

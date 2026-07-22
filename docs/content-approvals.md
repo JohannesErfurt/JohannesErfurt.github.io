@@ -86,9 +86,10 @@ Approval states: `pending`, `approved`, or `omit`.
 - Status: approved for public website use
 - Approved symbols: an original neural-network graph with six large,
   particle-filled neuron circles, bright crossing edges, and loose particles; a
-  clear eye for computer vision; connected musical notes with sound waves for
-  electronic music; and an agentic-AI assistant: a central chatbot connected to
-  a ring of speech, reasoning, document, globe, search, and calendar tools.
+  clear eye for computer vision; an electronic-music DJ/mixer deck with a
+  turntable, note, knobs, and faders; and an agentic-AI assistant: a central
+  chatbot connected to a ring of speech, reasoning, document, globe, search,
+  and calendar tools.
 - Approved presentation: white and cyan particles slowly form one large symbol
   at a time in the right side of the hero. Each twelve-second phase gives the
   symbol time to settle and remain recognisable before the next transition. No
@@ -98,9 +99,10 @@ Approval states: `pending`, `approved`, or `omit`.
   user requests reduced motion, and pauses outside the viewport or in an inactive
   tab.
 - Public-use approval: Johannes explicitly requested the four-symbol sequence
-  and supplied visual references for the agentic-AI assistant and neural-network
-  graph in the Codex task on 2026-07-22. The reference images themselves are not
-  published; the animation uses original particle illustrations.
+  and supplied visual references for the agentic-AI assistant, neural-network
+  graph, and electronic-music deck in the Codex task on 2026-07-22. The reference
+  images themselves are not published; the animation uses original particle
+  illustrations.
 - Approved by/date: `Johannes Erfurt, 2026-07-22`
 
 ## Additional public content approval — Experience infographic
