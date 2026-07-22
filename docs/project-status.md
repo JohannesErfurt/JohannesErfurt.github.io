@@ -1,6 +1,6 @@
 # Project status
 
-Updated: 2026-07-21
+Updated: 2026-07-22
 
 ## Current state
 
@@ -18,10 +18,10 @@ Updated: 2026-07-21
 - A-006 is complete. Browser verification at 320px and 1440px found no horizontal
   overflow or overlap; all seven links are focusable in logical DOM order and
   expose a visible focus outline.
-- H-005 is complete. Johannes approved a replacement four-page, visually designed
-  CV for public release on 2026-07-21. It is not claimed to be ATS-optimized;
-  its extracted language section contains English and Russian, while German
-  remains represented on the website.
+- H-005 is complete. Johannes approved the updated three-page, visually designed
+  CV for public release on 2026-07-22. It is not claimed to be ATS-optimized;
+  its extracted language section contains German, English, and Russian, plus the
+  four approved hobbies.
 - H-006 is complete. Johannes explicitly chose to omit an Impressum at his own
   risk, approved the limited factual privacy notice without private contact
   details, approved the social title/description, and omitted the social image.
@@ -56,6 +56,18 @@ Commit: hash or not created
 Blockers: H-NNN or none
 Next: A-NNN
 ```
+
+2026-07-22 — H-005 CV update — complete
+Result: Replaced the public CV with the updated three-page `cv_github.pdf`,
+retaining the stable download filename and the “Download CV (PDF)” label.
+Evidence: PDF extraction -> 3 pages, selectable text, German/English/Russian,
+four approved hobbies, five approved publications, and sabbatical wording; privacy
+scan -> no email, phone label, address, or private-key signature; metadata scrub ->
+only intentional title, author, and subject retained; rendered public copy -> no
+clipping or overlap; quality suite -> passed.
+Commit: `feat: update public CV content` (this iteration)
+Blockers: H-007 and H-008
+Next: H-007 — enable and validate GitHub Pages deployment
 
 2026-07-21 — About section expansion — complete
 Result: Expanded the homepage About section with a warmer personal narrative,

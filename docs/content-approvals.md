@@ -168,25 +168,24 @@ Approval states: `pending`, `approved`, or `omit`.
 
 - Status: replacement approved; visual design prioritized over ATS optimization
 - Expected path: `public/assets/Dr_Johannes_Erfurt_CV.pdf`
-- Source supplied: `cv_github.pdf`, 2026-07-21
-- Candidate format: four-page, visually designed PDF with selectable text,
-  hyperlinks, publications, project details, experience, education, and a
-  separate signature page.
+- Source supplied: `cv_github.pdf`, 2026-07-22
+- Candidate format: three-page, visually designed PDF with selectable text,
+  hyperlinks, publications, project details, experience, education, hobbies, and
+  a signature.
 - Text extraction and reading order reviewed: passed; the language section
-  contains English and Russian. German is not present in the replacement's
-  machine-extracted language section and remains represented on the website.
+  contains German, English, and Russian, plus the four approved hobbies.
 - PII review: passed; no email, phone label, residential address, or private
   contact details detected. The visible date is the document signing date.
 - Document metadata review: passed after removing source metadata; only title,
   author, and subject metadata are retained.
 - Content coverage: passed for the supplied replacement; all five approved
   publications and the approved sabbatical wording are included.
-- Render review: passed four-page visual review; no clipping, overlap, or broken
-  glyphs was found. Page four is intentionally a largely blank signature page.
+- Render review: passed three-page visual review; no clipping, overlap, or broken
+  glyphs was found.
 - Public-release approval: Johannes explicitly approved replacing the prior CV
-  with this supplied file in the Codex task on 2026-07-21. ATS optimization is
+  with this supplied file in the Codex task on 2026-07-22. ATS optimization is
   intentionally not claimed for this replacement.
-- Approved by/date: `Johannes Erfurt, 2026-07-21`
+- Approved by/date: `Johannes Erfurt, 2026-07-22`
 
 ## H-006 — Legal, privacy, and metadata
 
