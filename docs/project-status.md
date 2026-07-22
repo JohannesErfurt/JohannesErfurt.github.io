@@ -60,6 +60,16 @@ Blockers: H-NNN or none
 Next: A-NNN
 ```
 
+2026-07-22 — Hero expertise badge update — complete
+Result: Replaced the `Multi-Agent Systems · LangGraph` hero badge with the
+approved `MLOps - Software Engineering` text.
+Evidence: `npm run check` -> 23 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run build` -> 3 static pages; generated homepage -> new badge present and
+old badge absent.
+Commit: `content: update hero expertise badge` (this iteration)
+Blockers: H-007 and H-008
+Next: H-007 — validate the live GitHub Pages deployment
+
 2026-07-22 — About education and hobbies update — complete
 Result: Expanded the Education card with the approved Mathematics B.Sc. and
 M.Sc., replaced the Research card with a four-item Hobbies card, and added the

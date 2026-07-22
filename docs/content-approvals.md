@@ -44,6 +44,13 @@ Approval states: `pending`, `approved`, or `omit`.
   2026-07-22.
 - Approved by/date: `Johannes Erfurt, 2026-07-22`
 
+## Additional public content approval — hero expertise badge
+
+- Approved badge text: `MLOps - Software Engineering`.
+- Public-use approval: Johannes explicitly requested this replacement in the
+  Codex task on 2026-07-22.
+- Approved by/date: `Johannes Erfurt, 2026-07-22`
+
 ## H-002 — Experience and education
 
 - Status: approved
