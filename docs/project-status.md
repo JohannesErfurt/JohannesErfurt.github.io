@@ -60,6 +60,21 @@ Blockers: H-NNN or none
 Next: A-NNN
 ```
 
+2026-07-22 — Experience career infographic — complete
+Result: Added the user-supplied career-journey infographic below the Experience
+introduction and before the detailed timeline. The displayed image is constrained
+for desktop readability and links to its full-size version. Published an optimized
+WebP derivative, reducing transfer size from 1.59 MB to about 157 KB.
+Evidence: desktop browser preview -> complete infographic centered and readable;
+390px browser check -> image 293x440px with no horizontal overflow; `npm run
+check` -> 24 files, 0 diagnostics; `npm test` -> 7 passed; `npm run validate` ->
+3 pages built, HTML and internal links valid; Lighthouse rerun -> home
+99/100/100/100 and privacy 100/100/100/100 for Performance/Accessibility/Best
+Practices/SEO.
+Commit: `feat: add Experience career infographic` (this iteration)
+Blockers: H-007 and H-008
+Next: H-007 — validate the live GitHub Pages deployment
+
 2026-07-22 — CV-specific hero particle animation — complete
 Result: Added an original, dependency-free canvas animation whose white/cyan
 particles morph between five approved CV phrases and five related symbols. The

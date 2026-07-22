@@ -97,6 +97,21 @@ Approval states: `pending`, `approved`, or `omit`.
   the particle-morphing concept in the Codex task on 2026-07-22.
 - Approved by/date: `Johannes Erfurt, 2026-07-22`
 
+## Additional public content approval — Experience infographic
+
+- Status: approved for public website use
+- Source supplied by Johannes: `codex-clipboard-92e143cd-6a9a-4551-8b5a-aa652e5e2a51.png`
+- Public derivative: `public/assets/experience-career-journey.webp`
+- Processing: converted from a 1.59 MB PNG to a 157 KB WebP at the original
+  1024x1536 dimensions; the temporary source image is not published.
+- Presentation: displayed below the Experience introduction and linked to the
+  full-size asset. The German-language graphic summarizes Mathematics, the PhD,
+  Fraunhofer HHI, Scansonic MI, private AI projects, and the long-term AI systems
+  engineering goal.
+- Source/license/attribution: not supplied; Johannes explicitly instructed its
+  publication. No attribution statement is added to the site.
+- Approved by/date: `Johannes Erfurt, 2026-07-22`
+
 ## H-002 — Experience and education
 
 - Status: approved

@@ -39,6 +39,31 @@ const typeStyles: Record<string, string> = {
     </p>
   </div>
 
+  <figure class="mt-10 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm dark:border-slate-700 dark:bg-slate-900">
+    <div class="p-4 sm:p-6">
+      <a
+        href="/assets/experience-career-journey.webp"
+        target="_blank"
+        rel="noopener"
+        class="block rounded-xl outline-offset-4 focus-visible:outline-2 focus-visible:outline-indigo-700 dark:focus-visible:outline-indigo-300"
+        aria-label="Open the career journey infographic at full size"
+      >
+        <img
+          src="/assets/experience-career-journey.webp"
+          alt="Career journey from mathematics through a PhD in video coding and computer vision, applied research at Fraunhofer HHI, industrial AI at Scansonic MI, private generative AI projects, and the long-term goal of AI systems engineering"
+          width="1024"
+          height="1536"
+          class="mx-auto max-h-[52rem] w-auto max-w-full rounded-lg object-contain"
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+    </div>
+    <figcaption class="border-t border-slate-200 px-5 py-3 text-center text-sm text-slate-600 dark:border-slate-700 dark:text-slate-300">
+      Career journey at a glance (German). Select the image to open the full-size version.
+    </figcaption>
+  </figure>
+
   <ol class="mt-10 space-y-6">
     {entries.map((entry) => {
       const label = displayType(entry);
