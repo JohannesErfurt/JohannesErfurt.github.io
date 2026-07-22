@@ -85,11 +85,11 @@ Approval states: `pending`, `approved`, or `omit`.
 
 - Status: approved for public website use
 - Approved symbols: an original neural-network graph with six large,
-  particle-filled neuron circles, bright crossing edges, and loose particles; a
+  particle-filled neuron circles and clean crossing edges; a
   connected computer-vision eye with concentric iris rings and eight linked
   nodes; an electronic-music DJ/mixer deck with a turntable, note, knobs, and
-  faders; and an agentic-AI assistant: a central chatbot connected to a ring of
-  speech, reasoning, document, globe, search, and calendar tools; and an open
+  faders; and an agentic-AI assistant: a large chatbot connected to four clear
+  speech, reasoning, document, and globe tools; and an open
   children's storybook with a character, rainbow, cloud, star, and story lines.
 - Approved presentation: white and cyan particles slowly form one large symbol
   at a time in the right side of the hero. Each twelve-second phase gives the
