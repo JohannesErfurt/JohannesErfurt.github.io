@@ -31,6 +31,9 @@ Updated: 2026-07-22
 - The four hobbies in the expanded About section are approved for public use:
   custom AI-agent tinkering, electronic music and dancing, cultural exchange and
   traveling, and table tennis.
+- The updated About narrative and heading are approved for public use. They
+  describe a technology stack spanning mathematical foundations through agentic
+  AI systems, with an emphasis on robust, scalable, and maintainable solutions.
 - Live release acceptance requires H-007 and H-008.
 
 ## Verification baseline
@@ -56,6 +59,17 @@ Commit: hash or not created
 Blockers: H-NNN or none
 Next: A-NNN
 ```
+
+2026-07-22 — About narrative update — complete
+Result: Replaced the existing About heading and two introductory paragraphs with
+a polished English adaptation of Johannes's German summary. The new copy presents
+his end-to-end AI technology stack and systems-oriented engineering approach.
+Evidence: `npm run check` -> 23 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run build` -> 3 static pages; generated homepage -> new heading and all three
+paragraphs present.
+Commit: `content: refine About narrative` (this iteration)
+Blockers: H-007 and H-008
+Next: H-007 — validate the live GitHub Pages deployment
 
 2026-07-22 — H-005 CV update — complete
 Result: Replaced the public CV with the updated three-page `cv_github.pdf`,

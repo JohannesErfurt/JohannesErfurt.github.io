@@ -18,6 +18,21 @@ Approval states: `pending`, `approved`, or `omit`.
 - LinkedIn URL: `https://www.linkedin.com/in/johanneserfurt`
 - Approved by/date: `Johannes Erfurt, 2026-07-21`
 
+## Additional public content approval — About narrative
+
+- Approved heading: `From mathematical foundations to robust AI systems.`
+- Approved narrative: Johannes's technology stack spans the lifecycle of modern
+  AI applications, from mathematical foundations, machine learning, and computer
+  vision to software development, MLOps, and agentic AI systems. His focus is on
+  combining technologies thoughtfully into robust, scalable, and maintainable
+  systems. This breadth supports a holistic approach to scientific questions and
+  industrial development projects, as well as the rapid integration of new
+  technologies into existing solutions.
+- Public-use approval: Johannes supplied this biography summary and explicitly
+  requested its publication on the homepage About section in the Codex task on
+  2026-07-22.
+- Approved by/date: `Johannes Erfurt, 2026-07-22`
+
 ## H-002 — Experience and education
 
 - Status: approved

@@ -14,8 +14,9 @@ export interface Hobby {
 }
 
 export const aboutIntro = [
-  'I enjoy the space where research ideas become dependable software. My work has taken me from video coding and learned filters to industrial computer vision, MLOps, and multi-agent applications.',
-  'I like making complex systems understandable: asking careful questions, building useful prototypes, and then adding the tests, documentation, and engineering discipline that make them ready to share.',
+  'My technology stack spans the entire lifecycle of modern AI applications—from mathematical foundations, machine learning, and computer vision to software development, MLOps, and agentic AI systems.',
+  'My focus is not on mastering as many individual technologies as possible, but on combining them thoughtfully to build robust, scalable, and maintainable systems.',
+  'This breadth enables me to approach both scientific questions and industrial development projects holistically, while integrating new technologies quickly into existing solutions.',
 ];
 
 export const aboutHighlights: AboutHighlight[] = [
