@@ -15,7 +15,7 @@
     phase: number;
   };
 
-  type Target = { value: 'network' | 'vision' | 'music' | 'agents' };
+  type Target = { value: 'network' | 'vision' | 'music' | 'agents' | 'storybook' };
 
   const canvas = document.querySelector<HTMLCanvasElement>('[data-hero-particles]');
   const hero = canvas?.closest<HTMLElement>('#hero');
@@ -31,6 +31,7 @@
         { value: 'vision' },
         { value: 'music' },
         { value: 'agents' },
+        { value: 'storybook' },
       ];
       // A long phase leaves a deliberate pause once the particles have settled.
       const phaseDuration = 12000;
@@ -258,6 +259,80 @@
           drawRoundedRect(calendar.x - scale * 0.3, calendar.y - scale * 0.25, scale * 0.6, scale * 0.5, scale * 0.07);
           drawLine({ x: calendar.x - scale * 0.3, y: calendar.y - scale * 0.08 }, { x: calendar.x + scale * 0.3, y: calendar.y - scale * 0.08 });
           [-0.13, 0.13].forEach((offset) => drawCircle(calendar.x + scale * offset, calendar.y - scale * 0.32, scale * 0.05));
+        }
+
+        if (shape === 'storybook') {
+          const bookLeft = centerX - scale * 1.12;
+          const bookRight = centerX + scale * 1.12;
+          const bookTop = centerY - scale * 0.32;
+          const bookBottom = centerY + scale * 0.9;
+          const spineBottom = bookBottom + scale * 0.22;
+
+          // Open-book outline and curved page edges.
+          drawLine({ x: bookLeft, y: bookTop }, { x: centerX, y: centerY + scale * 0.22 });
+          drawLine({ x: centerX, y: centerY + scale * 0.22 }, { x: bookRight, y: bookTop });
+          drawLine({ x: bookLeft, y: bookTop }, { x: bookLeft, y: bookBottom });
+          drawLine({ x: bookRight, y: bookTop }, { x: bookRight, y: bookBottom });
+          drawLine({ x: centerX, y: centerY + scale * 0.22 }, { x: centerX, y: spineBottom });
+          maskContext.beginPath();
+          maskContext.moveTo(bookLeft, bookBottom);
+          maskContext.quadraticCurveTo(centerX - scale * 0.38, bookBottom - scale * 0.04, centerX, spineBottom);
+          maskContext.quadraticCurveTo(centerX + scale * 0.38, bookBottom - scale * 0.04, bookRight, bookBottom);
+          maskContext.stroke();
+          maskContext.beginPath();
+          maskContext.moveTo(bookLeft - scale * 0.1, bookBottom + scale * 0.12);
+          maskContext.quadraticCurveTo(centerX - scale * 0.34, bookBottom + scale * 0.03, centerX, spineBottom + scale * 0.12);
+          maskContext.quadraticCurveTo(centerX + scale * 0.34, bookBottom + scale * 0.03, bookRight + scale * 0.1, bookBottom + scale * 0.12);
+          maskContext.stroke();
+
+          // Rainbow emerging from the pages.
+          [0.45, 0.62, 0.79].forEach((radius) => {
+            maskContext.beginPath();
+            maskContext.arc(centerX, bookTop + scale * 0.35, scale * radius, Math.PI, Math.PI * 2);
+            maskContext.stroke();
+          });
+
+          // A friendly story character on the left page.
+          const character = { x: centerX - scale * 0.54, y: centerY + scale * 0.42 };
+          maskContext.beginPath();
+          maskContext.arc(character.x, character.y, scale * 0.26, 0, Math.PI * 2);
+          maskContext.stroke();
+          drawCircle(character.x - scale * 0.09, character.y - scale * 0.03, scale * 0.035);
+          drawCircle(character.x + scale * 0.09, character.y - scale * 0.03, scale * 0.035);
+          maskContext.beginPath();
+          maskContext.arc(character.x, character.y + scale * 0.04, scale * 0.11, 0.15 * Math.PI, 0.85 * Math.PI);
+          maskContext.stroke();
+          maskContext.beginPath();
+          maskContext.arc(character.x, character.y - scale * 0.26, scale * 0.18, Math.PI, Math.PI * 2);
+          maskContext.stroke();
+          drawCircle(character.x - scale * 0.22, character.y - scale * 0.22, scale * 0.08);
+          drawCircle(character.x + scale * 0.22, character.y - scale * 0.22, scale * 0.08);
+
+          // Story text lines on the right page.
+          [-0.04, 0.18, 0.4, 0.62].forEach((offset, index) => drawLine(
+            { x: centerX + scale * 0.35, y: centerY + scale * offset },
+            { x: bookRight - scale * (index === 3 ? 0.44 : 0.2), y: centerY + scale * offset },
+          ));
+
+          // Cloud, star, and sparkles above the book.
+          const cloud = { x: centerX - scale * 0.98, y: centerY - scale * 1.04 };
+          [-0.22, 0, 0.22].forEach((offset) => {
+            maskContext.beginPath();
+            maskContext.arc(cloud.x + scale * offset, cloud.y, scale * (offset === 0 ? 0.2 : 0.15), Math.PI, Math.PI * 2);
+            maskContext.stroke();
+          });
+          drawLine({ x: cloud.x - scale * 0.37, y: cloud.y }, { x: cloud.x + scale * 0.37, y: cloud.y });
+          const star = { x: centerX + scale * 0.88, y: centerY - scale * 1.03 };
+          const starPoints = Array.from({ length: 10 }, (_, index) => {
+            const angle = -Math.PI / 2 + index * Math.PI / 5;
+            const radius = index % 2 === 0 ? scale * 0.23 : scale * 0.1;
+            return { x: star.x + Math.cos(angle) * radius, y: star.y + Math.sin(angle) * radius };
+          });
+          starPoints.forEach((point, index) => drawLine(point, starPoints[(index + 1) % starPoints.length]!));
+          [{ x: centerX + scale * 0.18, y: centerY - scale * 1.4 }, { x: centerX - scale * 1.42, y: centerY - scale * 0.6 }].forEach((sparkle) => {
+            drawLine({ x: sparkle.x - scale * 0.07, y: sparkle.y }, { x: sparkle.x + scale * 0.07, y: sparkle.y });
+            drawLine({ x: sparkle.x, y: sparkle.y - scale * 0.07 }, { x: sparkle.x, y: sparkle.y + scale * 0.07 });
+          });
         }
 
       };
