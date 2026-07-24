@@ -12,17 +12,14 @@ const findEntry = (id: string): TimelineEntry => {
 };
 
 const scansonic = findEntry('scansonic-ai-developer');
+const hhiResearchAssociate = findEntry('fraunhofer-research-associate');
+const hhiStudentResearchAssistant = findEntry('fraunhofer-student-research-assistant');
 const careerTransition = [
   findEntry('ai-upskilling'),
   findEntry('sabbatical-world-travel-parental-leave'),
 ] as const;
 
 const workStages = [
-  {
-    id: 'hhi', kind: 'hhi' as const, label: 'Fraunhofer HHI', title: 'Video coding and computer vision research',
-    introduction: 'From a student research role to applied research in image and video coding.',
-    entries: [findEntry('fraunhofer-research-associate'), findEntry('fraunhofer-student-research-assistant')],
-  },
   {
     id: 'teaching', kind: 'mathematics' as const, label: 'Technical University of Berlin', title: 'Student teaching assistant',
     introduction: 'Mathematics and engineering tutorials for students.',
@@ -45,6 +42,8 @@ const educationStages = [
 
 const detailEntries = [
   scansonic,
+  hhiResearchAssociate,
+  hhiStudentResearchAssistant,
   ...careerTransition,
   ...workStages.flatMap((stage) => stage.entries),
   ...educationStages.flatMap((stage) => stage.entries),
@@ -74,11 +73,43 @@ const colorClass = (kind: IconKind) => ({
           <article aria-labelledby="scansonic-title">
             <div class="flex items-start gap-4">
               <span class={`grid h-16 w-16 shrink-0 place-items-center rounded-full border border-current/20 bg-current/5 p-2 ${colorClass('industry')}`}><CareerJourneyIcon kind="industry" /></span>
-              <div>
-                <p class="text-sm font-bold uppercase tracking-[0.14em] text-indigo-700 dark:text-indigo-300">Scansonic MI</p>
+              <div class="min-w-0 flex-1">
+                <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                  <p class="text-sm font-bold uppercase tracking-[0.14em] text-indigo-700 dark:text-indigo-300">Scansonic MI</p>
+                  <p class="font-mono text-sm font-semibold text-slate-600 dark:text-slate-300">05/2024-Present</p>
+                </div>
                 <h4 class="mt-1 text-xl font-bold tracking-tight text-slate-950 dark:text-white" id="scansonic-title">Software Developer for AI and Image Processing</h4>
-                <p class="mt-2 font-mono text-sm font-semibold text-slate-600 dark:text-slate-300">05/2024-Present</p>
                 <p class="mt-2 leading-7 text-slate-700 dark:text-slate-300">Develops industrial AI and computer-vision systems for automated quality monitoring of laser brazing and welding processes.</p>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article aria-labelledby="hhi-research-associate-title" data-timeline-id={hhiResearchAssociate.id}>
+            <div class="flex items-start gap-4">
+              <span class={`grid h-16 w-16 shrink-0 place-items-center rounded-full border border-current/20 bg-current/5 p-2 ${colorClass('hhi')}`}><CareerJourneyIcon kind="hhi" /></span>
+              <div class="min-w-0 flex-1">
+                <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                  <p class="text-sm font-bold uppercase tracking-[0.14em] text-indigo-700 dark:text-indigo-300">Fraunhofer HHI</p>
+                  <p class="font-mono text-sm font-semibold text-slate-600 dark:text-slate-300">09/2015-10/2022</p>
+                </div>
+                <h4 class="mt-1 text-xl font-bold tracking-tight text-slate-950 dark:text-white" id="hhi-research-associate-title">Research Associate</h4>
+                <p class="mt-2 leading-7 text-slate-700 dark:text-slate-300">{hhiResearchAssociate.summary}</p>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article aria-labelledby="hhi-student-research-assistant-title" data-timeline-id={hhiStudentResearchAssistant.id}>
+            <div class="flex items-start gap-4">
+              <span class={`grid h-16 w-16 shrink-0 place-items-center rounded-full border border-current/20 bg-current/5 p-2 ${colorClass('hhi')}`}><CareerJourneyIcon kind="hhi" /></span>
+              <div class="min-w-0 flex-1">
+                <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                  <p class="text-sm font-bold uppercase tracking-[0.14em] text-indigo-700 dark:text-indigo-300">Fraunhofer HHI</p>
+                  <p class="font-mono text-sm font-semibold text-slate-600 dark:text-slate-300">08/2014-08/2015</p>
+                </div>
+                <h4 class="mt-1 text-xl font-bold tracking-tight text-slate-950 dark:text-white" id="hhi-student-research-assistant-title">Student Research Assistant</h4>
+                <p class="mt-2 leading-7 text-slate-700 dark:text-slate-300">{hhiStudentResearchAssistant.summary}</p>
               </div>
             </div>
           </article>

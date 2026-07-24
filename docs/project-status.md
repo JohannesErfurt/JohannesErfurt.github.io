@@ -49,6 +49,17 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 — Experience role-heading refinement — complete
+Result: Promoted the Scansonic and Fraunhofer role names to their respective
+working-experience headings and aligned each period beside the organization
+label. Split Fraunhofer HHI into separate Research Associate and Student
+Research Assistant entries, both with the HHI symbol.
+Evidence: `npm run check` -> 25 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run build` -> 3 static pages built.
+Commit: `refactor: clarify experience role headings` (this iteration)
+Blockers: none
+Next: H-007 — validate the live GitHub Pages deployment
+
 2026-07-24 — Experience Scansonic and transition refinement — complete
 Result: Made the approved Scansonic role the current-work heading with its
 period and summary directly beneath it. Moved Further Education and Project
