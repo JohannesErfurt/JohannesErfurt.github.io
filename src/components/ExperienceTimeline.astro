@@ -1,117 +1,108 @@
 ---
-import { experience } from '../data';
+import { experience, projects } from '../data';
 import type { TimelineEntry } from '../data/schema';
+import CareerJourneyIcon from './CareerJourneyIcon.astro';
 
-const entries = [...experience]
-  .sort((left, right) => right.startDate.localeCompare(left.startDate)) as TimelineEntry[];
-
-const displayType = (entry: TimelineEntry): string => {
-  if (entry.type === 'sabbatical') return 'Sabbatical';
-  if (entry.type === 'upskilling') return 'Professional development';
-  if (entry.type === 'education') return 'Education';
-  if (entry.organization.includes('Fraunhofer')) return 'Research';
-  if (entry.role.includes('Teaching')) return 'Teaching';
-  return 'Industry';
+const findEntry = (id: string): TimelineEntry => {
+  const entry = experience.find((item) => item.id === id);
+  if (!entry) throw new Error(`Missing approved experience entry: ${id}`);
+  return entry as TimelineEntry;
 };
 
-const typeStyles: Record<string, string> = {
-  Industry: 'border-blue-300 bg-blue-50 text-blue-900 dark:border-blue-700 dark:bg-blue-950 dark:text-blue-200',
-  Research: 'border-violet-300 bg-violet-50 text-violet-900 dark:border-violet-700 dark:bg-violet-950 dark:text-violet-200',
-  Education: 'border-emerald-300 bg-emerald-50 text-emerald-900 dark:border-emerald-700 dark:bg-emerald-950 dark:text-emerald-200',
-  Teaching: 'border-cyan-300 bg-cyan-50 text-cyan-900 dark:border-cyan-700 dark:bg-cyan-950 dark:text-cyan-200',
-  'Professional development': 'border-amber-300 bg-amber-50 text-amber-950 dark:border-amber-700 dark:bg-amber-950 dark:text-amber-200',
-  Sabbatical: 'border-rose-300 bg-rose-50 text-rose-900 dark:border-rose-700 dark:bg-rose-950 dark:text-rose-200',
-};
+const stages = [
+  {
+    id: 'mathematics', kind: 'mathematics' as const, label: 'Mathematics', title: 'Bachelor’s and Master’s studies',
+    introduction: 'Mathematical foundations, signal processing, and early teaching experience.',
+    entries: [findEntry('tu-berlin-bsc-mathematics'), findEntry('durham-study-abroad'), findEntry('tomsk-study-abroad'), findEntry('tu-berlin-msc-mathematics'), findEntry('tu-berlin-student-teaching-assistant')],
+  },
+  {
+    id: 'hhi', kind: 'hhi' as const, label: 'Fraunhofer HHI', title: 'Video coding and computer vision research',
+    introduction: 'From a student research role to applied research in image and video coding.',
+    entries: [findEntry('fraunhofer-student-research-assistant'), findEntry('fraunhofer-research-associate')],
+  },
+  {
+    id: 'phd', kind: 'phd' as const, label: 'Promotion', title: 'PhD in video coding',
+    introduction: 'Doctoral research combining analytical signal processing and machine learning.',
+    entries: [findEntry('tu-berlin-phd')],
+  },
+  {
+    id: 'industry', kind: 'industry' as const, label: 'Scansonic MI', title: 'Industrial AI and machine learning',
+    introduction: 'A deliberate transition from research into production-oriented AI systems.',
+    entries: [findEntry('sabbatical-world-travel-parental-leave'), findEntry('ai-upskilling'), findEntry('scansonic-ai-developer')],
+  },
+] as const;
+
+const detailEntries = stages.flatMap((stage) => stage.entries);
+const colorClass = (kind: (typeof stages)[number]['kind'] | 'projects' | 'goal') => ({
+  mathematics: 'text-blue-700 dark:text-blue-300', phd: 'text-emerald-700 dark:text-emerald-300',
+  hhi: 'text-teal-700 dark:text-teal-300', industry: 'text-violet-700 dark:text-violet-300',
+  projects: 'text-orange-700 dark:text-orange-300', goal: 'text-blue-800 dark:text-blue-200',
+}[kind]);
 ---
 
-<section
-  class="mx-auto max-w-5xl px-6 py-16 sm:py-24"
-  id="experience"
-  aria-labelledby="experience-title"
->
+<section class="mx-auto max-w-6xl px-6 py-16 sm:py-24" id="experience" aria-labelledby="experience-title">
   <div class="max-w-3xl">
     <p class="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">Experience</p>
-    <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl" id="experience-title">
-      Engineering, research, and education
-    </h2>
-    <p class="mt-4 text-lg leading-8 text-slate-700 dark:text-slate-300">
-      A chronological record of industrial AI delivery, video-coding research, and mathematical training.
-    </p>
+    <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl" id="experience-title">Engineering, research, and education</h2>
+    <p class="mt-4 text-lg leading-8 text-slate-700 dark:text-slate-300">A career path from mathematical foundations and video-coding research to industrial AI systems and generative-AI projects.</p>
   </div>
 
-  <figure class="mt-10 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm dark:border-slate-700 dark:bg-slate-900">
-    <div class="p-4 sm:p-6">
-      <a
-        href="/assets/experience-career-journey.webp"
-        target="_blank"
-        rel="noopener"
-        class="block rounded-xl outline-offset-4 focus-visible:outline-2 focus-visible:outline-indigo-700 dark:focus-visible:outline-indigo-300"
-        aria-label="Open the career journey infographic at full size"
-      >
-        <img
-          src="/assets/experience-career-journey.webp"
-          alt="Career journey from mathematics through a PhD in video coding and computer vision, applied research at Fraunhofer HHI, industrial AI at Scansonic MI, private generative AI projects, and the long-term goal of AI systems engineering"
-          width="1024"
-          height="1536"
-          class="mx-auto max-h-[52rem] w-auto max-w-full rounded-lg object-contain"
-          loading="lazy"
-          decoding="async"
-        />
-      </a>
-    </div>
-    <figcaption class="border-t border-slate-200 px-5 py-3 text-center text-sm text-slate-600 dark:border-slate-700 dark:text-slate-300">
-      Career journey at a glance (German). Select the image to open the full-size version.
-    </figcaption>
-  </figure>
+  <ol class="relative mt-12 grid gap-x-16 gap-y-12 before:absolute before:bottom-10 before:left-[2.35rem] before:top-10 before:w-px before:bg-slate-200 dark:before:bg-slate-700 lg:grid-cols-2 lg:before:left-1/2 lg:before:-translate-x-1/2">
+    {stages.map((stage, index) => (
+      <li class:list={['relative', index % 2 === 0 ? 'lg:pr-12' : 'lg:col-start-2 lg:pl-12']}>
+        <article class="relative pl-24 lg:pl-0" aria-labelledby={`${stage.id}-title`}>
+          <div class:list={['absolute left-0 top-0 z-10 grid h-[4.7rem] w-[4.7rem] place-items-center rounded-full border-4 border-white bg-white p-2 shadow-md dark:border-slate-950 dark:bg-slate-900 lg:left-auto', index % 2 === 0 ? 'lg:-right-[6.55rem]' : 'lg:-left-[6.55rem]']}>
+            <span class={`h-full w-full ${colorClass(stage.kind)}`}><CareerJourneyIcon kind={stage.kind} /></span>
+          </div>
+          <p class="text-sm font-bold uppercase tracking-[0.14em] text-indigo-700 dark:text-indigo-300">{stage.label}</p>
+          <h3 class="mt-2 text-2xl font-bold tracking-tight text-slate-950 dark:text-white" id={`${stage.id}-title`}>{stage.title}</h3>
+          <p class="mt-2 leading-7 text-slate-700 dark:text-slate-300">{stage.introduction}</p>
+          <ol class="mt-6 space-y-5">
+            {stage.entries.map((entry) => (
+              <li class="border-l-2 border-indigo-400 pl-4 dark:border-indigo-400" data-timeline-id={entry.id}>
+                <p class="font-mono text-sm font-semibold text-slate-600 dark:text-slate-300">{entry.period}</p>
+                <h4 class="mt-1 text-base font-bold text-slate-950 dark:text-white">{entry.role}</h4>
+                <p class="mt-0.5 font-semibold text-slate-600 dark:text-slate-300">{entry.organization}</p>
+                <p class="mt-1.5 leading-6 text-slate-700 dark:text-slate-300">{entry.summary}</p>
+              </li>
+            ))}
+          </ol>
+        </article>
+      </li>
+    ))}
 
-  <ol class="mt-10 space-y-6">
-    {entries.map((entry) => {
-      const label = displayType(entry);
-      const hasDetails = entry.keyHighlights.length > 0 || (entry.techStack?.length ?? 0) > 0;
+    <li class="relative lg:pr-12">
+      <article class="relative pl-24 lg:pl-0" aria-labelledby="private-projects-title">
+        <div class="absolute left-0 top-0 z-10 grid h-[4.7rem] w-[4.7rem] place-items-center rounded-full border-4 border-white bg-white p-2 shadow-md dark:border-slate-950 dark:bg-slate-900 lg:-right-[6.55rem]"><span class={`h-full w-full ${colorClass('projects')}`}><CareerJourneyIcon kind="projects" /></span></div>
+        <p class="text-sm font-bold uppercase tracking-[0.14em] text-indigo-700 dark:text-indigo-300">Private AI projects</p>
+        <h3 class="mt-2 text-2xl font-bold tracking-tight text-slate-950 dark:text-white" id="private-projects-title">Generative AI and multi-agent systems</h3>
+        <p class="mt-2 leading-7 text-slate-700 dark:text-slate-300">Practical exploration of generative-AI products and controllable multi-agent workflows.</p>
+        <ul class="mt-6 space-y-5">
+          {projects.map((project) => <li class="border-l-2 border-orange-400 pl-4 dark:border-orange-400"><h4 class="text-base font-bold text-slate-950 dark:text-white">{project.title}</h4><p class="mt-1 leading-6 text-slate-700 dark:text-slate-300">{project.description}</p></li>)}
+        </ul>
+      </article>
+    </li>
 
-      return (
-        <li class="relative rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900 sm:p-8" data-timeline-id={entry.id}>
-          <article aria-labelledby={`${entry.id}-title`}>
-            <div class="flex flex-wrap items-center justify-between gap-3">
-              <span class={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-bold uppercase tracking-wide ${typeStyles[label]}`}>
-                {label === 'Sabbatical' && <span aria-hidden="true">🌍</span>}
-                {label}
-              </span>
-              <p class="font-mono text-sm font-semibold text-slate-600 dark:text-slate-300">{entry.period}</p>
-            </div>
-
-            <h3 class="mt-4 text-xl font-bold text-slate-950 dark:text-white" id={`${entry.id}-title`}>
-              {entry.role}
-            </h3>
-            <p class="mt-1 font-semibold text-slate-600 dark:text-slate-300">{entry.organization}</p>
-            <p class="mt-4 max-w-3xl leading-7 text-slate-700 dark:text-slate-300">{entry.summary}</p>
-
-            {hasDetails && (
-              <details class="group mt-5 border-t border-slate-200 pt-4 dark:border-slate-700">
-                <summary class="cursor-pointer font-semibold text-indigo-700 outline-offset-4 focus-visible:outline-2 focus-visible:outline-indigo-700 dark:text-indigo-300 dark:focus-visible:outline-indigo-300">
-                  Technical details
-                </summary>
-                <div class="mt-4 space-y-4 text-slate-700 dark:text-slate-300">
-                  {entry.keyHighlights.length > 0 && (
-                    <ul class="list-disc space-y-2 pl-5">
-                      {entry.keyHighlights.map((highlight) => <li>{highlight}</li>)}
-                    </ul>
-                  )}
-                  {(entry.techStack?.length ?? 0) > 0 && (
-                    <ul class="flex flex-wrap gap-2" aria-label={`Technologies used for ${entry.role}`}>
-                      {entry.techStack?.map((technology) => (
-                        <li class="rounded-md bg-slate-100 px-2.5 py-1 text-sm font-medium text-slate-700 dark:bg-slate-800 dark:text-slate-200">
-                          {technology}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              </details>
-            )}
-          </article>
-        </li>
-      );
-    })}
+    <li class="relative lg:col-start-2 lg:pl-12">
+      <article class="relative pl-24 lg:pl-0" aria-labelledby="long-term-goal-title">
+        <div class="absolute left-0 top-0 z-10 grid h-[4.7rem] w-[4.7rem] place-items-center rounded-full border-4 border-white bg-white p-2 shadow-md dark:border-slate-950 dark:bg-slate-900 lg:-left-[6.55rem]"><span class={`h-full w-full ${colorClass('goal')}`}><CareerJourneyIcon kind="goal" /></span></div>
+        <p class="text-sm font-bold uppercase tracking-[0.14em] text-indigo-700 dark:text-indigo-300">Long-term direction</p>
+        <h3 class="mt-2 text-2xl font-bold tracking-tight text-slate-950 dark:text-white" id="long-term-goal-title">AI systems engineering</h3>
+        <p class="mt-2 leading-7 text-slate-700 dark:text-slate-300">Developing intelligent, scalable AI systems for industrial applications and autonomous agents.</p>
+      </article>
+    </li>
   </ol>
+
+  <details class="mt-14 rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-700 dark:bg-slate-900 sm:p-7">
+    <summary class="cursor-pointer text-lg font-bold text-indigo-700 outline-offset-4 focus-visible:outline-2 focus-visible:outline-indigo-700 dark:text-indigo-300 dark:focus-visible:outline-indigo-300">Technical detail and selected outcomes</summary>
+    <ol class="mt-6 grid gap-6 md:grid-cols-2">
+      {detailEntries.map((entry) => (
+        <li class="rounded-xl bg-white p-5 shadow-sm dark:bg-slate-800" data-detail-id={entry.id}>
+          <h3 class="font-bold text-slate-950 dark:text-white">{entry.role}</h3>
+          {entry.keyHighlights.length > 0 && <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-700 dark:text-slate-300">{entry.keyHighlights.map((highlight) => <li>{highlight}</li>)}</ul>}
+          {(entry.techStack?.length ?? 0) > 0 && <ul class="mt-4 flex flex-wrap gap-2" aria-label={`Technologies used for ${entry.role}`}>{entry.techStack?.map((technology) => <li class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-700 dark:bg-slate-700 dark:text-slate-200">{technology}</li>)}</ul>}
+        </li>
+      ))}
+    </ol>
+  </details>
 </section>

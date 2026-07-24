@@ -1,6 +1,6 @@
 # Project status
 
-Updated: 2026-07-22
+Updated: 2026-07-24
 
 ## Current state
 
@@ -48,6 +48,20 @@ Updated: 2026-07-22
   privacy scored 100/100/100/100 for Performance/Accessibility/Best Practices/SEO).
 
 ## Iteration log
+
+2026-07-24 — Experience career-journey redesign — complete
+Result: Replaced the standalone Experience infographic with an accessible,
+responsive six-stage career journey inspired by the supplied CV reference. The
+timeline uses original SVG markers for Mathematics, Promotion, Fraunhofer HHI,
+Scansonic MI, Private AI Projects, and Long-term Direction; it retains every
+approved experience record and offers technical outcomes in a native disclosure.
+Evidence: `npm run check` -> 25 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run build` -> 3 static pages; `npm run validate` -> HTML and internal links
+valid. Browser visual preview was unavailable because the in-app browser could
+not reach the locally running development server.
+Commit: `feat: redesign experience journey` (this iteration)
+Blockers: none for this change; H-007 and H-008 remain release-process items
+Next: H-007 — validate the live GitHub Pages deployment
 
 Add newest entries first using this format:
 

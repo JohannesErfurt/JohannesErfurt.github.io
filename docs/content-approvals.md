@@ -118,6 +118,23 @@ Approval states: `pending`, `approved`, or `omit`.
   publication. No attribution statement is added to the site.
 - Approved by/date: `Johannes Erfurt, 2026-07-22`
 
+## Additional public content approval — Experience journey presentation
+
+- Status: approved for public website use
+- Approved presentation: replace the standalone Experience infographic with a
+  responsive, logo-led six-stage career journey. The stages are Mathematics,
+  Promotion (PhD), Fraunhofer HHI, Scansonic MI, Private AI Projects, and
+  Long-term Direction.
+- Approved icon treatment: original, accessible SVG interpretations of the six
+  symbols from Johannes' supplied career-journey graphic. They are used as the
+  visual markers for the corresponding stages; the supplied raster graphic is
+  not repeated in the page layout.
+- Approved long-term-direction text: `Developing intelligent, scalable AI
+  systems for industrial applications and autonomous agents.`
+- Public-use approval: Johannes explicitly requested this Experience-page
+  redesign in the Codex task on 2026-07-24.
+- Approved by/date: `Johannes Erfurt, 2026-07-24`
+
 ## H-002 — Experience and education
 
 - Status: approved
