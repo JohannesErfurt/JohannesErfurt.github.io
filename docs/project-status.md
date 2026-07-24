@@ -50,6 +50,16 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 â€” Homepage section backgrounds â€” complete
+Result: Added full-width, contrast-safe background bands to visually separate
+the homepage sections: cyan Projects, violet Experience, emerald Expertise, and
+sky Publications, complementing the existing warm About section.
+Evidence: `npm run check` -> 27 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run validate` -> 5 static pages built, HTML and internal links valid.
+Commit: `style: separate homepage sections` (this iteration)
+Blockers: none
+Next: H-007 â€” validate the live GitHub Pages deployment
+
 2026-07-24 â€” Homepage section order â€” complete
 Result: Reordered the homepage and its primary navigation so Projects follows
 About and Experience follows Projects.
