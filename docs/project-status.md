@@ -49,6 +49,16 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 — Experience teaching-entry simplification — complete
+Result: Made Student Teaching Assistant a compact standalone working-experience
+entry with its period aligned beside Technical University of Berlin. Removed the
+duplicated role, organization, and description content beneath the heading.
+Evidence: `npm run check` -> 25 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run build` -> 3 static pages built.
+Commit: `refactor: simplify teaching experience entry` (this iteration)
+Blockers: none
+Next: H-007 — validate the live GitHub Pages deployment
+
 2026-07-24 — Experience role-heading refinement — complete
 Result: Promoted the Scansonic and Fraunhofer role names to their respective
 working-experience headings and aligned each period beside the organization
