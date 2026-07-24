@@ -15,32 +15,15 @@ const scansonic = findEntry('scansonic-ai-developer');
 const hhiResearchAssociate = findEntry('fraunhofer-research-associate');
 const hhiStudentResearchAssistant = findEntry('fraunhofer-student-research-assistant');
 const teachingAssistant = findEntry('tu-berlin-student-teaching-assistant');
-const careerTransition = [
-  findEntry('ai-upskilling'),
-  findEntry('sabbatical-world-travel-parental-leave'),
+const careerTransition = [findEntry('ai-upskilling'), findEntry('sabbatical-world-travel-parental-leave')] as const;
+const educationEntries = [
+  { entry: findEntry('tu-berlin-phd'), kind: 'phd' as const },
+  { entry: findEntry('tu-berlin-msc-mathematics'), kind: 'mathematics' as const },
+  { entry: findEntry('tomsk-study-abroad'), kind: 'mathematics' as const },
+  { entry: findEntry('tu-berlin-bsc-mathematics'), kind: 'mathematics' as const },
+  { entry: findEntry('durham-study-abroad'), kind: 'mathematics' as const },
 ] as const;
-
-const educationStages = [
-  {
-    id: 'phd', kind: 'phd' as const, label: 'Promotion', title: 'PhD in video coding',
-    introduction: 'Doctoral research combining analytical signal processing and machine learning.',
-    entries: [findEntry('tu-berlin-phd')],
-  },
-  {
-    id: 'mathematics', kind: 'mathematics' as const, label: 'Mathematics', title: 'Bachelor’s and Master’s studies',
-    introduction: 'Mathematical foundations and signal-processing specialization, including international study periods.',
-    entries: [findEntry('tu-berlin-msc-mathematics'), findEntry('tomsk-study-abroad'), findEntry('tu-berlin-bsc-mathematics'), findEntry('durham-study-abroad')],
-  },
-] as const;
-
-const detailEntries = [
-  scansonic,
-  hhiResearchAssociate,
-  hhiStudentResearchAssistant,
-  teachingAssistant,
-  ...careerTransition,
-  ...educationStages.flatMap((stage) => stage.entries),
-];
+const detailEntries = [scansonic, hhiResearchAssociate, hhiStudentResearchAssistant, teachingAssistant, ...careerTransition, ...educationEntries.map(({ entry }) => entry)];
 const colorClass = (kind: IconKind) => ({
   mathematics: 'text-blue-700 dark:text-blue-300', phd: 'text-emerald-700 dark:text-emerald-300',
   hhi: 'text-teal-700 dark:text-teal-300', industry: 'text-violet-700 dark:text-violet-300',
@@ -56,136 +39,25 @@ const colorClass = (kind: IconKind) => ({
 
   <div class="mt-12 grid gap-14 lg:grid-cols-2 lg:gap-20">
     <section aria-labelledby="work-experience-title">
-      <div class="border-b-2 border-indigo-200 pb-4 dark:border-indigo-900">
-        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">Career</p>
-        <h3 class="mt-2 text-2xl font-bold text-slate-950 dark:text-white" id="work-experience-title">Work experience</h3>
-      </div>
+      <div class="border-b-2 border-indigo-200 pb-4 dark:border-indigo-900"><p class="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">Career</p><h3 class="mt-2 text-2xl font-bold text-slate-950 dark:text-white" id="work-experience-title">Work experience</h3></div>
       <ol class="mt-8 space-y-10">
-        <li>
-          <article aria-labelledby="scansonic-title">
-            <div class="flex items-start gap-4">
-              <span class={`grid h-16 w-16 shrink-0 place-items-center rounded-full border border-current/20 bg-current/5 p-2 ${colorClass('industry')}`}><CareerJourneyIcon kind="industry" /></span>
-              <div class="min-w-0 flex-1">
-                <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                  <p class="text-sm font-bold uppercase tracking-[0.14em] text-indigo-700 dark:text-indigo-300">Scansonic MI</p>
-                  <p class="font-mono text-sm font-semibold text-slate-600 dark:text-slate-300">05/2024-Present</p>
-                </div>
-                <h4 class="mt-1 text-xl font-bold tracking-tight text-slate-950 dark:text-white" id="scansonic-title">Software Developer for AI and Image Processing</h4>
-                <p class="mt-2 leading-7 text-slate-700 dark:text-slate-300">Develops industrial AI and computer-vision systems for automated quality monitoring of laser brazing and welding processes.</p>
-              </div>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article aria-labelledby="hhi-research-associate-title" data-timeline-id={hhiResearchAssociate.id}>
-            <div class="flex items-start gap-4">
-              <span class={`grid h-16 w-16 shrink-0 place-items-center rounded-full border border-current/20 bg-current/5 p-2 ${colorClass('hhi')}`}><CareerJourneyIcon kind="hhi" /></span>
-              <div class="min-w-0 flex-1">
-                <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                  <p class="text-sm font-bold uppercase tracking-[0.14em] text-indigo-700 dark:text-indigo-300">Fraunhofer HHI</p>
-                  <p class="font-mono text-sm font-semibold text-slate-600 dark:text-slate-300">09/2015-10/2022</p>
-                </div>
-                <h4 class="mt-1 text-xl font-bold tracking-tight text-slate-950 dark:text-white" id="hhi-research-associate-title">Research Associate</h4>
-                <p class="mt-2 leading-7 text-slate-700 dark:text-slate-300">{hhiResearchAssociate.summary}</p>
-              </div>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article aria-labelledby="hhi-student-research-assistant-title" data-timeline-id={hhiStudentResearchAssistant.id}>
-            <div class="flex items-start gap-4">
-              <span class={`grid h-16 w-16 shrink-0 place-items-center rounded-full border border-current/20 bg-current/5 p-2 ${colorClass('hhi')}`}><CareerJourneyIcon kind="hhi" /></span>
-              <div class="min-w-0 flex-1">
-                <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                  <p class="text-sm font-bold uppercase tracking-[0.14em] text-indigo-700 dark:text-indigo-300">Fraunhofer HHI</p>
-                  <p class="font-mono text-sm font-semibold text-slate-600 dark:text-slate-300">08/2014-08/2015</p>
-                </div>
-                <h4 class="mt-1 text-xl font-bold tracking-tight text-slate-950 dark:text-white" id="hhi-student-research-assistant-title">Student Research Assistant</h4>
-                <p class="mt-2 leading-7 text-slate-700 dark:text-slate-300">{hhiStudentResearchAssistant.summary}</p>
-              </div>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article aria-labelledby="teaching-assistant-title" data-timeline-id={teachingAssistant.id}>
-            <div class="flex items-start gap-4">
-              <span class={`grid h-16 w-16 shrink-0 place-items-center rounded-full border border-current/20 bg-current/5 p-2 ${colorClass('mathematics')}`}><CareerJourneyIcon kind="mathematics" /></span>
-              <div class="min-w-0 flex-1">
-                <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                  <p class="text-sm font-bold uppercase tracking-[0.14em] text-indigo-700 dark:text-indigo-300">Technical University of Berlin</p>
-                  <p class="font-mono text-sm font-semibold text-slate-600 dark:text-slate-300">10/2011-09/2014</p>
-                </div>
-                <h4 class="mt-1 text-xl font-bold tracking-tight text-slate-950 dark:text-white" id="teaching-assistant-title">Student Teaching Assistant</h4>
-                <p class="mt-2 leading-7 text-slate-700 dark:text-slate-300">Conducted mathematics and engineering tutorials and explained complex concepts to students.</p>
-              </div>
-            </div>
-          </article>
-        </li>
-
+        <li><article aria-labelledby="scansonic-title" data-timeline-id={scansonic.id}><div class="flex items-start gap-4"><span class={`grid h-16 w-16 shrink-0 place-items-center rounded-full border border-current/20 bg-current/5 p-2 ${colorClass('industry')}`}><CareerJourneyIcon kind="industry" /></span><div class="min-w-0 flex-1"><div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"><p class="text-sm font-bold uppercase tracking-[0.14em] text-indigo-700 dark:text-indigo-300">Scansonic MI</p><p class="font-mono text-sm font-semibold text-slate-600 dark:text-slate-300">05/2024-Present</p></div><h4 class="mt-1 text-xl font-bold tracking-tight text-slate-950 dark:text-white" id="scansonic-title">Software Developer for AI and Image Processing</h4><p class="mt-2 leading-7 text-slate-700 dark:text-slate-300">{scansonic.summary}</p></div></div></article></li>
+        <li><article aria-labelledby="hhi-research-associate-title" data-timeline-id={hhiResearchAssociate.id}><div class="flex items-start gap-4"><span class={`grid h-16 w-16 shrink-0 place-items-center rounded-full border border-current/20 bg-current/5 p-2 ${colorClass('hhi')}`}><CareerJourneyIcon kind="hhi" /></span><div class="min-w-0 flex-1"><div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"><p class="text-sm font-bold uppercase tracking-[0.14em] text-indigo-700 dark:text-indigo-300">Fraunhofer HHI</p><p class="font-mono text-sm font-semibold text-slate-600 dark:text-slate-300">09/2015-10/2022</p></div><h4 class="mt-1 text-xl font-bold tracking-tight text-slate-950 dark:text-white" id="hhi-research-associate-title">Research Associate</h4><p class="mt-2 leading-7 text-slate-700 dark:text-slate-300">{hhiResearchAssociate.summary}</p></div></div></article></li>
+        <li><article aria-labelledby="hhi-student-research-assistant-title" data-timeline-id={hhiStudentResearchAssistant.id}><div class="flex items-start gap-4"><span class={`grid h-16 w-16 shrink-0 place-items-center rounded-full border border-current/20 bg-current/5 p-2 ${colorClass('hhi')}`}><CareerJourneyIcon kind="hhi" /></span><div class="min-w-0 flex-1"><div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"><p class="text-sm font-bold uppercase tracking-[0.14em] text-indigo-700 dark:text-indigo-300">Fraunhofer HHI</p><p class="font-mono text-sm font-semibold text-slate-600 dark:text-slate-300">08/2014-08/2015</p></div><h4 class="mt-1 text-xl font-bold tracking-tight text-slate-950 dark:text-white" id="hhi-student-research-assistant-title">Student Research Assistant</h4><p class="mt-2 leading-7 text-slate-700 dark:text-slate-300">{hhiStudentResearchAssistant.summary}</p></div></div></article></li>
+        <li><article aria-labelledby="teaching-assistant-title" data-timeline-id={teachingAssistant.id}><div class="flex items-start gap-4"><span class={`grid h-16 w-16 shrink-0 place-items-center rounded-full border border-current/20 bg-current/5 p-2 ${colorClass('mathematics')}`}><CareerJourneyIcon kind="mathematics" /></span><div class="min-w-0 flex-1"><div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"><p class="text-sm font-bold uppercase tracking-[0.14em] text-indigo-700 dark:text-indigo-300">Technical University of Berlin</p><p class="font-mono text-sm font-semibold text-slate-600 dark:text-slate-300">10/2011-09/2014</p></div><h4 class="mt-1 text-xl font-bold tracking-tight text-slate-950 dark:text-white" id="teaching-assistant-title">Student Teaching Assistant</h4><p class="mt-2 leading-7 text-slate-700 dark:text-slate-300">{teachingAssistant.summary}</p></div></div></article></li>
       </ol>
-
-      <section class="mt-14" aria-labelledby="career-transition-title">
-        <div class="border-b-2 border-indigo-200 pb-4 dark:border-indigo-900">
-          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">Transition</p>
-          <h3 class="mt-2 text-2xl font-bold text-slate-950 dark:text-white" id="career-transition-title">Professional development and personal time</h3>
-        </div>
-        <ol class="mt-6 space-y-5 border-l border-slate-300 pl-5 dark:border-slate-700">
-          {careerTransition.map((entry) => (
-            <li class="border-l-2 border-amber-400 pl-4" data-timeline-id={entry.id}>
-              <p class="font-mono text-sm font-semibold text-slate-600 dark:text-slate-300">{entry.period}</p>
-              <h4 class="mt-1 font-bold text-slate-950 dark:text-white">{entry.role}</h4>
-              <p class="mt-0.5 font-semibold text-slate-600 dark:text-slate-300">{entry.organization}</p>
-              <p class="mt-1.5 leading-6 text-slate-700 dark:text-slate-300">{entry.summary}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
+      <section class="mt-14" aria-labelledby="career-transition-title"><div class="border-b-2 border-indigo-200 pb-4 dark:border-indigo-900"><p class="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">Transition</p><h3 class="mt-2 text-2xl font-bold text-slate-950 dark:text-white" id="career-transition-title">Professional development and personal time</h3></div><ol class="mt-6 space-y-5 border-l border-slate-300 pl-5 dark:border-slate-700">{careerTransition.map((entry) => <li class="border-l-2 border-amber-400 pl-4" data-timeline-id={entry.id}><p class="font-mono text-sm font-semibold text-slate-600 dark:text-slate-300">{entry.period}</p><h4 class="mt-1 font-bold text-slate-950 dark:text-white">{entry.role}</h4><p class="mt-0.5 font-semibold text-slate-600 dark:text-slate-300">{entry.organization}</p><p class="mt-1.5 leading-6 text-slate-700 dark:text-slate-300">{entry.summary}</p></li>)}</ol></section>
     </section>
 
     <section aria-labelledby="education-title">
-      <div class="border-b-2 border-indigo-200 pb-4 dark:border-indigo-900">
-        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">Foundation</p>
-        <h3 class="mt-2 text-2xl font-bold text-slate-950 dark:text-white" id="education-title">Education</h3>
-      </div>
+      <div class="border-b-2 border-indigo-200 pb-4 dark:border-indigo-900"><p class="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">Foundation</p><h3 class="mt-2 text-2xl font-bold text-slate-950 dark:text-white" id="education-title">Education</h3></div>
       <ol class="mt-8 space-y-10">
-        {educationStages.map((stage) => (
-          <li>
-            <article aria-labelledby={`${stage.id}-title`}>
-              <div class="flex items-start gap-4">
-                <span class={`grid h-16 w-16 shrink-0 place-items-center rounded-full border border-current/20 bg-current/5 p-2 ${colorClass(stage.kind)}`}><CareerJourneyIcon kind={stage.kind} /></span>
-                <div>
-                  <p class="text-sm font-bold uppercase tracking-[0.14em] text-indigo-700 dark:text-indigo-300">{stage.label}</p>
-                  <h4 class="mt-1 text-xl font-bold tracking-tight text-slate-950 dark:text-white" id={`${stage.id}-title`}>{stage.title}</h4>
-                  <p class="mt-2 leading-7 text-slate-700 dark:text-slate-300">{stage.introduction}</p>
-                </div>
-              </div>
-              <ol class="mt-5 space-y-5 border-l border-slate-300 pl-5 dark:border-slate-700">
-                {stage.entries.map((entry) => (
-                  <li class="border-l-2 border-indigo-400 pl-4" data-timeline-id={entry.id}>
-                    <p class="font-mono text-sm font-semibold text-slate-600 dark:text-slate-300">{entry.period}</p>
-                    <h5 class="mt-1 font-bold text-slate-950 dark:text-white">{entry.role}</h5>
-                    <p class="mt-0.5 font-semibold text-slate-600 dark:text-slate-300">{entry.organization}</p>
-                    <p class="mt-1.5 leading-6 text-slate-700 dark:text-slate-300">{entry.summary}</p>
-                  </li>
-                ))}
-              </ol>
-            </article>
-          </li>
+        {educationEntries.map(({ entry, kind }) => (
+          <li><article aria-labelledby={`${entry.id}-title`} data-timeline-id={entry.id}><div class="flex items-start gap-4"><span class={`grid h-16 w-16 shrink-0 place-items-center rounded-full border border-current/20 bg-current/5 p-2 ${colorClass(kind)}`}><CareerJourneyIcon kind={kind} /></span><div class="min-w-0 flex-1"><div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"><p class="text-sm font-bold uppercase tracking-[0.14em] text-indigo-700 dark:text-indigo-300">{entry.organization}</p><p class="font-mono text-sm font-semibold text-slate-600 dark:text-slate-300">{entry.period}</p></div><h4 class="mt-1 text-xl font-bold tracking-tight text-slate-950 dark:text-white" id={`${entry.id}-title`}>{entry.role}</h4><p class="mt-2 leading-7 text-slate-700 dark:text-slate-300">{entry.summary}</p></div></div></article></li>
         ))}
       </ol>
     </section>
   </div>
 
-  <details class="mt-14 rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-700 dark:bg-slate-900 sm:p-7">
-    <summary class="cursor-pointer text-lg font-bold text-indigo-700 outline-offset-4 focus-visible:outline-2 focus-visible:outline-indigo-700 dark:text-indigo-300 dark:focus-visible:outline-indigo-300">Technical detail and selected outcomes</summary>
-    <ol class="mt-6 grid gap-6 md:grid-cols-2">
-      {detailEntries.map((entry) => (
-        <li class="rounded-xl bg-white p-5 shadow-sm dark:bg-slate-800" data-detail-id={entry.id}>
-          <h3 class="font-bold text-slate-950 dark:text-white">{entry.role}</h3>
-          {entry.keyHighlights.length > 0 && <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-700 dark:text-slate-300">{entry.keyHighlights.map((highlight) => <li>{highlight}</li>)}</ul>}
-          {(entry.techStack?.length ?? 0) > 0 && <ul class="mt-4 flex flex-wrap gap-2" aria-label={`Technologies used for ${entry.role}`}>{entry.techStack?.map((technology) => <li class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-700 dark:bg-slate-700 dark:text-slate-200">{technology}</li>)}</ul>}
-        </li>
-      ))}
-    </ol>
-  </details>
+  <details class="mt-14 rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-700 dark:bg-slate-900 sm:p-7"><summary class="cursor-pointer text-lg font-bold text-indigo-700 outline-offset-4 focus-visible:outline-2 focus-visible:outline-indigo-700 dark:text-indigo-300 dark:focus-visible:outline-indigo-300">Technical detail and selected outcomes</summary><ol class="mt-6 grid gap-6 md:grid-cols-2">{detailEntries.map((entry) => <li class="rounded-xl bg-white p-5 shadow-sm dark:bg-slate-800" data-detail-id={entry.id}><h3 class="font-bold text-slate-950 dark:text-white">{entry.role}</h3>{entry.keyHighlights.length > 0 && <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-700 dark:text-slate-300">{entry.keyHighlights.map((highlight) => <li>{highlight}</li>)}</ul>}{(entry.techStack?.length ?? 0) > 0 && <ul class="mt-4 flex flex-wrap gap-2" aria-label={`Technologies used for ${entry.role}`}>{entry.techStack?.map((technology) => <li class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-700 dark:bg-slate-700 dark:text-slate-200">{technology}</li>)}</ul>}</li>)}</ol></details>
 </section>
