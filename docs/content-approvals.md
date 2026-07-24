@@ -165,6 +165,8 @@ Approval states: `pending`, `approved`, or `omit`.
     - Entry type: `sabbatical`; `isGap: true`.
     - Proposed public wording: `World Travel and Parental Leave - intercultural
       perspective and family focus.`
+    - Approved public travel locations: Thailand, Indonesia, New Zealand, French
+      Polynesia, Costa Rica, the United States, and Spain.
   - `09/2015-10/2022` — Research Associate, Fraunhofer Heinrich Hertz Institute
     - Image/video coding and signal-filter development for H.265/HEVC and H.266/VVC.
     - Wavelet, shearlet, Wiener-filter, classification, artifact-reduction, and

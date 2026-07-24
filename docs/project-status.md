@@ -49,6 +49,17 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 — Transition visual and travel update — complete
+Result: Redesigned the two Transition entries to match the icon-led Experience
+and Education structure, with dates alongside role titles. Added original SVG
+icons for further education and world travel, and published the approved travel
+locations in the sabbatical summary.
+Evidence: `npm run check` -> 25 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run build` -> 3 static pages built.
+Commit: `feat: enhance transition experience entries` (this iteration)
+Blockers: none
+Next: H-007 — validate the live GitHub Pages deployment
+
 2026-07-24 — English university-name normalization — complete
 Result: Replaced the German public display name with `Technical University of
 Berlin` across the education entries, About summary, and doctoral-thesis venue.
