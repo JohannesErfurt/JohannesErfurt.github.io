@@ -50,6 +50,15 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 â€” Homepage section order â€” complete
+Result: Reordered the homepage and its primary navigation so Projects follows
+About and Experience follows Projects.
+Evidence: `npm run check` -> 27 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run validate` -> 5 static pages built, HTML and internal links valid.
+Commit: `refactor: reorder homepage sections` (this iteration)
+Blockers: none
+Next: H-007 â€” validate the live GitHub Pages deployment
+
 2026-07-24 â€” Project demo and visuals â€” complete
 Result: Added Johannes' approved MindGrow Stories live-demo link and original,
 project-specific WebP concept illustrations to both selected-project cards and
