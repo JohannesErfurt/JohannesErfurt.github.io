@@ -11,12 +11,13 @@ const findEntry = (id: string): TimelineEntry => {
   return entry as TimelineEntry;
 };
 
+const scansonic = findEntry('scansonic-ai-developer');
+const careerTransition = [
+  findEntry('ai-upskilling'),
+  findEntry('sabbatical-world-travel-parental-leave'),
+] as const;
+
 const workStages = [
-  {
-    id: 'industry', kind: 'industry' as const, label: 'Scansonic MI', title: 'Industrial AI and machine learning',
-    introduction: 'A deliberate transition from research into production-oriented AI systems.',
-    entries: [findEntry('scansonic-ai-developer'), findEntry('ai-upskilling'), findEntry('sabbatical-world-travel-parental-leave')],
-  },
   {
     id: 'hhi', kind: 'hhi' as const, label: 'Fraunhofer HHI', title: 'Video coding and computer vision research',
     introduction: 'From a student research role to applied research in image and video coding.',
@@ -42,7 +43,12 @@ const educationStages = [
   },
 ] as const;
 
-const detailEntries = [...workStages, ...educationStages].flatMap((stage) => stage.entries);
+const detailEntries = [
+  scansonic,
+  ...careerTransition,
+  ...workStages.flatMap((stage) => stage.entries),
+  ...educationStages.flatMap((stage) => stage.entries),
+];
 const colorClass = (kind: IconKind) => ({
   mathematics: 'text-blue-700 dark:text-blue-300', phd: 'text-emerald-700 dark:text-emerald-300',
   hhi: 'text-teal-700 dark:text-teal-300', industry: 'text-violet-700 dark:text-violet-300',
@@ -64,6 +70,19 @@ const colorClass = (kind: IconKind) => ({
         <h3 class="mt-2 text-2xl font-bold text-slate-950 dark:text-white" id="work-experience-title">Work experience</h3>
       </div>
       <ol class="mt-8 space-y-10">
+        <li>
+          <article aria-labelledby="scansonic-title">
+            <div class="flex items-start gap-4">
+              <span class={`grid h-16 w-16 shrink-0 place-items-center rounded-full border border-current/20 bg-current/5 p-2 ${colorClass('industry')}`}><CareerJourneyIcon kind="industry" /></span>
+              <div>
+                <p class="text-sm font-bold uppercase tracking-[0.14em] text-indigo-700 dark:text-indigo-300">Scansonic MI</p>
+                <h4 class="mt-1 text-xl font-bold tracking-tight text-slate-950 dark:text-white" id="scansonic-title">Software Developer for AI and Image Processing</h4>
+                <p class="mt-2 font-mono text-sm font-semibold text-slate-600 dark:text-slate-300">05/2024-Present</p>
+                <p class="mt-2 leading-7 text-slate-700 dark:text-slate-300">Develops industrial AI and computer-vision systems for automated quality monitoring of laser brazing and welding processes.</p>
+              </div>
+            </div>
+          </article>
+        </li>
         {workStages.map((stage) => (
           <li>
             <article aria-labelledby={`${stage.id}-title`}>
@@ -105,6 +124,23 @@ const colorClass = (kind: IconKind) => ({
           </article>
         </li>
       </ol>
+
+      <section class="mt-14" aria-labelledby="career-transition-title">
+        <div class="border-b-2 border-indigo-200 pb-4 dark:border-indigo-900">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">Transition</p>
+          <h3 class="mt-2 text-2xl font-bold text-slate-950 dark:text-white" id="career-transition-title">Professional development and personal time</h3>
+        </div>
+        <ol class="mt-6 space-y-5 border-l border-slate-300 pl-5 dark:border-slate-700">
+          {careerTransition.map((entry) => (
+            <li class="border-l-2 border-amber-400 pl-4" data-timeline-id={entry.id}>
+              <p class="font-mono text-sm font-semibold text-slate-600 dark:text-slate-300">{entry.period}</p>
+              <h4 class="mt-1 font-bold text-slate-950 dark:text-white">{entry.role}</h4>
+              <p class="mt-0.5 font-semibold text-slate-600 dark:text-slate-300">{entry.organization}</p>
+              <p class="mt-1.5 leading-6 text-slate-700 dark:text-slate-300">{entry.summary}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
     </section>
 
     <section aria-labelledby="education-title">

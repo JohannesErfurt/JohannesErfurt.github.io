@@ -49,6 +49,17 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 — Experience Scansonic and transition refinement — complete
+Result: Made the approved Scansonic role the current-work heading with its
+period and summary directly beneath it. Moved Further Education and Project
+Phase plus World Travel and Parental Leave into a separate Career Transition
+topic outside Work Experience.
+Evidence: `npm run check` -> 25 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run build` -> 3 static pages built.
+Commit: `refactor: clarify experience transition` (this iteration)
+Blockers: none
+Next: H-007 — validate the live GitHub Pages deployment
+
 2026-07-24 — Experience columns and chronology update — complete
 Result: Reordered the Experience section into a latest-first two-column layout:
 work experience on the left and education on the right. Removed the long-term
