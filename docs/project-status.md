@@ -49,6 +49,17 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 — Experience columns and chronology update — complete
+Result: Reordered the Experience section into a latest-first two-column layout:
+work experience on the left and education on the right. Removed the long-term
+direction stage and its icon. Each remaining icon now appears inline beside its
+respective stage title rather than above it.
+Evidence: `npm run check` -> 25 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run validate` -> 3 static pages built, HTML and internal links valid.
+Commit: `refactor: organize experience by category` (this iteration)
+Blockers: none
+Next: H-007 — validate the live GitHub Pages deployment
+
 2026-07-24 — Experience career-journey redesign — complete
 Result: Replaced the standalone Experience infographic with an accessible,
 responsive six-stage career journey inspired by the supplied CV reference. The
