@@ -50,7 +50,6 @@ const publicationGroups = publicationTypes.map((type) => ({
                   aria-label={`Open details for ${publication.title}`}
                 >
                   <img class="aspect-video w-full object-cover transition duration-300 group-hover:scale-105 motion-reduce:transition-none" src={publication.image} alt={`Concept illustration for ${publication.title}`} width="1200" height="676" loading="lazy" decoding="async" />
-                  <span class="absolute inset-x-0 bottom-0 bg-slate-950/85 px-4 py-3 text-sm font-semibold text-white">View publication details</span>
                 </button>
                 <div class="max-w-xs">
                   <p class="text-sm font-bold text-indigo-700 dark:text-indigo-300">{publication.type} · {publication.year}</p>

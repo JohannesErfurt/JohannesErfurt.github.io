@@ -55,6 +55,17 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 — Publication card prompt removal — complete
+Result: Removed the repeated "View publication details" overlay from every
+publication image while retaining each card's button semantics, accessible
+label, dialog association, keyboard behavior, and hover treatment.
+Evidence: shared publication component contains no visible prompt text; all
+five image buttons retain descriptive `aria-label` and `aria-controls`
+attributes.
+Commit: `ui: simplify publication cards` (this iteration)
+Blockers: none
+Next: H-008 — perform live acceptance and the 30-second scan test
+
 2026-07-24 — MCALF publication image replacement — complete
 Result: Replaced the MCALF journal paper's concept artwork with Johannes'
 supplied filtering visual. The complete 3:2 composition is centered within the
