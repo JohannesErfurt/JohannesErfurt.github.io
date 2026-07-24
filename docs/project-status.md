@@ -49,6 +49,16 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 — Two-column vertical timeline — complete
+Result: Added subtle vertical connectors through the icon centers for Work,
+Transition, Education, and Study Abroad, while retaining the two-column page
+layout.
+Evidence: `npm run check` -> 25 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run build` -> 3 static pages built.
+Commit: `feat: add two column vertical timeline` (this iteration)
+Blockers: none
+Next: H-007 — validate the live GitHub Pages deployment
+
 2026-07-24 — Timeline date-layout redesign — complete
 Result: Moved every Experience, Transition, Education, and Study Abroad period
 to a muted line above its role title, giving titles full width and eliminating

@@ -34,6 +34,34 @@ const colorClass = (kind: IconKind) => ({
 ---
 
 <style is:global>
+  section[aria-labelledby="work-experience-title"] > ol,
+  section[aria-labelledby="career-transition-title"] > ol,
+  section[aria-labelledby="education-title"] > ol,
+  section[aria-labelledby="study-abroad-title"] > ol {
+    position: relative;
+  }
+
+  section[aria-labelledby="work-experience-title"] > ol::before,
+  section[aria-labelledby="career-transition-title"] > ol::before,
+  section[aria-labelledby="education-title"] > ol::before,
+  section[aria-labelledby="study-abroad-title"] > ol::before {
+    position: absolute;
+    top: 2rem;
+    bottom: 2rem;
+    left: 2rem;
+    width: 1px;
+    content: '';
+    background: linear-gradient(to bottom, rgb(165 180 252), rgb(129 140 248), rgb(165 180 252));
+  }
+
+  section[aria-labelledby="work-experience-title"] > ol > li > article > div > span,
+  section[aria-labelledby="career-transition-title"] > ol > li > article > div > span,
+  section[aria-labelledby="education-title"] > ol > li > article > div > span,
+  section[aria-labelledby="study-abroad-title"] > ol > li > article > div > span {
+    position: relative;
+    z-index: 1;
+  }
+
   section[aria-labelledby="work-experience-title"] > ol > li > article > div > div > .flex.flex-wrap.items-baseline.justify-between,
   section[aria-labelledby="education-title"] > ol > li > article > div > div > .flex.flex-wrap.items-baseline.justify-between,
   section[aria-labelledby="study-abroad-title"] article:not([data-timeline-id="tomsk-study-abroad"]) .flex.flex-wrap.items-baseline.justify-between {
