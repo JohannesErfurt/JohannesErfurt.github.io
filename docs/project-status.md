@@ -50,6 +50,22 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 — GitHub Pages performance-gate remediation — awaiting remote validation
+Result: Diagnosed the failed Pages workflow as a homepage Lighthouse performance
+regression and deferred rendering work for the four below-the-fold homepage
+sections while preserving their accessible DOM and the 0.95 quality threshold.
+Evidence: GitHub Actions run `30111405928` -> checks, tests, build, HTML, and
+links passed; homepage performance was 0.54. Local `npm run check` -> 27 files,
+0 diagnostics; `npm test` -> 7 passed; `npm run validate` -> 5 static pages
+built with valid HTML and internal links. Direct mobile Lighthouse -> 1.00
+performance, 0 ms total blocking time; an 8x CPU-throttled run also scored 1.00
+with 0 ms total blocking time. The full local Lighthouse CI wrapper reached a
+1.00 homepage result but Windows denied cleanup of its temporary Edge profile;
+the Linux GitHub Actions run remains the authoritative end-to-end verification.
+Commit: `perf: defer below-fold homepage rendering` (this iteration)
+Blockers: H-007 requires the new GitHub Actions run and live HTTP checks
+Next: H-007 — validate the remediated GitHub Pages deployment
+
 2026-07-24 â€” About layout readability â€” complete
 Result: Promoted the AI-adoption infographic to a full-width feature, kept the
 introductory copy above it, and reduced the supporting cards to Education,
