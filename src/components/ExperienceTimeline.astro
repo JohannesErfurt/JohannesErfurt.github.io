@@ -25,7 +25,6 @@ const studyAbroadEntries = [
   { entry: findEntry('tomsk-study-abroad'), kind: 'tomsk' as const },
   { entry: findEntry('durham-study-abroad'), kind: 'durham' as const },
 ] as const;
-const detailEntries = [scansonic, hhiResearchAssociate, hhiStudentResearchAssistant, teachingAssistant, ...careerTransition, ...educationEntries.map(({ entry }) => entry), ...studyAbroadEntries.map(({ entry }) => entry)];
 const colorClass = (kind: IconKind) => ({
   mathematics: 'text-blue-700 dark:text-blue-300', phd: 'text-emerald-700 dark:text-emerald-300',
   hhi: 'text-teal-700 dark:text-teal-300', industry: 'text-violet-700 dark:text-violet-300',
@@ -73,6 +72,4 @@ const colorClass = (kind: IconKind) => ({
       </section>
     </section>
   </div>
-
-  <details class="mt-14 rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-700 dark:bg-slate-900 sm:p-7"><summary class="cursor-pointer text-lg font-bold text-indigo-700 outline-offset-4 focus-visible:outline-2 focus-visible:outline-indigo-700 dark:text-indigo-300 dark:focus-visible:outline-indigo-300">Technical detail and selected outcomes</summary><ol class="mt-6 grid gap-6 md:grid-cols-2">{detailEntries.map((entry) => <li class="rounded-xl bg-white p-5 shadow-sm dark:bg-slate-800" data-detail-id={entry.id}><h3 class="font-bold text-slate-950 dark:text-white">{entry.role}</h3>{entry.keyHighlights.length > 0 && <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-700 dark:text-slate-300">{entry.keyHighlights.map((highlight) => <li>{highlight}</li>)}</ul>}{(entry.techStack?.length ?? 0) > 0 && <ul class="mt-4 flex flex-wrap gap-2" aria-label={`Technologies used for ${entry.role}`}>{entry.techStack?.map((technology) => <li class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-700 dark:bg-slate-700 dark:text-slate-200">{technology}</li>)}</ul>}</li>)}</ol></details>
 </section>

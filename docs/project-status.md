@@ -49,6 +49,15 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 — Experience technical-detail removal — complete
+Result: Removed the expandable Technical Detail and Selected Outcomes panel from
+Experience; the public CV remains the intended source for deeper detail.
+Evidence: `npm run check` -> 25 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run build` -> 3 static pages built.
+Commit: `refactor: remove experience detail panel` (this iteration)
+Blockers: none
+Next: H-007 — validate the live GitHub Pages deployment
+
 2026-07-24 — Logo-inspired study-abroad icons — complete
 Result: Replaced the generic Durham and Tomsk study-abroad markers with original
 icons inspired by the supplied university logos: a purple shield for Durham and
