@@ -132,6 +132,7 @@ Approval states: `pending`, `approved`, or `omit`.
   symbols from Johannes' supplied career-journey graphic. They are used as the
   visual markers for the corresponding stages; the supplied raster graphic is
   not repeated in the page layout.
+- Approved Experience heading: `From research to real-world AI`.
 - Public-use approval: Johannes explicitly requested this Experience-page
   redesign in the Codex task on 2026-07-24.
 - Approved by/date: `Johannes Erfurt, 2026-07-24`

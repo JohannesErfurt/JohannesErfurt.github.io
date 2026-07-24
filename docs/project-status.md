@@ -49,6 +49,15 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 — Experience heading update — complete
+Result: Replaced the Experience heading with the concise, narrative title
+`From research to real-world AI`.
+Evidence: `npm run check` -> 25 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run build` -> 3 static pages built.
+Commit: `content: refine experience heading` (this iteration)
+Blockers: none
+Next: H-007 — validate the live GitHub Pages deployment
+
 2026-07-24 — Experience technical-detail removal — complete
 Result: Removed the expandable Technical Detail and Selected Outcomes panel from
 Experience; the public CV remains the intended source for deeper detail.
