@@ -60,6 +60,14 @@ const colorClass = (kind: IconKind) => ({
   section[aria-labelledby="study-abroad-title"] > ol > li > article > div > span {
     position: relative;
     z-index: 1;
+    background-color: white;
+  }
+
+  .dark section[aria-labelledby="work-experience-title"] > ol > li > article > div > span,
+  .dark section[aria-labelledby="career-transition-title"] > ol > li > article > div > span,
+  .dark section[aria-labelledby="education-title"] > ol > li > article > div > span,
+  .dark section[aria-labelledby="study-abroad-title"] > ol > li > article > div > span {
+    background-color: rgb(15 23 42);
   }
 
   section[aria-labelledby="work-experience-title"] > ol > li > article > div > div > .flex.flex-wrap.items-baseline.justify-between,

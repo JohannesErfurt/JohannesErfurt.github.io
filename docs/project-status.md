@@ -49,6 +49,16 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 — Timeline connector interruption — complete
+Result: Made each timeline icon disc opaque in light and dark themes, so vertical
+connectors break at the icon edge and continue afterward rather than showing
+through the icon.
+Evidence: `npm run check` -> 25 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run build` -> 3 static pages built.
+Commit: `fix: interrupt timeline connectors at icons` (this iteration)
+Blockers: none
+Next: H-007 — validate the live GitHub Pages deployment
+
 2026-07-24 — Two-column vertical timeline — complete
 Result: Added subtle vertical connectors through the icon centers for Work,
 Transition, Education, and Study Abroad, while retaining the two-column page
