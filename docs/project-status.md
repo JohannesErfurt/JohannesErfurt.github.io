@@ -49,6 +49,15 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 — Further-education date alignment — complete
+Result: Changed the Transition title row to a fixed two-column grid so the
+Further Education and Project Phase period stays beside its title.
+Evidence: `npm run check` -> 25 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run build` -> 3 static pages built.
+Commit: `fix: align further education timeline` (this iteration)
+Blockers: none
+Next: H-007 — validate the live GitHub Pages deployment
+
 2026-07-24 — Experience heading update — complete
 Result: Replaced the Experience heading with the concise, narrative title
 `From research to real-world AI`.
