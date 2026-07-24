@@ -21,9 +21,9 @@ export const aboutHighlights: AboutHighlight[] = [
   {
     title: 'Education',
     items: [
-      { label: 'PhD in Video Coding — Technische Universität Berlin' },
-      { label: 'M.Sc. in Mathematics — Technische Universität Berlin' },
-      { label: 'B.Sc. in Mathematics — Technische Universität Berlin' },
+      { label: 'PhD in Video Coding — Technical University of Berlin' },
+      { label: 'M.Sc. in Mathematics — Technical University of Berlin' },
+      { label: 'B.Sc. in Mathematics — Technical University of Berlin' },
     ],
     icon: 'education',
   },

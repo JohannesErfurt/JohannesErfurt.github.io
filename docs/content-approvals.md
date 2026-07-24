@@ -202,6 +202,8 @@ Approval states: `pending`, `approved`, or `omit`.
   - Russian: `Very good command` `approved`
 - Confidentiality reviewed: yes for the drafted public content; named client
   examples remain intentionally omitted
+- Public display normalization: use `Technical University of Berlin` for the
+  English-language portfolio, including education and the doctoral-thesis venue.
 - Approved by/date: `Johannes Erfurt, 2026-07-21`
 
 ## H-003 — Projects and claims
