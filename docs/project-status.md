@@ -55,6 +55,18 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 — MCALF publication image replacement — complete
+Result: Replaced the MCALF journal paper's concept artwork with Johannes'
+supplied filtering visual. The complete 3:2 composition is centered within the
+existing 16:9 publication frame so no labels or diagrams are cropped.
+Evidence: source inspection -> 1536x1024 PNG; public derivative -> 1200x676,
+metadata-free WebP, 69,724 bytes; visual inspection -> complete MCALF title,
+classification diagram, arrows, and compressed/restored image comparison
+visible.
+Commit: `assets: update MCALF publication image` (this iteration)
+Blockers: none
+Next: H-008 — perform live acceptance and the 30-second scan test
+
 2026-07-24 — Shearlet journal publication image replacement — complete
 Result: Replaced the journal shearlet paper's concept artwork with Johannes'
 supplied shearlet decomposition visual. The complete 3:2 composition is centered
