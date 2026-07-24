@@ -50,6 +50,15 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 â€” Publication thumbnail refinement â€” complete
+Result: Reduced publication cover images to compact side-by-side thumbnails on
+larger screens while retaining a full-width tappable layout on mobile.
+Evidence: `npm run check` -> 27 files, 0 diagnostics; `npm run validate` -> 5
+static pages built, HTML and internal links valid.
+Commit: `style: reduce publication image size` (this iteration)
+Blockers: none
+Next: H-007 â€” validate the live GitHub Pages deployment
+
 2026-07-24 â€” Publication visual gallery â€” complete
 Result: Added five original, optimized WebP publication concept illustrations.
 Each image opens an accessible native dialog with a title-derived summary and
