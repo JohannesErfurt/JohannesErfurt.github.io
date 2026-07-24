@@ -55,6 +55,19 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 — Publication abstract summaries — complete
+Result: Added a substantive, source-verified abstract summary to every
+publication detail dialog. The summaries are original paraphrases of the
+official records, and the longer dialogs now scroll within the viewport.
+Evidence: official TU Berlin DepositOnce, ScienceDirect, Fraunhofer Publica,
+and Cambridge Core records reviewed; `npm run check` -> 27 files, 0
+diagnostics; `npm test` -> 7 passed; `npm run validate` -> 5 static pages
+built with valid HTML and internal links; generated homepage -> 5 publications,
+5 substantive abstracts, 5 Abstract headings, and 5 scrollable dialogs.
+Commit: `content: add publication abstract summaries` (this iteration)
+Blockers: none
+Next: H-008 — perform live acceptance and the 30-second scan test
+
 2026-07-24 — GitHub Pages performance-gate remediation — complete
 Result: Diagnosed the failed Pages workflow as a homepage Lighthouse performance
 regression and deferred rendering work for the four below-the-fold homepage

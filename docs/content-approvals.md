@@ -329,6 +329,22 @@ Approval states: `pending`, `approved`, or `omit`.
   detail interaction in the Codex task on 2026-07-24.
 - Approved by/date: `Johannes Erfurt, 2026-07-24`
 
+## Additional public content approval — Publication abstract summaries
+
+- Status: approved for public website use
+- Approved presentation: each publication detail dialog includes a concise
+  English abstract summary below the publication image and above the authors
+  and venue.
+- Source verification: the summaries were paraphrased from the official TU
+  Berlin DepositOnce, ScienceDirect, Fraunhofer Publica, and Cambridge Core
+  publication records on 2026-07-24. Reported quantitative results are retained
+  only where they appear in those official abstracts.
+- Copyright treatment: the website uses original paraphrases rather than
+  reproducing publisher abstracts verbatim.
+- Public-use approval: Johannes explicitly requested abstracts for every
+  publication in the Codex task on 2026-07-24.
+- Approved by/date: `Johannes Erfurt, 2026-07-24`
+
 ## H-005 — Public CV
 
 - Status: replacement approved; visual design prioritized over ATS optimization
