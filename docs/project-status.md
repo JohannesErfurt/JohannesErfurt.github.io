@@ -50,6 +50,15 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 â€” Hero symbol clarity refinement â€” complete
+Result: Replaced the neural-network animation target with a clear three-layer
+node graph and redrew the storybook target with a large full-body child figure.
+Evidence: `npm run check` -> 27 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run validate` -> 5 static pages built, HTML and internal links valid.
+Commit: `fix: clarify hero particle symbols` (this iteration)
+Blockers: none
+Next: H-007 â€” validate the live GitHub Pages deployment
+
 2026-07-24 â€” Publication-card summary removal â€” complete
 Result: Removed the short title-derived summary below each publication-card
 title while keeping it in the click-open detail dialog.

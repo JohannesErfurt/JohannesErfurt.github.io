@@ -91,27 +91,18 @@
         maskContext.lineJoin = 'round';
 
         if (shape === 'network') {
-          const nodes = [
-            { x: centerX - scale * 0.92, y: centerY - scale * 0.42 },
-            { x: centerX - scale * 0.92, y: centerY + scale * 0.55 },
-            { x: centerX - scale * 0.08, y: centerY - scale * 0.82 },
-            { x: centerX - scale * 0.04, y: centerY + scale * 0.08 },
-            { x: centerX - scale * 0.06, y: centerY + scale * 0.88 },
-            { x: centerX + scale * 0.98, y: centerY + scale * 0.12 },
-          ];
-          const links: Array<readonly [number, number]> = [[0, 2], [0, 3], [1, 3], [1, 4], [2, 5], [3, 5], [4, 5]];
-          links.forEach(([from, to]) => drawLine(nodes[from]!, nodes[to]!));
-          const neuronDots = [
-            [-0.11, -0.1], [0.1, -0.08], [0.07, 0.12], [-0.1, 0.1],
-          ] as const;
-          nodes.forEach((node, index) => {
+          // A classic three-layer neural network: clear neuron circles and
+          // dense connections remain recognisable after the particles settle.
+          const inputNodes = [-0.62, 0, 0.62].map((offset) => ({ x: centerX - scale * 0.9, y: centerY + scale * offset }));
+          const hiddenNodes = [-0.78, -0.26, 0.26, 0.78].map((offset) => ({ x: centerX, y: centerY + scale * offset }));
+          const outputNodes = [-0.38, 0.38].map((offset) => ({ x: centerX + scale * 0.9, y: centerY + scale * offset }));
+          inputNodes.forEach((input) => hiddenNodes.forEach((hidden) => drawLine(input, hidden)));
+          hiddenNodes.forEach((hidden) => outputNodes.forEach((output) => drawLine(hidden, output)));
+          [...inputNodes, ...hiddenNodes, ...outputNodes].forEach((node) => {
             maskContext.beginPath();
-            maskContext.arc(node.x, node.y, scale * 0.3, 0, Math.PI * 2);
+            maskContext.arc(node.x, node.y, scale * 0.19, 0, Math.PI * 2);
             maskContext.stroke();
-            neuronDots.forEach(([offsetX, offsetY], dotIndex) => {
-              const multiplier = 1 + ((index + dotIndex) % 2) * 0.24;
-              drawCircle(node.x + scale * offsetX * multiplier, node.y + scale * offsetY * multiplier, scale * 0.045);
-            });
+            drawCircle(node.x, node.y, scale * 0.07);
           });
         }
 
@@ -257,28 +248,27 @@
           maskContext.quadraticCurveTo(centerX + scale * 0.34, bookBottom + scale * 0.03, bookRight + scale * 0.1, bookBottom + scale * 0.12);
           maskContext.stroke();
 
-          // Rainbow emerging from the pages.
-          [0.45, 0.62, 0.79].forEach((radius) => {
-            maskContext.beginPath();
-            maskContext.arc(centerX, bookTop + scale * 0.35, scale * radius, Math.PI, Math.PI * 2);
-            maskContext.stroke();
-          });
-
-          // A friendly story character on the left page.
-          const character = { x: centerX - scale * 0.54, y: centerY + scale * 0.42 };
+          // A large, full-body child on the left page makes the storybook
+          // unmistakable even when rendered only as particles.
+          const character = { x: centerX - scale * 0.55, y: centerY + scale * 0.3 };
           maskContext.beginPath();
-          maskContext.arc(character.x, character.y, scale * 0.26, 0, Math.PI * 2);
+          maskContext.arc(character.x, character.y, scale * 0.19, 0, Math.PI * 2);
           maskContext.stroke();
-          drawCircle(character.x - scale * 0.09, character.y - scale * 0.03, scale * 0.035);
-          drawCircle(character.x + scale * 0.09, character.y - scale * 0.03, scale * 0.035);
+          drawCircle(character.x - scale * 0.065, character.y - scale * 0.025, scale * 0.027);
+          drawCircle(character.x + scale * 0.065, character.y - scale * 0.025, scale * 0.027);
           maskContext.beginPath();
-          maskContext.arc(character.x, character.y + scale * 0.04, scale * 0.11, 0.15 * Math.PI, 0.85 * Math.PI);
+          maskContext.arc(character.x, character.y + scale * 0.035, scale * 0.075, 0.15 * Math.PI, 0.85 * Math.PI);
           maskContext.stroke();
           maskContext.beginPath();
-          maskContext.arc(character.x, character.y - scale * 0.26, scale * 0.18, Math.PI, Math.PI * 2);
+          maskContext.arc(character.x, character.y - scale * 0.17, scale * 0.16, Math.PI, Math.PI * 2);
           maskContext.stroke();
-          drawCircle(character.x - scale * 0.22, character.y - scale * 0.22, scale * 0.08);
-          drawCircle(character.x + scale * 0.22, character.y - scale * 0.22, scale * 0.08);
+          const shouldersY = character.y + scale * 0.22;
+          drawLine({ x: character.x - scale * 0.2, y: shouldersY }, { x: character.x, y: character.y + scale * 0.34 });
+          drawLine({ x: character.x, y: character.y + scale * 0.34 }, { x: character.x + scale * 0.2, y: shouldersY });
+          drawLine({ x: character.x - scale * 0.14, y: shouldersY + scale * 0.04 }, { x: character.x - scale * 0.3, y: character.y + scale * 0.38 });
+          drawLine({ x: character.x + scale * 0.14, y: shouldersY + scale * 0.04 }, { x: character.x + scale * 0.3, y: character.y + scale * 0.38 });
+          drawLine({ x: character.x - scale * 0.07, y: character.y + scale * 0.34 }, { x: character.x - scale * 0.14, y: character.y + scale * 0.62 });
+          drawLine({ x: character.x + scale * 0.07, y: character.y + scale * 0.34 }, { x: character.x + scale * 0.14, y: character.y + scale * 0.62 });
 
           // Story text lines on the right page.
           [-0.04, 0.18, 0.4, 0.62].forEach((offset, index) => drawLine(
@@ -286,14 +276,8 @@
             { x: bookRight - scale * (index === 3 ? 0.44 : 0.2), y: centerY + scale * offset },
           ));
 
-          // Cloud, star, and sparkles above the book.
-          const cloud = { x: centerX - scale * 0.98, y: centerY - scale * 1.04 };
-          [-0.22, 0, 0.22].forEach((offset) => {
-            maskContext.beginPath();
-            maskContext.arc(cloud.x + scale * offset, cloud.y, scale * (offset === 0 ? 0.2 : 0.15), Math.PI, Math.PI * 2);
-            maskContext.stroke();
-          });
-          drawLine({ x: cloud.x - scale * 0.37, y: cloud.y }, { x: cloud.x + scale * 0.37, y: cloud.y });
+          // One star above the pages reinforces the story theme without
+          // competing with the book or child figure.
           const star = { x: centerX + scale * 0.88, y: centerY - scale * 1.03 };
           const starPoints = Array.from({ length: 10 }, (_, index) => {
             const angle = -Math.PI / 2 + index * Math.PI / 5;
