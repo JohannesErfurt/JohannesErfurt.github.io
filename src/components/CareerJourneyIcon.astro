@@ -1,12 +1,13 @@
 ---
 interface Props {
-  kind: 'mathematics' | 'phd' | 'hhi' | 'industry' | 'projects';
+  kind: 'mathematics' | 'phd' | 'hhi' | 'industry' | 'projects' | 'durham' | 'tomsk';
 }
 
 const { kind } = Astro.props;
 const labels = {
   mathematics: 'Mathematics', phd: 'Doctoral research', hhi: 'Fraunhofer HHI research',
   industry: 'Industrial AI at Scansonic MI', projects: 'Private AI projects',
+  durham: 'Study abroad at Durham University', tomsk: 'Study abroad at Tomsk Polytechnic University',
 } as const;
 ---
 
@@ -16,4 +17,6 @@ const labels = {
   {kind === 'hhi' && <><circle cx="48" cy="48" r="40" fill="currentColor" opacity="0.12" stroke="none" /><path d="M24 24h48v48H24z" /><path d="M30 34h36M30 42h28M30 50h20M30 58h12M30 66l36-32" /></>}
   {kind === 'industry' && <><circle cx="48" cy="48" r="40" fill="currentColor" opacity="0.12" stroke="none" /><path d="M19 71V43l18 10V42l18 10V34l22 13v24H19Z" /><path d="M30 71V59h12v12M56 58h4M67 58h4M56 66h4M67 66h4M25 31c8-8 16-8 24 0M31 25c5-5 10-5 15 0" /></>}
   {kind === 'projects' && <><circle cx="48" cy="48" r="40" fill="currentColor" opacity="0.12" stroke="none" /><path d="M38 25a14 14 0 0 1 20 3 14 14 0 0 1 17 16 14 14 0 0 1-6 23 14 14 0 0 1-22 5 14 14 0 0 1-22-5 14 14 0 0 1-5-22 14 14 0 0 1 18-20Z" /><path d="M48 31v34M35 40l13 8 13-8M35 57l13-9 13 9" /><circle cx="35" cy="40" r="2" fill="currentColor" stroke="none" /><circle cx="61" cy="40" r="2" fill="currentColor" stroke="none" /><circle cx="35" cy="57" r="2" fill="currentColor" stroke="none" /><circle cx="61" cy="57" r="2" fill="currentColor" stroke="none" /></>}
+  {kind === 'durham' && <><circle cx="48" cy="48" r="40" fill="currentColor" opacity="0.12" stroke="none" /><path d="M20 70h56M27 70V41l21-17 21 17v29M39 70V53h18v17M35 41h26M48 24v17M22 45h10M64 45h10" /></>}
+  {kind === 'tomsk' && <><circle cx="48" cy="48" r="40" fill="currentColor" opacity="0.12" stroke="none" /><circle cx="48" cy="48" r="25" /><path d="M23 48h50M48 23c9 8 9 42 0 50M48 23c-9 8-9 42 0 50M20 68h56m-12-43 7 7-7 7M71 32H56" /></>}
 </svg>

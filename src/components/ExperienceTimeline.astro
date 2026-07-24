@@ -3,7 +3,7 @@ import { experience } from '../data';
 import type { TimelineEntry } from '../data/schema';
 import CareerJourneyIcon from './CareerJourneyIcon.astro';
 
-type IconKind = 'mathematics' | 'phd' | 'hhi' | 'industry';
+type IconKind = 'mathematics' | 'phd' | 'hhi' | 'industry' | 'durham' | 'tomsk';
 
 const findEntry = (id: string): TimelineEntry => {
   const entry = experience.find((item) => item.id === id);
@@ -19,14 +19,17 @@ const careerTransition = [findEntry('ai-upskilling'), findEntry('sabbatical-worl
 const educationEntries = [
   { entry: findEntry('tu-berlin-phd'), kind: 'phd' as const },
   { entry: findEntry('tu-berlin-msc-mathematics'), kind: 'mathematics' as const },
-  { entry: findEntry('tomsk-study-abroad'), kind: 'mathematics' as const },
   { entry: findEntry('tu-berlin-bsc-mathematics'), kind: 'mathematics' as const },
-  { entry: findEntry('durham-study-abroad'), kind: 'mathematics' as const },
 ] as const;
-const detailEntries = [scansonic, hhiResearchAssociate, hhiStudentResearchAssistant, teachingAssistant, ...careerTransition, ...educationEntries.map(({ entry }) => entry)];
+const studyAbroadEntries = [
+  { entry: findEntry('tomsk-study-abroad'), kind: 'tomsk' as const },
+  { entry: findEntry('durham-study-abroad'), kind: 'durham' as const },
+] as const;
+const detailEntries = [scansonic, hhiResearchAssociate, hhiStudentResearchAssistant, teachingAssistant, ...careerTransition, ...educationEntries.map(({ entry }) => entry), ...studyAbroadEntries.map(({ entry }) => entry)];
 const colorClass = (kind: IconKind) => ({
   mathematics: 'text-blue-700 dark:text-blue-300', phd: 'text-emerald-700 dark:text-emerald-300',
   hhi: 'text-teal-700 dark:text-teal-300', industry: 'text-violet-700 dark:text-violet-300',
+  durham: 'text-rose-700 dark:text-rose-300', tomsk: 'text-amber-700 dark:text-amber-300',
 }[kind]);
 ---
 
@@ -56,6 +59,17 @@ const colorClass = (kind: IconKind) => ({
           <li><article aria-labelledby={`${entry.id}-title`} data-timeline-id={entry.id}><div class="flex items-start gap-4"><span class={`grid h-16 w-16 shrink-0 place-items-center rounded-full border border-current/20 bg-current/5 p-2 ${colorClass(kind)}`}><CareerJourneyIcon kind={kind} /></span><div class="min-w-0 flex-1"><div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"><p class="text-sm font-bold uppercase tracking-[0.14em] text-indigo-700 dark:text-indigo-300">{entry.organization}</p><p class="font-mono text-sm font-semibold text-slate-600 dark:text-slate-300">{entry.period}</p></div><h4 class="mt-1 text-xl font-bold tracking-tight text-slate-950 dark:text-white" id={`${entry.id}-title`}>{entry.role}</h4><p class="mt-2 leading-7 text-slate-700 dark:text-slate-300">{entry.summary}</p></div></div></article></li>
         ))}
       </ol>
+      <section class="mt-14" aria-labelledby="study-abroad-title">
+        <div class="border-b-2 border-indigo-200 pb-4 dark:border-indigo-900">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">International study</p>
+          <h4 class="mt-2 text-xl font-bold text-slate-950 dark:text-white" id="study-abroad-title">Study abroad</h4>
+        </div>
+        <ol class="mt-8 space-y-10">
+          {studyAbroadEntries.map(({ entry, kind }) => (
+            <li><article aria-labelledby={`${entry.id}-title`} data-timeline-id={entry.id}><div class="flex items-start gap-4"><span class={`grid h-16 w-16 shrink-0 place-items-center rounded-full border border-current/20 bg-current/5 p-2 ${colorClass(kind)}`}><CareerJourneyIcon kind={kind} /></span><div class="min-w-0 flex-1"><div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"><p class="text-sm font-bold uppercase tracking-[0.14em] text-indigo-700 dark:text-indigo-300">{entry.organization}</p><p class="font-mono text-sm font-semibold text-slate-600 dark:text-slate-300">{entry.period}</p></div><h5 class="mt-1 text-xl font-bold tracking-tight text-slate-950 dark:text-white" id={`${entry.id}-title`}>{entry.role}</h5><p class="mt-2 leading-7 text-slate-700 dark:text-slate-300">{entry.summary}</p></div></div></article></li>
+          ))}
+        </ol>
+      </section>
     </section>
   </div>
 
