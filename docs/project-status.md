@@ -55,6 +55,18 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 — Shearlet journal publication image replacement — complete
+Result: Replaced the journal shearlet paper's concept artwork with Johannes'
+supplied shearlet decomposition visual. The complete 3:2 composition is centered
+within the existing 16:9 publication frame so no labels or diagrams are cropped.
+Evidence: source inspection -> 1536x1024 PNG; public derivative -> 1200x676,
+metadata-free WebP, 76,262 bytes; visual inspection -> complete title, three
+scale rows, directional response grid, directional kernels, and descriptors
+visible.
+Commit: `assets: update shearlet publication image` (this iteration)
+Blockers: none
+Next: H-008 — perform live acceptance and the 30-second scan test
+
 2026-07-24 — Doctoral-thesis publication image replacement — complete
 Result: Replaced the doctoral-thesis concept artwork with Johannes' supplied
 in-loop-filtering visual. The complete 3:2 composition is centered within the

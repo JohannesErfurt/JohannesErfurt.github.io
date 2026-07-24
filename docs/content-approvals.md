@@ -361,6 +361,22 @@ Approval states: `pending`, `approved`, or `omit`.
   this replacement in the Codex task on 2026-07-24.
 - Approved by/date: `Johannes Erfurt, 2026-07-24`
 
+## Additional public content approval — Shearlet publication visual
+
+- Status: approved for public website use
+- Source supplied by Johannes:
+  `codex-clipboard-b08754ab-ca4b-45e2-8e46-627f7d15f3da.png`
+- Public derivative:
+  `public/assets/publications/shearlet-intensity-classification-loop-filter.webp`
+- Processing: resized from 1536x1024 to a metadata-free 1200x676 WebP and
+  centered on a matching dark background. The complete supplied composition is
+  retained without cropping; the source PNG is not published.
+- Presentation: replaces the previous concept illustration on the journal
+  shearlet publication card and in its detail dialog.
+- Public-use approval: Johannes supplied the image and explicitly requested
+  this replacement in the Codex task on 2026-07-24.
+- Approved by/date: `Johannes Erfurt, 2026-07-24`
+
 ## H-005 — Public CV
 
 - Status: replacement approved; visual design prioritized over ATS optimization
