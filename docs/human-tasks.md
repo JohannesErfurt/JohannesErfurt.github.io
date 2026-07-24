@@ -64,7 +64,7 @@ to the coding agent; do not store private source documents in the repository.
     - Social-preview copy and any image are licensed and approved.
   - Unlocks: A-012, A-016
 
-- [ ] **H-007 — Enable and validate GitHub Pages deployment**
+- [x] **H-007 — Enable and validate GitHub Pages deployment**
   - In repository settings, select GitHub Actions as the Pages source; push/merge
     the release candidate when ready; approve any required Pages environment.
   - Success criteria:

@@ -73,17 +73,17 @@
     - [x] The site configuration contains the correct canonical site URL.
   - **Suggested commit message:** `chore: configure Astro for GitHub Pages`
 
-- [ ] **Task 1.4: Configure GitHub Actions Deployment**
+- [x] **Task 1.4: Configure GitHub Actions Deployment**
   - [x] Create `.github/workflows/deploy.yml`.
   - [x] Configure automatic deployment on pushes to `main`.
   - [x] Use the maintained Astro and GitHub Pages deployment actions.
   - [x] Enable manual workflow execution with `workflow_dispatch`.
-  - [ ] In repository settings, select **GitHub Actions** as the GitHub Pages source.
-  - [ ] Push the workflow and verify a successful deployment.
+  - [x] In repository settings, select **GitHub Actions** as the GitHub Pages source.
+  - [x] Push the workflow and verify a successful deployment.
   - **Acceptance criteria:**
-    - [ ] The GitHub Actions build completes successfully.
-    - [ ] The deployment job completes successfully.
-    - [ ] The website is accessible at `https://johanneserfurt.github.io`.
+    - [x] The GitHub Actions build completes successfully.
+    - [x] The deployment job completes successfully.
+    - [x] The website is accessible at `https://johanneserfurt.github.io`.
   - **Suggested commit message:** `ci: configure GitHub Pages deployment`
 
 - [x] **Task 1.5: Create Initial Project Structure**
@@ -101,18 +101,18 @@
     - [x] Empty but required directories are tracked in Git.
   - **Suggested commit message:** `chore: create initial portfolio structure`
 
-- [ ] **Task 1.6: Build and Deploy a Minimal Vertical Slice**
+- [x] **Task 1.6: Build and Deploy a Minimal Vertical Slice**
   - [x] Create a minimal global layout.
   - [x] Create a basic responsive header.
   - [x] Create a simple hero section with the final professional title.
   - [x] Add one placeholder or real featured-project card.
   - [x] Create a minimal footer with GitHub and LinkedIn links.
   - [x] Verify the page locally.
-  - [ ] Deploy the minimal page through GitHub Actions.
+  - [x] Deploy the minimal page through GitHub Actions.
   - **Acceptance criteria:**
     - [x] Header, hero, one project card, and footer render on desktop and mobile.
     - [x] The local build succeeds.
-    - [ ] The deployed GitHub Pages site displays the same content.
+    - [x] The deployed GitHub Pages site displays the same content.
   - **Suggested commit message:** `feat: add initial deployed portfolio shell`
 
 ---
@@ -274,16 +274,16 @@ export interface PublicationEntry {
     - [x] Lighthouse reports are generated for the deployed or preview build.
   - **Suggested commit message:** `ci: add automated portfolio quality checks`
 
-- [ ] **Task 5.2: Validate GitHub Pages Release**
-  - [ ] Verify that pushes to `main` trigger a successful deployment.
-  - [ ] Verify the canonical URL and page metadata on the live site.
-  - [ ] Check all routes directly through the deployed GitHub Pages domain.
-  - [ ] Confirm that downloadable assets, including the sanitized CV, work in production.
-  - [ ] Confirm that custom 404 behavior works on GitHub Pages.
+- [x] **Task 5.2: Validate GitHub Pages Release**
+  - [x] Verify that pushes to `main` trigger a successful deployment.
+  - [x] Verify the canonical URL and page metadata on the live site.
+  - [x] Check all routes directly through the deployed GitHub Pages domain.
+  - [x] Confirm that downloadable assets, including the sanitized CV, work in production.
+  - [x] Confirm that custom 404 behavior works on GitHub Pages.
   - **Acceptance criteria:**
-    - [ ] The live site is accessible at `https://johanneserfurt.github.io`.
-    - [ ] All public routes and assets work without local-development assumptions.
-    - [ ] The deployment and QA workflows are green on `main`.
+    - [x] The live site is accessible at `https://johanneserfurt.github.io`.
+    - [x] All public routes and assets work without local-development assumptions.
+    - [x] The deployment and QA workflows are green on `main`.
   - **Suggested commit message:** `chore: validate production portfolio release`
 
 ---
@@ -296,4 +296,4 @@ export interface PublicationEntry {
 - [x] **Timeline Gap Explicit:** Sabbatical (11/2022 – 10/2023) is visually clear and positively framed.
 - [x] **Languages Displayed:** German, English, and Russian proficiencies are prominently listed.
 - [ ] **Mobile & Desktop Responsive:** Perfectly readable across viewport widths 320px to 3840px.
-- [ ] **Deployed on GitHub Pages:** Accessible live at `https://johanneserfurt.github.io`.
+- [x] **Deployed on GitHub Pages:** Accessible live at `https://johanneserfurt.github.io`.

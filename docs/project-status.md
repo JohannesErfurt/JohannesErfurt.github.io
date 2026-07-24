@@ -7,7 +7,7 @@ Updated: 2026-07-24
 - Phase: release-candidate validation
 - Last completed agent task: A-016 — Perform the release-candidate repository audit
 - Next ready agent task: none
-- Release state: local release candidate ready; awaiting H-007 and H-008
+- Release state: deployed release candidate verified; awaiting H-008
 - Source plan: `portfolio_project_plan.md` (contains pre-existing user changes)
 
 ## Human blockers
@@ -35,7 +35,12 @@ Updated: 2026-07-24
 - The updated About narrative and heading are approved for public use. They
   describe a technology stack spanning mathematical foundations through agentic
   AI systems, with an emphasis on robust, scalable, and maintainable solutions.
-- Live release acceptance requires H-007 and H-008.
+- H-007 is complete. GitHub Actions run `30115868410` passed quality, build,
+  and deployment for commit `7b576e8`; the reported environment URL is
+  `https://johanneserfurt.github.io/`. Unauthenticated checks returned HTTP 200
+  for every public route and the CV, and the custom missing route returned the
+  expected 404 page.
+- Final live acceptance requires H-008.
 
 ## Verification baseline
 
@@ -50,7 +55,7 @@ Updated: 2026-07-24
 
 ## Iteration log
 
-2026-07-24 — GitHub Pages performance-gate remediation — awaiting remote validation
+2026-07-24 — GitHub Pages performance-gate remediation — complete
 Result: Diagnosed the failed Pages workflow as a homepage Lighthouse performance
 regression and deferred rendering work for the four below-the-fold homepage
 sections while preserving their accessible DOM and the 0.95 quality threshold.
@@ -62,9 +67,13 @@ performance, 0 ms total blocking time; an 8x CPU-throttled run also scored 1.00
 with 0 ms total blocking time. The full local Lighthouse CI wrapper reached a
 1.00 homepage result but Windows denied cleanup of its temporary Edge profile;
 the Linux GitHub Actions run remains the authoritative end-to-end verification.
-Commit: `perf: defer below-fold homepage rendering` (this iteration)
-Blockers: H-007 requires the new GitHub Actions run and live HTTP checks
-Next: H-007 — validate the remediated GitHub Pages deployment
+Remote evidence: GitHub Actions run `30115868410` -> quality, build, and deploy
+all succeeded; deployment `5593276264` -> `github-pages` environment succeeded
+at `https://johanneserfurt.github.io/`; live route, metadata, CV, and custom 404
+checks passed.
+Commit: `7b576e8` (`perf: defer below-fold homepage rendering`)
+Blockers: H-008
+Next: H-008 — perform live acceptance and the 30-second scan test
 
 2026-07-24 â€” About layout readability â€” complete
 Result: Promoted the AI-adoption infographic to a full-width feature, kept the
