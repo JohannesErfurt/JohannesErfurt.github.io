@@ -91,18 +91,18 @@
         maskContext.lineJoin = 'round';
 
         if (shape === 'network') {
-          // A classic three-layer neural network: clear neuron circles and
-          // dense connections remain recognisable after the particles settle.
-          const inputNodes = [-0.62, 0, 0.62].map((offset) => ({ x: centerX - scale * 0.9, y: centerY + scale * offset }));
-          const hiddenNodes = [-0.78, -0.26, 0.26, 0.78].map((offset) => ({ x: centerX, y: centerY + scale * offset }));
-          const outputNodes = [-0.38, 0.38].map((offset) => ({ x: centerX + scale * 0.9, y: centerY + scale * offset }));
+          // A sparse, iconic 2–3–1 network reads more clearly than a dense
+          // graph when its lines are composed from animated particles.
+          const inputNodes = [-0.52, 0.52].map((offset) => ({ x: centerX - scale * 0.92, y: centerY + scale * offset }));
+          const hiddenNodes = [-0.7, 0, 0.7].map((offset) => ({ x: centerX - scale * 0.04, y: centerY + scale * offset }));
+          const outputNode = { x: centerX + scale * 0.94, y: centerY };
           inputNodes.forEach((input) => hiddenNodes.forEach((hidden) => drawLine(input, hidden)));
-          hiddenNodes.forEach((hidden) => outputNodes.forEach((output) => drawLine(hidden, output)));
-          [...inputNodes, ...hiddenNodes, ...outputNodes].forEach((node) => {
+          hiddenNodes.forEach((hidden) => drawLine(hidden, outputNode));
+          [...inputNodes, ...hiddenNodes, outputNode].forEach((node) => {
             maskContext.beginPath();
-            maskContext.arc(node.x, node.y, scale * 0.19, 0, Math.PI * 2);
+            maskContext.arc(node.x, node.y, scale * 0.2, 0, Math.PI * 2);
             maskContext.stroke();
-            drawCircle(node.x, node.y, scale * 0.07);
+            drawCircle(node.x, node.y, scale * 0.08);
           });
         }
 
@@ -180,48 +180,27 @@
         }
 
         if (shape === 'agents') {
-          const robotWidth = scale * 1.34;
-          const robotHeight = scale * 1.04;
+          // A large robot assistant and speech bubble are intentionally simple
+          // so the final particle state reads as an autonomous agent at once.
+          const robotWidth = scale * 1.58;
+          const robotHeight = scale * 1.18;
           const robotLeft = centerX - robotWidth / 2;
           const robotTop = centerY - robotHeight / 2;
-          drawRoundedRect(robotLeft, robotTop, robotWidth, robotHeight, scale * 0.26);
-          drawRoundedRect(robotLeft + scale * 0.17, robotTop + scale * 0.18, robotWidth - scale * 0.34, robotHeight - scale * 0.36, scale * 0.18);
-          drawCircle(centerX - scale * 0.22, centerY, scale * 0.085);
-          drawCircle(centerX + scale * 0.22, centerY, scale * 0.085);
+          drawRoundedRect(robotLeft, robotTop, robotWidth, robotHeight, scale * 0.3);
+          drawRoundedRect(robotLeft + scale * 0.16, robotTop + scale * 0.2, robotWidth - scale * 0.32, robotHeight - scale * 0.42, scale * 0.2);
+          drawCircle(centerX - scale * 0.28, centerY, scale * 0.1);
+          drawCircle(centerX + scale * 0.28, centerY, scale * 0.1);
+          drawLine({ x: centerX - scale * 0.25, y: centerY + scale * 0.28 }, { x: centerX + scale * 0.25, y: centerY + scale * 0.28 });
           drawLine({ x: centerX, y: robotTop }, { x: centerX, y: robotTop - scale * 0.22 });
-          drawCircle(centerX, robotTop - scale * 0.29, scale * 0.085);
-          drawCircle(robotLeft - scale * 0.1, centerY, scale * 0.14);
-          drawCircle(robotLeft + robotWidth + scale * 0.1, centerY, scale * 0.14);
+          drawCircle(centerX, robotTop - scale * 0.3, scale * 0.1);
+          drawCircle(robotLeft - scale * 0.1, centerY, scale * 0.17);
+          drawCircle(robotLeft + robotWidth + scale * 0.1, centerY, scale * 0.17);
 
-          const speech = { x: centerX, y: centerY - scale * 1.13 };
-          const brain = { x: centerX + scale * 1.12, y: centerY - scale * 0.25 };
-          const document = { x: centerX + scale * 0.93, y: centerY + scale * 0.86 };
-          const globe = { x: centerX - scale * 0.95, y: centerY + scale * 0.86 };
-          [
-            { from: { x: centerX, y: robotTop - scale * 0.22 }, to: speech },
-            { from: { x: robotLeft + robotWidth, y: centerY - scale * 0.15 }, to: brain },
-            { from: { x: robotLeft + robotWidth * 0.75, y: robotTop + robotHeight }, to: document },
-            { from: { x: robotLeft + robotWidth * 0.25, y: robotTop + robotHeight }, to: globe },
-          ].forEach((connection) => drawLine(connection.from, connection.to));
-
-          drawRoundedRect(speech.x - scale * 0.34, speech.y - scale * 0.2, scale * 0.68, scale * 0.4, scale * 0.12);
-          drawLine({ x: speech.x - scale * 0.1, y: speech.y + scale * 0.2 }, { x: speech.x - scale * 0.18, y: speech.y + scale * 0.31 });
-          [-0.14, 0, 0.14].forEach((offset) => drawCircle(speech.x + scale * offset, speech.y, scale * 0.05));
-
-          drawCircle(brain.x - scale * 0.15, brain.y, scale * 0.21);
-          drawCircle(brain.x + scale * 0.15, brain.y, scale * 0.21);
-          drawLine({ x: brain.x, y: brain.y - scale * 0.2 }, { x: brain.x, y: brain.y + scale * 0.2 });
-
-          drawRoundedRect(document.x - scale * 0.28, document.y - scale * 0.28, scale * 0.56, scale * 0.56, scale * 0.07);
-          [-0.1, 0.08].forEach((offset) => drawLine({ x: document.x - scale * 0.15, y: document.y + scale * offset }, { x: document.x + scale * 0.15, y: document.y + scale * offset }));
-
-          maskContext.beginPath();
-          maskContext.arc(globe.x, globe.y, scale * 0.28, 0, Math.PI * 2);
-          maskContext.stroke();
-          maskContext.beginPath();
-          maskContext.ellipse(globe.x, globe.y, scale * 0.12, scale * 0.28, 0, 0, Math.PI * 2);
-          maskContext.stroke();
-          drawLine({ x: globe.x - scale * 0.28, y: globe.y }, { x: globe.x + scale * 0.28, y: globe.y });
+          const speech = { x: centerX + scale * 0.9, y: centerY - scale * 0.84 };
+          drawLine({ x: centerX + scale * 0.4, y: robotTop }, { x: speech.x - scale * 0.24, y: speech.y + scale * 0.18 });
+          drawRoundedRect(speech.x - scale * 0.38, speech.y - scale * 0.23, scale * 0.76, scale * 0.46, scale * 0.14);
+          drawLine({ x: speech.x - scale * 0.12, y: speech.y + scale * 0.23 }, { x: speech.x - scale * 0.24, y: speech.y + scale * 0.38 });
+          [-0.16, 0, 0.16].forEach((offset) => drawCircle(speech.x + scale * offset, speech.y, scale * 0.055));
         }
 
         if (shape === 'storybook') {
@@ -248,11 +227,11 @@
           maskContext.quadraticCurveTo(centerX + scale * 0.34, bookBottom + scale * 0.03, bookRight + scale * 0.1, bookBottom + scale * 0.12);
           maskContext.stroke();
 
-          // A large, full-body child on the left page makes the storybook
-          // unmistakable even when rendered only as particles.
-          const character = { x: centerX - scale * 0.55, y: centerY + scale * 0.3 };
+          // A large child reading the book makes the subject explicit even
+          // after the particles resolve to the final icon.
+          const character = { x: centerX - scale * 0.5, y: centerY + scale * 0.02 };
           maskContext.beginPath();
-          maskContext.arc(character.x, character.y, scale * 0.19, 0, Math.PI * 2);
+          maskContext.arc(character.x, character.y, scale * 0.2, 0, Math.PI * 2);
           maskContext.stroke();
           drawCircle(character.x - scale * 0.065, character.y - scale * 0.025, scale * 0.027);
           drawCircle(character.x + scale * 0.065, character.y - scale * 0.025, scale * 0.027);
@@ -262,13 +241,13 @@
           maskContext.beginPath();
           maskContext.arc(character.x, character.y - scale * 0.17, scale * 0.16, Math.PI, Math.PI * 2);
           maskContext.stroke();
-          const shouldersY = character.y + scale * 0.22;
-          drawLine({ x: character.x - scale * 0.2, y: shouldersY }, { x: character.x, y: character.y + scale * 0.34 });
-          drawLine({ x: character.x, y: character.y + scale * 0.34 }, { x: character.x + scale * 0.2, y: shouldersY });
-          drawLine({ x: character.x - scale * 0.14, y: shouldersY + scale * 0.04 }, { x: character.x - scale * 0.3, y: character.y + scale * 0.38 });
-          drawLine({ x: character.x + scale * 0.14, y: shouldersY + scale * 0.04 }, { x: character.x + scale * 0.3, y: character.y + scale * 0.38 });
-          drawLine({ x: character.x - scale * 0.07, y: character.y + scale * 0.34 }, { x: character.x - scale * 0.14, y: character.y + scale * 0.62 });
-          drawLine({ x: character.x + scale * 0.07, y: character.y + scale * 0.34 }, { x: character.x + scale * 0.14, y: character.y + scale * 0.62 });
+          const shouldersY = character.y + scale * 0.23;
+          drawLine({ x: character.x - scale * 0.23, y: shouldersY }, { x: character.x, y: character.y + scale * 0.48 });
+          drawLine({ x: character.x, y: character.y + scale * 0.48 }, { x: character.x + scale * 0.23, y: shouldersY });
+          drawLine({ x: character.x - scale * 0.15, y: shouldersY }, { x: centerX - scale * 0.95, y: centerY + scale * 0.45 });
+          drawLine({ x: character.x + scale * 0.15, y: shouldersY }, { x: centerX - scale * 0.08, y: centerY + scale * 0.45 });
+          drawLine({ x: character.x - scale * 0.08, y: character.y + scale * 0.48 }, { x: character.x - scale * 0.16, y: character.y + scale * 0.72 });
+          drawLine({ x: character.x + scale * 0.08, y: character.y + scale * 0.48 }, { x: character.x + scale * 0.16, y: character.y + scale * 0.72 });
 
           // Story text lines on the right page.
           [-0.04, 0.18, 0.4, 0.62].forEach((offset, index) => drawLine(

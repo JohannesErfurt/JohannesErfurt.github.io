@@ -50,6 +50,16 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 â€” Hero symbol replacement â€” complete
+Result: Replaced the neural-network target with a sparse six-node graph,
+redesigned the storybook as a child-reading icon, and simplified the agent into
+a large robot assistant with a speech bubble.
+Evidence: `npm run check` -> 27 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run validate` -> 5 static pages built, HTML and internal links valid.
+Commit: `feat: replace hero particle symbols` (this iteration)
+Blockers: none
+Next: H-007 â€” validate the live GitHub Pages deployment
+
 2026-07-24 â€” Hero symbol clarity refinement â€” complete
 Result: Replaced the neural-network animation target with a clear three-layer
 node graph and redrew the storybook target with a large full-body child figure.
