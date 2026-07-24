@@ -1,4 +1,4 @@
-export type AboutIcon = 'education' | 'skills' | 'hobbies' | 'languages';
+export type AboutIcon = 'education' | 'skills' | 'hobbies';
 
 export interface AboutHighlightItem {
   label: string;
@@ -47,11 +47,5 @@ export const aboutHighlights: AboutHighlight[] = [
       { label: 'Table tennis', image: '/assets/hobby-table-tennis.png' },
     ],
     icon: 'hobbies',
-  },
-  {
-    title: 'Languages',
-    value: 'German, English, Russian',
-    description: 'Native German; business-fluent English; very good Russian',
-    icon: 'languages',
   },
 ];

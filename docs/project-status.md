@@ -50,6 +50,18 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 â€” About layout readability â€” complete
+Result: Promoted the AI-adoption infographic to a full-width feature, kept the
+introductory copy above it, and reduced the supporting cards to Education,
+Skills, and Hobbies in a three-column layout.
+Evidence: local browser visual check -> complete infographic readable with all
+three cards aligned below; `npm run check` -> 27 files, 0 diagnostics; `npm
+test` -> 7 passed; `npm run validate` -> 5 static pages built, HTML and
+internal links valid.
+Commit: `style: improve About layout readability` (this iteration)
+Blockers: none
+Next: H-007 â€” validate the live GitHub Pages deployment
+
 2026-07-24 â€” About illustration replacement â€” complete
 Result: Replaced the About illustration with Johannes' AI-adoption workflow
 infographic, preserving its complete 3:2 composition in a 197 KB WebP.

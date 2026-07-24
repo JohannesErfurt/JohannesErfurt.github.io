@@ -33,7 +33,8 @@ Approval states: `pending`, `approved`, or `omit`.
   2026-07-22, and supplied the workflow-adoption addition in the Codex task on
   2026-07-24.
 - Omitted content: the separate `My north star` panel and its supporting sentence
-  were removed at Johannes's request on 2026-07-22.
+  were removed at Johannes's request on 2026-07-22. The About Languages summary
+  card was removed at Johannes's request on 2026-07-24.
 - Approved by/date: `Johannes Erfurt, 2026-07-22`
 
 ## Additional public content approval — About illustration

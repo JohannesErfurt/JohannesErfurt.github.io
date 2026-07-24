@@ -6,7 +6,6 @@ const highlightIconPaths: Record<AboutIcon, string> = {
   education: 'M12 3 2 8l10 5 8-4v6h2V8L12 3Zm-6 9v4.5c0 1.9 2.7 3.5 6 3.5s6-1.6 6-3.5V12l-6 3-6-3Z',
   skills: 'm4 5 4-2 4 2 4-2 4 2v14l-4 2-4-2-4 2-4-2V5Zm4 3v8m8-8v8m-4-6v8',
   hobbies: 'M12 21s-8-4.6-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.4-8 11-8 11Z',
-  languages: 'M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v7a2.5 2.5 0 0 1-2.5 2.5H11l-4.5 4v-4H6.5A2.5 2.5 0 0 1 4 12.5v-7Z',
 };
 ---
 
@@ -16,31 +15,29 @@ const highlightIconPaths: Record<AboutIcon, string> = {
   aria-labelledby="about-title"
 >
   <div class="mx-auto max-w-5xl px-6 py-16 sm:py-24">
-    <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
-      <div>
-        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">A little about me</p>
-        <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl" id="about-title">
-          Turning AI potential into practical systems.
-        </h2>
-        <div class="mt-6 space-y-4 text-lg leading-8 text-slate-700 dark:text-slate-300">
-          {aboutIntro.map((paragraph) => <p>{paragraph}</p>)}
-        </div>
+    <div class="max-w-3xl">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">A little about me</p>
+      <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl" id="about-title">
+        Turning AI potential into practical systems.
+      </h2>
+      <div class="mt-6 space-y-4 text-lg leading-8 text-slate-700 dark:text-slate-300">
+        {aboutIntro.map((paragraph) => <p>{paragraph}</p>)}
       </div>
-
-      <figure class="overflow-hidden rounded-2xl border border-amber-200 bg-slate-950 shadow-lg dark:border-amber-900/70">
-        <img
-          src="/assets/about-ai-adoption-workflow.webp"
-          alt="Infographic showing an AI adoption workflow that bridges research and real-world applications"
-          width="1536"
-          height="1024"
-          class="aspect-[3/2] w-full object-cover"
-          loading="lazy"
-          decoding="async"
-        />
-      </figure>
     </div>
 
-    <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <figure class="mt-12 overflow-hidden rounded-2xl border border-amber-200 bg-slate-950 shadow-lg dark:border-amber-900/70">
+      <img
+        src="/assets/about-ai-adoption-workflow.webp"
+        alt="Infographic showing an AI adoption workflow that bridges research and real-world applications"
+        width="1536"
+        height="1024"
+        class="aspect-[3/2] w-full object-cover"
+        loading="lazy"
+        decoding="async"
+      />
+    </figure>
+
+    <div class="mt-12 grid gap-4 md:grid-cols-3">
     {aboutHighlights.map((highlight) => (
       <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900">
         <svg class="h-8 w-8 text-indigo-700 dark:text-indigo-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
