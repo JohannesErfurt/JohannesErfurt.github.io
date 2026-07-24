@@ -124,8 +124,9 @@ Approval states: `pending`, `approved`, or `omit`.
 - Approved presentation: a responsive two-column Experience layout with work
   experience on the left and education on the right. Each column is ordered
   latest-first. The working-experience stages are Scansonic MI, Fraunhofer HHI,
-  Technical University of Berlin teaching, and Private AI Projects; the education
-  stages are Promotion (PhD) and Mathematics.
+  Technical University of Berlin teaching; the education stages are Promotion
+  (PhD) and Mathematics. Private AI Projects are shown only in the dedicated
+  Projects section.
 - Omitted presentation: the Long-term Direction stage and its target symbol.
 - Approved icon treatment: original, accessible SVG interpretations of the five
   symbols from Johannes' supplied career-journey graphic. They are used as the

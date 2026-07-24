@@ -49,6 +49,15 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 — Experience project-topic removal — complete
+Result: Removed Private AI Projects from Experience so project content appears
+only in the dedicated Projects section.
+Evidence: `npm run check` -> 25 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run build` -> 3 static pages built.
+Commit: `refactor: remove projects from experience` (this iteration)
+Blockers: none
+Next: H-007 — validate the live GitHub Pages deployment
+
 2026-07-24 — Experience teaching-entry simplification — complete
 Result: Made Student Teaching Assistant a compact standalone working-experience
 entry with its period aligned beside Technical University of Berlin. Removed the
