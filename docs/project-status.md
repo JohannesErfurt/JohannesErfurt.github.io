@@ -49,6 +49,15 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 — Tomsk timeline alignment — complete
+Result: Moved the Tomsk study-abroad period into the same row as the Study
+Abroad title, avoiding a date that wraps beneath the long university name.
+Evidence: `npm run check` -> 25 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run build` -> 3 static pages built.
+Commit: `fix: align Tomsk study timeline` (this iteration)
+Blockers: none
+Next: H-007 — validate the live GitHub Pages deployment
+
 2026-07-24 — Education study-abroad separation — complete
 Result: Moved the two approved study-abroad records into a dedicated Study
 Abroad subsection within Education. Added original, consistent SVG university
