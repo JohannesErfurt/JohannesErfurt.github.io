@@ -50,6 +50,15 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 â€” Publication two-column cards â€” complete
+Result: Arranged publications as two cards per row on medium and larger screens,
+with each compact cover, title, and title-derived summary stacked vertically.
+Evidence: `npm run check` -> 27 files, 0 diagnostics; `npm run validate` -> 5
+static pages built, HTML and internal links valid.
+Commit: `style: arrange publication cards in grid` (this iteration)
+Blockers: none
+Next: H-007 â€” validate the live GitHub Pages deployment
+
 2026-07-24 â€” Publication thumbnail refinement â€” complete
 Result: Reduced publication cover images to compact side-by-side thumbnails on
 larger screens while retaining a full-width tappable layout on mobile.
