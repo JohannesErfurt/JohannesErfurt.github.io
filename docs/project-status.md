@@ -50,6 +50,15 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 â€” About illustration replacement â€” complete
+Result: Replaced the About illustration with Johannes' AI-adoption workflow
+infographic, preserving its complete 3:2 composition in a 197 KB WebP.
+Evidence: `npm run check` -> 27 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run validate` -> 5 static pages built, HTML and internal links valid.
+Commit: `feat: update About workflow illustration` (this iteration)
+Blockers: none
+Next: H-007 â€” validate the live GitHub Pages deployment
+
 2026-07-24 â€” About heading refinement â€” complete
 Result: Replaced the About heading with the approved `Turning AI potential into
 practical systems.`
