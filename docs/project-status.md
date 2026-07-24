@@ -50,6 +50,15 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 â€” Publication-card summary removal â€” complete
+Result: Removed the short title-derived summary below each publication-card
+title while keeping it in the click-open detail dialog.
+Evidence: `npm run check` -> 27 files, 0 diagnostics; `npm run validate` -> 5
+static pages built, HTML and internal links valid.
+Commit: `style: simplify publication cards` (this iteration)
+Blockers: none
+Next: H-007 â€” validate the live GitHub Pages deployment
+
 2026-07-24 â€” Publication two-column cards â€” complete
 Result: Arranged publications as two cards per row on medium and larger screens,
 with each compact cover, title, and title-derived summary stacked vertically.
