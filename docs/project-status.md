@@ -50,6 +50,15 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 â€” Expertise section removal â€” complete
+Result: Removed the homepage Expertise section, including its applied-skills and
+language panels, and removed the obsolete Languages navigation link.
+Evidence: `npm run check` -> 27 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run validate` -> 5 static pages built, HTML and internal links valid.
+Commit: `refactor: remove expertise section` (this iteration)
+Blockers: none
+Next: H-007 â€” validate the live GitHub Pages deployment
+
 2026-07-24 â€” Homepage section backgrounds â€” complete
 Result: Added full-width, contrast-safe background bands to visually separate
 the homepage sections: cyan Projects, violet Experience, emerald Expertise, and
