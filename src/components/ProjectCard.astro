@@ -37,8 +37,16 @@ const { project } = Astro.props;
     ))}
   </ul>
 
+  <a
+    class="mt-auto inline-flex w-fit pt-6 font-semibold text-indigo-700 underline decoration-indigo-300 underline-offset-4 outline-offset-4 hover:text-indigo-900 focus-visible:outline-2 focus-visible:outline-indigo-700 dark:text-indigo-300 dark:hover:text-indigo-200 dark:focus-visible:outline-indigo-300"
+    href={`/projects/${project.id}/`}
+    aria-label={`Read the ${project.title} case study`}
+  >
+    Read case study <span aria-hidden="true">→</span>
+  </a>
+
   {(project.githubUrl || project.demoUrl) && (
-    <div class="mt-auto flex flex-wrap gap-3 pt-6">
+    <div class="flex flex-wrap gap-3 pt-4">
       {project.githubUrl && (
         <a
           class="font-semibold text-indigo-700 underline decoration-indigo-300 underline-offset-4 outline-offset-4 hover:text-indigo-900 focus-visible:outline-2 focus-visible:outline-indigo-700 dark:text-indigo-300 dark:hover:text-indigo-200 dark:focus-visible:outline-indigo-300"

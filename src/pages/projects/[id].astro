@@ -1,0 +1,61 @@
+---
+import ProjectWorkflowVisual from '../../components/ProjectWorkflowVisual.astro';
+import { projects } from '../../data';
+import type { ProjectEntry } from '../../data/schema';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { id: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props as { project: ProjectEntry };
+const title = `${project.title} | Dr.-Ing. Johannes Erfurt`;
+const description = project.description;
+const workflowTitle = project.id === 'mindgrow-stories'
+  ? 'A modular multimodal workflow'
+  : 'A controllable writing workflow';
+const workflowDescription = project.id === 'mindgrow-stories'
+  ? 'LLM, image-generation, and VLM stages are separated into modular workflows, with automated quality assessment and character-consistency methods.'
+  : 'A LangGraph state machine supports planning, generation, evaluation, and iterative revision with specialized critic agents and human approval gates.';
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="mx-auto max-w-5xl px-6 py-16 sm:py-24" aria-labelledby="project-title">
+    <a class="font-semibold text-indigo-700 underline decoration-indigo-300 underline-offset-4 outline-offset-4 hover:text-indigo-900 focus-visible:outline-2 focus-visible:outline-indigo-700 dark:text-indigo-300 dark:hover:text-indigo-200 dark:focus-visible:outline-indigo-300" href="/#projects">← Back to selected projects</a>
+
+    <header class="mt-10 max-w-3xl">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">{project.subtitle}</p>
+      <h1 class="mt-3 text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl" id="project-title">{project.title}</h1>
+      <p class="mt-6 text-xl leading-8 text-slate-700 dark:text-slate-300">{project.description}</p>
+    </header>
+
+    <div class="mt-12"><ProjectWorkflowVisual projectId={project.id as 'mindgrow-stories' | 'wizarding-story-engine'} /></div>
+
+    <div class="mt-14 grid gap-10 lg:grid-cols-[1.35fr_0.65fr]">
+      <section aria-labelledby="workflow-title">
+        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">Approach</p>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-950 dark:text-white" id="workflow-title">{workflowTitle}</h2>
+        <p class="mt-5 text-lg leading-8 text-slate-700 dark:text-slate-300">{workflowDescription}</p>
+      </section>
+      <aside class="rounded-2xl border border-slate-200 bg-slate-50 p-6 dark:border-slate-700 dark:bg-slate-900" aria-labelledby="stack-title">
+        <h2 class="text-lg font-bold text-slate-950 dark:text-white" id="stack-title">Technology stack</h2>
+        <ul class="mt-4 flex flex-wrap gap-2">
+          {project.techStack.map((technology) => <li class="rounded-md border border-slate-200 bg-white px-2.5 py-1 text-sm font-medium text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200">{technology}</li>)}
+        </ul>
+      </aside>
+    </div>
+
+    <section class="mt-14 rounded-2xl border border-indigo-200 bg-indigo-50 p-7 dark:border-indigo-900 dark:bg-indigo-950/40" aria-labelledby="impact-title">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">Engineering impact</p>
+      <h2 class="mt-3 text-2xl font-bold text-slate-950 dark:text-white" id="impact-title">What this project demonstrates</h2>
+      <p class="mt-4 max-w-4xl text-lg leading-8 text-slate-700 dark:text-slate-300">{project.impact}</p>
+    </section>
+
+    {project.githubUrl && (
+      <a class="mt-12 inline-flex rounded-lg bg-indigo-700 px-5 py-3 font-semibold text-white outline-offset-4 hover:bg-indigo-800 focus-visible:outline-2 focus-visible:outline-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-400 dark:focus-visible:outline-indigo-300" href={project.githubUrl}>View source code <span class="ml-2" aria-hidden="true">↗</span></a>
+    )}
+  </article>
+</BaseLayout>

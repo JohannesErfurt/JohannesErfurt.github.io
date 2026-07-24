@@ -49,6 +49,17 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 — Dedicated project case studies — complete
+Result: Added shareable static case-study pages for MindGrow Stories and
+Wizarding Story Engine, linked from the homepage project cards. Each page has
+an original, data-grounded workflow visual, approved approach text, technology
+stack, impact statement, and the public source link where available.
+Evidence: `npm run check` -> 27 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run validate` -> 5 static pages built, HTML and internal links valid.
+Commit: `feat: add project case study pages` (this iteration)
+Blockers: none
+Next: H-007 — validate the live GitHub Pages deployment
+
 2026-07-24 — Timeline connector interruption — complete
 Result: Made each timeline icon disc opaque in light and dark themes, so vertical
 connectors break at the icon edge and continue afterward rather than showing

@@ -1,0 +1,63 @@
+---
+interface Props {
+  projectId: 'mindgrow-stories' | 'wizarding-story-engine';
+}
+
+const { projectId } = Astro.props;
+const isMindGrow = projectId === 'mindgrow-stories';
+const title = isMindGrow
+  ? 'MindGrow Stories workflow: story brief, LLM orchestration, image generation, VLM quality assessment, and personalized book'
+  : 'Wizarding Story Engine workflow: plan, draft, critic review, revision, and human approval';
+---
+
+<figure class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 p-4 shadow-sm dark:border-slate-700 sm:p-6">
+  <svg viewBox="0 0 960 420" role="img" aria-label={title} class="h-auto w-full" fill="none">
+    <defs>
+      <linearGradient id="workflow-bg" x1="0" x2="1" y1="0" y2="1">
+        <stop stop-color="#172554" />
+        <stop offset="1" stop-color="#1e1b4b" />
+      </linearGradient>
+      <filter id="workflow-glow" x="-30%" y="-30%" width="160%" height="160%">
+        <feGaussianBlur stdDeviation="9" result="blur" />
+        <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+      </filter>
+      <marker id="workflow-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+        <path d="M0 0 10 5 0 10Z" fill="#93c5fd" />
+      </marker>
+    </defs>
+    <rect width="960" height="420" rx="24" fill="url(#workflow-bg)" />
+    <g opacity=".16" stroke="#c4b5fd"><path d="M0 70H960M0 140H960M0 210H960M0 280H960M0 350H960" /><path d="M120 0V420M240 0V420M360 0V420M480 0V420M600 0V420M720 0V420M840 0V420" /></g>
+    {isMindGrow ? (
+      <>
+        <text x="54" y="70" fill="#e0e7ff" font-size="24" font-weight="700">MindGrow Stories</text>
+        <text x="54" y="101" fill="#a5b4fc" font-size="16">Multimodal creation workflow</text>
+        <g stroke="#93c5fd" stroke-width="3" marker-end="url(#workflow-arrow)">
+          <path d="M220 220H306" /><path d="M446 220H532" /><path d="M672 220H758" />
+          <path d="M602 278v54H376v-54" marker-end="url(#workflow-arrow)" />
+        </g>
+        <g font-family="system-ui, sans-serif" text-anchor="middle">
+          <g transform="translate(62 166)"><rect width="158" height="108" rx="18" fill="#1d4ed8" stroke="#93c5fd" /><text x="79" y="48" fill="white" font-size="18" font-weight="700">Story brief</text><text x="79" y="76" fill="#dbeafe" font-size="14">Personalization</text></g>
+          <g transform="translate(306 166)"><rect width="140" height="108" rx="18" fill="#4338ca" stroke="#c4b5fd" /><text x="70" y="48" fill="white" font-size="18" font-weight="700">LLM</text><text x="70" y="76" fill="#e0e7ff" font-size="14">Orchestration</text></g>
+          <g transform="translate(532 166)"><rect width="140" height="108" rx="18" fill="#7c3aed" stroke="#ddd6fe" /><text x="70" y="48" fill="white" font-size="18" font-weight="700">Images</text><text x="70" y="76" fill="#ede9fe" font-size="14">Generation</text></g>
+          <g transform="translate(758 166)"><rect width="140" height="108" rx="18" fill="#0f766e" stroke="#99f6e4" /><text x="70" y="48" fill="white" font-size="18" font-weight="700">Book</text><text x="70" y="76" fill="#ccfbf1" font-size="14">Output</text></g>
+          <g transform="translate(376 312)"><rect width="226" height="72" rx="18" fill="#9f1239" stroke="#fecdd3" /><text x="113" y="31" fill="white" font-size="17" font-weight="700">VLM quality assessment</text><text x="113" y="54" fill="#ffe4e6" font-size="13">Character consistency</text></g>
+        </g>
+      </>
+    ) : (
+      <>
+        <text x="54" y="70" fill="#e0e7ff" font-size="24" font-weight="700">Wizarding Story Engine</text>
+        <text x="54" y="101" fill="#a5b4fc" font-size="16">State-based multi-agent writing workflow</text>
+        <g stroke="#93c5fd" stroke-width="3" marker-end="url(#workflow-arrow)"><path d="M230 220H320" /><path d="M460 220H550" /><path d="M690 220H780" /><path d="M848 278v66H370v-66" marker-end="url(#workflow-arrow)" /></g>
+        <g font-family="system-ui, sans-serif" text-anchor="middle">
+          <g transform="translate(70 166)"><rect width="160" height="108" rx="18" fill="#1d4ed8" stroke="#93c5fd" /><text x="80" y="48" fill="white" font-size="18" font-weight="700">Plan</text><text x="80" y="76" fill="#dbeafe" font-size="14">Structured state</text></g>
+          <g transform="translate(320 166)"><rect width="140" height="108" rx="18" fill="#4338ca" stroke="#c4b5fd" /><text x="70" y="48" fill="white" font-size="18" font-weight="700">Draft</text><text x="70" y="76" fill="#e0e7ff" font-size="14">Generate</text></g>
+          <g transform="translate(550 166)"><rect width="140" height="108" rx="18" fill="#7c3aed" stroke="#ddd6fe" /><text x="70" y="48" fill="white" font-size="18" font-weight="700">Critic</text><text x="70" y="76" fill="#ede9fe" font-size="14">Evaluate</text></g>
+          <g transform="translate(780 166)"><rect width="120" height="108" rx="18" fill="#0f766e" stroke="#99f6e4" /><text x="60" y="48" fill="white" font-size="18" font-weight="700">Revise</text><text x="60" y="76" fill="#ccfbf1" font-size="14">Iterate</text></g>
+          <g transform="translate(370 324)"><rect width="200" height="60" rx="18" fill="#9f1239" stroke="#fecdd3" /><text x="100" y="37" fill="white" font-size="17" font-weight="700">Human approval</text></g>
+          <g transform="translate(610 324)"><rect width="210" height="60" rx="18" fill="#854d0e" stroke="#fde68a" /><text x="105" y="37" fill="white" font-size="17" font-weight="700">Token &amp; cost monitoring</text></g>
+        </g>
+      </>
+    )}
+  </svg>
+  <figcaption class="sr-only">{title}</figcaption>
+</figure>

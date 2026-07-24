@@ -245,6 +245,18 @@ Approval states: `pending`, `approved`, or `omit`.
   based on approved implementation details; no external visual assets are supplied
 - Approved by/date: `Johannes Erfurt, 2026-07-21`
 
+## Additional public content approval — Project case-study pages
+
+- Status: approved for public website use
+- Approved presentation: dedicated case-study pages for MindGrow Stories and
+  Wizarding Story Engine, linked from the homepage project cards.
+- Approved visuals: original SVG workflow diagrams based exclusively on the
+  approved project descriptions, technology stacks, and impact statements. No
+  supplied product screenshots, client material, or third-party images are used.
+- Public-use approval: Johannes explicitly requested the dedicated project-page
+  implementation in the Codex task on 2026-07-24.
+- Approved by/date: `Johannes Erfurt, 2026-07-24`
+
 ## H-004 — Publications
 
 - Status: approved
