@@ -13,8 +13,9 @@ Updated: 2026-07-24
 ## Human blockers
 
 - H-001 through H-004 are approved. H-002 dates and claims are complete, H-003
-  uses approved qualitative impacts and omits the unsupported third project,
-  and H-004 metadata was verified against official records. A-005 is unblocked.
+  uses approved qualitative impacts, includes the approved MindGrow Stories live
+  demo, and omits the unsupported third project; H-004 metadata was verified
+  against official records. A-005 is unblocked.
 - A-006 is complete. Browser verification at 320px and 1440px found no horizontal
   overflow or overlap; all seven links are focusable in logical DOM order and
   expose a visible focus outline.
@@ -48,6 +49,17 @@ Updated: 2026-07-24
   privacy scored 100/100/100/100 for Performance/Accessibility/Best Practices/SEO).
 
 ## Iteration log
+
+2026-07-24 â€” Project demo and visuals â€” complete
+Result: Added Johannes' approved MindGrow Stories live-demo link and original,
+project-specific WebP concept illustrations to both selected-project cards and
+their case-study pages. The illustrations are clearly described as concepts,
+not product screenshots.
+Evidence: `npm run check` -> 27 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run validate` -> 5 static pages built, HTML and internal links valid.
+Commit: `feat: add project demo and visuals` (this iteration)
+Blockers: none
+Next: H-007 â€” validate the live GitHub Pages deployment
 
 2026-07-24 — Dedicated project case studies — complete
 Result: Added shareable static case-study pages for MindGrow Stories and

@@ -225,7 +225,8 @@ Approval states: `pending`, `approved`, or `omit`.
     - Highlights: modular LLM, image-generation, and VLM workflows; automated
       quality assessment and character-consistency methods; Next.js, FastAPI,
       Render, and CI/CD-based cloud deployment.
-    - Public URL: omit until a public case-study URL is supplied.
+    - Public URL: `https://ai-storyteller-frontend-u0z2.onrender.com/`
+      (user-supplied live demo, approved for public linking on 2026-07-24).
     - Impact statement: `Demonstrates end-to-end delivery of a cloud-native generative-AI product, combining multi-agent orchestration, multimodal generation, automated quality assessment, character-consistency controls, and CI/CD-based deployment.`
     - Featured: proposed `true`.
   - Wizarding Story Engine
@@ -250,11 +251,15 @@ Approval states: `pending`, `approved`, or `omit`.
 - Status: approved for public website use
 - Approved presentation: dedicated case-study pages for MindGrow Stories and
   Wizarding Story Engine, linked from the homepage project cards.
-- Approved visuals: original SVG workflow diagrams based exclusively on the
-  approved project descriptions, technology stacks, and impact statements. No
-  supplied product screenshots, client material, or third-party images are used.
+- Approved visuals: original SVG workflow diagrams and original, generative
+  concept illustrations for each project, based exclusively on the approved
+  project descriptions, technology stacks, and impact statements. The WebP
+  derivatives are `public/assets/projects/mindgrow-stories-hero.webp` and
+  `public/assets/projects/wizarding-story-engine-hero.webp`. They are not
+  presented as product screenshots. No supplied product screenshots, client
+  material, or third-party images are used.
 - Public-use approval: Johannes explicitly requested the dedicated project-page
-  implementation in the Codex task on 2026-07-24.
+  implementation and project images in the Codex tasks on 2026-07-24.
 - Approved by/date: `Johannes Erfurt, 2026-07-24`
 
 ## H-004 — Publications

@@ -7,6 +7,7 @@
     "description": "A cloud-native multi-agent platform for the automated creation of personalized children's books, with modular LLM, image-generation, and VLM workflows.",
     "impact": "Demonstrates end-to-end delivery of a cloud-native generative-AI product, combining multi-agent orchestration, multimodal generation, automated quality assessment, character-consistency controls, and CI/CD-based deployment.",
     "techStack": ["Next.js", "FastAPI", "LLMs", "VLMs", "Image Generation", "CI/CD", "Render"],
+    "demoUrl": "https://ai-storyteller-frontend-u0z2.onrender.com/",
     "featured": true
   },
   {

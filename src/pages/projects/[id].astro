@@ -20,6 +20,17 @@ const workflowTitle = project.id === 'mindgrow-stories'
 const workflowDescription = project.id === 'mindgrow-stories'
   ? 'LLM, image-generation, and VLM stages are separated into modular workflows, with automated quality assessment and character-consistency methods.'
   : 'A LangGraph state machine supports planning, generation, evaluation, and iterative revision with specialized critic agents and human approval gates.';
+const projectVisuals = {
+  'mindgrow-stories': {
+    src: '/assets/projects/mindgrow-stories-hero.webp',
+    alt: "Concept illustration of MindGrow Stories connecting AI workflow stages to an illustrated children's book",
+  },
+  'wizarding-story-engine': {
+    src: '/assets/projects/wizarding-story-engine-hero.webp',
+    alt: 'Concept illustration of a multi-agent writing workflow around an open book',
+  },
+} as const;
+const projectVisual = projectVisuals[project.id as keyof typeof projectVisuals];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -32,7 +43,19 @@ const workflowDescription = project.id === 'mindgrow-stories'
       <p class="mt-6 text-xl leading-8 text-slate-700 dark:text-slate-300">{project.description}</p>
     </header>
 
-    <div class="mt-12"><ProjectWorkflowVisual projectId={project.id as 'mindgrow-stories' | 'wizarding-story-engine'} /></div>
+    <figure class="mt-12 overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 shadow-sm dark:border-slate-700">
+      <img
+        class="aspect-video w-full object-cover"
+        src={projectVisual.src}
+        alt={projectVisual.alt}
+        width="1440"
+        height="810"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </figure>
+
+    <div class="mt-8"><ProjectWorkflowVisual projectId={project.id as 'mindgrow-stories' | 'wizarding-story-engine'} /></div>
 
     <div class="mt-14 grid gap-10 lg:grid-cols-[1.35fr_0.65fr]">
       <section aria-labelledby="workflow-title">
@@ -53,6 +76,10 @@ const workflowDescription = project.id === 'mindgrow-stories'
       <h2 class="mt-3 text-2xl font-bold text-slate-950 dark:text-white" id="impact-title">What this project demonstrates</h2>
       <p class="mt-4 max-w-4xl text-lg leading-8 text-slate-700 dark:text-slate-300">{project.impact}</p>
     </section>
+
+    {project.demoUrl && (
+      <a class="mt-12 inline-flex rounded-lg bg-indigo-700 px-5 py-3 font-semibold text-white outline-offset-4 hover:bg-indigo-800 focus-visible:outline-2 focus-visible:outline-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-400 dark:focus-visible:outline-indigo-300" href={project.demoUrl}>Open live demo</a>
+    )}
 
     {project.githubUrl && (
       <a class="mt-12 inline-flex rounded-lg bg-indigo-700 px-5 py-3 font-semibold text-white outline-offset-4 hover:bg-indigo-800 focus-visible:outline-2 focus-visible:outline-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-400 dark:focus-visible:outline-indigo-300" href={project.githubUrl}>View source code <span class="ml-2" aria-hidden="true">↗</span></a>

@@ -6,6 +6,17 @@ interface Props {
 }
 
 const { project } = Astro.props;
+const projectVisuals = {
+  'mindgrow-stories': {
+    src: '/assets/projects/mindgrow-stories-hero.webp',
+    alt: "Concept illustration of MindGrow Stories connecting AI workflow stages to an illustrated children's book",
+  },
+  'wizarding-story-engine': {
+    src: '/assets/projects/wizarding-story-engine-hero.webp',
+    alt: 'Concept illustration of a multi-agent writing workflow around an open book',
+  },
+} as const;
+const projectVisual = projectVisuals[project.id as keyof typeof projectVisuals];
 ---
 
 <article
@@ -17,6 +28,16 @@ const { project } = Astro.props;
     {project.featured && <span class="rounded-full bg-indigo-100 px-3 py-1 text-indigo-900 dark:bg-indigo-950 dark:text-indigo-200">Featured</span>}
     <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-700 dark:bg-slate-800 dark:text-slate-200">{project.category}</span>
   </div>
+
+  <img
+    class="mt-5 aspect-video w-full rounded-xl border border-slate-200 object-cover dark:border-slate-700"
+    src={projectVisual.src}
+    alt={projectVisual.alt}
+    width="1440"
+    height="810"
+    loading="lazy"
+    decoding="async"
+  />
 
   <h3 class="mt-5 text-2xl font-bold tracking-tight text-slate-950 dark:text-white" id={`${project.id}-title`}>
     {project.title}
