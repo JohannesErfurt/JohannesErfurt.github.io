@@ -50,6 +50,8 @@ export interface PublicationEntry {
   id: string;
   year: number;
   title: string;
+  description: string;
+  image: string;
   venue: string;
   authors: string;
   doi?: string;
@@ -153,7 +155,7 @@ export function validatePublicationEntry(
   path = 'publication',
 ): asserts value is PublicationEntry {
   assertRecord(value, path);
-  assertStringFields<PublicationEntry>(value, ['id', 'title', 'venue', 'authors'], path);
+  assertStringFields<PublicationEntry>(value, ['id', 'title', 'description', 'image', 'venue', 'authors'], path);
   if (!Number.isInteger(value.year)) {
     throw new TypeError(`${path}.year must be an integer`);
   }

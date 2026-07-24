@@ -50,6 +50,17 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 â€” Publication visual gallery â€” complete
+Result: Added five original, optimized WebP publication concept illustrations.
+Each image opens an accessible native dialog with a title-derived summary and
+the approved bibliographic details and official links.
+Evidence: `npm run check` -> 27 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run validate` -> 5 static pages built, HTML and internal links valid;
+local browser check -> publication image opens its labeled dialog with details.
+Commit: `feat: add publication visual gallery` (this iteration)
+Blockers: none
+Next: H-007 â€” validate the live GitHub Pages deployment
+
 2026-07-24 â€” Expertise section removal â€” complete
 Result: Removed the homepage Expertise section, including its applied-skills and
 language panels, and removed the obsolete Languages navigation link.

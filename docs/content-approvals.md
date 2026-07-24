@@ -308,6 +308,22 @@ Approval states: `pending`, `approved`, or `omit`.
   redistribution license was confirmed for the other four records.
 - Approved by/date: `Johannes Erfurt, 2026-07-21`
 
+## Additional public content approval â€” Publication visual gallery
+
+- Status: approved for public website use
+- Approved presentation: a title-based original concept illustration for each
+  approved publication. Selecting an illustration opens an accessible detail
+  dialog with its approved title, bibliographic type and year, authors, venue,
+  DOI, and official record link.
+- Approved descriptions: short, title-derived bibliographic summaries only; no
+  unverified abstract, result, or performance claim is added.
+- Public derivatives: five original WebP illustrations in
+  `public/assets/publications/`. They are conceptual artwork, not paper figures,
+  publisher artwork, or screenshots.
+- Public-use approval: Johannes explicitly requested the publication images and
+  detail interaction in the Codex task on 2026-07-24.
+- Approved by/date: `Johannes Erfurt, 2026-07-24`
+
 ## H-005 — Public CV
 
 - Status: replacement approved; visual design prioritized over ATS optimization
