@@ -20,7 +20,7 @@ Approval states: `pending`, `approved`, or `omit`.
 
 ## Additional public content approval — About narrative
 
-- Approved heading: `From mathematical foundations to robust AI systems.`
+- Approved heading: `Turning AI potential into practical systems.`
 - Approved narrative: `I enjoy building intelligent systems that bridge research
   and real-world applications. My interests span machine learning, computer
   vision, generative AI, MLOps, and autonomous agents, with a focus on scalable,
