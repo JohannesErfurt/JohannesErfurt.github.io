@@ -14,9 +14,8 @@ import HeroParticleCanvas from './HeroParticleCanvas.astro';
     alt=""
     width="1536"
     height="1024"
-    class="absolute inset-0 -z-20 h-full w-full object-cover object-center"
-    loading="eager"
-    fetchpriority="high"
+    class="absolute inset-0 -z-20 hidden h-full w-full object-cover object-center md:block"
+    loading="lazy"
     decoding="async"
     aria-hidden="true"
   />
@@ -29,12 +28,15 @@ import HeroParticleCanvas from './HeroParticleCanvas.astro';
   <div class="relative z-10 mx-auto max-w-5xl px-6 py-12 sm:py-16">
   <div class="flex flex-col gap-8 sm:flex-row sm:items-center">
     <img
-      src="/assets/johannes-erfurt-profile.webp"
-      width="320"
-      height="320"
+      src="/assets/johannes-erfurt-profile-384.webp"
+      srcset="/assets/johannes-erfurt-profile-192.webp 192w, /assets/johannes-erfurt-profile-384.webp 384w, /assets/johannes-erfurt-profile.webp 800w"
+      sizes="(min-width: 640px) 12rem, 10rem"
+      width="384"
+      height="384"
       alt="Portrait of Dr.-Ing. Johannes Erfurt"
       class="h-40 w-40 shrink-0 rounded-2xl border-2 border-white/70 object-cover shadow-2xl sm:h-48 sm:w-48"
       loading="eager"
+      fetchpriority="high"
       decoding="async"
     />
     <div>

@@ -17,6 +17,10 @@
 
   type Target = { value: 'network' | 'vision' | 'music' | 'agents' | 'storybook' };
 
+  const desktopLayout = window.matchMedia('(min-width: 768px)');
+  if (!desktopLayout.matches) {
+    // Decorative animation only; skip script work on mobile Lighthouse runs.
+  } else {
   const canvas = document.querySelector<HTMLCanvasElement>('[data-hero-particles]');
   const hero = canvas?.closest<HTMLElement>('#hero');
 
@@ -37,7 +41,6 @@
       const phaseDuration = 12000;
 
       const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-      const desktopLayout = window.matchMedia('(min-width: 768px)');
       const particles: Particle[] = [];
       let width = 0;
       let height = 0;
@@ -466,10 +469,19 @@
 
       const handleLayoutChange = () => desktopLayout.matches ? enable() : disable();
 
-      reducedMotion.addEventListener('change', handleMotionChange);
-      desktopLayout.addEventListener('change', handleLayoutChange);
-      document.addEventListener('visibilitychange', handleDocumentVisibility);
-      enable();
+      const boot = () => {
+        reducedMotion.addEventListener('change', handleMotionChange);
+        desktopLayout.addEventListener('change', handleLayoutChange);
+        document.addEventListener('visibilitychange', handleDocumentVisibility);
+        enable();
+      };
+
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(boot, { timeout: 2000 });
+      } else {
+        globalThis.setTimeout(boot, 1);
+      }
     }
+  }
   }
 </script>
