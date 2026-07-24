@@ -15,6 +15,7 @@ export interface AboutHighlight {
 
 export const aboutIntro = [
   'I enjoy building intelligent systems that bridge research and real-world applications. My interests span machine learning, computer vision, generative AI, MLOps, and autonomous agents, with a focus on scalable, maintainable software.',
+  'AI capabilities are advancing rapidly; the decisive challenge for many organisations is adapting workflows and supplying the context that models need to work reliably. I want to help teams redesign those processes and integrate AI into practical, effective day-to-day systems.',
 ];
 
 export const aboutHighlights: AboutHighlight[] = [

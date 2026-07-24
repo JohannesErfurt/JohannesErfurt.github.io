@@ -50,6 +50,15 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 â€” About AI-adoption narrative â€” complete
+Result: Added an approved About paragraph positioning Johannes as helping teams
+adapt workflows and provide the context needed for dependable AI integration.
+Evidence: `npm run check` -> 27 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run validate` -> 5 static pages built, HTML and internal links valid.
+Commit: `content: add AI adoption narrative` (this iteration)
+Blockers: none
+Next: H-007 â€” validate the live GitHub Pages deployment
+
 2026-07-24 â€” Hero symbol replacement â€” complete
 Result: Replaced the neural-network target with a sparse six-node graph,
 redesigned the storybook as a child-reading icon, and simplified the agent into

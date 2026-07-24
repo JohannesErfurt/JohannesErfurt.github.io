@@ -24,10 +24,14 @@ Approval states: `pending`, `approved`, or `omit`.
 - Approved narrative: `I enjoy building intelligent systems that bridge research
   and real-world applications. My interests span machine learning, computer
   vision, generative AI, MLOps, and autonomous agents, with a focus on scalable,
-  maintainable software.`
+  maintainable software. AI capabilities are advancing rapidly; the decisive
+  challenge for many organisations is adapting workflows and supplying the
+  context that models need to work reliably. I want to help teams redesign those
+  processes and integrate AI into practical, effective day-to-day systems.`
 - Public-use approval: Johannes supplied this biography summary and explicitly
   requested its publication on the homepage About section in the Codex task on
-  2026-07-22.
+  2026-07-22, and supplied the workflow-adoption addition in the Codex task on
+  2026-07-24.
 - Omitted content: the separate `My north star` panel and its supporting sentence
   were removed at Johannes's request on 2026-07-22.
 - Approved by/date: `Johannes Erfurt, 2026-07-22`
