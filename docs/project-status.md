@@ -49,6 +49,16 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-07-24 — Logo-inspired study-abroad icons — complete
+Result: Replaced the generic Durham and Tomsk study-abroad markers with original
+icons inspired by the supplied university logos: a purple shield for Durham and
+a green landmark motif for Tomsk. The supplied raster logos remain unpublished.
+Evidence: `npm run check` -> 25 files, 0 diagnostics; `npm test` -> 7 passed;
+`npm run build` -> 3 static pages built.
+Commit: `feat: refine study abroad icons` (this iteration)
+Blockers: none
+Next: H-007 — validate the live GitHub Pages deployment
+
 2026-07-24 — Transition visual and travel update — complete
 Result: Redesigned the two Transition entries to match the icon-led Experience
 and Education structure, with dates alongside role titles. Added original SVG

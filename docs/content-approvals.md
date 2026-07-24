@@ -167,6 +167,10 @@ Approval states: `pending`, `approved`, or `omit`.
       perspective and family focus.`
     - Approved public travel locations: Thailand, Indonesia, New Zealand, French
       Polynesia, Costa Rica, the United States, and Spain.
+    - Approved icon treatment: original, circular SVG study-abroad markers
+      inspired by the Tomsk Polytechnic University and Durham University logos
+      Johannes supplied on 2026-07-24. The supplied raster logos are not
+      published.
   - `09/2015-10/2022` — Research Associate, Fraunhofer Heinrich Hertz Institute
     - Image/video coding and signal-filter development for H.265/HEVC and H.266/VVC.
     - Wavelet, shearlet, Wiener-filter, classification, artifact-reduction, and
