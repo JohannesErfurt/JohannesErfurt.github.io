@@ -39,9 +39,9 @@ Approval states: `pending`, `approved`, or `omit`.
 
 ## Additional public content approval — About illustration
 
-- Status: approved for public website use
+- Status: superseded on 2026-08-11 by the About-page interest illustration
 - Source supplied by Johannes: `codex-clipboard-55951bf2-0747-4fa7-9b6f-6a26d6466a61.png`
-- Public derivative: `public/assets/about-ai-adoption-workflow.webp`
+- Historical public derivative: `public/assets/about-ai-adoption-workflow.webp`
 - Processing: converted from a 1.78 MB PNG to a 197 KB WebP at the original
   1536x1024 dimensions; the temporary source image is not published.
 - Alt text: `Infographic showing an AI adoption workflow that bridges research
@@ -392,6 +392,19 @@ Approval states: `pending`, `approved`, or `omit`.
 - Public-use approval: Johannes supplied the image and explicitly requested
   this replacement in the Codex task on 2026-07-24.
 - Approved by/date: `Johannes Erfurt, 2026-07-24`
+
+## Additional public content approval — About-page interest illustration
+
+- Status: approved for public website use
+- Generated asset: `public/assets/about-ai-adoption-workflow.webp`
+- Presentation: replaces the previous About-page illustration beneath “A little
+  about me”. The image visually connects machine learning, computer vision,
+  generative AI, MLOps, and autonomous agents without embedded text.
+- Processing: generated at 1536x1024 and saved as an optimized WebP; no private
+  information, logos, watermarks, or externally sourced imagery are included.
+- Public-use approval: Johannes explicitly requested this replacement in the
+  Codex task on 2026-08-11.
+- Approved by/date: `Johannes Erfurt, 2026-08-11`
 
 ## H-005 — Public CV
 

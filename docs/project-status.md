@@ -55,6 +55,17 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-08-11 — About-page interest illustration replacement — complete
+Result: Replaced the About-page illustration with a restrained editorial visual
+that connects machine learning, computer vision, generative AI, MLOps, and
+autonomous agents. Updated the alternative text to describe the new visual.
+Evidence: generated 1536x1024 source inspected; public derivative is an
+89,530-byte WebP with no embedded text, logos, watermarks, or private data;
+visual inspection passed.
+Commit: `assets: refresh about-page interest illustration` (this iteration)
+Blockers: none
+Next: H-008 — perform live acceptance and the 30-second scan test
+
 2026-07-24 — Publication card prompt removal — complete
 Result: Removed the repeated "View publication details" overlay from every
 publication image while retaining each card's button semantics, accessible
