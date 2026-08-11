@@ -55,6 +55,16 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-08-11 — About illustration side-by-side layout — complete
+Result: Moved the About illustration into a smaller right-hand column beside
+the “A little about me” text, with a single-column stack retained for mobile
+screens.
+Evidence: shared About component uses a responsive two-column grid at the
+medium breakpoint; `npm run check`, `npm test`, and `npm run build` passed.
+Commit: `layout: place about illustration beside text` (this iteration)
+Blockers: none
+Next: H-008 — perform live acceptance and the 30-second scan test
+
 2026-08-11 — About-page interest illustration replacement — complete
 Result: Replaced the About-page illustration with a restrained editorial visual
 that connects machine learning, computer vision, generative AI, MLOps, and
