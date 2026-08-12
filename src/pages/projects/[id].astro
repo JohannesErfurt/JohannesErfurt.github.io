@@ -1,5 +1,4 @@
 ---
-import ProjectWorkflowVisual from '../../components/ProjectWorkflowVisual.astro';
 import { projects } from '../../data';
 import type { ProjectEntry } from '../../data/schema';
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -20,6 +19,23 @@ const workflowTitle = project.id === 'mindgrow-stories'
 const workflowDescription = project.id === 'mindgrow-stories'
   ? 'LLM, image-generation, and VLM stages are separated into modular workflows, with automated quality assessment and character-consistency methods.'
   : 'A LangGraph state machine supports planning, generation, evaluation, and iterative revision with specialized critic agents and human approval gates.';
+const mindgrowApproach = `MindGrow Stories is a production-oriented, cloud-native generative-AI system for parent-led creation of personalized educational children’s books. It is not a simple prompt wrapper or a collection of loosely connected AI calls. The project implements a complete application lifecycle: structured user input, asynchronous orchestration, multimodal generation, automated evaluation, artifact management, authentication, observability, testing, and deployment.
+
+The application begins with a parent-defined book brief containing the child’s age, reading level, educational or emotional goal, story context, characters, language, dedication, visual style, and layout preferences. Character references and optional photos are incorporated into the generation process to improve identity consistency across the cover and individual scenes.
+
+A FastAPI backend creates and manages asynchronous book-generation jobs through an in-process queue with bounded concurrency and admission controls. Jobs expose structured progress, support idempotent submissions, persist checkpoints, and can resume after interruptions. The system also includes retry and backoff behavior, stale-job detection, cancellation, per-user job limits, memory-aware result handling, retention cleanup, and persistent on-disk artifacts. These mechanisms address the operational problems of long-running and failure-prone AI workloads rather than treating generation as a single synchronous request.
+
+The generation pipeline separates story creation from visual production. Language models generate the story, scene structure, captions, and image prompts. Configurable image providers then produce the cover, character sheets, and scene illustrations. Provider adapters support multiple hosted services, including Google, deAPI, and Hugging Face, while a deterministic dummy provider enables offline testing without external API calls.
+
+Generated images are evaluated by vision-language models for visual quality, character identity, scene adherence, composition, and cross-image continuity. The system supports multiple independent judges, conservative result merging, optional dispute verification, structured inspection metadata, and actionable refinement prompts. When an image fails evaluation, the pipeline can regenerate or edit it and evaluate the result again. The final artifact is selected using iteration-aware logic instead of blindly accepting the last generated image.
+
+Once the story and illustrations pass the relevant checks, the backend assembles them into configurable book layouts and produces printable PDF and ZIP bundles. Manifests, prompts, provider metadata, seeds, image references, inspection results, and generated files are persisted so that outputs remain inspectable and reproducible.
+
+The Next.js frontend provides the parent-facing experience for authentication, book creation, character management, job monitoring, the personal library, and book viewing. Active jobs are managed through a shared polling provider, allowing the creation flow, library, and book page to observe the same job state without duplicating polling logic.
+
+Engineering quality is treated as a core part of the product. The repository contains extensive Python unit and integration tests, frontend tests, Playwright end-to-end checks, deterministic offline generation paths, artifact-integrity checks, security tests, dependency auditing, and package/build verification. GitHub Actions runs the CI pipeline, and Render deployment is configured to deploy only after the relevant checks pass. Sentry provides error monitoring for the deployed FastAPI and Next.js services.
+
+Overall, the project demonstrates the engineering of a complex generative-AI product under real application constraints: unreliable external providers, expensive model calls, long-running workflows, large generated artifacts, visual quality uncertainty, user data protection, memory pressure, recoverability, and continuous deployment. The substantial work lies not only in calling LLMs and image models, but in building the surrounding system that makes those calls usable, testable, observable, recoverable, and meaningful to parents.`;
 const projectVisuals = {
   'mindgrow-stories': {
     src: '/assets/projects/mindgrow-stories-hero.webp',
@@ -56,13 +72,17 @@ const projectVisual = projectVisuals[project.id as keyof typeof projectVisuals];
       />
     </figure>
 
-    <div class="mt-8"><ProjectWorkflowVisual projectId={project.id as 'mindgrow-stories' | 'wizarding-story-engine'} /></div>
+    {project.id === 'mindgrow-stories' ? (
+      <figure class="mt-12 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-900">
+        <img class="w-full" src="/assets/projects/mindgrow-stories-workflow.webp" alt="MindGrow Stories parent-led educational story generation workflow" width="1536" height="1024" loading="lazy" decoding="async" />
+      </figure>
+    ) : null}
 
     <div class="mt-14 grid gap-10 lg:grid-cols-[1.35fr_0.65fr]">
       <section aria-labelledby="workflow-title">
         <p class="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">Approach</p>
         <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-950 dark:text-white" id="workflow-title">{workflowTitle}</h2>
-        <p class="mt-5 text-lg leading-8 text-slate-700 dark:text-slate-300">{workflowDescription}</p>
+        {project.id === 'mindgrow-stories' ? <div class="mt-5 space-y-5 text-lg leading-8 text-slate-700 dark:text-slate-300">{mindgrowApproach.split('\n\n').map((paragraph) => <p>{paragraph}</p>)}</div> : <p class="mt-5 text-lg leading-8 text-slate-700 dark:text-slate-300">{workflowDescription}</p>}
       </section>
       <aside class="rounded-2xl border border-slate-200 bg-slate-50 p-6 dark:border-slate-700 dark:bg-slate-900" aria-labelledby="stack-title">
         <h2 class="text-lg font-bold text-slate-950 dark:text-white" id="stack-title">Technology stack</h2>

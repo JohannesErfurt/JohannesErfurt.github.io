@@ -1147,3 +1147,13 @@ Next: A-002
   Commit: pending (this iteration)
   Blockers: none
   Next: commit the scoped project-card UX update.
+  2026-08-12 — MindGrow case-study workflow and approach expansion — complete
+  Result: Replaced the MindGrow case-study workflow visual with the user-supplied
+  parent-led generation diagram and added the supplied production-oriented
+  engineering narrative to the Approach section. The detailed content remains
+  on the case-study page, not the compact project card.
+  Evidence: workflow converted to a 1536x1024, 218,194-byte WebP;
+  `npm run check`, `npm test`, and `npm run build` passed.
+  Commit: pending (this iteration)
+  Blockers: none
+  Next: commit the scoped MindGrow case-study update.
