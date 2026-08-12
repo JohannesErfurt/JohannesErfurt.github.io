@@ -1040,3 +1040,13 @@ Next: A-002
   Commit: pending (this iteration)
   Blockers: none
   Next: run the baseline checks, then commit this scoped asset and documentation update.
+  2026-08-12 — CNN publication Lena-image revision — complete
+  Result: Replaced the CNN adaptive-loop-filter artwork's grayscale landscape
+  input/output examples with recognizable compressed and restored Lena panels,
+  while retaining the CNN pipeline, title, arrows, and legend.
+  Evidence: generated 1536x1024 source inspected; public derivative is a
+  144,810-byte WebP with the full diagram inside the canvas and no logos,
+  watermarks, or private data.
+  Commit: pending (this iteration)
+  Blockers: none
+  Next: run the baseline checks, then commit this scoped asset and documentation update.
