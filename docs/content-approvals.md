@@ -415,13 +415,17 @@ Approval states: `pending`, `approved`, or `omit`.
 
 - Status: approved for public website use
 - Generated asset: `public/assets/publications/wpsnr-image-compression.webp`
-- Presentation: replaces the previous concept illustration for “A Study of the
-  Perceptually Weighted Peak Signal-To-Noise Ratio (WPSNR) for Image
-  Compression” on its conference-publication card and detail dialog.
-- Processing: generated at 1536x1024 and saved as an optimized WebP; the image
-  contains no words, logos, watermarks, or private information.
-- Public-use approval: Johannes explicitly requested this replacement in the
-  Codex task on 2026-08-12.
+  - Presentation: replaces the previous concept illustration for “A Study of the
+    Perceptually Weighted Peak Signal-To-Noise Ratio (WPSNR) for Image
+    Compression” on its conference-publication card and detail dialog. The
+    artwork follows Johannes' supplied Lena reference and shows the source image,
+    coarse region-wise sensitivity weights, fine pixel-wise sensitivity weights,
+    and a shared color scale.
+  - Processing: generated at 1536x1024 and saved as an optimized WebP; the image
+    contains no words, logos, watermarks, or private information. The supplied
+    reference was used only as a public-domain-style research figure reference.
+  - Public-use approval: Johannes explicitly requested this replacement in the
+    Codex task on 2026-08-12.
 - Approved by/date: `Johannes Erfurt, 2026-08-12`
 
 ## Additional public content approval — About-page interest illustration

@@ -1030,3 +1030,13 @@ Next: A-002
 - 2026-07-21: A loop invocation continues through all ready agent tasks without
   waiting for another prompt. Each task still requires its own verification
   evidence and scoped local commit before the loop advances.
+  2026-08-12 — WPSNR sensitivity-map image revision — complete
+  Result: Replaced the WPSNR publication artwork with a Lena-based research
+  visualization containing distinct coarse region-wise and fine pixel-wise
+  sensitivity-weight maps plus a shared color scale.
+  Evidence: generated 1536x1024 source inspected; public derivative is a
+  160,372-byte WebP with all panels inside safe margins and no logos, watermarks,
+  or private data.
+  Commit: pending (this iteration)
+  Blockers: none
+  Next: run the baseline checks, then commit this scoped asset and documentation update.
