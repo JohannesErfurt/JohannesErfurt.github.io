@@ -1139,3 +1139,11 @@ Next: A-002
   Commit: pending (this iteration)
   Blockers: none
   Next: commit the scoped project-content update.
+  2026-08-12 — compact selected-project cards — complete
+  Result: Simplified the main project previews to image, project name,
+  technology keywords, case-study link, and demo/source links. Full descriptions,
+  scope, development effort, and engineering impact remain on the detail pages.
+  Evidence: `npm run check`, `npm test`, and `npm run build` passed.
+  Commit: pending (this iteration)
+  Blockers: none
+  Next: commit the scoped project-card UX update.

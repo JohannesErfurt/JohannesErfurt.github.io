@@ -20,17 +20,12 @@ const projectVisual = projectVisuals[project.id as keyof typeof projectVisuals];
 ---
 
 <article
-  class="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900 sm:p-8"
+  class="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-700 dark:bg-slate-900 sm:p-5"
   data-project-id={project.id}
   aria-labelledby={`${project.id}-title`}
 >
-  <div class="flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-wide">
-    {project.featured && <span class="rounded-full bg-indigo-100 px-3 py-1 text-indigo-900 dark:bg-indigo-950 dark:text-indigo-200">Featured</span>}
-    <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-700 dark:bg-slate-800 dark:text-slate-200">{project.category}</span>
-  </div>
-
   <img
-    class="mt-5 aspect-video w-full rounded-xl border border-slate-200 object-cover dark:border-slate-700"
+    class="aspect-video w-full rounded-xl border border-slate-200 object-cover dark:border-slate-700"
     src={projectVisual.src}
     alt={projectVisual.alt}
     width="1440"
@@ -42,19 +37,8 @@ const projectVisual = projectVisuals[project.id as keyof typeof projectVisuals];
   <h3 class="mt-5 text-2xl font-bold tracking-tight text-slate-950 dark:text-white" id={`${project.id}-title`}>
     {project.title}
   </h3>
-  <p class="mt-1 font-semibold text-indigo-700 dark:text-indigo-300">{project.subtitle}</p>
-  {project.scopeLabel && project.developmentEffort && <div class="mt-4 grid gap-2 sm:grid-cols-2" aria-label={`Project scope and development effort for ${project.title}`}>
-    <div class="rounded-lg border border-indigo-100 bg-indigo-50/70 px-3 py-2 dark:border-indigo-900/70 dark:bg-indigo-950/40"><p class="text-[0.68rem] font-bold uppercase tracking-wide text-indigo-700 dark:text-indigo-300">Scope</p><p class="mt-1 text-sm font-semibold text-slate-800 dark:text-slate-200">{project.scopeLabel}</p></div>
-    <div class="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 dark:border-slate-700 dark:bg-slate-950"><p class="text-[0.68rem] font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">Development effort</p><p class="mt-1 text-sm font-semibold text-slate-800 dark:text-slate-200">{project.developmentEffort}</p></div>
-  </div>}
-  <p class="mt-4 leading-7 text-slate-700 dark:text-slate-300">{project.description}</p>
 
-  <div class="mt-5 rounded-xl bg-slate-50 p-4 dark:bg-slate-950">
-    <p class="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-400">Engineering impact</p>
-    <p class="mt-2 leading-7 text-slate-700 dark:text-slate-300">{project.impact}</p>
-  </div>
-
-  <ul class="mt-5 flex flex-wrap gap-2" aria-label={`Technologies used for ${project.title}`}>
+  <ul class="mt-4 flex flex-wrap gap-2" aria-label={`Technologies used for ${project.title}`}>
     {project.techStack.map((technology) => (
       <li class="rounded-md border border-slate-200 px-2.5 py-1 text-sm font-medium text-slate-700 dark:border-slate-700 dark:text-slate-200">
         {technology}
