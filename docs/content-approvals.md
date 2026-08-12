@@ -393,6 +393,20 @@ Approval states: `pending`, `approved`, or `omit`.
   this replacement in the Codex task on 2026-07-24.
 - Approved by/date: `Johannes Erfurt, 2026-07-24`
 
+## Additional public content approval — CNN adaptive-loop-filter publication visual
+
+- Status: approved for public website use
+- Generated asset:
+  `public/assets/publications/adaptive-loop-filter-cnn-classification.webp`
+- Presentation: replaces the previous concept illustration for “Adaptive Loop
+  Filter with a CNN-Based Classification” on its conference-publication card
+  and detail dialog.
+- Processing: generated at 1536x1024 and saved as an optimized WebP; the image
+  contains no words, logos, watermarks, or private information.
+- Public-use approval: Johannes explicitly requested this replacement in the
+  Codex task on 2026-08-12.
+- Approved by/date: `Johannes Erfurt, 2026-08-12`
+
 ## Additional public content approval — About-page interest illustration
 
 - Status: approved for public website use

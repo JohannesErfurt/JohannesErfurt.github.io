@@ -55,6 +55,17 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-08-12 — CNN adaptive-loop-filter publication image — complete
+Result: Replaced the conference-paper concept artwork with a publication-style
+scientific illustration showing blocky input, CNN feature layers and
+classification, adaptive filter banks, and restored output.
+Evidence: generated 1536x1024 source inspected; public derivative is a
+113,870-byte WebP with no embedded text, logos, watermarks, or private data;
+`npm run check`, `npm test`, and `npm run build` passed.
+Commit: `assets: add CNN adaptive-loop-filter publication image` (this iteration)
+Blockers: none
+Next: H-008 — perform live acceptance and the 30-second scan test
+
 2026-08-12 — Development dependency vulnerability remediation — complete
 Result: Applied npm's non-forced audit updates for brace-expansion, fast-uri,
 ip-address, js-yaml, nanoid, and postcss. Added npm overrides for patched
