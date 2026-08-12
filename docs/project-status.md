@@ -1095,3 +1095,12 @@ Next: A-002
   Commit: pending (this iteration)
   Blockers: none
   Next: commit the scoped project-content update.
+  2026-08-12 — Wizarding Story Engine project image replacement — complete
+  Result: Replaced the Wizarding Story Engine hero artwork with the user-supplied
+  magical library and multi-agent story-orchestration illustration, preserving
+  the existing project metadata and asset path.
+  Evidence: source converted to a 1536x1024, 245,652-byte WebP and inspected;
+  `npm run check`, `npm test`, and `npm run build` passed.
+  Commit: pending (this iteration)
+  Blockers: none
+  Next: commit the scoped project asset update.
