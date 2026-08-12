@@ -1173,3 +1173,11 @@ Next: A-002
   Commit: pending (this iteration)
   Blockers: none
   Next: commit the scoped project UX and case-study layout update.
+  2026-08-12 — direct project image links and case-study impact — complete
+  Result: Removed project-image summary dialogs; images now link directly to
+  each case study, and the redundant “Read case study” button is gone. The
+  engineering-impact section is present on each case-study page.
+  Evidence: `npm run check`, `npm test`, and `npm run build` passed.
+  Commit: pending (this iteration)
+  Blockers: none
+  Next: commit the scoped project-navigation update.

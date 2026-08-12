@@ -68,6 +68,12 @@ Overall, the project demonstrates the engineering of a complex generative-AI pro
       </section>
     </div>
 
+    <section class="mt-14 rounded-2xl border border-indigo-200 bg-indigo-50 p-7 dark:border-indigo-900 dark:bg-indigo-950/40" aria-labelledby="impact-title">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">Engineering impact</p>
+      <h2 class="mt-3 text-2xl font-bold text-slate-950 dark:text-white" id="impact-title">What this project demonstrates</h2>
+      <p class="mt-4 max-w-4xl text-lg leading-8 text-slate-700 dark:text-slate-300">{project.impact}</p>
+    </section>
+
     {project.demoUrl && (
       <a class="mt-12 inline-flex rounded-lg bg-indigo-700 px-5 py-3 font-semibold text-white outline-offset-4 hover:bg-indigo-800 focus-visible:outline-2 focus-visible:outline-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-400 dark:focus-visible:outline-indigo-300" href={project.demoUrl}>Open live demo</a>
     )}
