@@ -55,6 +55,17 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-08-12 — WPSNR publication image — complete
+Result: Replaced the WPSNR conference-paper concept artwork with a
+publication-style scientific illustration showing compressed input, uniform
+and perceptual weighting paths, saliency maps, and quality comparisons.
+Evidence: generated 1536x1024 source inspected; public derivative is a
+157,124-byte WebP with no embedded text, logos, watermarks, or private data;
+`npm run check`, `npm test`, and `npm run build` passed.
+Commit: `assets: add WPSNR publication image` (this iteration)
+Blockers: none
+Next: H-008 — perform live acceptance and the 30-second scan test
+
 2026-08-12 — CNN publication image title revision — complete
 Result: Added the exact title “CNN-based In-Loop Filter” to the conference
 publication illustration while preserving the CNN/filtering diagram.
