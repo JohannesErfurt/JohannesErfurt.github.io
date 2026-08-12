@@ -1123,3 +1123,11 @@ Next: A-002
   Commit: pending (this iteration)
   Blockers: none
   Next: commit the scoped project-content and presentation update.
+  2026-08-12 — Wizarding Story Engine description rewrite — complete
+  Result: Replaced the project description with the user-approved explanation
+  of chapter planning, scene writing, continuity checks, review cycles, and
+  human approval gates.
+  Evidence: `npm run check` and `npm test` passed.
+  Commit: pending (this iteration)
+  Blockers: none
+  Next: commit the scoped project-content update.

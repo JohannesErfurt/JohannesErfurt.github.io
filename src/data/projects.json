@@ -17,7 +17,7 @@
     "title": "Wizarding Story Engine",
     "subtitle": "Open-Source Multi-Agent Writing System",
     "category": "AI / Multi-Agent",
-    "description": "A state-based LangGraph pipeline for planning, generating, evaluating, and iteratively revising long-form narrative text.",
+    "description": "An AI-driven novel writing system that develops story ideas into complete chapters. It plans the narrative, writes scenes, checks characters and continuity, and revises the prose through repeated review cycles. Human approval remains part of the process, allowing each chapter to be accepted, revised, or redirected before the story continues.",
     "impact": "Provides an open-source reference architecture for controllable long-form generation, with specialized critic agents, iterative revision, resumable execution, human approval gates, and explicit token and cost monitoring.",
     "scopeLabel": "Focused prototype",
     "developmentEffort": "Built over a few days",
