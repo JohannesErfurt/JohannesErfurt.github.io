@@ -1078,3 +1078,12 @@ Next: A-002
   Commit: pending (this iteration)
   Blockers: none
   Next: commit the scoped layout update.
+  2026-08-12 — MindGrow Stories project image replacement — complete
+  Result: Replaced the MindGrow Stories hero artwork with the user-supplied
+  illustrated children’s-book scene, preserving the existing project metadata
+  and asset path.
+  Evidence: source converted to a 1536x1024, 293,726-byte WebP and inspected;
+  `npm run check`, `npm test`, and `npm run build` passed.
+  Commit: pending (this iteration)
+  Blockers: none
+  Next: commit the scoped project asset update.
