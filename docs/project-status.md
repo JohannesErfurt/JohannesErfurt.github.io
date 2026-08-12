@@ -1164,3 +1164,12 @@ Next: A-002
   Commit: pending (this iteration)
   Blockers: none
   Next: commit the scoped project-content update.
+  2026-08-12 — project image dialogs and case-study simplification — complete
+  Result: Added publication-style hover zoom and accessible dialogs to project
+  images, showing each project's short description and engineering impact. Case
+  study pages no longer duplicate the front-page hero image or impact section;
+  the technology stack now appears above the approach content.
+  Evidence: `npm run check`, `npm test`, and `npm run build` passed.
+  Commit: pending (this iteration)
+  Blockers: none
+  Next: commit the scoped project UX and case-study layout update.

@@ -36,17 +36,6 @@ The Next.js frontend provides the parent-facing experience for authentication, b
 Engineering quality is treated as a core part of the product. The repository contains extensive Python unit and integration tests, frontend tests, Playwright end-to-end checks, deterministic offline generation paths, artifact-integrity checks, security tests, dependency auditing, and package/build verification. GitHub Actions runs the CI pipeline, and Render deployment is configured to deploy only after the relevant checks pass. Sentry provides error monitoring for the deployed FastAPI and Next.js services.
 
 Overall, the project demonstrates the engineering of a complex generative-AI product under real application constraints: unreliable external providers, expensive model calls, long-running workflows, large generated artifacts, visual quality uncertainty, user data protection, memory pressure, recoverability, and continuous deployment. The substantial work lies not only in calling LLMs and image models, but in building the surrounding system that makes those calls usable, testable, observable, recoverable, and meaningful to parents.`;
-const projectVisuals = {
-  'mindgrow-stories': {
-    src: '/assets/projects/mindgrow-stories-hero.webp',
-    alt: "Concept illustration of MindGrow Stories connecting AI workflow stages to an illustrated children's book",
-  },
-  'wizarding-story-engine': {
-    src: '/assets/projects/wizarding-story-engine-hero.webp',
-    alt: 'Concept illustration of a multi-agent writing workflow around an open book',
-  },
-} as const;
-const projectVisual = projectVisuals[project.id as keyof typeof projectVisuals];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -60,43 +49,24 @@ const projectVisual = projectVisuals[project.id as keyof typeof projectVisuals];
       {project.scopeLabel && project.developmentEffort && <div class="mt-6 flex flex-wrap gap-3" aria-label="Project scope and development effort"><span class="rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1.5 text-sm font-semibold text-indigo-800 dark:border-indigo-900 dark:bg-indigo-950/50 dark:text-indigo-200">{project.scopeLabel}</span><span class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-semibold text-slate-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">{project.developmentEffort}</span></div>}
     </header>
 
-    <figure class="mt-12 overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 shadow-sm dark:border-slate-700">
-      <img
-        class="aspect-video w-full object-cover"
-        src={projectVisual.src}
-        alt={projectVisual.alt}
-        width="1440"
-        height="810"
-        fetchpriority="high"
-        decoding="async"
-      />
-    </figure>
-
     {project.id === 'mindgrow-stories' ? (
       <figure class="mt-12 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-900">
         <img class="w-full" src="/assets/projects/mindgrow-stories-workflow.webp" alt="MindGrow Stories parent-led educational story generation workflow" width="1536" height="1024" loading="lazy" decoding="async" />
       </figure>
     ) : null}
 
-    <div class="mt-14 grid gap-10 lg:grid-cols-[1.35fr_0.65fr]">
+    <aside class="mt-12 rounded-2xl border border-slate-200 bg-slate-50 p-6 dark:border-slate-700 dark:bg-slate-900" aria-labelledby="stack-title">
+      <h2 class="text-lg font-bold text-slate-950 dark:text-white" id="stack-title">Technology stack</h2>
+      <ul class="mt-4 flex flex-wrap gap-2">{project.techStack.map((technology) => <li class="rounded-md border border-slate-200 bg-white px-2.5 py-1 text-sm font-medium text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200">{technology}</li>)}</ul>
+    </aside>
+
+    <div class="mt-14">
       <section aria-labelledby="workflow-title">
         <p class="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">Approach</p>
         <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-950 dark:text-white" id="workflow-title">{workflowTitle}</h2>
         {project.id === 'mindgrow-stories' ? <div class="mt-5 space-y-5 text-lg leading-8 text-slate-700 dark:text-slate-300">{mindgrowApproach.split('\n\n').map((paragraph) => <p>{paragraph}</p>)}</div> : <p class="mt-5 text-lg leading-8 text-slate-700 dark:text-slate-300">{workflowDescription}</p>}
       </section>
-      <aside class="rounded-2xl border border-slate-200 bg-slate-50 p-6 dark:border-slate-700 dark:bg-slate-900" aria-labelledby="stack-title">
-        <h2 class="text-lg font-bold text-slate-950 dark:text-white" id="stack-title">Technology stack</h2>
-        <ul class="mt-4 flex flex-wrap gap-2">
-          {project.techStack.map((technology) => <li class="rounded-md border border-slate-200 bg-white px-2.5 py-1 text-sm font-medium text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200">{technology}</li>)}
-        </ul>
-      </aside>
     </div>
-
-    <section class="mt-14 rounded-2xl border border-indigo-200 bg-indigo-50 p-7 dark:border-indigo-900 dark:bg-indigo-950/40" aria-labelledby="impact-title">
-      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">Engineering impact</p>
-      <h2 class="mt-3 text-2xl font-bold text-slate-950 dark:text-white" id="impact-title">What this project demonstrates</h2>
-      <p class="mt-4 max-w-4xl text-lg leading-8 text-slate-700 dark:text-slate-300">{project.impact}</p>
-    </section>
 
     {project.demoUrl && (
       <a class="mt-12 inline-flex rounded-lg bg-indigo-700 px-5 py-3 font-semibold text-white outline-offset-4 hover:bg-indigo-800 focus-visible:outline-2 focus-visible:outline-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-400 dark:focus-visible:outline-indigo-300" href={project.demoUrl}>Open live demo</a>
