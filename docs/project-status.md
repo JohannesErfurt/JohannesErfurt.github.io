@@ -1070,3 +1070,11 @@ Next: A-002
   Commit: pending (this iteration)
   Blockers: none
   Next: run the baseline checks, then commit this scoped asset and documentation update.
+  2026-08-12 — publication card grid sizing — complete
+  Result: Reduced publication card padding and enabled three columns at wide
+  breakpoints so multiple publication cards fit side by side; detail dialogs
+  retain their readable width.
+  Evidence: `npm run check`, `npm test`, and `npm run build` passed.
+  Commit: pending (this iteration)
+  Blockers: none
+  Next: commit the scoped layout update.
