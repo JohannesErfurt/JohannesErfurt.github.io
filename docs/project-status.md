@@ -55,6 +55,17 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-08-12 — CNN publication image crop-safe revision — complete
+Result: Enlarged the title to “CNN-based IN-Loop Filter” and repositioned the
+title and diagram lower on a true 16:9 canvas so the Conference thumbnail does
+not clip the title.
+Evidence: revised 1672x941 WebP inspected at the publication-card aspect ratio;
+title and diagram are fully inside the canvas; `npm run check`, `npm test`, and
+`npm run build` passed.
+Commit: `assets: optimize CNN publication image crop` (this iteration)
+Blockers: none
+Next: H-008 — perform live acceptance and the 30-second scan test
+
 2026-08-12 — WPSNR publication image — complete
 Result: Replaced the WPSNR conference-paper concept artwork with a
 publication-style scientific illustration showing compressed input, uniform

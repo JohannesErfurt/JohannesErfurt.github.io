@@ -401,10 +401,12 @@ Approval states: `pending`, `approved`, or `omit`.
 - Presentation: replaces the previous concept illustration for “Adaptive Loop
   Filter with a CNN-Based Classification” on its conference-publication card
   and detail dialog.
-- Processing: generated at 1536x1024 and saved as an optimized WebP; the image
-  contains no words, logos, watermarks, or private information.
-- Revision: the title “CNN-based In-Loop Filter” was added at Johannes'
-  request on 2026-08-12; the diagram remains unchanged.
+- Processing: generated at 1672x941 (16:9) and saved as an optimized WebP; the
+  image contains only the approved title and diagram, with no logos,
+  watermarks, or private information.
+- Revision: the title was enlarged, changed to “CNN-based IN-Loop Filter” at
+  Johannes' requested capitalization, and moved with the diagram into a lower
+  position with a top safety margin to prevent thumbnail clipping.
 - Public-use approval: Johannes explicitly requested this replacement and title
   revision in the Codex tasks on 2026-08-12.
 - Approved by/date: `Johannes Erfurt, 2026-08-12`
