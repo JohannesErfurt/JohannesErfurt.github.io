@@ -1104,3 +1104,12 @@ Next: A-002
   Commit: pending (this iteration)
   Blockers: none
   Next: commit the scoped project asset update.
+  2026-08-12 — publication gallery UX revision — complete
+  Result: Reordered publications newest-first in one unified responsive gallery;
+  compact cards now fit three across on large screens, two across on tablets,
+  and one on small screens, with hover affordances and unchanged accessible
+  detail dialogs.
+  Evidence: `npm run check`, `npm test`, and `npm run build` passed.
+  Commit: pending (this iteration)
+  Blockers: none
+  Next: commit the scoped publication-layout update.
