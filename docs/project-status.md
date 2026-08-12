@@ -55,6 +55,19 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-08-12 — Development dependency vulnerability remediation — complete
+Result: Applied npm's non-forced audit updates for brace-expansion, fast-uri,
+ip-address, js-yaml, nanoid, and postcss. Added npm overrides for patched
+tmp@0.2.7 and uuid@11.1.1 because the latest @lhci/cli release still pins
+vulnerable ranges for those transitive packages.
+Evidence: `npm ci` -> 582 packages installed, 0 vulnerabilities; `npm audit`
+and `npm audit --omit=dev` -> 0 vulnerabilities; `npm ls tmp uuid` -> patched
+versions; `npm run quality` -> all checks, tests, build, link validation, and
+Lighthouse assertions passed.
+Commit: `security: remediate development dependency vulnerabilities` (this iteration)
+Blockers: none
+Next: H-008 — perform live acceptance and the 30-second scan test
+
 2026-08-11 — About illustration side-by-side layout — complete
 Result: Moved the About illustration into a smaller right-hand column beside
 the “A little about me” text, with a single-column stack retained for mobile

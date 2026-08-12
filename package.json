@@ -15,6 +15,10 @@
     "lighthouse": "node scripts/run_lighthouse.mjs",
     "quality": "npm run check && npm test && npm run validate && npm run lighthouse"
   },
+  "overrides": {
+    "tmp": "^0.2.7",
+    "uuid": "^11.1.1"
+  },
   "devDependencies": {
     "@astrojs/check": "^0.9.6",
     "@lhci/cli": "^0.15.1",
