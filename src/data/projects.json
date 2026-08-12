@@ -4,7 +4,7 @@
     "title": "MindGrow Stories",
     "subtitle": "Full-Stack AI Application",
     "category": "AI / Multi-Agent",
-    "description": "A cloud-native multi-agent platform for the automated creation of personalized children's books, with modular LLM, image-generation, and VLM workflows.",
+    "description": "MindGrow Stories is a cloud-native AI platform that helps parents create personalized, educational children’s books designed to support learning, emotional development, and everyday parenting challenges through coordinated language, image-generation, and visual-quality workflows.",
     "impact": "Demonstrates end-to-end delivery of a cloud-native generative-AI product, combining multi-agent orchestration, multimodal generation, automated quality assessment, character-consistency controls, and CI/CD-based deployment.",
     "techStack": ["Next.js", "FastAPI", "LLMs", "VLMs", "Image Generation", "CI/CD", "Render"],
     "demoUrl": "https://ai-storyteller-frontend-u0z2.onrender.com/",
