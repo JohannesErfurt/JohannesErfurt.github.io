@@ -55,6 +55,16 @@ Updated: 2026-07-24
 
 ## Iteration log
 
+2026-08-12 — CNN publication image title revision — complete
+Result: Added the exact title “CNN-based In-Loop Filter” to the conference
+publication illustration while preserving the CNN/filtering diagram.
+Evidence: revised 1536x1024 source inspected; public derivative is a
+122,538-byte WebP; title is centered in the top margin and does not overlap the
+diagram.
+Commit: `assets: title CNN publication image` (this iteration)
+Blockers: none
+Next: H-008 — perform live acceptance and the 30-second scan test
+
 2026-08-12 — CNN adaptive-loop-filter publication image — complete
 Result: Replaced the conference-paper concept artwork with a publication-style
 scientific illustration showing blocky input, CNN feature layers and

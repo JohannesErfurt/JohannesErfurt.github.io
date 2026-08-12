@@ -403,8 +403,10 @@ Approval states: `pending`, `approved`, or `omit`.
   and detail dialog.
 - Processing: generated at 1536x1024 and saved as an optimized WebP; the image
   contains no words, logos, watermarks, or private information.
-- Public-use approval: Johannes explicitly requested this replacement in the
-  Codex task on 2026-08-12.
+- Revision: the title “CNN-based In-Loop Filter” was added at Johannes'
+  request on 2026-08-12; the diagram remains unchanged.
+- Public-use approval: Johannes explicitly requested this replacement and title
+  revision in the Codex tasks on 2026-08-12.
 - Approved by/date: `Johannes Erfurt, 2026-08-12`
 
 ## Additional public content approval — About-page interest illustration
