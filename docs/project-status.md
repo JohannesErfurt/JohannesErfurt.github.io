@@ -1050,3 +1050,13 @@ Next: A-002
   Commit: pending (this iteration)
   Blockers: none
   Next: run the baseline checks, then commit this scoped asset and documentation update.
+  2026-08-12 — WPSNR workflow-and-sensitivity image revision — complete
+  Result: Expanded the WPSNR publication artwork into a complete perceptual
+  quality workflow: Lena input, compressed/blocky Lena, region-wise and
+  pixel-wise sensitivity maps, weighted quality output, and visual examples
+  explaining why homogeneous regions receive higher weights than textured ones.
+  Evidence: generated 1536x1024 source inspected; public derivative is a
+  181,586-byte WebP with the workflow and explanatory panels inside the canvas.
+  Commit: pending (this iteration)
+  Blockers: none
+  Next: run the baseline checks, then commit this scoped asset and documentation update.

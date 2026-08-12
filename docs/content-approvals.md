@@ -421,9 +421,11 @@ Approval states: `pending`, `approved`, or `omit`.
   - Presentation: replaces the previous concept illustration for “A Study of the
     Perceptually Weighted Peak Signal-To-Noise Ratio (WPSNR) for Image
     Compression” on its conference-publication card and detail dialog. The
-    artwork follows Johannes' supplied Lena reference and shows the source image,
-    coarse region-wise sensitivity weights, fine pixel-wise sensitivity weights,
-    and a shared color scale.
+    artwork follows Johannes' supplied Lena reference and shows the complete
+    workflow: source and compressed images, coarse region-wise sensitivity
+    weights, fine pixel-wise sensitivity weights, weighted quality output, and
+    the distinction between higher-weight homogeneous regions and lower-weight
+    textured regions.
   - Processing: generated at 1536x1024 and saved as an optimized WebP; the image
     contains no words, logos, watermarks, or private information. The supplied
     reference was used only as a public-domain-style research figure reference.
