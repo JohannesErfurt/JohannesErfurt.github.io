@@ -18,7 +18,17 @@ const workflowTitle = project.id === 'mindgrow-stories'
   : 'A controllable writing workflow';
 const workflowDescription = project.id === 'mindgrow-stories'
   ? 'LLM, image-generation, and VLM stages are separated into modular workflows, with automated quality assessment and character-consistency methods.'
-  : 'A LangGraph state machine supports planning, generation, evaluation, and iterative revision with specialized critic agents and human approval gates.';
+  : `This project implements a stateful, multi-agent narrative pipeline using LangGraph and LangChain. A shared AgentState, defined with nested Pydantic models, carries the story bible, character and world information, timeline data, chapter plans, scene drafts, critic feedback, approval status, and runtime metadata through the graph.
+
+The workflow separates responsibilities across specialized nodes. Planning agents develop the story structure, chapter architecture, and individual scenes. The writing agent generates prose from the current story state and style targets. Specialized critics then review the result for lore consistency, magical rules, character behavior, German prose quality, atmosphere, and overall reader appeal. Blocking feedback is routed back into revision, while accepted material proceeds to persistence and approval.
+
+The system maintains both long-term and short-term memory. Long-term memory stores durable story facts such as characters, locations, relationships, world rules, mysteries, and timeline events. Short-term memory contains the active scene context, recent prose, unresolved conflicts, emotional tensions, and current critic feedback.
+
+LangGraph checkpointing allows execution to pause and resume using a stable thread identifier. Human approval gates can accept a chapter, reject it, or provide revision instructions before the pipeline updates the persistent story state and continues production.
+
+Model configuration, language settings, style targets, few-shot example categories, request limits, token limits, and estimated cost limits are defined outside the graph in book_config.yaml. Gemini is used through the configured provider layer for planning, drafting, writing, and criticism. Each model call records token usage and estimated cost, enabling per-node usage logs, run-level cost preflight checks, and post-run reporting.
+
+The project also includes a narrative analyzer for basic prose measurements such as sentence length, vocabulary variety, paragraph size, and dialogue-to-description ratio. These measurements provide additional signals for tuning prompts and evaluating generated scenes. Unit tests use deterministic model clients where possible, allowing graph routing, state updates, checkpoint recovery, critic behavior, approval handling, and cost safeguards to be tested without making live model calls.`;
 const mindgrowApproach = `MindGrow Stories is a production-oriented, cloud-native generative-AI system for parent-led creation of personalized educational children’s books. It is not a simple prompt wrapper or a collection of loosely connected AI calls. The project implements a complete application lifecycle: structured user input, asynchronous orchestration, multimodal generation, automated evaluation, artifact management, authentication, observability, testing, and deployment.
 
 The application begins with a parent-defined book brief containing the child’s age, reading level, educational or emotional goal, story context, characters, language, dedication, visual style, and layout preferences. Character references and optional photos are incorporated into the generation process to improve identity consistency across the cover and individual scenes.
@@ -46,7 +56,7 @@ Overall, the project demonstrates the engineering of a complex generative-AI pro
       <p class="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">{project.subtitle}</p>
       <h1 class="mt-3 text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl" id="project-title">{project.title}</h1>
       <p class="mt-6 text-xl leading-8 text-slate-700 dark:text-slate-300">{project.description}</p>
-      {project.scopeLabel && project.developmentEffort && <div class="mt-6 flex flex-wrap gap-3" aria-label="Project scope and development effort"><span class="rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1.5 text-sm font-semibold text-indigo-800 dark:border-indigo-900 dark:bg-indigo-950/50 dark:text-indigo-200">{project.scopeLabel}</span><span class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-semibold text-slate-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">{project.developmentEffort}</span></div>}
+      {project.scopeLabel && project.developmentEffort && <div class="mt-6 flex flex-wrap gap-3"><span class="rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1.5 text-sm font-semibold text-indigo-800 dark:border-indigo-900 dark:bg-indigo-950/50 dark:text-indigo-200">{project.scopeLabel}</span><span class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-semibold text-slate-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">{project.developmentEffort}</span></div>}
     </header>
 
     {project.id === 'mindgrow-stories' ? (
@@ -69,7 +79,7 @@ Overall, the project demonstrates the engineering of a complex generative-AI pro
       <section aria-labelledby="workflow-title">
         <p class="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">Approach</p>
         <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-950 dark:text-white" id="workflow-title">{workflowTitle}</h2>
-        {project.id === 'mindgrow-stories' ? <div class="mt-5 space-y-5 text-lg leading-8 text-slate-700 dark:text-slate-300">{mindgrowApproach.split('\n\n').map((paragraph) => <p>{paragraph}</p>)}</div> : <p class="mt-5 text-lg leading-8 text-slate-700 dark:text-slate-300">{workflowDescription}</p>}
+        <div class="mt-5 space-y-5 text-lg leading-8 text-slate-700 dark:text-slate-300">{(project.id === 'mindgrow-stories' ? mindgrowApproach : workflowDescription).split('\n\n').map((paragraph) => <p>{paragraph}</p>)}</div>
       </section>
     </div>
 

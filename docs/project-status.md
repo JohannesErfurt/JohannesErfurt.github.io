@@ -1190,3 +1190,12 @@ Next: A-002
   Commit: pending (this iteration)
   Blockers: none
   Next: run the baseline checks, then commit the scoped case-study asset update.
+  2026-08-12 — ARIA label validation fix — complete
+  Result: Removed the invalid `aria-label` from the non-interactive project
+  scope badge wrapper on generated case-study pages.
+  Evidence: `npm run check`, `npm test`, `npm run validate`, and HTML validation
+  passed. The remaining `npm run quality` failure is Lighthouse cleanup failing
+  to remove a Windows temporary directory (`EPERM`), not a page-quality error.
+  Commit: pending (this iteration)
+  Blockers: Lighthouse Windows temp-directory cleanup permission issue.
+  Next: commit the ARIA fix; rerun Lighthouse after clearing the temp lock or restarting Windows.
