@@ -1210,3 +1210,10 @@ Next: A-002
   Commit: pending (this iteration)
   Blockers: Windows Lighthouse temp-directory cleanup lock.
   Next: commit the heading hierarchy fix.
+  2026-08-12 — remove About-page illustration — complete
+  Result: Removed the image displayed beside “A little about me”; the narrative
+  now uses the full content width while the highlights remain unchanged.
+  Evidence: `npm run check`, `npm test`, and elevated `npm run build` passed.
+  Commit: pending (this iteration)
+  Blockers: none
+  Next: commit the scoped About layout update.
