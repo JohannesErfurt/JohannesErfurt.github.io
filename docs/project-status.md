@@ -1181,3 +1181,12 @@ Next: A-002
   Commit: pending (this iteration)
   Blockers: none
   Next: commit the scoped project-navigation update.
+  2026-08-12 — Wizarding Story Engine workflow illustration — complete
+  Result: Added the supplied workflow illustration to the Wizarding Story Engine
+  case-study page, showing planning, chapter and scene drafting, critique,
+  revision, human approval, memory layers, and token/cost monitoring.
+  Evidence: source converted to a 1672x941, 295,434-byte WebP; existing project
+  card artwork remains unchanged.
+  Commit: pending (this iteration)
+  Blockers: none
+  Next: run the baseline checks, then commit the scoped case-study asset update.
