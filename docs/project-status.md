@@ -1217,3 +1217,11 @@ Next: A-002
   Commit: pending (this iteration)
   Blockers: none
   Next: commit the scoped About layout update.
+  2026-08-12 — downloadable CV replacement — complete
+  Result: Replaced `public/assets/Dr_Johannes_Erfurt_CV.pdf` with the supplied
+  `cv_github.pdf`; the existing “Download CV (PDF)” link remains unchanged.
+  Evidence: replacement asset is 480,857 bytes; `npm run check`, `npm test`, and
+  `npm run build` passed.
+  Commit: pending (this iteration)
+  Blockers: none
+  Next: commit the CV asset update.
