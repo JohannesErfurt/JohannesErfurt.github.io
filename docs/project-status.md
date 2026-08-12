@@ -1157,3 +1157,10 @@ Next: A-002
   Commit: pending (this iteration)
   Blockers: none
   Next: commit the scoped MindGrow case-study update.
+  2026-08-12 — project development-effort wording update — complete
+  Result: Updated the project labels to “More than six months of development”
+  for MindGrow Stories and “Built over a few weeks” for Wizarding Story Engine.
+  Evidence: `npm run check` and `npm test` passed.
+  Commit: pending (this iteration)
+  Blockers: none
+  Next: commit the scoped project-content update.
