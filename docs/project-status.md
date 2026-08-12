@@ -1199,3 +1199,14 @@ Next: A-002
   Commit: pending (this iteration)
   Blockers: Lighthouse Windows temp-directory cleanup permission issue.
   Next: commit the ARIA fix; rerun Lighthouse after clearing the temp lock or restarting Windows.
+  2026-08-12 — heading-order accessibility fix — complete
+  Result: Changed publication card and dialog headings from skipped h4/h5 levels
+  to a sequential h3/h4 hierarchy beneath the publications h2. This removes
+  the homepage Lighthouse heading-order assertion.
+  Evidence: homepage Lighthouse run completed without the previous heading-order
+  failure; `npm run check`, `npm test`, `npm run validate`, and HTML/link checks passed.
+  Remaining issue: Lighthouse privacy-page run is blocked during Windows Chrome
+  temporary-directory cleanup with `EPERM` after audits complete.
+  Commit: pending (this iteration)
+  Blockers: Windows Lighthouse temp-directory cleanup lock.
+  Next: commit the heading hierarchy fix.
