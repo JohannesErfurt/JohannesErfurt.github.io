@@ -1060,3 +1060,13 @@ Next: A-002
   Commit: pending (this iteration)
   Blockers: none
   Next: run the baseline checks, then commit this scoped asset and documentation update.
+  2026-08-12 — CNN publication exact-layout Lena replacement — complete
+  Result: Edited the prior CNN publication artwork in place, replacing only the
+  left blocky landscape and right restored landscape with compressed and clean
+  Lena panels. The central CNN/filter workflow and title were preserved.
+  Evidence: 1672x941 source inspected; public derivative is a 135,138-byte WebP
+  with the central diagram unchanged and both outer panels inside their original
+  borders.
+  Commit: pending (this iteration)
+  Blockers: none
+  Next: run the baseline checks, then commit this scoped asset and documentation update.

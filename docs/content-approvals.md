@@ -401,10 +401,11 @@ Approval states: `pending`, `approved`, or `omit`.
 - Presentation: replaces the previous concept illustration for “Adaptive Loop
   Filter with a CNN-Based Classification” on its conference-publication card
   and detail dialog.
-  - Processing: generated at 1536x1024 and saved as an optimized WebP; the
-    image contains the approved title, CNN diagram, and grayscale Lena
-    compressed-input/restored-output panels, with no logos, watermarks, or
-    private information.
+  - Processing: edited from the previously approved 1672x941 artwork and saved
+    as an optimized WebP; only the two outer example panels were replaced with
+    grayscale Lena compressed-input/restored-output panels. The title, central
+    CNN diagram, arrows, labels, and styling remain unchanged; there are no
+    logos, watermarks, or private information.
 - Revision: the title was enlarged, changed to “CNN-based IN-Loop Filter” at
   Johannes' requested capitalization, and moved with the diagram into a lower
   position with a top safety margin to prevent thumbnail clipping.
