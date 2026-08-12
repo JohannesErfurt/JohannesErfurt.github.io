@@ -40,6 +40,8 @@ export interface ProjectEntry {
   category: (typeof projectCategories)[number];
   description: string;
   impact: string;
+  scopeLabel?: string;
+  developmentEffort?: string;
   techStack: string[];
   githubUrl?: string;
   demoUrl?: string;
@@ -146,6 +148,8 @@ export function validateProjectEntry(
   assertStringArray(value.techStack, `${path}.techStack`);
   assertOptionalString(value.githubUrl, `${path}.githubUrl`);
   assertOptionalString(value.demoUrl, `${path}.demoUrl`);
+  assertOptionalString(value.scopeLabel, `${path}.scopeLabel`);
+  assertOptionalString(value.developmentEffort, `${path}.developmentEffort`);
   if (typeof value.featured !== 'boolean') {
     throw new TypeError(`${path}.featured must be a boolean`);
   }

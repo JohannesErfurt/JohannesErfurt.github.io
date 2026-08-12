@@ -1113,3 +1113,13 @@ Next: A-002
   Commit: pending (this iteration)
   Blockers: none
   Next: commit the scoped publication-layout update.
+  2026-08-12 — selected-project complexity framing — complete
+  Result: Added explicit scope and development-effort badges to project cards
+  and case-study headers: MindGrow Stories is a product-scale platform built
+  over about six months; Wizarding Story Engine is a focused prototype built
+  over a few days.
+  Evidence: project data remains schema-valid; `npm run check`, `npm test`, and
+  `npm run build` passed.
+  Commit: pending (this iteration)
+  Blockers: none
+  Next: commit the scoped project-content and presentation update.

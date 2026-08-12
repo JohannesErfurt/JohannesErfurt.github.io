@@ -41,6 +41,7 @@ const projectVisual = projectVisuals[project.id as keyof typeof projectVisuals];
       <p class="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">{project.subtitle}</p>
       <h1 class="mt-3 text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl" id="project-title">{project.title}</h1>
       <p class="mt-6 text-xl leading-8 text-slate-700 dark:text-slate-300">{project.description}</p>
+      {project.scopeLabel && project.developmentEffort && <div class="mt-6 flex flex-wrap gap-3" aria-label="Project scope and development effort"><span class="rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1.5 text-sm font-semibold text-indigo-800 dark:border-indigo-900 dark:bg-indigo-950/50 dark:text-indigo-200">{project.scopeLabel}</span><span class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-semibold text-slate-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">{project.developmentEffort}</span></div>}
     </header>
 
     <figure class="mt-12 overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 shadow-sm dark:border-slate-700">
